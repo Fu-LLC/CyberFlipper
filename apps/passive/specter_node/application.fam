@@ -1,6 +1,6 @@
 App(
     appid="specter_node",
-    name="Specter Passive",
+    name="[F] Specter Passive",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="specter_app",
     cdefines=["APP_SPECTER"],

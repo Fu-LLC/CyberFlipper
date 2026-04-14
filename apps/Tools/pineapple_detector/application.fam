@@ -1,12 +1,12 @@
 App(
     appid="pineapple_detector",
-    name="Pineapple Detector",
+    name="[F] Pineapple Detector",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="pineapple_detector_app",
     requires=["gui", "furi"],
     stack_size=4 * 1024,
     fap_category="Tools",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="WiFi Pineapple rogue AP detector — identifies Hak5 Pineapple devices by OUI and behavior",
 )

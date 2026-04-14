@@ -1,12 +1,12 @@
 App(
     appid="airtag_spoofer",
-    name="AirTag Spoofer",
+    name="[F] AirTag Spoofer",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="airtag_spoofer_app",
     requires=["gui", "furi", "bt"],
     stack_size=4 * 1024,
     fap_category="Bluetooth",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="Clones and rebroadcasts Apple AirTag BLE advertisements for selective or bulk spoofing",
 )

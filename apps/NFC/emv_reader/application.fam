@@ -1,12 +1,12 @@
 App(
     appid="emv_reader",
-    name="EMV Reader",
+    name="[F] EMV Reader",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="emv_reader_app",
     requires=["gui", "furi", "nfc"],
     stack_size=2 * 1024,
     fap_category="NFC",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="Read payment card metadata (non-destructive)",
 )

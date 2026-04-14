@@ -1,12 +1,12 @@
 App(
     appid="device_scout",
-    name="Device Scout",
+    name="[F] Device Scout",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="device_scout_app",
     requires=["gui", "furi"],
     stack_size=4 * 1024,
     fap_category="Tools",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="Anti-surveillance wireless scanner — detects and ranks persistent nearby devices to identify trackers",
 )

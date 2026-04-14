@@ -1,12 +1,12 @@
 App(
     appid="cyber_chef",
-    name="CyberChef",
+    name="[F] CyberChef",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="cyber_chef_app",
     requires=["gui", "furi"],
     stack_size=4 * 1024,
     fap_category="Tools",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="On-device data transformation toolkit — encode/decode/hash/XOR (CyberChef-inspired)",
 )

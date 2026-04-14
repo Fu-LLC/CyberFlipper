@@ -1,12 +1,12 @@
 App(
     appid="rf_replay_multi",
-    name="RF Replay Multi",
+    name="[F] RF Replay Multi",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="rf_replay_multi_app",
     requires=["gui", "furi"],
     stack_size=4 * 1024,
     fap_category="Sub-GHz",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="Multi-protocol RF replay attack tool — capture and replay signals across 300-928MHz",
 )

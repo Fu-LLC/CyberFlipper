@@ -1,12 +1,12 @@
 App(
     appid="deauth_scanner",
-    name="Deauth Scanner",
+    name="[F] Deauth Scanner",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="deauth_scanner_app",
     requires=["gui", "furi"],
     stack_size=4 * 1024,
     fap_category="Tools",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="WiFi deauth frame monitor — tracks source MAC, channel, and RSSI of active deauth attacks in real-time",
 )

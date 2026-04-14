@@ -25,7 +25,7 @@ static void sim_flip(FlipperScannerApp* app) {
     if(app->count>=MAX_FLIPPERS||rand()%10!=0) return;
     static const char* names[]={"Flipper_Boi","CyberFlip","h4cker_f0x","FlipMaster","DolphinKing",
         "SubGHz_Pro","RFID_Ninja","BadUSB_Lord","IR_Wizard","Flipzilla"};
-    static const char* fws[]={"0.99.1","1.0.0-rc","0.98.3","UNLEASHED","ROGUEMASTER","XTREME","CUSTOM"};
+    static const char* fws[]={"0.99.1","1.0.0-rc","0.98.3","F-SERIES","F-SERIES","CYBER","CUSTOM"};
     FlipperDevice* f=&app->flippers[app->count++];
     strncpy(f->name,names[rand()%10],19); strncpy(f->fw,fws[rand()%7],11);
     for(int i=0;i<6;i++) f->addr[i]=rand()%256;

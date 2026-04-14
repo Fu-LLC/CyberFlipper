@@ -1,12 +1,12 @@
 App(
     appid="cyber_guide",
-    name="Cyber Guide",
+    name="[F] Cyber Guide",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="cyber_guide_app",
     requires=["gui", "furi"],
     stack_size=2 * 1024,
     fap_category="Tools",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="On-device security research guide based on OWASP benchmarks",
 )

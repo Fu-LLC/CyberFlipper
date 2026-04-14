@@ -1,12 +1,12 @@
 App(
     appid="spi_mem",
-    name="SPI Mem Manager",
+    name="[F] SPI Mem Manager",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="spi_mem_app",
     requires=["gui", "furi"],
     stack_size=4 * 1024,
     fap_category="GPIO",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="Read/write SPI flash chips (W25Qxx, AT25, M25P)",
 )

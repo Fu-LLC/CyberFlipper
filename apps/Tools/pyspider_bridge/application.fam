@@ -1,1 +1,1 @@
-App(appid="pyspider_bridge", name="pyspider_bridge", apptype=FlipperAppType.EXTERNAL, entry_point="pyspider_bridge_app", requires=["gui"])
+App(appid="pyspider_bridge", name="[F] pyspider_bridge", apptype=FlipperAppType.EXTERNAL, entry_point="pyspider_bridge_app", requires=["gui"])

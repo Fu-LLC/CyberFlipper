@@ -1,13 +1,13 @@
 App(
     appid="signal_analyzer",
-    name="Signal Analyzer",
+    name="[F] Signal Analyzer",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="signal_analyzer_app",
     requires=["gui", "subghz", "furi"],
     cdefines=["APP_SIGNAL_ANALYZER"],
     stack_size=4 * 1024,
     fap_category="Sub-GHz",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="Real-time Sub-GHz spectrum analyzer with signal strength and modulation detection",
 )

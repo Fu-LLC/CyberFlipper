@@ -1,12 +1,12 @@
 App(
     appid="gsm_analyzer",
-    name="GSM Analyzer",
+    name="[F] GSM Analyzer",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="gsm_analyzer_app",
     requires=["gui", "furi"],
     stack_size=4 * 1024,
     fap_category="Tools",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="GSM tower analysis via AT commands (SIM800L/GPIO)",
 )

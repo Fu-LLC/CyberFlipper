@@ -1,6 +1,6 @@
 App(
     appid="wardriver",
-    name="WiGLE Wardriver",
+    name="[F] WiGLE Wardriver",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="wardriver_app",
     cdefines=["APP_WARDRIVER"],

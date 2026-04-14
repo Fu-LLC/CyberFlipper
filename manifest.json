@@ -1,7 +1,7 @@
 {
   "name": "CYBERFLIPPER",
   "version": "1.1.0",
-  "build_date": "2026-04-14T11:00:48.191807",
+  "build_date": "2026-04-14T11:02:35.952295",
   "platform": "Flipper Zero (STM32WB55RG)",
   "firmware": {
     "firmware.dfu": {
@@ -37,8 +37,8 @@
     "resources.tar": {
       "size": 32296960,
       "size_human": "30.80 MB",
-      "sha256": "6a6874de012e26fe546488fb4122b33183d95e7e9c4701313970d06258183153",
-      "modified": "2026-04-14T11:00:48.085157"
+      "sha256": "eaf3b54cf4b6c425ae593d39aa5a4868fb19de97cba9c4b67034dd168ffe44d1",
+      "modified": "2026-04-14T11:02:35.849263"
     }
   },
   "apps": {

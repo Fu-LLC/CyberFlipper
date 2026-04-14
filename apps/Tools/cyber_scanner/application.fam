@@ -1,1 +1,1 @@
-App(appid="cyber_scanner", name="cyber_scanner", apptype=FlipperAppType.EXTERNAL, entry_point="cyber_scanner_app", requires=["gui"])
+App(appid="cyber_scanner", name="[F] cyber_scanner", apptype=FlipperAppType.EXTERNAL, entry_point="cyber_scanner_app", requires=["gui"])

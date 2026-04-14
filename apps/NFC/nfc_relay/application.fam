@@ -1,12 +1,12 @@
 App(
     appid="nfc_relay",
-    name="NFC Relay",
+    name="[F] NFC Relay",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="nfc_relay_app",
     requires=["gui", "furi", "nfc"],
     stack_size=4 * 1024,
     fap_category="NFC",
-    fap_version="1.0",
-    fap_author="@CYBERFLIPPER",
+    fap_version="1.1.0",
+    fap_author="Personfu",
     fap_description="NFC relay proxy between reader and card",
 )
