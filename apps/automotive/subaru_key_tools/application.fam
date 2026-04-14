@@ -1,0 +1,12 @@
+App(
+    appid="subaru_key_tools",
+    name="Subaru Key Tools",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="subaru_key_tools_app",
+    requires=["gui", "subghz", "furi"],
+    stack_size=4 * 1024,
+    fap_category="Automotive",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Subaru fixed and rolling code key analysis",
+)

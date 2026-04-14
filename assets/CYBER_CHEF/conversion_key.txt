@@ -1,0 +1,5 @@
+# CYBERCHEF OFFLINE REFERENCE
+- Base64: [a-zA-Z0-9+/]
+- HEX: 0123456789ABCDEF
+- ROT13: A <-> N, B <-> O
+- URL Encode: SPACE -> %20

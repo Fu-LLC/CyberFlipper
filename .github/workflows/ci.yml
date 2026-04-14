@@ -1,0 +1,74 @@
+name: CYBERFLIPPER CI — Validate & Package
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  validate:
+    name: Validate FAP Applications
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate Apps
+        run: python3 validate_apps.py
+
+      - name: Check Firmware Integrity
+        run: |
+          echo "=== Firmware File Integrity ==="
+          for f in firmware.dfu radio.bin splash.bin updater.bin update.fuf resources.tar; do
+            if [ -f "$f" ]; then
+              size=$(stat -c%s "$f" 2>/dev/null || stat -f%z "$f")
+              hash=$(sha256sum "$f" | cut -d' ' -f1)
+              echo "[OK] $f — ${size} bytes — SHA256: ${hash:0:16}..."
+            else
+              echo "[MISSING] $f"
+            fi
+          done
+
+      - name: Count Languages
+        run: |
+          echo "=== Language Breakdown ==="
+          echo "C/H files: $(find . -name '*.c' -o -name '*.h' | wc -l)"
+          echo "Python files: $(find . -name '*.py' | wc -l)"
+          echo "Shell scripts: $(find . -name '*.sh' | wc -l)"
+          echo "PowerShell: $(find . -name '*.ps1' | wc -l)"
+          echo "Batch: $(find . -name '*.cmd' -o -name '*.bat' | wc -l)"
+          echo "YAML: $(find . -name '*.yml' -o -name '*.yaml' | wc -l)"
+          echo "FAM manifests: $(find . -name '*.fam' | wc -l)"
+          echo "Markdown: $(find . -name '*.md' | wc -l)"
+
+  package:
+    name: Build Release Package
+    needs: validate
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build Package
+        run: python3 package.py
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/CYBERFLIPPER-*.tgz
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

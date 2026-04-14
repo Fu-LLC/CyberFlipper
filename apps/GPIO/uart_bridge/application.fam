@@ -1,0 +1,12 @@
+App(
+    appid="uart_bridge",
+    name="UART Bridge",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="uart_bridge_app",
+    requires=["gui", "furi"],
+    stack_size=2 * 1024,
+    fap_category="GPIO",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Universal UART bridge with auto baud detection",
+)

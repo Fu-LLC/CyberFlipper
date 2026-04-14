@@ -1,0 +1,12 @@
+App(
+    appid="mfkey32",
+    name="MFKey32",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="mfkey32_app",
+    requires=["gui", "furi", "nfc"],
+    stack_size=4 * 1024,
+    fap_category="NFC",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Mifare Classic key recovery from collected nonces",
+)

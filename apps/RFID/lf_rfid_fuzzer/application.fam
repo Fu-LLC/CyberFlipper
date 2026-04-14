@@ -1,0 +1,12 @@
+App(
+    appid="lf_rfid_fuzzer",
+    name="LF RFID Fuzzer",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="lf_rfid_fuzzer_app",
+    requires=["gui", "furi"],
+    stack_size=2 * 1024,
+    fap_category="RFID",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Low-frequency RFID emulation fuzzer (125kHz EM4100/HID)",
+)

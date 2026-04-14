@@ -1,0 +1,12 @@
+App(
+    appid="bt_spam",
+    name="BT Spam",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="bt_spam_app",
+    requires=["gui", "furi", "bt"],
+    stack_size=2 * 1024,
+    fap_category="Tools",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="BLE advertisement spam — Apple/Samsung/Windows proximity notifications",
+)

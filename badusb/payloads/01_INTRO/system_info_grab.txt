@@ -1,0 +1,8 @@
+REM CYBERFLIPPER - INTRO Level
+REM System Info Grabber - Displays basic system information
+REM Safe for learning - read-only reconnaissance
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -WindowStyle Hidden -Command "Get-ComputerInfo | Select CsName,WindowsVersion,OsArchitecture | Out-File $env:TEMP\sysinfo.txt; notepad $env:TEMP\sysinfo.txt"
+ENTER

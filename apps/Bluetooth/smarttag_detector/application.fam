@@ -1,0 +1,12 @@
+App(
+    appid="smarttag_detector",
+    name="SmartTag Detect",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="smarttag_detector_app",
+    requires=["gui", "furi", "bt"],
+    stack_size=4 * 1024,
+    fap_category="Bluetooth",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Samsung SmartTag, Tile, and RayBan Meta tracker detector with RSSI locate mode",
+)

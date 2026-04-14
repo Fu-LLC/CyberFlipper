@@ -1,0 +1,12 @@
+App(
+    appid="freq_scanner",
+    name="Freq Scanner",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="freq_scanner_app",
+    requires=["gui", "subghz", "furi"],
+    stack_size=2 * 1024,
+    fap_category="Sub-GHz",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Scan and detect active Sub-GHz transmissions across all bands",
+)
