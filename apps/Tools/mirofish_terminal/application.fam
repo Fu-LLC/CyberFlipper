@@ -1,1 +1,1 @@
-App(appid="mirofish_terminal", name="[F] mirofish_terminal", apptype=FlipperAppType.EXTERNAL, entry_point="mirofish_terminal_app", requires=["gui"])
+App(appid="mirofish_terminal", name="[F] mirofish_terminal", apptype=FlipperAppType.EXTERNAL, entry_point="mirofish_terminal_app", requires=["gui"])fap_category="Tools"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CYBERFLIPPER v1.0.0 — App Validator
+CYBERFLIPPER v1.1.0 — App Validator
 Validates all FAP application manifests and source files.
 Checks for missing files, syntax issues, and build compatibility.
 

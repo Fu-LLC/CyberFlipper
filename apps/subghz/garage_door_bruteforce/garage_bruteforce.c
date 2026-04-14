@@ -1,3 +1,4 @@
+#include <furi.h>
 /**
  * CYBERFLIPPER — Garage Door Bruteforce
  * De Bruijn sequence generator and transmitter for fixed-code garage systems.
