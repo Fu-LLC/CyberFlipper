@@ -89,7 +89,141 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 
 ---
 
-## ▓▒░ V. DEPLOYMENT (NEURAL UPLINK)
+## ▓▒░ V. HARDWARE TECHNICAL SPECIFICATIONS
+
+> *Full specifications reference: [Official Flipper Zero Tech Specs](https://docs.flipper.net/zero/development/hardware/tech-specs) | [Hardware Schematics](https://docs.flipper.net/zero/development/hardware/schematic#)*
+
+### 📐 Body
+
+| Parameter | Value |
+| :--- | :--- |
+| **Materials** | PC, ABS, PMMA |
+| **Height** | 40.1 mm (1.58 inches) |
+| **Width** | 100.3 mm (3.95 inches) |
+| **Depth** | 25.6 mm (1.01 inches) |
+| **Weight** | 102 grams (3.6 ounces) |
+
+### 🖥️ Display
+
+| Parameter | Value |
+| :--- | :--- |
+| **Type** | Monochrome LCD |
+| **Resolution** | 128×64 pixels |
+| **Controller** | ST7567 |
+| **Interface** | SPI |
+| **Diagonal** | 1.4" |
+
+### ⚙️ Microcontroller Unit (MCU)
+
+| Parameter | Value |
+| :--- | :--- |
+| **Model** | STM32WB55RG |
+| **Application Processor** | ARM Cortex-M4 32-bit @ 64 MHz |
+| **Radio Processor** | ARM Cortex-M0+ 32-bit @ 32 MHz |
+| **Radio** | Bluetooth LE 5.4, 802.15.4, Proprietary |
+| **Flash** | 1024 KB (shared between application & radio) |
+| **SRAM** | 256 KB (shared between application & radio) |
+
+### 📡 Sub-1 GHz Module
+
+| Parameter | Value |
+| :--- | :--- |
+| **Transceiver** | CC1101 |
+| **TX Power** | -20 dBm max |
+| **Frequency Bands** | 315 MHz · 433 MHz · 868 MHz · 915 MHz (region-dependent) |
+
+### 📱 NFC (13.56 MHz)
+
+| Parameter | Value |
+| :--- | :--- |
+| **Transceiver** | ST25R3916 |
+| **Frequency** | 13.56 MHz |
+| **Protocols** | ISO-14443A/B, NFC Forum |
+| **Supported Cards** | MIFARE Classic®, Ultralight®, DESFire®, FeliCa™, HID iClass (Picopass) |
+
+### 🔑 RFID 125 kHz
+
+| Parameter | Value |
+| :--- | :--- |
+| **Frequency** | 125 KHz |
+| **Modulation** | AM, OOK |
+| **Coding** | ASK, PSK |
+| **Supported Cards** | EM4100, HID H10301, Indala 26, IoProx XSF, AWID, FDX-A, FDX-B, Pyramid, Viking, Jablotron, Paradox, PAC Stanley, Keri, Gallagher, Nexwatch, Electra, Securakey |
+
+### 🔌 GPIO
+
+| Parameter | Value |
+| :--- | :--- |
+| **I/O Pins** | 13 available on external 2.54mm connectors |
+| **Logic Level** | 3.3V CMOS |
+| **Input Tolerance** | 5V tolerant (See AN4899) |
+| **Max Current** | Up to 20 mA per digital pin |
+
+### 🔴 Infrared
+
+| Parameter | Value |
+| :--- | :--- |
+| **RX Wavelength** | 950 nm (±100 nm) |
+| **RX Carrier** | 38 KHz (±5%) |
+| **TX Wavelength** | 940 nm |
+| **TX Carrier** | 0–2 MHz |
+| **TX Power** | 300 mW |
+| **Protocols** | NEC, Kaseikyo, RCA, RC5, RC6, Samsung, SIRC |
+
+### 🗝️ iButton 1-Wire
+
+| Parameter | Value |
+| :--- | :--- |
+| **Protocols** | Dallas DS199x, DS1971, CYFRAL, Metakom, TM2004, RW1990 |
+
+### 🔋 Battery
+
+| Parameter | Value |
+| :--- | :--- |
+| **Type** | Lithium Polymer (LiPo) |
+| **Capacity** | 2100 mAh |
+| **Battery Life** | Up to 28 days |
+| **Operating Temp** | 0° to 40°C (32° to 104°F) |
+
+### 💾 MicroSD Card
+
+| Parameter | Value |
+| :--- | :--- |
+| **Max Capacity** | Up to 256 GB |
+| **Recommended** | 2–32 GB |
+| **Interface** | SPI |
+| **R/W Speed** | Up to 5 Mbps |
+
+### 🔗 USB
+
+| Parameter | Value |
+| :--- | :--- |
+| **Connector** | Type-C |
+| **Standard** | USB 2.0 |
+| **Data Speed** | 12 Mbps |
+| **Max Charge** | 1 A |
+
+### 📶 Bluetooth LE 5.4
+
+| Parameter | Value |
+| :--- | :--- |
+| **TX Power** | 4 dBm max |
+| **RX Sensitivity** | -96 dBm |
+| **Data Rate** | 2 Mbps |
+
+### 🔊 Buzzer & Vibration
+
+| Parameter | Value |
+| :--- | :--- |
+| **Buzzer Frequency** | 100–2500 Hz |
+| **Sound Output** | 87 dB |
+| **Buzzer Type** | Coin |
+| **Vibration Force** | 30 N |
+| **Vibration Speed** | 13500 rpm |
+
+---
+
+## ▓▒░ VI. DEPLOYMENT (NEURAL UPLINK)
 For guaranteed execution without serial-IO timeouts:
 
 1. Decompress CYBERFLIPPER.tgz locally.
