@@ -1,16 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deploy | CYBERFLIPPER</title>
+    <title>DEPLOY | CYBERFLIPPER</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="layout.css">
 </head>
 <body class="theme-dark">
-    <div id="matrix-rain" class="dash-matrix-rain"></div>
-    <div class="hud-scanner"></div>
     <nav class="p-4 d-flex justify-content-center">
         <a href="index.html" class="nav-anchor">DASHBOARD</a>
         <a href="toolchain.html" class="nav-anchor">TOOLCHAIN</a>
@@ -19,28 +17,29 @@
         <a href="download.html" class="nav-anchor active">DEPLOY</a>
         <a href="about.html" class="nav-anchor">ABOUT</a>
     </nav>
-
-    <div class="container py-5 text-center">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h1 class="hud-label text-cyan display-4">[ PRODUCTION_DEPLOYMENT ]</h1>
-                <p class="text-white-50 mt-3">Authorized Mission Release v1.1.0 (Audited FLLC Core)</p>
-            </div>
+    <main class="container py-5">
+        <div class="text-center mt-5 mb-5">
+            <h1 class="hud-label text-cyan display-5">[ SYSTEM_DEPLOYMENT_HUB ]</h1>
+            <p class="text-white-50 mt-3">Ready to upgrade your Flipper Zero? Access the definitive F-SERIES master bundle.</p>
         </div>
-
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="terminal-card electric-border p-5">
-                    <h3 class="mb-4">CYBERFLIPPER.tgz</h3>
-                    <p class="text-white-50 mb-4">Final production bundle with decentralized F-SERIES animations and audited app Author-signatures.</p>
-                    <div class="d-grid gap-3">
-                        <a href="dist/CYBERFLIPPER.tgz" class="btn btn-outline-cyan btn-lg hud-label" download>DOWNLOAD_UPLINK</a>
-                        <div class="small text-white-50 font-monospace">SHA256: F93EA27523C3EE373E3C29440FA4D4A37B795660BBD7769FD4A900E18189809F</div>
+            <div class="col-md-8">
+                <div class="glass-card text-center p-5">
+                    <h2 class="text-white">CYBERFLIPPER v1.1.0</h2>
+                    <p class="text-cyan mb-4">PRODUCTION STABLE | F-SERIES IDENTITY ENABLED</p>
+                    <div class="p-3 bg-black mb-4 border border-secondary font-monospace text-success" style="font-size: 0.8rem;">
+                        [+] Sterile resources.tar (F-SERIES ONLY)<br>
+                        [+] Master Identity Passport Override<br>
+                        [+] 74+ [F] Branded tactical applications<br>
+                        [+] Comprehensive Sub-GHz/NFC/RFID dictionaries
+                    </div>
+                    <a href="CYBERFLIPPER-v1.1.0.tgz" class="btn btn-cyber btn-lg neon-pulse w-100 py-3">DOWNLOAD RELEASE v1.1.0</a>
+                    <div class="mt-4 p-2 bg-dark border border-secondary">
+                        <small class="text-white-50">SHA256: 24c58fd32e5265b6d0fccabd300b587be5e637ec54e6e770047fa2276579e3cf</small>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="dashboard.js"></script>
+    </main>
 </body>
 </html>
