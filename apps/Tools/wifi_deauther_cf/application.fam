@@ -1,0 +1,12 @@
+App(
+    appid="wifi_deauther_cf",
+    name="WiFi Deauther",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="wifi_deauther_cf_app",
+    requires=["gui", "furi"],
+    stack_size=4 * 1024,
+    fap_category="Tools",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="WiFi deauthentication frame tester — authorized network security testing via ESP32 bridge",
+)

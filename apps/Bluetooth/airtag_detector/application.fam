@@ -1,0 +1,12 @@
+App(
+    appid="airtag_detector",
+    name="AirTag Detector",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="airtag_detector_app",
+    requires=["gui", "furi", "bt"],
+    stack_size=4 * 1024,
+    fap_category="Bluetooth",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Apple AirTag scanner — detects nearby AirTags with RSSI locate mode and spoof capability",
+)

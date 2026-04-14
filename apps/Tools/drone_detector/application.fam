@@ -1,0 +1,12 @@
+App(
+    appid="drone_detector",
+    name="Drone Detector",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="drone_detector_app",
+    requires=["gui", "furi"],
+    stack_size=4 * 1024,
+    fap_category="Tools",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Drone RemoteID detector — captures ASTM F3411 BLE/WiFi drone ID frames with GPS and RSSI tracking",
+)

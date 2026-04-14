@@ -1,0 +1,13 @@
+App(
+    appid="code_repeater",
+    name="Code Repeater",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="code_repeater_app",
+    requires=["gui", "subghz", "furi"],
+    cdefines=["APP_CODE_REPEATER"],
+    stack_size=4 * 1024,
+    fap_category="Sub-GHz",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Capture and replay Sub-GHz signals with timing control",
+)

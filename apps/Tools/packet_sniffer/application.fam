@@ -1,0 +1,12 @@
+App(
+    appid="packet_sniffer",
+    name="Packet Sniffer",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="packet_sniffer_app",
+    requires=["gui", "subghz", "furi"],
+    stack_size=4 * 1024,
+    fap_category="Tools",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Sub-GHz packet capture with hex dump and analysis",
+)

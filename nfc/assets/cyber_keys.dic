@@ -1,0 +1,13 @@
+# CYBERFLIPPER — NFC Master Dictionary
+# High-intensity research patterns for tag identification
+A1 B2 C3 D4
+00 00 00 00
+FF FF FF FF
+D3 F7 D3 F7
+4D 3A 99 C3
+1A 2B 3C 4D
+# [FLLC - SECURITY SECTOR]
+B0 B1 B2 B3 B4 B5
+A0 A1 A2 A3 A4 A5
+00 01 02 03 04 05
+49 45 4D 44 41 4C

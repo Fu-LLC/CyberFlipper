@@ -1,0 +1,7 @@
+REM CYBERFLIPPER - ADVANCED Level
+REM Workstation Security Audit - Inspired by OWASP & Hak5
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -W Hidden -C "echo '=== SECURITY AUDIT ===' > $env:TEMP\audit.txt; echo 'FIREWALL STATUS:' >> $env:TEMP\audit.txt; Get-NetFirewallProfile | Select Name, Enabled >> $env:TEMP\audit.txt; echo 'PENDING UPDATES:' >> $env:TEMP\audit.txt; Get-HotFix | Select Description, HotFixID, InstalledOn | Sort InstalledOn -D | Select -First 5 >> $env:TEMP\audit.txt; echo 'LOCAL ADMINS:' >> $env:TEMP\audit.txt; net localgroup administrators >> $env:TEMP\audit.txt; notepad $env:TEMP\audit.txt"
+ENTER

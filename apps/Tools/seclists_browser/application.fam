@@ -1,0 +1,12 @@
+App(
+    appid="seclists_browser",
+    name="SecLists Browser",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="seclists_browser_app",
+    requires=["gui", "furi"],
+    stack_size=4 * 1024,
+    fap_category="Tools",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Wordlist browser for password & fuzzing patterns — built-in SecLists references",
+)

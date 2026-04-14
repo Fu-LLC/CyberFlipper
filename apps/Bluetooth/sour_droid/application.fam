@@ -1,0 +1,12 @@
+App(
+    appid="sour_droid",
+    name="Sour Droid",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="sour_droid_app",
+    requires=["gui", "furi", "bt"],
+    stack_size=4 * 1024,
+    fap_category="Bluetooth",
+    fap_version="1.0",
+    fap_author="@CYBERFLIPPER",
+    fap_description="Android/Samsung BLE FastPair & EasySetup notification flood for protocol resilience testing",
+)
