@@ -145,11 +145,12 @@ def build_package(base_dir):
             dpath = os.path.join(base_dir, d)
             if os.path.isdir(dpath):
                 if d == "dolphin":
-                    # Filtered dolphin for production release purity
-                    for item in os.listdir(dpath):
-                        if item in DOLPHIN_WHITELIST:
-                            tar.add(os.path.join(dpath, item), arcname=os.path.join(d, item))
-                    print(f"      + Added directory '{d}' (F-SERIES STERILIZED) to resources")
+                    # Absolute resource sterilization
+                    for item in ["Icons", "manifest.txt"]:
+                        ipath = os.path.join(dpath, item)
+                        if os.path.exists(ipath):
+                            tar.add(ipath, arcname=os.path.join(d, item))
+                    print(f"      + Added directory '{d}' (TOTAL PURGE ACTIVE) to resources")
                 else:
                     tar.add(dpath, arcname=d)
                     print(f"      + Added directory '{d}' to resources")
