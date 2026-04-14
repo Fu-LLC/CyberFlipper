@@ -15,10 +15,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ARCH-PCB_12.1.F7B9C6-000000?style=for-the-badge&logo=circuit-board" alt="PCB">
-  <img src="https://img.shields.io/badge/MCU-STM32WB55_DUAL_CORE-A020F0?style=for-the-badge" alt="MCU">
-  <img src="https://img.shields.io/badge/TX_RX-CC1101_TRANSCEIVER-ff0000?style=for-the-badge" alt="CC1101">
-  <img src="https://img.shields.io/badge/STATUS-OPERATIONAL-00FFFF?style=for-the-badge" alt="Status">
+  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/ARCH-PCB_12.1.F7B9C6-000000?style=for-the-badge&logo=circuit-board" alt="PCB"></a>
+  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/MCU-STM32WB55_DUAL_CORE-A020F0?style=for-the-badge" alt="MCU"></a>
+  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/TX_RX-CC1101_TRANSCEIVER-ff0000?style=for-the-badge" alt="CC1101"></a>
+  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/STATUS-OPERATIONAL-00FFFF?style=for-the-badge" alt="Status"></a>
 </p>
 
 ---
