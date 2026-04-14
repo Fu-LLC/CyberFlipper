@@ -1,44 +1,44 @@
 {
   "name": "CYBERFLIPPER",
   "version": "1.1.0",
-  "build_date": "2026-04-14T10:53:25.238490",
+  "build_date": "2026-04-14T11:00:36.762221",
   "platform": "Flipper Zero (STM32WB55RG)",
   "firmware": {
     "firmware.dfu": {
       "size": 832417,
       "size_human": "0.79 MB",
       "sha256": "26f2b7cfb809aa6685d5f33a8b99b6896e038a78972557499a01949ad79f4aa9",
-      "modified": "2026-04-14T10:32:01.912848"
+      "modified": "2026-04-14T10:31:56.316339"
     },
     "radio.bin": {
       "size": 116956,
       "size_human": "0.11 MB",
       "sha256": "134a9af448d2bc35995600c9e95723a387c144c2d1adea671086f16f95d327df",
-      "modified": "2026-04-14T10:32:02.013348"
+      "modified": "2026-04-14T10:31:56.516841"
     },
     "splash.bin": {
       "size": 1664,
       "size_human": "0.00 MB",
       "sha256": "0f1b45da74706c238b3dd6adba842bd9563108b4521ff20d3a9752df59300155",
-      "modified": "2026-04-14T10:32:02.479849"
+      "modified": "2026-04-14T10:31:56.892341"
     },
     "updater.bin": {
       "size": 121225,
       "size_human": "0.12 MB",
       "sha256": "7a8aea343292cf0fcddda6f3de24f118b8ef4f97bcb972848e0c0a4c4bda846d",
-      "modified": "2026-04-14T10:32:03.422349"
+      "modified": "2026-04-14T10:31:57.334342"
     },
     "update.fuf": {
-      "size": 1595,
+      "size": 1606,
       "size_human": "0.00 MB",
-      "sha256": "757163c3bcd560faa7510b6e99815bfcb799bf4d7501281c353fb611674e1a83",
-      "modified": "2026-04-14T10:32:03.414351"
+      "sha256": "c9a02c27fc97640e9862e86d1bb7a0238672c9bb0c3b6a113ea3fc8db2237a81",
+      "modified": "2026-04-14T10:31:57.331844"
     },
     "resources.tar": {
-      "size": 31733760,
-      "size_human": "30.26 MB",
-      "sha256": "18c5ce85fcfe6efca4116d92583d7dea6e68fb65cb89023f0f0db4410d31be13",
-      "modified": "2026-04-14T10:53:25.135822"
+      "size": 32296960,
+      "size_human": "30.80 MB",
+      "sha256": "6a6874de012e26fe546488fb4122b33183d95e7e9c4701313970d06258183153",
+      "modified": "2026-04-14T11:00:36.658644"
     }
   },
   "apps": {
@@ -92,6 +92,7 @@
       "garage_door_bruteforce",
       "protopirate",
       "rf_jammer",
+      "rf_replay_multi",
       "rolljam",
       "signal_analyzer"
     ],
@@ -115,6 +116,7 @@
       "ettercap_mitm",
       "evil_portal_cf",
       "flock_detector",
+      "gnss_spoof",
       "gnss_viewer",
       "gsm_analyzer",
       "hackrf_bridge",
@@ -135,6 +137,6 @@
       "wifi_scanner_cf"
     ]
   },
-  "badusb_payloads": 55,
+  "badusb_payloads": 60,
   "subghz_captures": 167
 }

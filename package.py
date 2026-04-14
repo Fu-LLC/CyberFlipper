@@ -136,7 +136,7 @@ def build_package(base_dir):
     # whitelist for dolphin assets in the final release
     DOLPHIN_WHITELIST = [
         "internal", "external", "manifest.txt", "manifest_Minimal.txt", "manifest_None.txt",
-        "Cyber_F_128x64", "F_BOOT_128x64", "F_SCAN_128x64", "F_GLITCH_128x64", "F_PULSE_128x64",
+        "Icons", "Cyber_F_128x64", "F_BOOT_128x64", "F_SCAN_128x64", "F_GLITCH_128x64", "F_PULSE_128x64",
         "F_GRID_PRO", "F_NOISE_PRO", "F_RADAR_PRO", "F_WAVE_PRO"
     ]
 
@@ -176,8 +176,22 @@ def build_package(base_dir):
     for cat, app_list in sorted(apps.items()):
         print(f"      {cat}: {len(app_list)} apps")
 
-    # Generate manifest
-    print("\n  [*] Generating manifest...")
+    # Generate manifest.txt (OFFICIAL FLIPPER FORMAT)
+    print("\n  [*] Generating Flipper Update Manifest...")
+    flipper_manifest = [
+        "Filetype: Flipper Update Manifest",
+        "Version: 1",
+        f"Info: {RELEASE_NAME} v{VERSION}",
+        "Target: 7", # Specific hardware target for official updates
+        "Loader: firmware.dfu",
+        "Radio: radio.bin",
+        "Resources: resources.tar"
+    ]
+    with open(os.path.join(base_dir, "update.txt"), "w") as f:
+        f.write("\n".join(flipper_manifest) + "\n")
+    print(f"  [+] update.txt (manifest.txt) generated")
+
+    # Generate manifest.json (INTERNAL DEBUG)
     manifest = generate_manifest(base_dir)
     manifest_path = os.path.join(base_dir, "manifest.json")
     with open(manifest_path, "w") as f:
@@ -191,14 +205,15 @@ def build_package(base_dir):
 
     print(f"\n  [*] Creating {RELEASE_NAME}.tgz...")
     with tarfile.open(tgz_path, "w:gz") as tar:
-        # ONLY add required firmware files and metadata texts
-        pack_items = FIRMWARE_FILES + ["README.md", "LICENSE", "manifest.json"]
+        # qFlipper looks for 'update.txt' or 'manifest.txt'
+        pack_items = FIRMWARE_FILES + ["README.md", "LICENSE", "manifest.json", "update.txt"]
         for item in pack_items:
             item_path = os.path.join(base_dir, item)
             if os.path.exists(item_path):
                 # Flat structure for official compatibility
-                tar.add(item_path, arcname=item)
-                print(f"      + {item}")
+                name_in_tgz = "manifest.txt" if item == "update.txt" else item
+                tar.add(item_path, arcname=name_in_tgz)
+                print(f"      + {name_in_tgz}")
 
     size_mb = os.path.getsize(tgz_path) / 1024 / 1024
     print(f"\n  [SUCCESS] {tgz_path}")
