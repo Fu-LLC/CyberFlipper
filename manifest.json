@@ -1,7 +1,7 @@
 {
   "name": "CYBERFLIPPER-v1.0.0",
   "version": "1.0.0",
-  "build_date": "2026-04-14T07:54:57.161195",
+  "build_date": "2026-04-14T08:18:38.606855",
   "platform": "Flipper Zero (STM32WB55RG)",
   "firmware": {
     "firmware.dfu": {
