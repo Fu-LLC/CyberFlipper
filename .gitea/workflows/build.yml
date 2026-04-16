@@ -49,7 +49,7 @@ jobs:
           sdk-channel: ${{ matrix.sdk-channel }}
           sdk-index-url: ${{ matrix.sdk-index-url }}
       - name: Upload app artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: protopirate_${{ matrix.fap-name }}_${{ steps.build-app.outputs.suffix }}.fap
           path: ${{ steps.build-app.outputs.fap-artifacts }}
