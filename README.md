@@ -269,19 +269,19 @@ Use `compile_assets.py` or official FBT logs to debug:
 =======
 *   **Wireless Exploitation:**
     *   📡 **[ESP32 Marauder (JustCallMeKoko)](https://github.com/justcallmekoko/ESP32Marauder):** Pinned over UART TX(13) / RX(14). Essential 802.11 deauth mapping, beacon spamming, and PMKID capture.
-    *   ⚡ **[Awake Dynamics ESP32-C5](https://awakedynamics.com/):** Next-generation 2.4/5GHz Wi-Fi overrides natively synthesized over the GPIO backbone.
+    *   ⚡ **[Awake Dynamics ESP32-C5](https://awokdynamics.com/collections/all-products-excluding-route):** Next-generation 2.4/5GHz Wi-Fi overrides natively synthesized over the GPIO backbone.
 *   **Rogue Signal & IMSI Detection:**
-    *   🕵️‍♂️ **[Nyan Box](https://github.com/inAudible1/NyanBox):** Correlates Axon Camera network density to passively track law enforcement grids.
-    *   📱 **[Ray Hunter](https://rayhunter.net/):** Verizon hotspot mod specifically dedicated to Stingray (Cell-Site Simulator) detection and IMSI catcher awareness.
+    *   🕵️‍♂️ **[Nyan Box]([https://github.com/NyanBox](https://github.com/jbohack/nyanBOX)):** Correlates Axon Camera network density to passively track law enforcement grids.
+    *   📱 **[Ray Hunter](https://github.com/EFForg/rayhunter):** Verizon hotspot mod specifically dedicated to Stingray (Cell-Site Simulator) detection and IMSI catcher awareness.
 *   **Captive Portals & Micro-Computing:**
     *   😈 **[M5Stick S3](https://docs.m5stack.com/en/core/m5stickc_plus2):** Running the "Evil" educational project for rapid captive-portal phishing emulation.
     *   🖥️ **[M5Stack Cardputer Advanced](https://shop.m5stack.com/products/m5stack-cardputer-esp32-s3-mini-keyboard-computer):** Running Porkchop firmware by Octo as a standalone serial analysis terminal.
 *   **Spectrum Analysis & VHF/UHF Comms:**
     *   📻 **[HackRF Portapack H4](https://greatscottgadgets.com/hackrf/one/) & RTL-SDR:** Making the invisible world visible. When the Flipper's CC1101 bottlenecks, escalate to external 1MHz-6GHz SDR arrays via physical SPI bridging.
     *   🎙️ **[Quansheng UV-K5](https://github.com/egzumer/uv-k5-firmware-custom):** A highly capable, hackable handheld radio. The Flipper's GPIO serves as a programmable PTT interface to transmit encrypted digital APRS payloads.
-*   **📡 [ProjectZero](https://github.com/C5Lab/projectZero) & OWASP Intelligence:** Integrated security logic and protocol manipulation derived from official Project Zero vulnerability mapping and the [OWASP CheatSheet Series](https://github.com/OWASP/CheatSheetSeries).
+*   **📡 [ProjectZero](https://github.com/C5Lab/projectZero) & OWASP Intelligence:** Integrated security logic and protocol manipulation derived from official Project Zero vulnerability mapping and the [OWASP CheatSheet Series](https://github.com/personfu/CheatSheetSeries).
 *   **🦆 Hak5 Tactical Payloads:** Native translation of master payload repositories: [USB Rubber Ducky](https://github.com/hak5/usbrubberducky-payloads), [WiFi Pineapple](https://github.com/hak5/wifipineapplepager-payloads), [Bash Bunny](https://github.com/hak5/bashbunny-payloads), and [OMG Cable](https://github.com/hak5/omg-payloads).
-*   **🛠️ Cyber-Analytic Arrays:** Logic and conversion matrices sourced from [CyberChef (GCHQ)](https://github.com/gchq/CyberChef), [SecLists](https://github.com/Personfu/seclists), and [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking).
+*   **🛠️ Cyber-Analytic Arrays:** Logic and conversion matrices sourced from [CyberChef (GCHQ)](https://github.com/personfu/CyberChef), [SecLists](https://github.com/Personfu/seclists), and [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking).
 *   **🌍 Signal ISR (Intelligence, Surveillance, Reconnaissance):** Direct integration of cellular tower and satellite tracking logic via [Tower-Hunter](https://github.com/Ringmast4r/Tower-Hunter) and [GNSS](https://github.com/Ringmast4r/GNSS) frameworks.
 *   **Content updated and supported by creators like Talking Sasquatch and more [YouTube] (https://www.youtube.com/watch?v=aZYvyy_R4jU) 
 > *We operate closely mapped alongside heavily customized smartphones and physical tools: **Nothing Phone 3** (Brute-force cloud processing), **Civivi Elementum Button Lock** (Physical override architecture), and the **Zebra F-701** (Tactical scribing).*
