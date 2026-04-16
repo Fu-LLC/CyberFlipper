@@ -1,0 +1,7 @@
+Filetype: Flipper Update Manifest
+Version: 1
+Info: CYBERFLIPPER v1.1.0
+Target: 7
+Loader: firmware.dfu
+Radio: radio.bin
+Resources: resources.tar

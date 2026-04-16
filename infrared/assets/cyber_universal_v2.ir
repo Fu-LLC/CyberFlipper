@@ -1,0 +1,37 @@
+# CYBERFLIPPER — Universal IR Master (Research) - 2026 IOT EXTENSION
+# Industrial, Commercial, & Modern IoT Control
+
+# [2026_SMART_BOARD_V2]
+name: Power_Toggle
+type: parsed
+protocol: NECext
+address: 04 FB 00 00
+command: 02 FD
+
+# [GENERIC_IOT_LED_STRIP_WIFI]
+name: Sync_Mode
+type: parsed
+protocol: NEC
+address: 00 EF
+command: 12 CD
+
+# [SMART_HVAC_INTERFACE_2026]
+name: Override
+type: parsed
+protocol: Samsung32
+address: 09 09 00 00
+command: 14 EB
+
+# [AIR_QUALITY_MONITOR]
+name: Reset_Cal
+type: parsed
+protocol: RC5
+address: 1A
+command: 2B
+
+# [INDUSTRIAL_FAN_CONTROLLER]
+name: Max_Speed
+type: parsed
+protocol: Sony20
+address: 01 02 00
+command: 0F

