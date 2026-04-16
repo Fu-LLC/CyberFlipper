@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="cyberflipper_f_logo_1776184531587.png" alt="CYBERFLIPPER F-SERIES" width="300">
+  <img src="cyberflipper_f_logo_.png" alt="CYBERFLIPPER F-SERIES" width="300">
 </p>
 
 <p align="center">
   <strong>[ CYBERFLIPPER F-SERIES : PRODUCTION RELEASE v1.1.0 ]</strong><br>
-  <em>Maintained by Personfu @ <a href="https://fllc.net">fllc.net</a> | NEON_DUSK_PROTOCOL</em><br>
+  <em>Maintained by Personfu @ <a href="https://fllc.net">fllc.net</a> </em><br>
   <strong>Official Discord: <a href="https://discord.gg/Cd9qyvht7X">discord.gg/Cd9qyvht7X</a></strong>
 </p>
 
