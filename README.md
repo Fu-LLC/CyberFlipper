@@ -1,10 +1,15 @@
 <p align="center">
-  <img src="cyberflipper_f_logo_1776184531587.png" alt="CYBERFLIPPER F-SERIES" width="300">
+  <img src="CYBERFLIPPER_Logo.png" alt="CYBERFLIPPER" width="300">
 </p>
 
 <p align="center">
+<<<<<<< HEAD
     <strong>[ CYBERFLIPPER : PRODUCTION RELEASE v1.2.0 ]</strong><br>
     <em>Maintained by Personfu @ <a href="https://fllc.net">fllc.net</a></em><br>
+=======
+  <strong>[ CYBERFLIPPER F-SERIES : PRODUCTION RELEASE v1.1.0 ]</strong><br>
+  <em>Maintained by Personfu @ <a href="https://fllc.net">fllc.net</a> </em><br>
+>>>>>>> c546d7bada1fcb711d4969db2b3dfea55be65915
   <strong>Official Discord: <a href="https://discord.gg/Cd9qyvht7X">discord.gg/Cd9qyvht7X</a></strong>
 </p>
 
@@ -54,37 +59,13 @@ graph TD
 
 ---
 
-## ▓▒░ III. EDC ECOSYSTEM & TITAN MODULARITY
-CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
-
-*   **Wireless Exploitation:**
-    *   📡 **[ESP32 Marauder (JustCallMeKoko)](https://github.com/justcallmekoko/ESP32Marauder):** Pinned over UART TX(13) / RX(14). Essential 802.11 deauth mapping, beacon spamming, and PMKID capture.
-    *   ⚡ **[Awake Dynamics ESP32-C5](https://awakedynamics.com/):** Next-generation 2.4/5GHz Wi-Fi overrides natively synthesized over the GPIO backbone.
-*   **Rogue Signal & IMSI Detection:**
-    *   🕵️‍♂️ **[Nyan Box](https://github.com/inAudible1/NyanBox):** Correlates Axon Camera network density to passively track law enforcement grids.
-    *   📱 **[Ray Hunter](https://rayhunter.net/):** Verizon hotspot mod specifically dedicated to Stingray (Cell-Site Simulator) detection and IMSI catcher awareness.
-*   **Captive Portals & Micro-Computing:**
-    *   😈 **[M5Stick S3](https://docs.m5stack.com/en/core/m5stickc_plus2):** Running the "Evil" educational project for rapid captive-portal phishing emulation.
-    *   🖥️ **[M5Stack Cardputer Advanced](https://shop.m5stack.com/products/m5stack-cardputer-esp32-s3-mini-keyboard-computer):** Running Porkchop firmware by Octo as a standalone serial analysis terminal.
-*   **Spectrum Analysis & VHF/UHF Comms:**
-    *   📻 **[HackRF Portapack H4](https://greatscottgadgets.com/hackrf/one/) & RTL-SDR:** Making the invisible world visible. When the Flipper's CC1101 bottlenecks, escalate to external 1MHz-6GHz SDR arrays via physical SPI bridging.
-    *   🎙️ **[Quansheng UV-K5](https://github.com/egzumer/uv-k5-firmware-custom):** A highly capable, hackable handheld radio. The Flipper's GPIO serves as a programmable PTT interface to transmit encrypted digital APRS payloads.
-*   **📡 [ProjectZero](https://github.com/C5Lab/projectZero) & OWASP Intelligence:** Integrated security logic and protocol manipulation derived from official Project Zero vulnerability mapping and the [OWASP CheatSheet Series](https://github.com/OWASP/CheatSheetSeries).
-*   **🦆 Hak5 Tactical Payloads:** Native translation of master payload repositories: [USB Rubber Ducky](https://github.com/hak5/usbrubberducky-payloads), [WiFi Pineapple](https://github.com/hak5/wifipineapplepager-payloads), [Bash Bunny](https://github.com/hak5/bashbunny-payloads), and [OMG Cable](https://github.com/hak5/omg-payloads).
-*   **🛠️ Cyber-Analytic Arrays:** Logic and conversion matrices sourced from [CyberChef (GCHQ)](https://github.com/gchq/CyberChef), [SecLists](https://github.com/Personfu/seclists), and [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking).
-*   **🌍 Signal ISR (Intelligence, Surveillance, Reconnaissance):** Direct integration of cellular tower and satellite tracking logic via [Tower-Hunter](https://github.com/Ringmast4r/Tower-Hunter) and [GNSS](https://github.com/Ringmast4r/GNSS) frameworks.
-
-> *We operate closely mapped alongside heavily customized smartphones and physical tools: **Nothing Phone 3** (Brute-force cloud processing), **Civivi Elementum Button Lock** (Physical override architecture), and the **Zebra F-701** (Tactical scribing).*
-
----
-
-## ▓▒░ IV. NATIVE SOFTWARE TOPOLOGY
+## ▓▒░ III. NATIVE SOFTWARE TOPOLOGY
 *   **PASSIVE_NODE Integrations:** Background mapping software (wardriver.c). Natively formats 802.11 / NMEA frames to .csv for direct database sync without external parsing.
 *   **Flipper Mobile App & qFlipper Protocol:** Payload bloat removed. Designed to flash natively over qFlipper or directly via SD card insertion avoiding SPI watchdog timeouts.
 
 ---
 
-## ▓▒░ V. HARDWARE TECHNICAL SPECIFICATIONS
+## ▓▒░ IV. HARDWARE TECHNICAL SPECIFICATIONS
 
 > *Full specifications reference: [Official Flipper Zero Tech Specs](https://docs.flipper.net/zero/development/hardware/tech-specs) | [Hardware Schematics](https://docs.flipper.net/zero/development/hardware/schematic#)*
 
@@ -218,8 +199,10 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 
 ---
 
----
+## ▓▒░ V. EDC ECOSYSTEM
+CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
 
+<<<<<<< HEAD
 ## ▓▒░ VI. LAB401 PRODUCT CATALOG INTEGRATION
 
 ### 🛒 Live Lab401 Catalog
@@ -283,3 +266,29 @@ Use `compile_assets.py` or official FBT logs to debug:
 - `log trace`: High-intensity telemetry (overwhelming).
 
 *For errors regarding 'frames order', verify the passive/active frame counts in your meta.txt against the .bm library.*
+=======
+*   **Wireless Exploitation:**
+    *   📡 **[ESP32 Marauder (JustCallMeKoko)](https://github.com/justcallmekoko/ESP32Marauder):** Pinned over UART TX(13) / RX(14). Essential 802.11 deauth mapping, beacon spamming, and PMKID capture.
+    *   ⚡ **[Awake Dynamics ESP32-C5](https://awakedynamics.com/):** Next-generation 2.4/5GHz Wi-Fi overrides natively synthesized over the GPIO backbone.
+*   **Rogue Signal & IMSI Detection:**
+    *   🕵️‍♂️ **[Nyan Box](https://github.com/inAudible1/NyanBox):** Correlates Axon Camera network density to passively track law enforcement grids.
+    *   📱 **[Ray Hunter](https://rayhunter.net/):** Verizon hotspot mod specifically dedicated to Stingray (Cell-Site Simulator) detection and IMSI catcher awareness.
+*   **Captive Portals & Micro-Computing:**
+    *   😈 **[M5Stick S3](https://docs.m5stack.com/en/core/m5stickc_plus2):** Running the "Evil" educational project for rapid captive-portal phishing emulation.
+    *   🖥️ **[M5Stack Cardputer Advanced](https://shop.m5stack.com/products/m5stack-cardputer-esp32-s3-mini-keyboard-computer):** Running Porkchop firmware by Octo as a standalone serial analysis terminal.
+*   **Spectrum Analysis & VHF/UHF Comms:**
+    *   📻 **[HackRF Portapack H4](https://greatscottgadgets.com/hackrf/one/) & RTL-SDR:** Making the invisible world visible. When the Flipper's CC1101 bottlenecks, escalate to external 1MHz-6GHz SDR arrays via physical SPI bridging.
+    *   🎙️ **[Quansheng UV-K5](https://github.com/egzumer/uv-k5-firmware-custom):** A highly capable, hackable handheld radio. The Flipper's GPIO serves as a programmable PTT interface to transmit encrypted digital APRS payloads.
+*   **📡 [ProjectZero](https://github.com/C5Lab/projectZero) & OWASP Intelligence:** Integrated security logic and protocol manipulation derived from official Project Zero vulnerability mapping and the [OWASP CheatSheet Series](https://github.com/OWASP/CheatSheetSeries).
+*   **🦆 Hak5 Tactical Payloads:** Native translation of master payload repositories: [USB Rubber Ducky](https://github.com/hak5/usbrubberducky-payloads), [WiFi Pineapple](https://github.com/hak5/wifipineapplepager-payloads), [Bash Bunny](https://github.com/hak5/bashbunny-payloads), and [OMG Cable](https://github.com/hak5/omg-payloads).
+*   **🛠️ Cyber-Analytic Arrays:** Logic and conversion matrices sourced from [CyberChef (GCHQ)](https://github.com/gchq/CyberChef), [SecLists](https://github.com/Personfu/seclists), and [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking).
+*   **🌍 Signal ISR (Intelligence, Surveillance, Reconnaissance):** Direct integration of cellular tower and satellite tracking logic via [Tower-Hunter](https://github.com/Ringmast4r/Tower-Hunter) and [GNSS](https://github.com/Ringmast4r/GNSS) frameworks.
+*   **Content updated and supported by creators like Talking Sasquatch and more [YouTube] (https://www.youtube.com/watch?v=aZYvyy_R4jU) 
+> *We operate closely mapped alongside heavily customized smartphones and physical tools: **Nothing Phone 3** (Brute-force cloud processing), **Civivi Elementum Button Lock** (Physical override architecture), and the **Zebra F-701** (Tactical scribing).*
+
+---
+
+### 🔗 Contributor Uplink
+Join the **F-SERIES** core on Discord for development blueprints:
+➡️ **[https://discord.gg/Cd9qyvht7X](https://discord.gg/Cd9qyvht7X)**
+>>>>>>> c546d7bada1fcb711d4969db2b3dfea55be65915
