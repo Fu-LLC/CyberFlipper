@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="cyberflipper_f_logo_.png" alt="CYBERFLIPPER F-SERIES" width="300">
+  <img src="CYBERFLIPPER_Logo.png" alt="CYBERFLIPPER" width="300">
 </p>
 
 <p align="center">
