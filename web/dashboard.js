@@ -4,7 +4,7 @@
    ============================================= */
 
 // ── BOOT SEQUENCE — Typewriter loading text ──
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const loadText = document.querySelector('.loading-text');
   if (loadText) {
     const lines = [
@@ -26,10 +26,19 @@ window.addEventListener('load', () => {
     typeNext();
   }
 
+  // Dismiss after typewriter finishes (6 lines × 280ms = ~1680ms + buffer)
   setTimeout(() => {
     const ls = document.getElementById('loadingScreen');
     if (ls) ls.classList.add('hidden');
   }, 2200);
+
+  // Fallback: force-remove after 5s no matter what
+  setTimeout(() => {
+    const ls = document.getElementById('loadingScreen');
+    if (ls && !ls.classList.contains('hidden')) {
+      ls.classList.add('hidden');
+    }
+  }, 5000);
 });
 
 // ── UPTIME CLOCK ──
