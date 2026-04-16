@@ -202,7 +202,6 @@ graph TD
 ## ▓▒░ V. EDC ECOSYSTEM
 CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
 
-<<<<<<< HEAD
 ## ▓▒░ VI. LAB401 PRODUCT CATALOG INTEGRATION
 
 ### 🛒 Live Lab401 Catalog
