@@ -194,7 +194,7 @@ graph TD
 
 ---
 
-## ▓▒░ III. EDC ECOSYSTEM & TITAN MODULARITY
+## ▓▒░ V. EDC ECOSYSTEM
 CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
 
 *   **Wireless Exploitation:**
@@ -213,7 +213,7 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 *   **🦆 Hak5 Tactical Payloads:** Native translation of master payload repositories: [USB Rubber Ducky](https://github.com/hak5/usbrubberducky-payloads), [WiFi Pineapple](https://github.com/hak5/wifipineapplepager-payloads), [Bash Bunny](https://github.com/hak5/bashbunny-payloads), and [OMG Cable](https://github.com/hak5/omg-payloads).
 *   **🛠️ Cyber-Analytic Arrays:** Logic and conversion matrices sourced from [CyberChef (GCHQ)](https://github.com/gchq/CyberChef), [SecLists](https://github.com/Personfu/seclists), and [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking).
 *   **🌍 Signal ISR (Intelligence, Surveillance, Reconnaissance):** Direct integration of cellular tower and satellite tracking logic via [Tower-Hunter](https://github.com/Ringmast4r/Tower-Hunter) and [GNSS](https://github.com/Ringmast4r/GNSS) frameworks.
-
+*   **Content updated and supported by creators like Talking Sasquatch and more [YouTube] (https://www.youtube.com/watch?v=aZYvyy_R4jU) 
 > *We operate closely mapped alongside heavily customized smartphones and physical tools: **Nothing Phone 3** (Brute-force cloud processing), **Civivi Elementum Button Lock** (Physical override architecture), and the **Zebra F-701** (Tactical scribing).*
 
 ---
