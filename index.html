@@ -16,12 +16,12 @@
 
     <!-- Navigation -->
     <nav class="p-4 d-flex justify-content-center">
-        <a href="./" class="nav-anchor active">DASHBOARD</a>
-        <a href="toolchain/" class="nav-anchor">TOOLCHAIN</a>
-        <a href="intel/" class="nav-anchor">INTEL</a>
-        <a href="stats/" class="nav-anchor">STATS</a>
-        <a href="download/" class="nav-anchor">DEPLOY</a>
-        <a href="about/" class="nav-anchor">ABOUT</a>
+        <a href="/CyberFlipper/index.html" class="nav-anchor active">DASHBOARD</a>
+        <a href="/CyberFlipper/toolchain.html" class="nav-anchor">TOOLCHAIN</a>
+        <a href="/CyberFlipper/intel.html" class="nav-anchor">INTEL</a>
+        <a href="/CyberFlipper/stats.html" class="nav-anchor">STATS</a>
+        <a href="/CyberFlipper/download.html" class="nav-anchor">DEPLOY</a>
+        <a href="/CyberFlipper/about.html" class="nav-anchor">ABOUT</a>
     </nav>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
@@ -60,7 +60,7 @@
         <div class="d-lg-flex d-none gap-4">
             <span>UPTIME: <span id="uptime-clock" class="text-white">00:00:00</span></span>
             <span>NODES: <span class="text-white">82 ACTIVE</span></span>
-            <span>RELEASE: <span class="text-cyan">v1.1.0 STABLE</span></span>
+            <span>RELEASE: <span class="text-cyan">v1.2.1 OPTIMIZED</span></span>
         </div>
         <div>
             <span>COORDINATES: <span class="text-white" id="geo-location">FETCHING...</span></span>
@@ -144,6 +144,199 @@
                                 <div class="hud-label small mb-2">[ UPLINK_CORE ]</div>
                                 <div class="text-white-50" style="font-size: 0.7rem;">DECENTRALIZED MESH: <span class="text-success">SYNCHRONIZED</span></div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modular Reconnaissance Dashboard -->
+        <section id="recon-dashboard" class="py-5 bg-black-90 cyber-recon-section">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <h2 class="hud-label text-cyan display-4">[ MODULAR RECONNAISSANCE DASHBOARD ]</h2>
+                    <p class="text-white-50 lead max-width-700 mx-auto">Unified, real-time multi-protocol telemetry and advanced cyber operations suite. Expandable, plugin-driven, and visually immersive—engineered for Flipper Zero and next-gen hardware research.</p>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-broadcast-pin text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Real-Time Multi-Protocol Telemetry</h5>
+                            <ul class="feature-list">
+                                <li>Wi-Fi, BLE, Sub-GHz, NFC live feeds</li>
+                                <li>Timeline playback & entity correlation</li>
+                                <li>Plugin parser architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-activity text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>SDR Fusion Layer</h5>
+                            <ul class="feature-list">
+                                <li>RTL-SDR/BladeRF integration</li>
+                                <li>Automatic demodulation pipelines</li>
+                                <li>Signal fingerprinting & spectrum heatmaps</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-bullseye text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Intelligent Beacon Hunter</h5>
+                            <ul class="feature-list">
+                                <li>Steerable antenna & direction-finding (TDoA/AoA)</li>
+                                <li>Triangulation & live locus visualization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-key text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Credential Capture Aggregator</h5>
+                            <ul class="feature-list">
+                                <li>Wi-Fi handshakes, BLE pairing, NFC transactions</li>
+                                <li>Searchable index with RSSI, channel, timestamp</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-fingerprint text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Automated Signature Mining</h5>
+                            <ul class="feature-list">
+                                <li>Protocol fingerprint clustering & anomaly detection</li>
+                                <li>MAC OUI, SSID, BLE adv pattern extraction</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-bar-chart-steps text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Rolling-Code Analytics</h5>
+                            <ul class="feature-list">
+                                <li>Garage/remote key signal analysis</li>
+                                <li>Reuse pattern & PRNG weakness detection</li>
+                                <li>Ethical gating for research</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-cpu text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Firmware Intelligence</h5>
+                            <ul class="feature-list">
+                                <li>Automated firmware fetch/parse pipeline</li>
+                                <li>Symbol/config extraction, diffing, secret flagging</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-diagram-3 text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Hardware Orchestration</h5>
+                            <ul class="feature-list">
+                                <li>Unified API for Pi, ESP32, SDRs</li>
+                                <li>Remote shell, OTA, secure key provisioning</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-broadcast text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Autonomous Scouting Agents</h5>
+                            <ul class="feature-list">
+                                <li>ESP32/LoRa node fleet for long-range telemetry</li>
+                                <li>Sensor fusion & low-power operation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-cast text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Simulation & Testbed</h5>
+                            <ul class="feature-list">
+                                <li>High-fidelity simulation mode</li>
+                                <li>Active testbed with safety controls</li>
+                                <li>Protocol fuzzers, replay, and audit trails</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-shop-window text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Plugin Marketplace</h5>
+                            <ul class="feature-list">
+                                <li>Modular parsers, visualizations, drivers</li>
+                                <li>Sandboxing, vetting, signed plugins</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-file-earmark-bar-graph text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Forensics & Analytics</h5>
+                            <ul class="feature-list">
+                                <li>PCAP/iq/JSON exports, chain-of-custody</li>
+                                <li>Graph DBs, heatmaps, Sankey flows</li>
+                                <li>Temporal clustering, entity mapping</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-robot text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>AI Analyst Assistant</h5>
+                            <ul class="feature-list">
+                                <li>Transformer models for incident triage</li>
+                                <li>Auto-summarization & mitigation suggestions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-shield-check text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Operational Hardening</h5>
+                            <ul class="feature-list">
+                                <li>Automated patching, vulnerability scanner</li>
+                                <li>Secure boot/TPM integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-people text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Collaboration & Ethics</h5>
+                            <ul class="feature-list">
+                                <li>Ephemeral sharing, RBAC, expiring exports</li>
+                                <li>Consent recording, approval workflows</li>
+                                <li>Redact/anonymize, synthetic test modes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-search text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Research & Bus Analysis</h5>
+                            <ul class="feature-list">
+                                <li>CVE tracking, vendor disclosure, telemetry trends</li>
+                                <li>I2C/SPI/UART sniffers, waveform capture</li>
+                                <li>Side-channel lab tools, adaptive capture</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="recon-card glass-card h-100 p-4">
+                            <div class="recon-icon mb-3"><i class="bi bi-diagram-2 text-cyan" style="font-size:2.5rem;"></i></div>
+                            <h5>Staging & Threat Scoring</h5>
+                            <ul class="feature-list">
+                                <li>Hardware staging suite, dynamic threat scoring</li>
+                                <li>Chainable workflows, cryptographic signing</li>
+                                <li>Multi-tenant isolation, educational modules</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -317,7 +510,7 @@
                     <div class="timeline-item active">
                         <div class="date">APR 2026</div>
                         <div class="content">
-                            <h5>v1.1.0 Production</h5>
+                            <h5>v1.2.1 Production</h5>
                             <p>Global brand synchronization. F-SERIES Identity established. Native qFlipper compatibility.</p>
                         </div>
                     </div>
@@ -331,7 +524,7 @@
                 <div class="glass-card p-5">
                     <h2 class="mb-4 neon-text">SYSTEM DEPLOYMENT</h2>
                     <p class="mb-5">Ready to upgrade your Flipper Zero? Get the latest stable release of CYBERFLIPPER.</p>
-                    <a href="CYBERFLIPPER-v1.1.0.tgz" class="btn btn-cyber btn-lg neon-pulse px-5 py-3">DOWNLOAD RELEASE v1.1.0</a>
+                    <a href="dist/CYBERFLIPPER_v1.2.1_OPTIMIZED.tgz" class="btn btn-cyber btn-lg neon-pulse px-5 py-3">DOWNLOAD RELEASE v1.2.1</a>
                     <div class="mt-4 text-white-50">SHA256: 24c58fd32e5265b6d0fccabd300b587be5e637ec54e6e770047fa2276579e3cf</div>
                 </div>
             </div>
