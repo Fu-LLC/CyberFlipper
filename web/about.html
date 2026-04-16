@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABOUT — CYBERFLIPPER</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">CF</div>
+    <div class="loading-text">LOADING MISSION BRIEF</div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+  <div class="scan-line"></div>
+  <div class="hud-grid-overlay"></div>
+  <div class="site-background"><div class="site-overlay"></div></div>
+
+  <div class="hud-top-bar">
+    <div class="d-flex align-items-center gap-2">
+      <span class="hud-status-indicator online"></span>
+      <span>MISSION BRIEF: <span class="text-cyan">CYBERFLIPPER PROJECT</span></span>
+    </div>
+    <div class="d-lg-flex d-none gap-4">
+      <span>UPTIME: <span id="uptime-clock" class="text-white">00:00:00</span></span>
+      <span>RELEASE: <span class="text-cyan">v1.2.0 STABLE</span></span>
+    </div>
+    <div>COORDINATES: <span class="text-white" id="geo-location">FETCHING...</span></div>
+  </div>
+
+  <header class="cyber-header">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <a href="index.html" style="text-decoration:none;"><div class="header-logo">CF</div></a>
+            <div class="ms-3">
+              <h1 class="logo-text mb-0">CYBER<span class="text-cyan">FLIPPER</span></h1>
+              <p class="subtitle mb-0">MISSION BRIEF</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <a href="index.html" class="btn btn-outline-cyber me-2"><i class="bi bi-house"></i> HOME</a>
+          <a href="https://github.com/Personfu/CyberFlipper" class="btn btn-cyber" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i> ACCESS REPO
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg cyber-nav sticky-top">
+    <div class="container">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        style="color:var(--cf-cyan);"><i class="bi bi-list fs-4"></i></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="intel.html"><i class="bi bi-cpu"></i> CVE INTEL</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">STATS</a></li>
+          <li class="nav-item"><a class="nav-link" href="download.html">DOWNLOAD</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">ABOUT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <div class="hud-label text-cyan mb-2">▸ MISSION BRIEF</div>
+          <h2 style="font-family:'Orbitron',monospace;font-size:2rem;color:#fff;">
+            WHAT IS <span class="text-cyan">CYBERFLIPPER?</span>
+          </h2>
+          <p class="mt-4" style="color:rgba(221,224,240,0.7);line-height:1.9;">
+            CYBERFLIPPER is an open-source security research platform built on the Flipper Zero device.
+            It extends the Flipper Zero with curated BadUSB payloads, NFC profiles, SubGHz captures,
+            RFID collections, and a complete web-based intelligence dashboard featuring real-time
+            CVE analysis powered by Claude AI.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100 text-center">
+            <div class="stat-icon mb-3"><i class="bi bi-shield-exclamation"></i></div>
+            <h5 class="hud-label text-cyan">SECURITY RESEARCH</h5>
+            <p class="text-white-50 small mt-2">
+              54 CVE-mapped BadUSB payloads based on real CISA KEV entries. Each payload audits
+              a specific vulnerability exposure on Windows targets during authorized penetration tests.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100 text-center">
+            <div class="stat-icon mb-3"><i class="bi bi-cpu"></i></div>
+            <h5 class="hud-label text-cyan">CLAUDE AI INTELLIGENCE</h5>
+            <p class="text-white-50 small mt-2">
+              The CVE Intel Feed integrates Claude AI (claude-sonnet-4-5) for deep vulnerability analysis,
+              attack chain mapping, exploitation guidance, and patch prioritization.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100 text-center">
+            <div class="stat-icon mb-3"><i class="bi bi-broadcast"></i></div>
+            <h5 class="hud-label text-cyan">RF SIGNAL LIBRARY</h5>
+            <p class="text-white-50 small mt-2">
+              Comprehensive SubGHz RAW captures, NFC profiles, LFRFID access card data, and
+              infrared remote control databases for physical security assessment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="ms-2">LEGAL_DISCLAIMER.txt</span>
+            </div>
+            <div class="terminal-body">
+              <span style="color:var(--cf-pink)">[WARNING]</span> CYBERFLIPPER is designed exclusively for:<br>
+              &nbsp;&nbsp;• Authorized penetration testing on systems you own or have explicit written permission to test<br>
+              &nbsp;&nbsp;• Security education and professional certification preparation (OSCP, CEH, CompTIA Sec+)<br>
+              &nbsp;&nbsp;• CTF (Capture the Flag) competitions<br>
+              &nbsp;&nbsp;• Academic cybersecurity research<br><br>
+              <span style="color:var(--cf-pink)">[PROHIBITED]</span> Unauthorized access to computer systems is a federal crime.<br>
+              &nbsp;&nbsp;• Computer Fraud and Abuse Act (CFAA) — USA<br>
+              &nbsp;&nbsp;• Computer Misuse Act — UK<br>
+              &nbsp;&nbsp;• Similar laws in all jurisdictions<br><br>
+              <span style="color:#00ff88">[AFFIRMATION]</span> By using CYBERFLIPPER, you affirm you are conducting<br>
+              &nbsp;&nbsp;AUTHORIZED SECURITY RESEARCH ONLY.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="glass-card p-4">
+            <h4 class="hud-label text-cyan mb-4 text-center">PROJECT CREDITS</h4>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <ul class="data-list">
+                  <li><strong>Lead Developer:</strong> Personfu / FurulieLLC</li>
+                  <li><strong>Base Firmware:</strong> 0dayCTF/Flipper (upstream)</li>
+                  <li><strong>AI Integration:</strong> Anthropic Claude API</li>
+                  <li><strong>Frontend:</strong> Bootstrap 5.3 + Orbitron</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="data-list">
+                  <li><strong>CVE Source:</strong> CISA KEV Catalog</li>
+                  <li><strong>NVD Reference:</strong> NIST NVD</li>
+                  <li><strong>Flipper SDK:</strong> Flipper Unleashed</li>
+                  <li><strong>License:</strong> MIT (see repo)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="cyber-footer py-4 text-center">
+    <p class="mb-1" style="color:rgba(221,224,240,0.35);font-size:0.7rem;letter-spacing:2px;">
+      &copy; 2026 CYBERFLIPPER — FurulieLLC &amp; Personfu
+    </p>
+    <p style="color:var(--cf-muted);font-size:0.6rem;letter-spacing:1px;">
+      FOR AUTHORIZED SECURITY RESEARCH AND EDUCATIONAL USE ONLY
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CYBERFLIPPER — About</title>
+  <style>
+    :root { --bg:#0a0a0f;--surface:#0f0f1a;--border:#1a1a2e;--accent:#00ffcc;--accent3:#7c3aed;--text:#e0e0f0;--muted:#6b7280;--glow:0 0 20px rgba(0,255,204,0.3); }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Courier New',monospace;}
+    header{background:linear-gradient(90deg,#0a0a0f,#0f0f2a,#0a0a0f);border-bottom:1px solid var(--accent);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--glow);}
+    .logo-text{font-size:1.2rem;font-weight:700;color:var(--accent);letter-spacing:2px;}
+    .logo-sub{font-size:0.65rem;color:var(--muted);letter-spacing:3px;}
+    nav a{color:var(--muted);text-decoration:none;font-size:0.75rem;letter-spacing:2px;margin-left:24px;transition:color 0.2s;}
+    nav a:hover,nav a.active{color:var(--accent);}
+    .hero{background:linear-gradient(135deg,#0a0a0f,#0d0d1f);border-bottom:1px solid var(--border);padding:60px 24px;text-align:center;}
+    .hero h1{font-size:2rem;color:var(--accent);letter-spacing:4px;text-shadow:0 0 30px rgba(0,255,204,0.5);margin-bottom:8px;}
+    .hero p{color:var(--muted);font-size:0.8rem;letter-spacing:2px;}
+    .container{max-width:900px;margin:0 auto;padding:48px 24px;}
+    .section{margin-bottom:48px;}
+    .section-tag{font-size:0.65rem;letter-spacing:3px;color:var(--accent);margin-bottom:8px;}
+    .section h2{font-size:1.3rem;color:var(--text);margin-bottom:20px;}
+    .section p{font-size:0.82rem;line-height:1.9;color:#9ca3af;margin-bottom:12px;}
+    .mission-card{background:var(--surface);border:1px solid rgba(0,255,204,0.2);border-radius:10px;padding:28px;margin-bottom:24px;border-left:3px solid var(--accent);}
+    .mission-card h3{font-size:0.8rem;letter-spacing:2px;color:var(--accent);margin-bottom:10px;}
+    .mission-card p{font-size:0.78rem;line-height:1.8;color:#9ca3af;}
+    .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+    .tech-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;}
+    .tech-label{font-size:0.65rem;letter-spacing:2px;color:var(--muted);margin-bottom:4px;}
+    .tech-value{font-size:0.8rem;color:var(--text);}
+    .warning-box{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:20px;margin-top:32px;}
+    .warning-box h3{font-size:0.75rem;letter-spacing:2px;color:#ef4444;margin-bottom:8px;}
+    .warning-box p{font-size:0.75rem;line-height:1.7;color:#9ca3af;}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:0.65rem;letter-spacing:2px;color:var(--muted);}
+  </style>
+</head>
+<body>
+<header>
+  <div><div class="logo-text">⚡ CYBERFLIPPER</div><div class="logo-sub">ABOUT THE PROJECT</div></div>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="intel.html">CVE INTEL</a>
+    <a href="about.html" class="active">ABOUT</a>
+    <a href="stats.html">STATS</a>
+    <a href="download.html">DOWNLOAD</a>
+  </nav>
+</header>
+<div class="hero">
+  <h1>▓ ABOUT CYBERFLIPPER</h1>
+  <p>NEON_DUSK_PROTOCOL — OPEN SOURCE SECURITY RESEARCH</p>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="section-tag">▸ PROJECT OVERVIEW</div>
+    <h2>What is CyberFlipper?</h2>
+    <p>CyberFlipper is a comprehensive Flipper Zero custom firmware package and security research toolkit built for authorized penetration testing, red team operations, and educational security research.</p>
+    <p>Version 1.2.0 (NEON_DUSK_PROTOCOL) introduces the flagship CVE 0-Day Intel Feed — a Claude AI–powered dashboard that aggregates 54 real CISA KEV vulnerabilities with interactive analysis, attack chain documentation, and automated BadUSB payload generation.</p>
+  </div>
+  <div class="section">
+    <div class="section-tag">▸ MISSION</div>
+    <h2>Core Objectives</h2>
+    <div class="mission-card">
+      <h3>🤖 CVE INTELLIGENCE</h3>
+      <p>Provide actionable, real-time vulnerability intelligence powered by Claude AI. Every CVE in the feed includes vendor data, CWE classification, attack vector analysis, and automated detection payload generation.</p>
+    </div>
+    <div class="mission-card">
+      <h3>⚡ SECURITY EDUCATION</h3>
+      <p>Document attack techniques, payload structures, and vulnerability categories in an accessible format. Covering BadUSB, NFC, SubGHz, RFID, and IR attack vectors with real Flipper Zero formatted files.</p>
+    </div>
+    <div class="mission-card">
+      <h3>🛡️ DEFENSE SUPPORT</h3>
+      <p>Every payload in CyberFlipper is an audit tool first. The BadUSB scripts check for CVE exposure, service configurations, and patch status — designed for defenders as much as red teamers.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-tag">▸ TECHNICAL SPECS</div>
+    <h2>Platform Details</h2>
+    <div class="tech-grid">
+      <div class="tech-item"><div class="tech-label">FIRMWARE BASE</div><div class="tech-value">Unleashed 0.79+</div></div>
+      <div class="tech-item"><div class="tech-label">BADUSB FORMAT</div><div class="tech-value">DuckyScript 3.0</div></div>
+      <div class="tech-item"><div class="tech-label">NFC FORMAT</div><div class="tech-value">Flipper NFC v3</div></div>
+      <div class="tech-item"><div class="tech-label">SUBGHZ FORMAT</div><div class="tech-value">RAW + Decoded .sub</div></div>
+      <div class="tech-item"><div class="tech-label">LFRFID FORMAT</div><div class="tech-value">Flipper RFID v1</div></div>
+      <div class="tech-item"><div class="tech-label">AI ENGINE</div><div class="tech-value">Claude Sonnet 4 (Anthropic)</div></div>
+      <div class="tech-item"><div class="tech-label">CVE SOURCE</div><div class="tech-value">CISA KEV / cve.org</div></div>
+      <div class="tech-item"><div class="tech-label">LICENSE</div><div class="tech-value">GPL v3.0</div></div>
+    </div>
+  </div>
+  <div class="warning-box">
+    <h3>⚠ AUTHORIZED USE ONLY</h3>
+    <p>CyberFlipper is provided for authorized security research, penetration testing with explicit written permission, and educational purposes only. Unauthorized access to systems, networks, or devices is illegal and unethical. The authors are not responsible for misuse of this toolkit. Always obtain proper authorization before conducting any security testing.</p>
+  </div>
+</div>
+<footer>⚡ CYBERFLIPPER — NEON DUSK PROTOCOL v1.2.0 | FOR AUTHORIZED SECURITY RESEARCH ONLY</footer>
+</body>
+</html>

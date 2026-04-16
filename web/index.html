@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CYBERFLIPPER | Unified Intelligence Deck</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">CF</div>
+    <div class="loading-text">DECRYPTING INTELLIGENCE DECK</div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <!-- HUD FX -->
+  <div class="scan-line"></div>
+  <div class="hud-grid-overlay"></div>
+  <div class="site-background"><div class="site-overlay"></div></div>
+
+  <!-- HUD Top Bar -->
+  <div class="hud-top-bar">
+    <div class="d-flex align-items-center gap-2">
+      <span class="hud-status-indicator online"></span>
+      <span>SYSTEM STATUS: <span class="text-cyan">COMPROMISED &amp; GAINED</span></span>
+    </div>
+    <div class="d-lg-flex d-none gap-4">
+      <span>UPTIME: <span id="uptime-clock" class="text-white">00:00:00</span></span>
+      <span>CVE PAYLOADS: <span class="text-cyan">54</span></span>
+      <span>RELEASE: <span class="text-cyan">v1.2.0 STABLE</span></span>
+    </div>
+    <div>COORDINATES: <span class="text-white" id="geo-location">FETCHING...</span></div>
+  </div>
+
+  <!-- Header -->
+  <header class="cyber-header">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <div class="header-logo">CF</div>
+            <div class="ms-3">
+              <h1 class="logo-text mb-0">CYBER<span class="text-cyan">FLIPPER</span></h1>
+              <p class="subtitle mb-0">UNIFIED SECURITY AUDITING PLATFORM</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <a href="https://github.com/Personfu/CyberFlipper" class="btn btn-cyber" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i> ACCESS REPO
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg cyber-nav sticky-top">
+    <div class="container">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        style="color:var(--cf-cyan);">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#hero">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="intel.html"><i class="bi bi-cpu"></i> CVE INTEL</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stats">CORE STATS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tools">TOOLCHAIN</a></li>
+          <li class="nav-item"><a class="nav-link" href="#history">HISTORY</a></li>
+          <li class="nav-item"><a class="nav-link" href="download.html">DOWNLOAD</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Live Ticker -->
+  <div class="cyber-ticker">
+    <span class="ticker-track">
+      ⚡ CYBERFLIPPER v1.2.0 — NEON DUSK PROTOCOL &nbsp;|&nbsp; 54 CVE BadUSB Payloads — Full CISA KEV Coverage &nbsp;|&nbsp;
+      Claude AI CVE 0-Day Finder NOW LIVE &nbsp;|&nbsp; 50+ NFC Profiles &nbsp;|&nbsp; 40+ SubGHz RAW Captures &nbsp;|&nbsp;
+      30+ Infrared Remote Profiles &nbsp;|&nbsp; Flipper Zero Unleashed Compatible &nbsp;|&nbsp;
+      Open Source Security Research Platform &nbsp;|&nbsp; github.com/Personfu/CyberFlipper &nbsp;|&nbsp;
+    </span>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero-section">
+      <div class="container h-100 d-flex align-items-center py-5">
+        <div class="row w-100 g-5 align-items-center">
+          <div class="col-lg-7">
+            <div class="hud-label mb-2">[ DATA EXTRACTION ACTIVE ]</div>
+            <h2 class="display-3 fw-black glitch-text mb-0" style="font-family:'Orbitron',monospace;font-weight:900;"
+              data-text="DOMINATE THE AIRWAVES">
+              DOMINATE THE <span class="text-cyan">AIRWAVES</span>
+            </h2>
+            <p class="lead mt-4" style="color:rgba(221,224,240,0.75);">
+              The ultimate Flipper Zero security research platform. Featuring 54 CVE BadUSB payloads,
+              Claude AI–powered vulnerability intelligence, SubGHz signal libraries, NFC profiles,
+              RFID cloning tools, and a complete web-based HUD dashboard.
+            </p>
+            <div class="mt-5 d-flex gap-3 flex-wrap">
+              <a href="intel.html" class="btn btn-cyber btn-lg neon-pulse">
+                <i class="bi bi-cpu"></i> CVE 0-DAY INTEL
+              </a>
+              <a href="download.html" class="btn btn-cyber btn-lg">
+                <i class="bi bi-download"></i> DEPLOY FIRMWARE
+              </a>
+              <a href="#tools" class="btn btn-outline-cyber btn-lg">VIEW INVENTORY</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="holographic-card">
+              <h3 class="hud-label text-center mb-4">LIVE TELEMETRY</h3>
+              <div class="stat-grid">
+                <div class="stat-item text-center">
+                  <div class="label">CVE PAYLOADS</div>
+                  <div class="value" data-val="54">0</div>
+                </div>
+                <div class="stat-item text-center">
+                  <div class="label">NFC PROFILES</div>
+                  <div class="value" data-val="50">0</div>
+                </div>
+                <div class="stat-item text-center">
+                  <div class="label">SUBGHZ</div>
+                  <div class="value" data-val="40">0</div>
+                </div>
+              </div>
+              <div class="mt-3">
+                <canvas id="signalWave" style="width:100%;height:60px;display:block;"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="stat-card text-center">
+              <div class="stat-icon"><i class="bi bi-shield-exclamation"></i></div>
+              <div class="stat-num counter" data-val="54">54</div>
+              <div class="stat-title">CVE BADUSB PAYLOADS</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card text-center">
+              <div class="stat-icon"><i class="bi bi-usb-symbol"></i></div>
+              <div class="stat-num counter" data-val="15">15</div>
+              <div class="stat-title">AUDIT SCRIPTS</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card text-center">
+              <div class="stat-icon"><i class="bi bi-broadcast"></i></div>
+              <div class="stat-num counter" data-val="40">40</div>
+              <div class="stat-title">SUBGHZ CAPTURES</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card text-center">
+              <div class="stat-icon"><i class="bi bi-credit-card"></i></div>
+              <div class="stat-num counter" data-val="50">50</div>
+              <div class="stat-title">NFC PROFILES</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CVE INTEL FEATURE -->
+    <section class="py-5" style="background:linear-gradient(135deg,rgba(6,6,20,0.97),rgba(12,12,40,0.97));">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="hud-label mb-2 text-purple">▸ MAIN FEATURE</div>
+            <h2 style="font-family:'Orbitron',monospace;font-size:1.8rem;color:#fff;">
+              CVE 0-DAY <span class="text-cyan">INTEL FEED</span>
+            </h2>
+            <p style="color:rgba(221,224,240,0.65);line-height:1.9;margin-top:1rem;">
+              CYBERFLIPPER's flagship feature — a live Claude AI–powered CVE dashboard with 54 real
+              CISA KEV vulnerabilities. Search by vendor, severity, or attack vector.
+              Get AI analysis, attack chain breakdowns, and automated BadUSB payload generation.
+            </p>
+            <a href="intel.html" class="btn btn-cyber btn-lg neon-pulse mt-4">
+              <i class="bi bi-cpu"></i> LAUNCH CVE INTEL
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <div class="terminal-card">
+              <div class="terminal-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="ms-3" style="font-size:0.75rem;">CYBERFLIPPER_CVE_INTEL.sh</span>
+              </div>
+              <div class="terminal-body">
+                <span style="color:var(--cf-cyan)">[+]</span> CVE Feed initializing...<br>
+                <span style="color:var(--cf-cyan)">[+]</span> CISA KEV sync: 54 entries loaded<br>
+                <span style="color:var(--cf-pink)">[!]</span> CRITICAL: CVE-2026-20131 (Cisco FMC — Unauth Java RCE as root)<br>
+                <span style="color:var(--cf-pink)">[!]</span> CRITICAL: CVE-2026-1340 (Ivanti EPMM — Code Injection)<br>
+                <span style="color:var(--cf-pink)">[!]</span> CRITICAL: CVE-2026-33634 (Trivy — Embedded Malicious Code)<br>
+                <span style="color:var(--cf-cyan)">[+]</span> Claude AI Assistant: <span style="color:#00ff88">ONLINE</span><br>
+                <span style="color:var(--cf-cyan)">[+]</span> BadUSB payload generator: <span style="color:#00ff88">READY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLCHAIN -->
+    <section id="tools" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="hud-label text-cyan">TOOLCHAIN INVENTORY</div>
+          <p class="text-white-50 mt-2">Full spectrum signal analysis and exploitation toolkit for Flipper Zero.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon mb-2"><i class="bi bi-usb-symbol"></i></div>
+              <h5 class="hud-label text-cyan">BADUSB ARSENAL</h5>
+              <p class="text-white-50 small">DuckyScript payloads for Windows audit, CVE exposure checks, and network recon. 13+ payload categories.</p>
+              <ul class="data-list mt-2">
+                <li><strong>14_CVE_EXPLOITS</strong> — 54 CISA KEV payloads</li>
+                <li><strong>13_CYBERFLIPPER</strong> — 15 core audit scripts</li>
+                <li><strong>15_EDUCATIONAL</strong> — Learning payloads</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon mb-2"><i class="bi bi-broadcast"></i></div>
+              <h5 class="hud-label text-cyan">SUBGHZ LIBRARY</h5>
+              <p class="text-white-50 small">RAW and decoded captures at 315/433/868/915 MHz. Gate openers, key fobs, sensors, industrial remotes.</p>
+              <ul class="data-list mt-2">
+                <li><strong>RAW format</strong> — FuriHalSubGhz OOK/FSK</li>
+                <li><strong>433 MHz</strong> — Optimized primary band</li>
+                <li><strong>Multi-band</strong> — 315/868/915 support</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon mb-2"><i class="bi bi-credit-card"></i></div>
+              <h5 class="hud-label text-cyan">NFC / RFID PROFILES</h5>
+              <p class="text-white-50 small">NTAG213/215/216, MIFARE Classic, EM4100, HID Prox, and Indala profiles for physical access research.</p>
+              <ul class="data-list mt-2">
+                <li><strong>NFC v3</strong> — Flipper Zero native format</li>
+                <li><strong>LFRFID v1</strong> — Low-frequency access cards</li>
+                <li><strong>Gaming/Transport</strong> — Specialty profiles</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon mb-2"><i class="bi bi-tv"></i></div>
+              <h5 class="hud-label text-cyan">INFRARED LIBRARY</h5>
+              <p class="text-white-50 small">Universal remote database — Samsung, LG, Sony, Apple TV, Roku, projectors, and more.</p>
+              <ul class="data-list mt-2">
+                <li><strong>30+ devices</strong> catalogued</li>
+                <li><strong>Cyber Universal</strong> — Brand commands</li>
+                <li><strong>Custom RAW</strong> — Capture &amp; replay</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon mb-2"><i class="bi bi-cpu"></i></div>
+              <h5 class="hud-label text-cyan">CVE INTELLIGENCE</h5>
+              <p class="text-white-50 small">Claude AI–powered vulnerability feed with 54 real CISA KEV CVEs, attack analysis, and payload generation.</p>
+              <ul class="data-list mt-2">
+                <li><strong>54 CVEs</strong> from CISA KEV catalog</li>
+                <li><strong>Claude AI</strong> — Real-time analysis</li>
+                <li><strong>Auto BadUSB</strong> — Payload generator</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon mb-2"><i class="bi bi-sd-card"></i></div>
+              <h5 class="hud-label text-cyan">SD CARD READY</h5>
+              <p class="text-white-50 small">Drop-in SD card content for Flipper Zero. Organized directory structure, immediately deployable firmware package.</p>
+              <ul class="data-list mt-2">
+                <li><strong>Unleashed</strong> 0.79+ compatible</li>
+                <li><strong>TGZ archive</strong> — Full dist package</li>
+                <li><strong>DFU firmware</strong> — Flash-ready</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section id="history" class="py-5" style="background:rgba(6,6,20,0.8);">
+      <div class="container">
+        <h3 class="text-center mb-5 hud-label text-cyan">PROJECT TIMELINE</h3>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="date">FEB 2026</div>
+                <div class="content">
+                  <h5>projectZero Fork</h5>
+                  <p>Initial codebase from 0dayCTF/Flipper. Base payload structure and firmware modules ported.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="date">MAR 2026</div>
+                <div class="content">
+                  <h5>Integration Phase</h5>
+                  <p>Merged NFC, SubGHz, LFRFID, IR, and BadUSB repositories. 13 CyberFlipper custom payloads authored.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="date">APR 2026</div>
+                <div class="content">
+                  <h5>v1.1 — CVE Arsenal</h5>
+                  <p>54 CISA KEV BadUSB payloads created. Full CVE coverage across Microsoft, Cisco, Apple, Fortinet, Google, Adobe.</p>
+                </div>
+              </div>
+              <div class="timeline-item active">
+                <div class="date">APR 2026</div>
+                <div class="content">
+                  <h5>v1.2.0 — NEON DUSK PROTOCOL</h5>
+                  <p>Claude AI CVE 0-Day Finder deployed. Full web dashboard live at personfu.github.io/CyberFlipper/</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-1 mt-4 mt-lg-0">
+            <div class="glass-card p-4 h-100">
+              <h4 class="hud-label text-cyan mb-3">DATA ARCHITECTURE</h4>
+              <p class="text-white-50 small">CYBERFLIPPER uses a structured payload pipeline. Every BadUSB script is categorized, named by CVE ID, and outputs audit reports to the target desktop.</p>
+              <ul class="data-list mt-3">
+                <li><strong>DuckyScript 3.0:</strong> GUI r + hidden PowerShell execution</li>
+                <li><strong>CVE Audit:</strong> Service checks, patch status, exposure logging</li>
+                <li><strong>NFC Format:</strong> Native Flipper v3 with UID/ATQA/SAK</li>
+                <li><strong>SubGHz:</strong> FuriHalSubGhzPreset RAW + decoded</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CTA -->
+    <section class="py-5 text-center">
+      <div class="container">
+        <div class="glass-card p-5" style="border-color:rgba(0,255,204,0.25);">
+          <h2 class="mb-4" style="font-family:'Orbitron',monospace;color:var(--cf-cyan);">
+            <i class="bi bi-download"></i> SYSTEM DEPLOYMENT
+          </h2>
+          <p class="text-white-50 mb-5">Ready to upgrade your Flipper Zero? Get the latest CYBERFLIPPER firmware package.</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="download.html" class="btn btn-cyber btn-lg neon-pulse px-5 py-3">
+              <i class="bi bi-download"></i> DOWNLOAD v1.2.0
+            </a>
+            <a href="intel.html" class="btn btn-outline-cyber btn-lg px-4 py-3">
+              <i class="bi bi-cpu"></i> CVE INTEL FEED
+            </a>
+          </div>
+          <div class="mt-4 text-white-50" style="font-size:0.7rem;letter-spacing:2px;">
+            NEON_DUSK_PROTOCOL — Flipper Zero Unleashed 0.79+ Compatible
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cyber-footer py-4 text-center">
+    <p class="mb-1" style="color:rgba(221,224,240,0.35);font-size:0.7rem;letter-spacing:2px;">
+      &copy; 2026 CYBERFLIPPER — FurulieLLC &amp; Personfu
+    </p>
+    <p style="color:var(--cf-muted);font-size:0.6rem;letter-spacing:1px;">
+      FOR AUTHORIZED SECURITY RESEARCH AND EDUCATIONAL USE ONLY
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

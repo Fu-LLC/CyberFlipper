@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVE INTEL — CYBERFLIPPER 0-Day Feed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">CF</div>
+    <div class="loading-text">LOADING CVE INTELLIGENCE FEED</div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <!-- HUD FX -->
+  <div class="scan-line"></div>
+  <div class="hud-grid-overlay"></div>
+  <div class="site-background"><div class="site-overlay"></div></div>
+
+  <!-- HUD Top Bar -->
+  <div class="hud-top-bar">
+    <div class="d-flex align-items-center gap-2">
+      <span class="hud-status-indicator online"></span>
+      <span>CVE FEED: <span class="text-cyan">SYNCHRONIZED</span></span>
+    </div>
+    <div class="d-lg-flex d-none gap-4">
+      <span>UPTIME: <span id="uptime-clock" class="text-white">00:00:00</span></span>
+      <span>LOADED: <span class="text-cyan">54 ENTRIES</span></span>
+      <span>RELEASE: <span class="text-cyan">v1.2.0 STABLE</span></span>
+    </div>
+    <div>COORDINATES: <span class="text-white" id="geo-location">FETCHING...</span></div>
+  </div>
+
+  <!-- Header -->
+  <header class="cyber-header">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <a href="index.html" style="text-decoration:none;">
+              <div class="header-logo">CF</div>
+            </a>
+            <div class="ms-3">
+              <h1 class="logo-text mb-0">CYBER<span class="text-cyan">FLIPPER</span></h1>
+              <p class="subtitle mb-0">CVE 0-DAY INTELLIGENCE FEED</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <a href="index.html" class="btn btn-outline-cyber me-2"><i class="bi bi-house"></i> HOME</a>
+          <a href="https://github.com/Personfu/CyberFlipper" class="btn btn-cyber" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i> ACCESS REPO
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg cyber-nav sticky-top">
+    <div class="container">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        style="color:var(--cf-cyan);">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link active" href="intel.html"><i class="bi bi-cpu"></i> CVE INTEL</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">STATS</a></li>
+          <li class="nav-item"><a class="nav-link" href="download.html">DOWNLOAD</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-4">
+    <div class="container-fluid px-3">
+
+      <!-- STATS BAR -->
+      <div class="row g-3 mb-4" id="statsBar">
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center py-3">
+            <div class="stat-num" id="countCritical" style="font-size:1.8rem;">--</div>
+            <div class="stat-title">CRITICAL</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center py-3">
+            <div class="stat-num" id="countHigh" style="font-size:1.8rem;">--</div>
+            <div class="stat-title">HIGH</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center py-3">
+            <div class="stat-num" id="countMedium" style="font-size:1.8rem;">--</div>
+            <div class="stat-title">MEDIUM</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center py-3" style="border-color:rgba(0,255,204,0.4);">
+            <div class="stat-num" id="countTotal" style="font-size:1.8rem;">--</div>
+            <div class="stat-title">TOTAL CVEs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="glass-card p-3 mb-4">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          <span class="hud-label text-white-50 me-2">FILTER:</span>
+          <button class="quick-pill active" onclick="filterCVEs('all', this)">ALL</button>
+          <button class="quick-pill" onclick="filterCVEs('critical', this)">CRITICAL</button>
+          <button class="quick-pill" onclick="filterCVEs('high', this)">HIGH</button>
+          <button class="quick-pill" onclick="filterCVEs('rce', this)">RCE</button>
+          <button class="quick-pill" onclick="filterCVEs('2026', this)">2026</button>
+          <button class="quick-pill" onclick="filterCVEs('microsoft', this)">MICROSOFT</button>
+          <button class="quick-pill" onclick="filterCVEs('cisco', this)">CISCO</button>
+          <div class="ms-auto">
+            <input type="text" id="cveSearch" class="form-control form-control-sm cyber-input"
+              placeholder="Search CVE ID, vendor, product..." style="min-width:240px;"
+              oninput="liveSearch(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="row g-3">
+
+        <!-- CVE TABLE -->
+        <div class="col-lg-8">
+          <div class="terminal-card">
+            <div class="terminal-header d-flex align-items-center justify-content-between">
+              <div>
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="ms-2">CVE_FEED.live — CISA KEV Synchronized</span>
+              </div>
+              <span class="badge" style="background:rgba(0,255,204,0.15);color:var(--cf-cyan);font-size:0.65rem;">
+                <i class="bi bi-arrow-repeat me-1"></i>LIVE
+              </span>
+            </div>
+            <div class="terminal-body p-0">
+              <table class="table cve-table mb-0" id="cveTable">
+                <thead>
+                  <tr>
+                    <th>CVE ID</th>
+                    <th class="d-none d-md-table-cell">VENDOR</th>
+                    <th>PRODUCT</th>
+                    <th>SEV</th>
+                    <th>CWE</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="cveBody">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI PANEL -->
+        <div class="col-lg-4">
+          <div class="ai-panel-card" id="aiPanel">
+            <div class="ai-panel-header">
+              <span><i class="bi bi-cpu me-2"></i>CLAUDE AI ASSISTANT</span>
+              <span class="badge" style="background:rgba(0,255,204,0.15);color:var(--cf-cyan);font-size:0.65rem;" id="aiStatus">STANDBY</span>
+            </div>
+
+            <!-- API Key -->
+            <div class="p-3 border-bottom" style="border-color:rgba(0,255,204,0.1)!important;">
+              <label class="hud-label text-white-50 mb-2" style="font-size:0.65rem;">ANTHROPIC API KEY</label>
+              <div class="d-flex gap-2">
+                <input type="password" id="apiKey" class="form-control form-control-sm cyber-input flex-grow-1"
+                  placeholder="sk-ant-..." autocomplete="off">
+                <button onclick="saveApiKey()" class="btn btn-cyber btn-sm px-2">
+                  <i class="bi bi-floppy"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="p-3 border-bottom" style="border-color:rgba(0,255,204,0.1)!important;">
+              <div class="hud-label text-white-50 mb-2" style="font-size:0.65rem;">QUICK ACTIONS</div>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="quick-pill" onclick="quickAction('threat_summary')">THREAT SUMMARY</button>
+                <button class="quick-pill" onclick="quickAction('attack_paths')">ATTACK PATHS</button>
+                <button class="quick-pill" onclick="quickAction('patch_priority')">PATCH PRIORITY</button>
+                <button class="quick-pill" onclick="quickAction('critical_list')">CRITICAL LIST</button>
+              </div>
+            </div>
+
+            <!-- Chat -->
+            <div id="chatOutput" class="ai-chat-output">
+              <div class="ai-message">
+                <div class="hud-label text-cyan mb-1" style="font-size:0.65rem;">SYSTEM</div>
+                <p>CYBERFLIPPER CVE Intelligence AI online. 54 CISA KEV vulnerabilities loaded. Select a CVE for analysis, use quick actions, or type a custom query. Provide your Anthropic API key for Claude AI responses.</p>
+              </div>
+            </div>
+
+            <!-- Input -->
+            <div class="p-3">
+              <div class="input-group">
+                <input type="text" id="chatInput" class="form-control cyber-input"
+                  placeholder="Ask about CVEs, attack vectors, exploits..." 
+                  onkeydown="if(event.key==='Enter')sendMessage()">
+                <button class="btn btn-cyber" onclick="sendMessage()">
+                  <i class="bi bi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CVE DETAIL MODAL -->
+      <div class="modal fade" id="cveDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content" style="background:var(--cf-surface);border:1px solid rgba(0,255,204,0.3);">
+            <div class="modal-header" style="border-bottom:1px solid rgba(0,255,204,0.2);">
+              <h5 class="modal-title hud-label text-cyan" id="modalTitle">CVE DETAIL</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+              <!-- Populated by showDetail() -->
+            </div>
+            <div class="modal-footer" style="border-top:1px solid rgba(0,255,204,0.2);">
+              <button class="btn btn-outline-cyber btn-sm" onclick="aiAnalyzeCurrent()">
+                <i class="bi bi-cpu"></i> AI ANALYZE
+              </button>
+              <button class="btn btn-cyber btn-sm" onclick="copyBadUSBCmd()">
+                <i class="bi bi-usb-symbol"></i> COPY BADUSB CMD
+              </button>
+              <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">CLOSE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="cyber-footer py-4 text-center">
+    <p class="mb-1" style="color:rgba(221,224,240,0.35);font-size:0.7rem;letter-spacing:2px;">
+      &copy; 2026 CYBERFLIPPER — FurulieLLC &amp; Personfu
+    </p>
+    <p style="color:var(--cf-muted);font-size:0.6rem;letter-spacing:1px;">
+      FOR AUTHORIZED SECURITY RESEARCH AND EDUCATIONAL USE ONLY
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dashboard.js"></script>
+  <script>
+  /* ===================================================
+     CYBERFLIPPER CVE INTEL — intel.html JS core
+     54-entry CVE_DB + Claude AI integration
+     =================================================== */
+
+  const CVE_DB = [
+    // ── CRITICAL ──────────────────────────────────────────────────────────────
+    { id:'CVE-2026-20131', vendor:'Cisco', product:'Firepower Management Center', title:'Unauthenticated Remote Java RCE as Root', desc:'An unauthenticated remote attacker can exploit a Java deserialization flaw in Cisco FMC to execute arbitrary code as root without authentication.', cwe:'CWE-502', sev:'CRITICAL', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-20131' },
+    { id:'CVE-2026-1340',  vendor:'Ivanti', product:'Endpoint Manager Mobile (EPMM)', title:'Unauthenticated Code Injection RCE', desc:'Remote unauthenticated code injection in Ivanti EPMM allows full system compromise. Actively exploited in the wild.', cwe:'CWE-94', sev:'CRITICAL', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-1340' },
+    { id:'CVE-2026-33634', vendor:'Aqua Security', product:'Trivy', title:'Malicious Code Embedded in Trivy Binary', desc:'A supply chain attack embedded malicious code in the Trivy container scanner binary. Attackers can leverage Trivy scan jobs to execute arbitrary commands.', cwe:'CWE-506', sev:'CRITICAL', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-33634' },
+    { id:'CVE-2026-20115', vendor:'Cisco', product:'IOS XR', title:'BGP Remote Memory Corruption RCE', desc:'Memory corruption in Cisco IOS XR BGP processing enables a remote attacker to crash the routing process or potentially execute code.', cwe:'CWE-787', sev:'CRITICAL', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-20115' },
+    { id:'CVE-2026-20116', vendor:'Cisco', product:'IOS XR', title:'SSH Server Heap Buffer Overflow RCE', desc:'Heap-based buffer overflow in the IOS XR SSH server allows unauthenticated remote code execution.', cwe:'CWE-122', sev:'CRITICAL', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-20116' },
+    { id:'CVE-2026-20152', vendor:'Cisco', product:'Industrial Network Director', title:'Hardcoded Credentials Full Access', desc:'Hardcoded credentials in Cisco IND allow any remote attacker full administrative access to the management console.', cwe:'CWE-798', sev:'CRITICAL', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-20152' },
+    { id:'CVE-2025-21298', vendor:'Microsoft', product:'Windows OLE', title:'Zero-Click OLE Remote Code Execution', desc:'Processing a malicious RTF document triggers a zero-click OLE vulnerability in Windows allowing remote code execution with no user interaction beyond opening the file.', cwe:'CWE-416', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21298' },
+    { id:'CVE-2025-21333', vendor:'Microsoft', product:'Hyper-V', title:'Hyper-V VM Escape to Host RCE', desc:'A guest VM can escape Hyper-V isolation and execute code on the host operating system through a heap overflow in the hypervisor.', cwe:'CWE-122', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21333' },
+    { id:'CVE-2025-21334', vendor:'Microsoft', product:'Hyper-V', title:'Hyper-V NT Kernel Integration VSP RCE', desc:'Second Hyper-V escape variant in the NT Kernel Integration VSP subsystem allowing host privilege escalation from a guest.', cwe:'CWE-122', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21334' },
+    { id:'CVE-2025-21335', vendor:'Microsoft', product:'Hyper-V', title:'Hyper-V Hypervisor RCE (Third Variant)', desc:'Third Hyper-V escape variant. Guest-to-host code execution via NT kernel Hyper-V integration services.', cwe:'CWE-122', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21335' },
+    { id:'CVE-2025-30397', vendor:'Microsoft', product:'Scripting Engine', title:'Type Confusion RCE via Crafted Web Page', desc:'Type confusion in the Windows Scripting Engine (JScript9) allows an attacker to achieve code execution by tricking a user into visiting a crafted web page or opening a malicious HTML file.', cwe:'CWE-843', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-30397' },
+    { id:'CVE-2025-0282', vendor:'Ivanti', product:'Connect Secure VPN', title:'Stack Overflow Pre-Auth RCE', desc:'Stack-based buffer overflow in Ivanti Connect Secure allows pre-authentication remote code execution. Exploited in the wild before patch release.', cwe:'CWE-121', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-0282' },
+    { id:'CVE-2025-23006', vendor:'SonicWall', product:'SMA 1000 Appliance Manager', title:'Pre-Auth Deserialization RCE (Zero-Day)', desc:'Pre-authentication deserialization flaw in SonicWall SMA 1000 enables remote code execution. Was a zero-day at time of exploitation.', cwe:'CWE-502', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-23006' },
+    { id:'CVE-2025-29824', vendor:'Microsoft', product:'Windows CLFS Driver', title:'CLFS Kernel Use-After-Free LPE', desc:'Use-after-free in the Windows Common Log File System (CLFS) driver enables privilege escalation from user to SYSTEM. Exploited in ransomware campaigns.', cwe:'CWE-416', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-29824' },
+    { id:'CVE-2025-32433', vendor:'Erlang', product:'OTP SSH Server', title:'Pre-Auth RCE via SSH Message Handling', desc:'Improper message handling in Erlang/OTP SSH server allows unauthenticated remote code execution by sending specially crafted SSH messages.', cwe:'CWE-78', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-32433' },
+    { id:'CVE-2025-31161', vendor:'CrushFTP', product:'CrushFTP', title:'Authentication Bypass + Admin Takeover', desc:'Authentication bypass in CrushFTP allows remote attackers to gain administrator-level access without credentials, leading to full server compromise.', cwe:'CWE-287', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-31161' },
+    { id:'CVE-2025-30065', vendor:'Apache', product:'Parquet', title:'Schema Parsing RCE via Parquet Files', desc:'Remote code execution through malicious Apache Parquet files. An attacker can execute code on any system that parses untrusted Parquet files — impacting data pipelines globally.', cwe:'CWE-502', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-30065' },
+    { id:'CVE-2025-24054', vendor:'Microsoft', product:'Windows NTLM', title:'NTLM Hash Theft via Crafted File (Zero-Click)', desc:'Spoofing vulnerability in Windows NTLM enables NTLM credential relay attacks. A specially crafted .library-ms file causes credential theft with minimal user interaction.', cwe:'CWE-290', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-24054' },
+    { id:'CVE-2025-26633', vendor:'Microsoft', product:'MMC (Microsoft Management Console)', title:'MMC Zero-Day UAC Bypass & Payload Exec', desc:'Improper input validation in MMC allows attackers to bypass User Account Control and execute malicious payloads. Used by EncryptHub APT.', cwe:'CWE-20', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-26633' },
+    { id:'CVE-2025-21590', vendor:'Juniper Networks', product:'Junos OS', title:'Kernel Shell Injection via Local Access', desc:'Shell injection in Juniper Junos OS kernel allows a local attacker with minimal privileges to compromise the underlying OS.', cwe:'CWE-78', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21590' },
+    { id:'CVE-2025-24200', vendor:'Apple', product:'iOS / iPadOS', title:'USB Restricted Mode Bypass (Zero-Day)', desc:'Authorization logic flaw allows an attacker with physical access to a locked iPhone or iPad to disable USB Restricted Mode, bypassing forensic protections. Exploited in targeted attacks.', cwe:'CWE-863', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-24200' },
+    { id:'CVE-2025-24201', vendor:'Apple', product:'WebKit', title:'Out-of-Bounds Write in WebKit (Zero-Day)', desc:'Out-of-bounds write in Apple WebKit allows a malicious website to break out of the Web Content sandbox. Exploited in sophisticated targeted attacks.', cwe:'CWE-787', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-24201' },
+    { id:'CVE-2025-2783', vendor:'Google', product:'Chrome', title:'Mojo IPC Sandbox Escape (Zero-Day)', desc:'Incorrect handle in Mojo IPC allows sandbox escape in Google Chrome on Windows. Exploited in the wild in an espionage campaign targeting Russian media outlets.', cwe:'CWE-119', sev:'CRITICAL', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-2783' },
+    // ── HIGH ───────────────────────────────────────────────────────────────────
+    { id:'CVE-2026-1341',  vendor:'Ivanti', product:'Neurons for ITSM', title:'Pre-Auth Admin Account Creation', desc:'Pre-authentication flaw in Ivanti Neurons for ITSM allows attackers to create administrative accounts without credentials.', cwe:'CWE-287', sev:'HIGH', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-1341' },
+    { id:'CVE-2026-1342',  vendor:'Ivanti', product:'Neurons for ITSM', title:'SSRF + Credential Exposure', desc:'Server-side request forgery in Ivanti ITSM enables internal network pivoting and credential harvesting.', cwe:'CWE-918', sev:'HIGH', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-1342' },
+    { id:'CVE-2026-22871', vendor:'Microsoft', product:'Windows Remote Desktop', title:'UDP RDP Pre-Auth Denial of Service', desc:'A specially crafted UDP packet causes a denial-of-service condition in Windows RDP before authentication. Can be chained with other RDP vulns.', cwe:'CWE-400', sev:'HIGH', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-22871' },
+    { id:'CVE-2026-20117', vendor:'Cisco', product:'IOS XR', title:'MPLS Processing Memory Corruption', desc:'Memory corruption in MPLS packet processing on Cisco IOS XR allows remote attackers to crash or compromise affected routers.', cwe:'CWE-787', sev:'HIGH', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-20117' },
+    { id:'CVE-2026-20118', vendor:'Cisco', product:'IOS XR', title:'gRPC API Authentication Bypass', desc:'Authentication bypass in the IOS XR gRPC API allows unauthenticated read/write access to network configuration.', cwe:'CWE-287', sev:'HIGH', year:2026, url:'https://nvd.nist.gov/vuln/detail/CVE-2026-20118' },
+    { id:'CVE-2025-21293', vendor:'Microsoft', product:'Active Directory Domain Services', title:'AD DS Elevation of Privilege', desc:'Privilege escalation in AD DS allows an attacker with low privileges to elevate to Domain Admin under specific configurations.', cwe:'CWE-269', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21293' },
+    { id:'CVE-2025-0283', vendor:'Ivanti', product:'Connect Secure VPN', title:'Local Privilege Escalation Post-Auth', desc:'Post-authentication privilege escalation in Ivanti Connect Secure enables users to gain elevated system access.', cwe:'CWE-269', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-0283' },
+    { id:'CVE-2025-21418', vendor:'Microsoft', product:'Windows Ancillary Function Driver (AFD)', title:'AFD Kernel Privilege Escalation', desc:'Heap-based privilege escalation in the Windows AFD kernel driver allows local users to gain SYSTEM-level access.', cwe:'CWE-269', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21418' },
+    { id:'CVE-2025-21420', vendor:'Microsoft', product:'Windows Disk Cleanup', title:'Disk Cleanup Service DLL Hijacking LPE', desc:'DLL hijacking in the Windows Disk Cleanup scheduled task allows local users to escalate privileges to SYSTEM.', cwe:'CWE-427', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21420' },
+    { id:'CVE-2025-22457', vendor:'Ivanti', product:'Connect Secure / Policy Secure', title:'Stack Overflow Leading to RCE', desc:'Stack-based buffer overflow in Ivanti Connect Secure and Policy Secure enables remote code execution by unauthenticated attackers.', cwe:'CWE-121', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-22457' },
+    { id:'CVE-2025-24813', vendor:'Apache', product:'Tomcat', title:'Partial PUT RCE via Session Deserialization', desc:'Partial PUT request handling flaw in Apache Tomcat allows remote code execution through deserialization of uploaded session data if the DefaultServlet is configured to handle partial PUT.', cwe:'CWE-502', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-24813' },
+    { id:'CVE-2025-24989', vendor:'Microsoft', product:'Power Pages', title:'Improper Access Control Privilege Escalation', desc:'Improper access control in Microsoft Power Pages allows unauthorized users to elevate privileges and access restricted data.', cwe:'CWE-284', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-24989' },
+    { id:'CVE-2025-25181', vendor:'Advantive / Vasion', product:'Verasys / PrinterLogic SaaS', title:'SQL Injection via Unauthenticated API', desc:'Unauthenticated SQL injection in PrinterLogic SaaS allows attackers to extract database contents and potentially achieve code execution.', cwe:'CWE-89', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-25181' },
+    { id:'CVE-2025-27363', vendor:'Meta', product:'FreeType Library', title:'FreeType OOB Write via TrueType Fonts', desc:'Out-of-bounds write in the FreeType library when parsing TrueType font subglyph structures. Exploited in Android attacks.', cwe:'CWE-787', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-27363' },
+    { id:'CVE-2025-29441', vendor:'Apache', product:'ActiveMQ NMS OpenWire Client', title:'Deserialization RCE via Broker Messages', desc:'Deserialization of untrusted data in Apache ActiveMQ NMS OpenWire client allows a malicious broker to execute code on client machines.', cwe:'CWE-502', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-29441' },
+    { id:'CVE-2025-31200', vendor:'Apple', product:'CoreAudio', title:'CoreAudio Heap Overflow in Media Stream', desc:'Heap-based buffer overflow in Apple CoreAudio when processing a malicious media stream. Exploited in highly targeted attacks on iOS.', cwe:'CWE-122', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-31200' },
+    { id:'CVE-2025-31201', vendor:'Apple', product:'RPAC (iOS)', title:'Bypass Pointer Authentication Code (PAC)', desc:'A logical flaw allows attackers to bypass Apple\'s Pointer Authentication Code (PAC) security feature in iOS, undermining exploit mitigations.', cwe:'CWE-254', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-31201' },
+    { id:'CVE-2025-32756', vendor:'Fortinet', product:'FortiVoice / FortiMail / FortiNDR', title:'Stack Overflow Pre-Auth RCE (Zero-Day)', desc:'Stack-based overflow in multiple Fortinet products allows pre-authentication remote code execution. Actively exploited as a zero-day by China-nexus threat actor.', cwe:'CWE-121', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-32756' },
+    { id:'CVE-2025-32974', vendor:'XWiki', product:'XWiki Platform', title:'CSRF to Remote Code Execution', desc:'Cross-site request forgery in XWiki Platform allows remote code execution via a malicious link. No privilege required if admin visits crafted page.', cwe:'CWE-352', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-32974' },
+    { id:'CVE-2025-34028', vendor:'Commvault', product:'Command Center', title:'Pre-Auth Path Traversal + RCE', desc:'Pre-authenticated path traversal in Commvault Command Center leads to remote code execution. Attackers can read/write files and gain system access.', cwe:'CWE-22', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-34028' },
+    { id:'CVE-2025-3928', vendor:'Commvault', product:'Web Server', title:'Authenticated Webshell Deployment', desc:'Authenticated users can upload and execute webshells through an unvalidated file upload endpoint in Commvault Web Server.', cwe:'CWE-434', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-3928' },
+    { id:'CVE-2025-47729', vendor:'TeleMessage', product:'Archiving Backend', title:'Plaintext Message Archive Exposure', desc:'TeleMessage archiving backend stores messages in plaintext without proper access controls, exposing communications to any attacker with API access.', cwe:'CWE-312', sev:'HIGH', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-47729' },
+    // ── MEDIUM ─────────────────────────────────────────────────────────────────
+    { id:'CVE-2025-21194', vendor:'Microsoft', product:'Surface / Hypervisor', title:'Hypervisor-Protected Code Integrity Bypass', desc:'Bypasses Hypervisor-Protected Code Integrity (HVCI) in Microsoft Surface devices, allowing malicious code to run in protected kernel memory.', cwe:'CWE-693', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21194' },
+    { id:'CVE-2025-21308', vendor:'Microsoft', product:'Windows Themes', title:'NTLM Credential Coercion via .theme File', desc:'A malicious Windows .theme file triggers automatic NTLM authentication to an attacker-controlled server, enabling credential theft.', cwe:'CWE-290', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21308' },
+    { id:'CVE-2025-21355', vendor:'Microsoft', product:'Bing', title:'Microsoft Bing RCE via Search Service', desc:'Remote code execution in Microsoft Bing search infrastructure. Allows attackers to run arbitrary code via the Bing backend API.', cwe:'CWE-78', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-21355' },
+    { id:'CVE-2025-22230', vendor:'VMware', product:'Tools for Windows', title:'VMware Tools Authentication Bypass', desc:'Authentication bypass in VMware Tools for Windows allows a low-privilege local user to perform high-privilege operations in a guest VM.', cwe:'CWE-287', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-22230' },
+    { id:'CVE-2025-26466', vendor:'OpenSSH', product:'OpenSSH Client/Server', title:'OpenSSH DoS via Memory/CPU Exhaustion', desc:'A pre-authentication memory/CPU exhaustion attack against OpenSSH server can cause denial of service. No authentication bypass, but can disable SSH access.', cwe:'CWE-400', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-26466' },
+    { id:'CVE-2025-27591', vendor:'Advantive / Vasion', product:'PrinterLogic SaaS', title:'Stored XSS in Printer Management Panel', desc:'Stored XSS in PrinterLogic SaaS allows an attacker to inject malicious scripts that execute when administrators view affected pages.', cwe:'CWE-79', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-27591' },
+    { id:'CVE-2025-29889', vendor:'Microsoft', product:'SharePoint', title:'SharePoint CSRF / Spoofing', desc:'Cross-site request forgery / spoofing in Microsoft SharePoint allows attackers to forge requests on behalf of authenticated users.', cwe:'CWE-352', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-29889' },
+    { id:'CVE-2025-29890', vendor:'Microsoft', product:'SharePoint', title:'SharePoint Second CSRF / Spoofing Variant', desc:'Second CSRF/spoofing variant in Microsoft SharePoint affecting different SharePoint Server components.', cwe:'CWE-352', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-29890' },
+    { id:'CVE-2025-30400', vendor:'Microsoft', product:'DWM (Desktop Window Manager)', title:'DWM Use-After-Free LPE', desc:'Use-after-free vulnerability in Windows Desktop Window Manager allows a local attacker to escalate privileges to SYSTEM.', cwe:'CWE-416', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-30400' },
+    { id:'CVE-2025-32701', vendor:'Microsoft', product:'CLFS Driver', title:'CLFS Second Use-After-Free LPE', desc:'Second use-after-free vulnerability in the Windows CLFS driver. Allows SYSTEM-level privilege escalation from low-privilege user accounts.', cwe:'CWE-416', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-32701' },
+    { id:'CVE-2025-32706', vendor:'Microsoft', product:'CLFS Driver', title:'CLFS Third Variant — Heap Corruption LPE', desc:'Third variant in the CLFS driver LPE chain. Heap corruption allows privilege escalation. Part of multi-CVE ransomware exploit kits.', cwe:'CWE-122', sev:'MEDIUM', year:2025, url:'https://nvd.nist.gov/vuln/detail/CVE-2025-32706' },
+    { id:'CVE-2009-0238', vendor:'Microsoft', product:'Office', title:'Excel Malformed Object RCE', desc:'Microsoft Office Excel contains an RCE vulnerability allowing an attacker to take complete control if a user opens a specially crafted Excel file with a malformed object.', cwe:'CWE-94', sev:'CRITICAL', year:2009, url:'https://www.cve.org/CVERecord?id=CVE-2009-0238' },
+    { id:'CVE-2026-32201', vendor:'Microsoft', product:'SharePoint Server', title:'SharePoint Improper Input Validation Spoofing', desc:'Microsoft SharePoint Server contains an improper input validation vulnerability allowing an unauthorized attacker to perform spoofing over a network.', cwe:'CWE-20', sev:'HIGH', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-32201' },
+    { id:'CVE-2012-1854', vendor:'Microsoft', product:'Visual Basic for Applications (VBA)', title:'VBA Insecure Library Loading RCE', desc:'Microsoft VBA contains an insecure library loading vulnerability that could allow remote code execution via DLL hijacking.', cwe:'CWE-426', sev:'HIGH', year:2012, url:'https://www.cve.org/CVERecord?id=CVE-2012-1854' },
+    { id:'CVE-2025-60710', vendor:'Microsoft', product:'Windows', title:'Windows Link Following Privilege Escalation', desc:'Microsoft Windows contains a link following vulnerability that allows for privilege escalation. Actively targeted by threat actors for LPE chains.', cwe:'CWE-59', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-60710' },
+    { id:'CVE-2023-21529', vendor:'Microsoft', product:'Exchange Server', title:'Exchange Server Deserialization RCE', desc:'Microsoft Exchange Server contains a deserialization of untrusted data vulnerability allowing an authenticated attacker to achieve remote code execution.', cwe:'CWE-502', sev:'HIGH', year:2023, url:'https://www.cve.org/CVERecord?id=CVE-2023-21529' },
+    { id:'CVE-2023-36424', vendor:'Microsoft', product:'Windows CLFS', title:'Windows CLFS Out-of-Bounds Read LPE', desc:'Microsoft Windows Common Log File System Driver contains an out-of-bounds read vulnerability allowing privilege escalation.', cwe:'CWE-125', sev:'HIGH', year:2023, url:'https://www.cve.org/CVERecord?id=CVE-2023-36424' },
+    { id:'CVE-2020-9715', vendor:'Adobe', product:'Acrobat', title:'Acrobat Use-After-Free Code Execution', desc:'Adobe Acrobat contains a use-after-free vulnerability allowing code execution. A malicious PDF can trigger memory corruption leading to arbitrary code execution.', cwe:'CWE-416', sev:'HIGH', year:2020, url:'https://www.cve.org/CVERecord?id=CVE-2020-9715' },
+    { id:'CVE-2026-21643', vendor:'Fortinet', product:'FortiClient EMS', title:'FortiClient EMS SQL Injection', desc:'Fortinet FortiClient EMS contains a SQL injection vulnerability allowing unauthenticated attackers to execute unauthorized code via crafted HTTP requests.', cwe:'CWE-89', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-21643' },
+    { id:'CVE-2026-34621', vendor:'Adobe', product:'Acrobat and Reader', title:'Acrobat Prototype Pollution RCE', desc:'Adobe Acrobat and Reader contain a prototype pollution vulnerability allowing arbitrary code execution. Affects latest Reader versions.', cwe:'CWE-1321', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-34621' },
+    { id:'CVE-2026-35616', vendor:'Fortinet', product:'FortiClient EMS', title:'FortiClient EMS Improper Access Control', desc:'Fortinet FortiClient EMS contains an improper access control vulnerability allowing unauthenticated attackers to execute unauthorized code or commands via crafted requests.', cwe:'CWE-284', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-35616' },
+    { id:'CVE-2026-3502', vendor:'TrueConf', product:'Client', title:'TrueConf Download Without Integrity Check', desc:'TrueConf Client contains a download of code without integrity check vulnerability. An attacker influencing the update path can substitute a tampered payload leading to arbitrary code execution.', cwe:'CWE-494', sev:'HIGH', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-3502' },
+    { id:'CVE-2026-5281', vendor:'Google', product:'Dawn', title:'Dawn Use-After-Free RCE', desc:'Google Dawn contains a use-after-free vulnerability allowing a remote attacker who compromised the renderer to execute arbitrary code. Affects Chrome, Edge, Opera.', cwe:'CWE-416', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-5281' },
+    { id:'CVE-2026-3055', vendor:'Citrix', product:'NetScaler', title:'NetScaler Out-of-Bounds Read', desc:'Citrix NetScaler ADC and Gateway contain an out-of-bounds read vulnerability when configured as SAML IDP leading to memory overread.', cwe:'CWE-125', sev:'HIGH', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-3055' },
+    { id:'CVE-2025-53521', vendor:'F5', product:'BIG-IP', title:'BIG-IP Stack-Based Buffer Overflow RCE', desc:'F5 BIG-IP APM contains a stack-based buffer overflow vulnerability that could allow a threat actor to achieve remote code execution.', cwe:'CWE-121', sev:'CRITICAL', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-53521' },
+    { id:'CVE-2026-33017', vendor:'Langflow', product:'Langflow', title:'Langflow Code Injection RCE', desc:'Langflow contains a code injection vulnerability allowing building public flows without authentication, leading to unauthenticated remote code execution.', cwe:'CWE-94', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-33017' },
+    { id:'CVE-2025-32432', vendor:'Craft CMS', product:'Craft CMS', title:'Craft CMS Code Injection RCE', desc:'Craft CMS contains a code injection vulnerability allowing a remote attacker to execute arbitrary code on vulnerable installations.', cwe:'CWE-94', sev:'CRITICAL', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-32432' },
+    { id:'CVE-2025-54068', vendor:'Laravel', product:'Livewire', title:'Livewire Code Injection RCE', desc:'Laravel Livewire contains a code injection vulnerability allowing unauthenticated attackers to achieve remote command execution in specific deployment scenarios.', cwe:'CWE-94', sev:'CRITICAL', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-54068' },
+    { id:'CVE-2025-43510', vendor:'Apple', product:'Multiple Products', title:'Apple Improper Locking Vulnerability', desc:'Apple watchOS, iOS, iPadOS, macOS, visionOS, and tvOS contain an improper locking vulnerability allowing malicious apps to cause unexpected changes in memory shared between processes.', cwe:'CWE-667', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-43510' },
+    { id:'CVE-2025-43520', vendor:'Apple', product:'Multiple Products', title:'Apple Classic Buffer Overflow', desc:'Apple watchOS, iOS, iPadOS, macOS, visionOS, and tvOS contain a classic buffer overflow allowing a malicious app to cause unexpected system termination or write kernel memory.', cwe:'CWE-120', sev:'CRITICAL', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-43520' },
+    { id:'CVE-2025-31277', vendor:'Apple', product:'Multiple Products', title:'Apple WebKit Buffer Overflow', desc:'Apple Safari, iOS, watchOS, visionOS, iPadOS, macOS, and tvOS contain a buffer overflow in WebKit — processing maliciously crafted web content may lead to memory corruption.', cwe:'CWE-119', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-31277' },
+    { id:'CVE-2025-66376', vendor:'Synacor', product:'Zimbra Collaboration Suite (ZCS)', title:'Zimbra Classic UI CSS XSS', desc:'Synacor Zimbra ZCS contains a cross-site scripting vulnerability in the Classic UI where attackers can abuse CSS @import directives in email HTML.', cwe:'CWE-79', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-66376' },
+    { id:'CVE-2026-20963', vendor:'Microsoft', product:'SharePoint', title:'SharePoint Deserialization RCE', desc:'Microsoft SharePoint contains a deserialization of untrusted data vulnerability allowing an unauthorized attacker to execute code over a network.', cwe:'CWE-502', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-20963' },
+    { id:'CVE-2025-47813', vendor:'Wing FTP Server', product:'Wing FTP Server', title:'Wing FTP Server Info Disclosure', desc:'Wing FTP Server contains a generation of error message containing sensitive information vulnerability when using a long value in the UID cookie.', cwe:'CWE-209', sev:'MEDIUM', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-47813' },
+    { id:'CVE-2026-3910', vendor:'Google', product:'Chromium V8', title:'V8 Out-of-Bounds Memory RCE', desc:'Google Chromium V8 contains an improper restriction of operations within memory buffer bounds allowing RCE inside a sandbox via crafted HTML. Affects Chrome, Edge, Opera.', cwe:'CWE-119', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-3910' },
+    { id:'CVE-2026-3909', vendor:'Google', product:'Skia', title:'Skia Out-of-Bounds Write', desc:'Google Skia contains an out-of-bounds write vulnerability allowing out-of-bounds memory access via a crafted HTML page. Affects Chrome, ChromeOS, Android, Flutter.', cwe:'CWE-787', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-3909' },
+    { id:'CVE-2025-68613', vendor:'n8n', product:'n8n', title:'n8n Dynamic Code RCE', desc:'n8n contains an improper control of dynamically managed code resources in its workflow expression evaluation system allowing remote code execution.', cwe:'CWE-913', sev:'CRITICAL', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-68613' },
+    { id:'CVE-2021-22054', vendor:'Omnissa', product:'Workspace ONE UEM', title:'Workspace ONE SSRF', desc:'Omnissa Workspace ONE UEM contains a server-side request forgery vulnerability allowing network-adjacent attackers to send unauthenticated requests and gain access to sensitive information.', cwe:'CWE-918', sev:'HIGH', year:2021, url:'https://www.cve.org/CVERecord?id=CVE-2021-22054' },
+    { id:'CVE-2025-26399', vendor:'SolarWinds', product:'Web Help Desk', title:'SolarWinds WHD Deserialization RCE', desc:'SolarWinds Web Help Desk contains a deserialization of untrusted data vulnerability in AjaxProxy allowing attackers to run commands on the host machine.', cwe:'CWE-502', sev:'CRITICAL', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-26399' },
+    { id:'CVE-2026-1603', vendor:'Ivanti', product:'Endpoint Manager (EPM)', title:'Ivanti EPM Authentication Bypass', desc:'Ivanti Endpoint Manager contains an authentication bypass vulnerability allowing remote unauthenticated attackers to leak stored credential data.', cwe:'CWE-288', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-1603' },
+    { id:'CVE-2017-7921', vendor:'Hikvision', product:'Multiple Products', title:'Hikvision Improper Authentication', desc:'Multiple Hikvision products contain an improper authentication vulnerability allowing malicious users to escalate privileges and gain access to sensitive information.', cwe:'CWE-287', sev:'CRITICAL', year:2017, url:'https://www.cve.org/CVERecord?id=CVE-2017-7921' },
+    { id:'CVE-2021-22681', vendor:'Rockwell Automation', product:'Multiple Products', title:'Rockwell Insufficient Credential Protection', desc:'Multiple Rockwell products contain an insufficient protected credentials vulnerability. Studio 5000 Logix Designer may expose a key used to verify Logix controllers, allowing unauthorized app connections.', cwe:'CWE-522', sev:'CRITICAL', year:2021, url:'https://www.cve.org/CVERecord?id=CVE-2021-22681' },
+    { id:'CVE-2023-43000', vendor:'Apple', product:'Multiple Products', title:'Apple WebKit Use-After-Free', desc:'Apple macOS, iOS, iPadOS, and Safari contain a use-after-free vulnerability due to processing of maliciously crafted web content leading to memory corruption.', cwe:'CWE-416', sev:'HIGH', year:2023, url:'https://www.cve.org/CVERecord?id=CVE-2023-43000' },
+    { id:'CVE-2021-30952', vendor:'Apple', product:'Multiple Products', title:'Apple WebKit Integer Overflow', desc:'Apple tvOS, macOS, Safari, iPadOS, and watchOS contain an integer overflow vulnerability due to processing maliciously crafted web content leading to arbitrary code execution.', cwe:'CWE-190', sev:'HIGH', year:2021, url:'https://www.cve.org/CVERecord?id=CVE-2021-30952' },
+    { id:'CVE-2023-41974', vendor:'Apple', product:'iOS and iPadOS', title:'iOS/iPadOS Kernel Use-After-Free', desc:'Apple iOS and iPadOS contain a use-after-free vulnerability allowing an app to execute arbitrary code with kernel privileges.', cwe:'CWE-416', sev:'HIGH', year:2023, url:'https://www.cve.org/CVERecord?id=CVE-2023-41974' },
+    { id:'CVE-2026-22719', vendor:'Broadcom', product:'VMware Aria Operations', title:'Aria Operations Command Injection RCE', desc:'Broadcom VMware Aria Operations contains a command injection vulnerability allowing an unauthenticated attacker to execute arbitrary commands potentially leading to remote code execution.', cwe:'CWE-77', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-22719' },
+    { id:'CVE-2026-21385', vendor:'Qualcomm', product:'Multiple Chipsets', title:'Qualcomm Chipset Memory Corruption', desc:'Multiple Qualcomm chipsets contain a memory corruption vulnerability while using alignments for memory allocation. Affects numerous Android and embedded devices.', cwe:'CWE-190', sev:'HIGH', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-21385' },
+    { id:'CVE-2022-20775', vendor:'Cisco', product:'SD-WAN', title:'Cisco SD-WAN Path Traversal LPE', desc:'Cisco SD-WAN CLI contains a path traversal vulnerability allowing authenticated local attackers to gain elevated privileges and execute arbitrary commands as root.', cwe:'CWE-22', sev:'HIGH', year:2022, url:'https://www.cve.org/CVERecord?id=CVE-2022-20775' },
+    { id:'CVE-2026-20127', vendor:'Cisco', product:'Catalyst SD-WAN', title:'Catalyst SD-WAN Authentication Bypass', desc:'Cisco Catalyst SD-WAN Controller and Manager contain an authentication bypass vulnerability allowing unauthenticated remote attackers to gain administrative privileges via crafted requests.', cwe:'CWE-287', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-20127' },
+    { id:'CVE-2026-25108', vendor:'Soliton Systems', product:'FileZen', title:'FileZen OS Command Injection', desc:'Soliton Systems FileZen contains an OS command injection vulnerability triggered by a specially crafted HTTP request after user login.', cwe:'CWE-78', sev:'HIGH', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-25108' },
+    { id:'CVE-2025-49113', vendor:'RoundCube', product:'Webmail', title:'RoundCube Deserialization RCE', desc:'RoundCube Webmail contains a deserialization of untrusted data vulnerability allowing remote code execution by authenticated users via the _from parameter in upload.php.', cwe:'CWE-502', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-49113' },
+    { id:'CVE-2025-68461', vendor:'RoundCube', product:'Webmail', title:'RoundCube SVG XSS', desc:'RoundCube Webmail contains a cross-site scripting vulnerability via the animate tag in an SVG document. Allows session hijacking via malicious email.', cwe:'CWE-79', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-68461' },
+    { id:'CVE-2021-22175', vendor:'GitLab', product:'GitLab', title:'GitLab SSRF via Webhooks', desc:'GitLab contains a server-side request forgery vulnerability when requests to the internal network for webhooks are enabled. Allows internal network scanning.', cwe:'CWE-918', sev:'HIGH', year:2021, url:'https://www.cve.org/CVERecord?id=CVE-2021-22175' },
+    { id:'CVE-2026-22769', vendor:'Dell', product:'RecoverPoint RP4VMs', title:'Dell RP4VMs Hardcoded Credentials', desc:'Dell RecoverPoint for Virtual Machines contains hardcoded credentials allowing unauthenticated remote attackers to gain unauthorized access to the underlying OS with root persistence.', cwe:'CWE-798', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-22769' },
+    { id:'CVE-2020-7796', vendor:'Synacor', product:'Zimbra Collaboration Suite', title:'Zimbra ZCS WebEx SSRF', desc:'Synacor Zimbra Collaboration Suite contains an SSRF vulnerability if the WebEx zimlet is installed and zimlet JSP is enabled.', cwe:'CWE-918', sev:'HIGH', year:2020, url:'https://www.cve.org/CVERecord?id=CVE-2020-7796' },
+    { id:'CVE-2024-7694', vendor:'TeamT5', product:'ThreatSonar Anti-Ransomware', title:'ThreatSonar Unrestricted File Upload RCE', desc:'TeamT5 ThreatSonar does not validate uploaded file content, allowing admin-level users to upload malicious files and execute arbitrary system commands on the server.', cwe:'CWE-434', sev:'HIGH', year:2024, url:'https://www.cve.org/CVERecord?id=CVE-2024-7694' },
+    { id:'CVE-2008-0015', vendor:'Microsoft', product:'Windows', title:'Windows Video ActiveX Control RCE', desc:'Microsoft Windows Video ActiveX Control contains an RCE vulnerability exploitable via a specially crafted webpage. Successful exploitation gains user-level code execution.', cwe:'N/A', sev:'CRITICAL', year:2008, url:'https://www.cve.org/CVERecord?id=CVE-2008-0015' },
+    { id:'CVE-2026-2441', vendor:'Google', product:'Chromium', title:'Chromium CSS Use-After-Free', desc:'Google Chromium CSS contains a use-after-free vulnerability allowing remote attackers to potentially exploit heap corruption via a crafted HTML page. Affects Chrome, Edge, Opera.', cwe:'CWE-416', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-2441' },
+    { id:'CVE-2026-1731', vendor:'BeyondTrust', product:'Remote Support / PRA', title:'BeyondTrust RS/PRA OS Command Injection', desc:'BeyondTrust Remote Support and Privileged Remote Access contain an OS command injection vulnerability allowing unauthenticated remote attackers to execute OS commands. No auth or user interaction required.', cwe:'CWE-78', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-1731' },
+    { id:'CVE-2026-20700', vendor:'Apple', product:'Multiple Products', title:'Apple Buffer Overflow — Arbitrary Write', desc:'Apple iOS, macOS, tvOS, watchOS, and visionOS contain a buffer overflow allowing an attacker with memory write capability to execute arbitrary code.', cwe:'CWE-119', sev:'CRITICAL', year:2026, url:'https://www.cve.org/CVERecord?id=CVE-2026-20700' },
+    { id:'CVE-2024-43468', vendor:'Microsoft', product:'Configuration Manager', title:'Configuration Manager SQL Injection', desc:'Microsoft Configuration Manager contains an SQL injection vulnerability. An unauthenticated attacker can send specially crafted requests enabling command execution on the server and underlying database.', cwe:'CWE-89', sev:'CRITICAL', year:2024, url:'https://www.cve.org/CVERecord?id=CVE-2024-43468' },
+    { id:'CVE-2025-15556', vendor:'Notepad++', product:'Notepad++', title:'Notepad++ Updater Download Integrity Check Bypass', desc:'Notepad++ WinGUp updater contains a download without integrity check vulnerability allowing an attacker to intercept update traffic and execute an attacker-controlled installer.', cwe:'CWE-494', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-15556' },
+  ];
+
+  let currentCVE = null;
+  let activeFilter = 'all';
+
+  // ── Severity badge helper ──────────────────────────────────────────────────
+  function sevBadge(sev) {
+    const classes = { CRITICAL:'cve-critical', HIGH:'cve-high', MEDIUM:'cve-medium' };
+    return `<span class="cve-badge ${classes[sev]||''}">${sev}</span>`;
+  }
+
+  // ── Populate stats bar ─────────────────────────────────────────────────────
+  function updateStats(data) {
+    document.getElementById('countCritical').textContent = data.filter(c=>c.sev==='CRITICAL').length;
+    document.getElementById('countHigh').textContent     = data.filter(c=>c.sev==='HIGH').length;
+    document.getElementById('countMedium').textContent   = data.filter(c=>c.sev==='MEDIUM').length;
+    document.getElementById('countTotal').textContent    = data.length;
+  }
+
+  // ── Render CVE table ───────────────────────────────────────────────────────
+  function renderTable(data) {
+    const tbody = document.getElementById('cveBody');
+    tbody.innerHTML = '';
+    if (!data.length) {
+      tbody.innerHTML = `<tr><td colspan="6" class="text-center text-white-50 py-4">NO CVEs MATCH FILTER</td></tr>`;
+      return;
+    }
+    data.forEach(c => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><code style="color:var(--cf-cyan);font-size:0.72rem;">${c.id}</code></td>
+        <td class="d-none d-md-table-cell" style="font-size:0.8rem;">${c.vendor}</td>
+        <td style="font-size:0.8rem;">${c.product}</td>
+        <td>${sevBadge(c.sev)}</td>
+        <td><span style="color:var(--cf-muted);font-size:0.7rem;">${c.cwe}</span></td>
+        <td>
+          <button class="btn btn-cyber btn-sm py-0 px-2" style="font-size:0.65rem;"
+            onclick="showDetail('${c.id}')">DETAIL</button>
+        </td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // ── Filter logic ───────────────────────────────────────────────────────────
+  function filterCVEs(filter, btn) {
+    activeFilter = filter;
+    document.querySelectorAll('.quick-pill').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    document.getElementById('cveSearch').value = '';
+    applyFilter();
+  }
+
+  function liveSearch(q) {
+    applyFilter(q);
+  }
+
+  function applyFilter(query) {
+    let data = CVE_DB;
+    const q = (query || '').toLowerCase();
+    if (q) {
+      data = data.filter(c =>
+        c.id.toLowerCase().includes(q) ||
+        c.vendor.toLowerCase().includes(q) ||
+        c.product.toLowerCase().includes(q) ||
+        c.title.toLowerCase().includes(q)
+      );
+    } else {
+      if (activeFilter === 'critical') data = data.filter(c => c.sev === 'CRITICAL');
+      else if (activeFilter === 'high') data = data.filter(c => c.sev === 'HIGH');
+      else if (activeFilter === 'rce')  data = data.filter(c => c.title.toLowerCase().includes('rce') || c.desc.toLowerCase().includes('remote code execution'));
+      else if (activeFilter === '2026') data = data.filter(c => c.year === 2026);
+      else if (activeFilter === 'microsoft') data = data.filter(c => c.vendor.toLowerCase().includes('microsoft'));
+      else if (activeFilter === 'cisco') data = data.filter(c => c.vendor.toLowerCase().includes('cisco'));
+    }
+    renderTable(data);
+    updateStats(data);
+  }
+
+  // ── CVE Detail Modal ───────────────────────────────────────────────────────
+  function showDetail(id) {
+    const c = CVE_DB.find(x => x.id === id);
+    if (!c) return;
+    currentCVE = c;
+    document.getElementById('modalTitle').textContent = c.id;
+    document.getElementById('modalBody').innerHTML = `
+      <div class="mb-3">
+        ${sevBadge(c.sev)}
+        <span class="ms-2" style="color:var(--cf-muted);font-size:0.75rem;">${c.cwe} | ${c.year}</span>
+      </div>
+      <h5 style="color:#fff;font-family:'Orbitron',monospace;font-size:0.95rem;">${c.title}</h5>
+      <p style="color:rgba(221,224,240,0.7);margin-top:1rem;">${c.desc}</p>
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <div class="glass-card p-3">
+            <div class="hud-label text-cyan mb-1" style="font-size:0.65rem;">VENDOR</div>
+            <div style="color:#fff;">${c.vendor}</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="glass-card p-3">
+            <div class="hud-label text-cyan mb-1" style="font-size:0.65rem;">PRODUCT</div>
+            <div style="color:#fff;">${c.product}</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <a href="${c.url}" class="btn btn-outline-cyber btn-sm" target="_blank" rel="noopener">
+          <i class="bi bi-box-arrow-up-right"></i> NVD REFERENCE
+        </a>
+      </div>`;
+    new bootstrap.Modal(document.getElementById('cveDetailModal')).show();
+  }
+
+  function copyBadUSBCmd() {
+    if (!currentCVE) return;
+    const cmd = `REM CyberFlipper BadUSB Audit — ${currentCVE.id}\nGUI r\nDELAY 500\nSTRING powershell -WindowStyle Hidden -Command "& {$r = '${currentCVE.id} ${currentCVE.vendor} ${currentCVE.product} AUDIT'; echo $r > $env:USERPROFILE\\Desktop\\CF_CVE_AUDIT.txt}"  \nENTER`;
+    navigator.clipboard.writeText(cmd).then(() => {
+      const btn = event.target.closest('button');
+      if (btn) { btn.textContent = 'COPIED!'; setTimeout(()=>{ btn.innerHTML = '<i class="bi bi-usb-symbol"></i> COPY BADUSB CMD'; }, 2000); }
+    }).catch(() => alert(cmd));
+  }
+
+  function aiAnalyzeCurrent() {
+    if (!currentCVE) return;
+    bootstrap.Modal.getInstance(document.getElementById('cveDetailModal'))?.hide();
+    setTimeout(() => {
+      const q = `Analyze ${currentCVE.id} — ${currentCVE.title} (${currentCVE.vendor} ${currentCVE.product}). Severity: ${currentCVE.sev}. ${currentCVE.desc} Provide: 1) attack chain, 2) affected environment, 3) exploitation steps, 4) detection, 5) mitigation.`;
+      document.getElementById('chatInput').value = q;
+      sendMessage();
+    }, 400);
+  }
+
+  // ── Quick Actions ──────────────────────────────────────────────────────────
+  function quickAction(type) {
+    const prompts = {
+      threat_summary: 'Give me a threat landscape summary for the 107 CVEs in the CYBERFLIPPER database. What are the most dangerous vendor ecosystems? What attack patterns dominate?',
+      attack_paths: 'Identify the most dangerous attack chains across the loaded CVEs. Which combinations can be chained for full domain compromise or lateral movement?',
+      patch_priority: 'Create a patching priority matrix for the loaded CVEs. Rank by exploitability in the wild, severity, and blast radius. Top 10 to patch immediately.',
+      critical_list: 'List only the CRITICAL severity CVEs from the database. For each, provide a one-sentence attack summary and the affected product.'
+    };
+    document.getElementById('chatInput').value = prompts[type] || '';
+    sendMessage();
+  }
+
+  // ── API Key Management ─────────────────────────────────────────────────────
+  function saveApiKey() {
+    const k = document.getElementById('apiKey').value.trim();
+    if (k) {
+      localStorage.setItem('cf_api_key', k);
+      document.getElementById('aiStatus').textContent = 'READY';
+      document.getElementById('aiStatus').style.color = 'var(--cf-cyan)';
+      appendAIMessage('system', 'API key saved. Claude AI is now active for CVE intelligence queries.');
+    }
+  }
+
+  function getStoredKey() {
+    return localStorage.getItem('cf_api_key') || '';
+  }
+
+  // Prefill key if stored
+  window.addEventListener('DOMContentLoaded', () => {
+    const k = getStoredKey();
+    if (k) {
+      document.getElementById('apiKey').value = k;
+      document.getElementById('aiStatus').textContent = 'READY';
+      document.getElementById('aiStatus').style.color = 'var(--cf-cyan)';
+    }
+  });
+
+  // ── Claude AI ──────────────────────────────────────────────────────────────
+  function buildSystemPrompt() {
+    const cveList = CVE_DB.map(c =>
+      `- ${c.id} | ${c.sev} | ${c.vendor} ${c.product} | ${c.title} | ${c.cwe} | ${c.year}`
+    ).join('\n');
+    return `You are CYBERFLIPPER AI, an expert offensive security analyst embedded in the CyberFlipper Flipper Zero security research platform.
+
+You have access to a database of 54 real CISA KEV vulnerabilities:
+${cveList}
+
+Your role:
+1. Analyze CVEs in depth — attack chains, exploitation steps, affected environments
+2. Prioritize vulnerabilities for penetration testing and security research
+3. Explain technical details clearly for security researchers
+4. Suggest detection strategies and defensive mitigations
+5. Help generate audit commands and BadUSB payload concepts for authorized testing
+
+Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONLY. Never assist with unauthorized system access.`;
+  }
+
+  async function callClaude(message) {
+    const apiKey = getStoredKey();
+    if (!apiKey) return null;
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
+        max_tokens: 1024,
+        system: buildSystemPrompt(),
+        messages: [{ role: 'user', content: message }]
+      })
+    });
+    if (!resp.ok) throw new Error(`API ${resp.status}: ${resp.statusText}`);
+    const data = await resp.json();
+    return data.content?.[0]?.text || 'No response from Claude.';
+  }
+
+  function getLocalResponse(query) {
+    const q = query.toLowerCase();
+    if (q.includes('critical')) {
+      const crits = CVE_DB.filter(c => c.sev === 'CRITICAL');
+      return `${crits.length} CRITICAL CVEs loaded:\n${crits.map(c => `• ${c.id} — ${c.vendor} ${c.product}: ${c.title}`).join('\n')}\n\n[Set your API key above for full Claude AI analysis]`;
+    }
+    if (q.includes('rce') || q.includes('remote code')) {
+      const rces = CVE_DB.filter(c => c.title.toLowerCase().includes('rce') || c.desc.toLowerCase().includes('remote code execution'));
+      return `${rces.length} RCE vulnerabilities found:\n${rces.map(c => `• ${c.id} (${c.sev}) — ${c.title}`).join('\n')}\n\n[Set API key for AI analysis]`;
+    }
+    if (q.includes('cisco')) {
+      const cs = CVE_DB.filter(c => c.vendor.toLowerCase().includes('cisco'));
+      return `${cs.length} Cisco CVEs: ${cs.map(c => c.id).join(', ')}\n\n[Set API key for full analysis]`;
+    }
+    if (q.includes('microsoft') || q.includes('windows')) {
+      const ms = CVE_DB.filter(c => c.vendor.toLowerCase().includes('microsoft'));
+      return `${ms.length} Microsoft CVEs: ${ms.map(c => c.id).join(', ')}\n\n[Set API key for full analysis]`;
+    }
+    return `Query received. ${CVE_DB.length} CVEs indexed. Set your Anthropic API key above to enable Claude AI-powered deep analysis of CVE attack chains, exploitation steps, and patch prioritization.`;
+  }
+
+  // ── Chat UI ────────────────────────────────────────────────────────────────
+  function appendAIMessage(role, text) {
+    const out = document.getElementById('chatOutput');
+    const div = document.createElement('div');
+    div.className = 'ai-message';
+    div.innerHTML = `
+      <div class="hud-label mb-1" style="font-size:0.65rem;color:${role==='user'?'var(--cf-purple)':'var(--cf-cyan)'};">
+        ${role==='user'?'OPERATOR':'CLAUDE AI'}
+      </div>
+      <p style="white-space:pre-wrap;">${text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</p>`;
+    out.appendChild(div);
+    out.scrollTop = out.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const inp = document.getElementById('chatInput');
+    const msg = inp.value.trim();
+    if (!msg) return;
+    inp.value = '';
+    appendAIMessage('user', msg);
+
+    const status = document.getElementById('aiStatus');
+    status.textContent = 'PROCESSING...';
+
+    try {
+      const apiKey = getStoredKey();
+      let response;
+      if (apiKey) {
+        response = await callClaude(msg);
+      } else {
+        response = getLocalResponse(msg);
+      }
+      appendAIMessage('claude', response);
+    } catch(err) {
+      appendAIMessage('claude', `ERROR: ${err.message}\n\nVerify your API key and try again.`);
+    } finally {
+      status.textContent = apiKey_status();
+    }
+  }
+
+  function apiKey_status() {
+    return getStoredKey() ? 'READY' : 'STANDBY';
+  }
+
+  // ── Init ───────────────────────────────────────────────────────────────────
+  renderTable(CVE_DB);
+  updateStats(CVE_DB);
+  </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOOLCHAIN — CYBERFLIPPER</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">CF</div>
+    <div class="loading-text">LOADING TOOLCHAIN INVENTORY</div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+  <div class="scan-line"></div>
+  <div class="hud-grid-overlay"></div>
+  <div class="site-background"><div class="site-overlay"></div></div>
+
+  <div class="hud-top-bar">
+    <div class="d-flex align-items-center gap-2">
+      <span class="hud-status-indicator online"></span>
+      <span>TOOLCHAIN: <span class="text-cyan">ALL MODULES ONLINE</span></span>
+    </div>
+    <div class="d-lg-flex d-none gap-4">
+      <span>UPTIME: <span id="uptime-clock" class="text-white">00:00:00</span></span>
+      <span>RELEASE: <span class="text-cyan">v1.2.0 STABLE</span></span>
+    </div>
+    <div>COORDINATES: <span class="text-white" id="geo-location">FETCHING...</span></div>
+  </div>
+
+  <header class="cyber-header">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <a href="index.html" style="text-decoration:none;"><div class="header-logo">CF</div></a>
+            <div class="ms-3">
+              <h1 class="logo-text mb-0">CYBER<span class="text-cyan">FLIPPER</span></h1>
+              <p class="subtitle mb-0">TOOLCHAIN INVENTORY</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <a href="index.html" class="btn btn-outline-cyber me-2"><i class="bi bi-house"></i> HOME</a>
+          <a href="https://github.com/Personfu/CyberFlipper" class="btn btn-cyber" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i> REPO
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg cyber-nav sticky-top">
+    <div class="container">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        style="color:var(--cf-cyan);"><i class="bi bi-list fs-4"></i></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="intel.html"><i class="bi bi-cpu"></i> CVE INTEL</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">STATS</a></li>
+          <li class="nav-item"><a class="nav-link" href="download.html">DOWNLOAD</a></li>
+          <li class="nav-item"><a class="nav-link active" href="toolchain.html">TOOLCHAIN</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <div class="hud-label text-cyan mb-2">▸ INTEGRATED SECURITY ARSENAL</div>
+        <h2 style="font-family:'Orbitron',monospace;font-size:2rem;color:#fff;">
+          CYBER<span class="text-cyan">FLIPPER</span> TOOLCHAIN
+        </h2>
+        <p class="mt-3" style="color:rgba(221,224,240,0.65);max-width:640px;margin:auto;">
+          All modules integrated into a single coherent security research platform for Flipper Zero.
+        </p>
+      </div>
+
+      <!-- CORE MODULES -->
+      <h4 class="hud-label text-cyan mb-4">CORE MODULES</h4>
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100">
+            <div class="stat-icon mb-3"><i class="bi bi-usb-symbol"></i></div>
+            <h5 class="hud-label text-cyan">BADUSB ENGINE</h5>
+            <p class="text-white-50 small mt-2 mb-3">DuckyScript 1.0 payload execution. 54 CVE exploit payloads targeting Microsoft, Cisco, Adobe, Fortinet, Apple, Google, and more.</p>
+            <ul class="text-white-50 small ps-3 mb-0">
+              <li>54 CISA KEV CVE payloads</li>
+              <li>Reverse shell launchers</li>
+              <li>Credential harvesters</li>
+              <li>Persistence scripts</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100">
+            <div class="stat-icon mb-3"><i class="bi bi-wifi"></i></div>
+            <h5 class="hud-label text-cyan">SUB-GHz ARSENAL</h5>
+            <p class="text-white-50 small mt-2 mb-3">40+ pre-captured Sub-GHz RAW signals across 315, 433, 868, and 915 MHz bands for replay and analysis.</p>
+            <ul class="text-white-50 small ps-3 mb-0">
+              <li>Gate & garage openers</li>
+              <li>Rolling code captures</li>
+              <li>Weather station spoofing</li>
+              <li>Custom frequency profiles</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100">
+            <div class="stat-icon mb-3"><i class="bi bi-credit-card-2-front"></i></div>
+            <h5 class="hud-label text-cyan">NFC LIBRARY</h5>
+            <p class="text-white-50 small mt-2 mb-3">50+ NFC profiles spanning NTAG213/215/216 formats, MIFARE Classic dumps, and access card emulation sets.</p>
+            <ul class="text-white-50 small ps-3 mb-0">
+              <li>NTAG213/215/216 profiles</li>
+              <li>MIFARE Classic 1K/4K</li>
+              <li>Access control emulation</li>
+              <li>Amiibo backups</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100">
+            <div class="stat-icon mb-3"><i class="bi bi-broadcast-pin"></i></div>
+            <h5 class="hud-label text-cyan">INFRARED MATRIX</h5>
+            <p class="text-white-50 small mt-2 mb-3">30+ universal infrared profiles for TVs, projectors, ACs, and media devices. Bruteforce mode included.</p>
+            <ul class="text-white-50 small ps-3 mb-0">
+              <li>Samsung / LG / Sony / TCL</li>
+              <li>AC universal profiles</li>
+              <li>Projector controls</li>
+              <li>Bruteforce scripts</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100">
+            <div class="stat-icon mb-3"><i class="bi bi-key"></i></div>
+            <h5 class="hud-label text-cyan">LFRFID COLLECTION</h5>
+            <p class="text-white-50 small mt-2 mb-3">Low-frequency RFID card profiles in EM4100, HID Prox, Indala, and IOProx formats for facility access research.</p>
+            <ul class="text-white-50 small ps-3 mb-0">
+              <li>EM4100 125kHz cards</li>
+              <li>HID Prox corporate cards</li>
+              <li>Indala profiles</li>
+              <li>Generic LF templates</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 h-100">
+            <div class="stat-icon mb-3"><i class="bi bi-robot"></i></div>
+            <h5 class="hud-label text-cyan">CLAUDE AI INTEL</h5>
+            <p class="text-white-50 small mt-2 mb-3">Embedded claude-sonnet-4-5 AI assistant with full CVE database context. Provides threat analysis and attack path enumeration.</p>
+            <ul class="text-white-50 small ps-3 mb-0">
+              <li>100+ CVE live database</li>
+              <li>Threat summaries</li>
+              <li>Attack path analysis</li>
+              <li>Patch prioritization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEVELOPMENT ENVIRONMENT -->
+      <h4 class="hud-label text-cyan mb-4">DEVELOPMENT ENVIRONMENT</h4>
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="ms-2">BUILD_ENVIRONMENT.sh</span>
+            </div>
+            <div class="terminal-body">
+              <span style="color:var(--cf-cyan)">[CYBERFLIPPER BUILD SYSTEM]</span><br>
+              <span style="color:var(--cf-muted)"># Prerequisites</span><br>
+              <span style="color:#00ff88">$</span> python3 --version  <span style="color:var(--cf-muted)"># Python 3.10+</span><br>
+              <span style="color:#00ff88">$</span> pip install ufbt    <span style="color:var(--cf-muted)"># Flipper Build Tool</span><br>
+              <span style="color:#00ff88">$</span> ufbt update          <span style="color:var(--cf-muted)"># Pull latest SDK</span><br><br>
+              <span style="color:var(--cf-muted)"># Build firmware</span><br>
+              <span style="color:#00ff88">$</span> cd CYBERFLIPPER<br>
+              <span style="color:#00ff88">$</span> ufbt fap_dist         <span style="color:var(--cf-muted)"># Build .fap apps</span><br>
+              <span style="color:#00ff88">$</span> python3 scripts/package.py  <span style="color:var(--cf-muted)"># Bundle release</span><br><br>
+              <span style="color:#00ff88">[+]</span> Build complete: dist/CYBERFLIPPER-v1.2.0.tgz
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5 class="hud-label text-cyan mb-3">TECH STACK</h5>
+            <div class="data-list">
+              <div class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-25">
+                <span class="text-white-50 small">Firmware Base</span>
+                <span class="text-cyan small">Flipper Zero Unleashed 0.79+</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-25">
+                <span class="text-white-50 small">BadUSB Format</span>
+                <span class="text-cyan small">DuckyScript 1.0</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-25">
+                <span class="text-white-50 small">Build System</span>
+                <span class="text-cyan small">uFBT + Python 3.10</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-25">
+                <span class="text-white-50 small">Web Dashboard</span>
+                <span class="text-cyan small">Bootstrap 5 + Orbitron</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-25">
+                <span class="text-white-50 small">AI Integration</span>
+                <span class="text-cyan small">claude-sonnet-4-5</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-25">
+                <span class="text-white-50 small">CI/CD</span>
+                <span class="text-cyan small">GitHub Actions Pages</span>
+              </div>
+              <div class="d-flex justify-content-between py-2">
+                <span class="text-white-50 small">CVE Source</span>
+                <span class="text-cyan small">CISA KEV Catalog</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXTERNAL TOOLS -->
+      <h4 class="hud-label text-cyan mb-4">INTEGRATED EXTERNAL TOOLS</h4>
+      <div class="row g-3 mb-5">
+        <div class="col-md-3 col-6">
+          <a href="https://github.com/flipperdevices/flipperzero-firmware" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-github fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">FLIPPER OFFICIAL</div>
+            <div class="text-white-50 small mt-1">Official FW</div>
+          </a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="https://github.com/Flipper-XFW/Xtreme-Firmware" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-lightning-charge fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">XTREME FW</div>
+            <div class="text-white-50 small mt-1">Custom Build</div>
+          </a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="https://github.com/UberGuidoZ/Flipper" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-archive fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">UBERDUCKY</div>
+            <div class="text-white-50 small mt-1">Payload Library</div>
+          </a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="https://github.com/hak5/usbrubberducky-payloads" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-usb-symbol fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">HAK5 DUCKY</div>
+            <div class="text-white-50 small mt-1">Rubber Ducky Scripts</div>
+          </a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-wrench-adjustable fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">CYBERCHEF</div>
+            <div class="text-white-50 small mt-1">Data Transformation</div>
+          </a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-shield-exclamation fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">CISA KEV</div>
+            <div class="text-white-50 small mt-1">CVE Catalog</div>
+          </a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="https://nvd.nist.gov/" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-database fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">NVD NIST</div>
+            <div class="text-white-50 small mt-1">Vulnerability DB</div>
+          </a>
+        </div>
+        <div class="col-md-3 col-6">
+          <a href="https://www.anthropic.com/" target="_blank" rel="noopener"
+            class="glass-card p-3 text-center d-block text-decoration-none h-100">
+            <i class="bi bi-robot fs-4 text-cyan"></i>
+            <div class="hud-label mt-2 small">ANTHROPIC AI</div>
+            <div class="text-white-50 small mt-1">claude-sonnet-4-5</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="glass-card p-4 text-center">
+        <h4 class="hud-label text-cyan mb-3">READY TO DEPLOY?</h4>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="download.html" class="btn btn-cyber btn-lg"><i class="bi bi-download"></i> DOWNLOAD v1.2.0</a>
+          <a href="intel.html" class="btn btn-outline-cyber btn-lg"><i class="bi bi-cpu"></i> CVE INTEL FEED</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="cyber-footer py-4 text-center">
+    <p class="mb-1" style="color:rgba(221,224,240,0.35);font-size:0.7rem;letter-spacing:2px;">
+      &copy; 2026 CYBERFLIPPER — FurulieLLC &amp; Personfu
+    </p>
+    <p style="color:var(--cf-muted);font-size:0.6rem;letter-spacing:1px;">
+      FOR AUTHORIZED SECURITY RESEARCH AND EDUCATIONAL USE ONLY
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
