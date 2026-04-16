@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - IMPOSSIBLE Level
-REM C2 Beacon Simulator - Command-and-control simulation
-DELAY 100
-GUI r
-DELAY 200
-STRING powershell -NoExit -C "Write-Host '=== CYBERFLIPPER C2 SIMULATOR ===' -F Red;$id=[guid]::NewGuid().ToString().Substring(0,8);Write-Host \"Beacon: $id\" -F Yellow;Write-Host \"Host: $env:COMPUTERNAME\\$env:USERNAME\" -F Yellow;for($i=1;$i -le 5;$i++){Write-Host \"[$(Get-Date -f HH:mm:ss)] Check-in #$i\" -F Cyan;sleep 2};Write-Host 'Simulation complete (no real C2)' -F Green"
-ENTER

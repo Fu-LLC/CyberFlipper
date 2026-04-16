@@ -1,5 +1,0 @@
-OWASP CHEATSHEET (QUICK REF)
-- SQLi: ' OR 1=1 --
-- XSS: <script>alert(1)</script>
-- LFI: ../../../etc/passwd
-- Command Injection: ; id; ls -la

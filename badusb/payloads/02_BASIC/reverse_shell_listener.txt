@@ -1,8 +1,0 @@
-REM CYBERFLIPPER - BASIC Level
-REM Reverse Shell Listener - Opens a TCP listener
-REM Educational: Understanding reverse shell concepts
-DELAY 1000
-GUI r
-DELAY 500
-STRING powershell -NoExit -C "Write-Host 'CYBERFLIPPER Listener' -F Green;$l=[System.Net.Sockets.TcpListener]4444;$l.Start();Write-Host 'Port 4444 open...'"
-ENTER

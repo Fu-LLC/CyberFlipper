@@ -1,7 +1,37 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore build/dist artifacts
 dist/
-.vscode
-.clangd
-.editorconfig
-.env
-.ufbt
+build/
+*.tgz
+*.tar.gz
+*.zip
+*.bin
+*.dfu
+*.fuf
+*.elf
+*.hex
+*.map
+*.o
+*.out
+*.log
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
 .DS_Store
+Thumbs.db
+
+# Ignore system files
+*.bak
+*.tmp
+*.old
+
+# Ignore legacy/backup folders
+CYBERFLIPPER_CLEAN/

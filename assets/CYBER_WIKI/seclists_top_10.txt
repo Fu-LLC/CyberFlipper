@@ -1,6 +1,0 @@
-TOP_10_CREDENTIALS
-1. admin / admin
-2. root / (blank)
-3. user / password
-4. administrator / admin123
-5. guest / guest

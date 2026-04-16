@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - INTRO Level
-REM Network Scanner - Shows all connected devices
-DELAY 1000
-GUI r
-DELAY 500
-STRING cmd /c "arp -a > %TEMP%\network.txt & ipconfig >> %TEMP%\network.txt & notepad %TEMP%\network.txt"
-ENTER

