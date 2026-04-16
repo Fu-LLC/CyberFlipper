@@ -218,6 +218,26 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 
 ---
 
+<<<<<<< HEAD
+=======
+## ▓▒░ V. EDC ECOSYSTEM
+CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
+
+## ▓▒░ VI. LAB401 PRODUCT CATALOG INTEGRATION
+
+### 🛒 Live Lab401 Catalog
+The CyberFlipper dashboard now features a fully integrated, live-updating product catalog from [Lab401](https://lab401.com/collections/all-products). This catalog is available at [lab401.html](lab401.html) and is updated daily via GitHub Actions. All product data is stored in [assets/lab401_catalog.json](assets/lab401_catalog.json) and rendered dynamically for a seamless user experience.
+
+**Features:**
+- Live product data (title, price, image, description, direct buy link)
+- Fully themed UI, accessible from all navigation menus
+- Automated daily updates via GitHub Actions ([.github/workflows/update_lab401_catalog.yml](.github/workflows/update_lab401_catalog.yml))
+- Source code for catalog fetcher: [.github/scripts/fetch_lab401_catalog.py](.github/scripts/fetch_lab401_catalog.py)
+
+**Legal:**
+All product data is sourced from Lab401 and is for informational and convenience purposes only. See [Lab401 Terms](https://lab401.com/pages/terms-of-service) for details. No commercial relationship is implied.
+
+>>>>>>> a086e6fca8b1d2cb1f38e1522b704a4f20f321e2
 ---
 
 ## ▓▒░ VII. BRANDING & ASSET PIPELINE
