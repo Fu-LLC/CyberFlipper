@@ -5,10 +5,9 @@ Maintainers/Major contributors include:
 ## Project Lead & Primary Author
 
 **Personfu**  
-GitHub: [Personfu](https://github.com/Personfu)  
-Twitter/X: @Personfu  
+GitHub: [Personfu](https://github.com/Personfu)    
 Discord: sentientbeing#2000 
-Website: https://personfu.github.io/
+Website: https://fllc.net/
 
 ---
 

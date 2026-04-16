@@ -220,6 +220,21 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 
 ---
 
+## ▓▒░ VI. LAB401 PRODUCT CATALOG INTEGRATION
+
+### 🛒 Live Lab401 Catalog
+The CyberFlipper dashboard now features a fully integrated, live-updating product catalog from [Lab401](https://lab401.com/collections/all-products). This catalog is available at [lab401.html](lab401.html) and is updated daily via GitHub Actions. All product data is stored in [assets/lab401_catalog.json](assets/lab401_catalog.json) and rendered dynamically for a seamless user experience.
+
+**Features:**
+- Live product data (title, price, image, description, direct buy link)
+- Fully themed UI, accessible from all navigation menus
+- Automated daily updates via GitHub Actions ([.github/workflows/update_lab401_catalog.yml](.github/workflows/update_lab401_catalog.yml))
+- Source code for catalog fetcher: [.github/scripts/fetch_lab401_catalog.py](.github/scripts/fetch_lab401_catalog.py)
+
+**Legal:**
+All product data is sourced from Lab401 and is for informational and convenience purposes only. See [Lab401 Terms](https://lab401.com/pages/terms-of-service) for details. No commercial relationship is implied.
+
+---
 ## ▓▒░ VII. BRANDING & ASSET PIPELINE
 ### 🎨 Custom Animation Standards
 CYBERFLIPPER uses the **F-SERIES** bitmap specification. To create custom animations for the intelligence deck:
@@ -228,11 +243,13 @@ CYBERFLIPPER uses the **F-SERIES** bitmap specification. To create custom animat
 3. **Register:** Add your animation to `/dolphin/manifest.txt` with a designated weight.
 
 ### 🔗 Contributor Uplink
-Join the **F-SERIES** core on Discord for development blueprints:
-➡️ **[https://discord.gg/Cd9qyvht7X](https://discord.gg/Cd9qyvht7X)**
 
 ---
-<p align="center">&copy; 2026 FurulieLLC | Personfu | NEON_DUSK_PROTOCOL</p>
+## Legal Attribution & Sources
+This project is based on open source contributions from the Flipper Zero community. Major contributors include Personfu, Protopirate, UberGuidoZ, Sasquatch, and others. All code is used under the terms of the original licenses. No explicit creator branding or donation links are present. For full legal details and contributor credits, see the repository's LICENSE and NOTICE files.
+
+---
+<p align="center">&copy; 2026 CYBERFLIPPER | Unified Hardware Intelligence</p>
 
 ## ▓▒░ VIII. APPENDIX: FLIPPER ANIMATION ARCHITECTURE
 *A technical guide for the CyberFlipper Neural Interface.*

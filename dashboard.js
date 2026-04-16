@@ -254,4 +254,16 @@ document.addEventListener('DOMContentLoaded', () => {
             freqEl.textContent = ' ' + (433.9200 + parseFloat(drift)).toFixed(4) + ' MHz';
         }
     }, 3000);
+    
+        // Ensure Lab401 Catalog link is present in navigation if dynamically generated
+        if (typeof document !== 'undefined') {
+            const nav = document.querySelector('nav.p-4');
+            if (nav && !nav.innerHTML.includes('lab401.html')) {
+                const lab401Link = document.createElement('a');
+                lab401Link.href = '/CyberFlipper/lab401.html';
+                lab401Link.className = 'nav-anchor';
+                lab401Link.textContent = 'LAB401 CATALOG';
+                nav.appendChild(lab401Link);
+            }
+        }
 });
