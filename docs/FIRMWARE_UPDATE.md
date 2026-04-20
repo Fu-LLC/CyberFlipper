@@ -1,35 +1,35 @@
-# CyberFlipper — SD Card Installation
+# CyberFlipper — Installation Guide
 
-CyberFlipper is installed by copying content to your Flipper's SD card using qFlipper. There is no firmware flashing involved.
+## Two packages, two steps:
 
-## Step-by-Step
+| Package | Purpose | Where it goes |
+| :--- | :--- | :--- |
+| `CYBERFLIPPER-v1.2.1-UPDATE.zip` | Firmware update | `SD:/update/CYBERFLIPPER-v1.2.1/` |
+| `CYBERFLIPPER-v1.2.1-SD_CARD.zip` | Apps, payloads, signals | SD card root |
 
-1. Download `CYBERFLIPPER-v1.2.1-SD_CARD.zip` from the [Releases page](https://github.com/Fu-LLC/CyberFlipper/releases).
-2. Extract the zip to a folder on your PC.
-3. Open **qFlipper** and connect your Flipper via USB.
-4. Click the **SD Card** tab.
-5. Copy the following folders to the SD card root:
-   - `badusb/` — BadUSB / HID payloads + CVE scripts
-   - `infrared/` — IR remote databases
-   - `nfc/` — NFC card dumps and Amiibo
-   - `subghz/` — Sub-GHz signals and brute-force sets
-   - `lfrfid/` — Low-frequency RFID dumps
-   - `dolphin/` — Dolphin XP level data and passport icon
-   - `apps/` — Extra .fap applications (Games, Tools, NFC, etc.)
-   - `u2f/` — U2F key data
-6. Eject via qFlipper and reboot your Flipper.
+---
 
-## Building the SD Card zip locally
+## Step 1 — Apply Firmware Update
+
+1. Download and extract `CYBERFLIPPER-v1.2.1-UPDATE.zip`.
+2. In **qFlipper SD Card tab**, copy the `CYBERFLIPPER-v1.2.1/` folder into `SD:/update/`.
+3. On Flipper: **File Browser → update → CYBERFLIPPER-v1.2.1 → update.fuf → Run in App**.
+4. Flipper reboots and installs the firmware. Wait for it to complete.
+
+## Step 2 — Load Content Pack
+
+1. Download and extract `CYBERFLIPPER-v1.2.1-SD_CARD.zip`.
+2. In **qFlipper SD Card tab**, copy all folders to SD card root.
+3. Reboot Flipper.
+
+## Build locally
 
 ```bash
 python scripts/build_update.py
 ```
 
-This produces `CYBERFLIPPER-v<VER>-SD_CARD.zip` — the only release artifact.
+Produces both `UPDATE.zip` and `SD_CARD.zip`.
 
 ## Notes
-- Do **not** use "Install from file" in qFlipper — that method is not supported.
-- Do **not** attempt to flash `update.fuf`, `.tgz`, or `.dfu` files.
-- All content is SD card data only; your Flipper firmware is unchanged.
-
-For setup help see `docs/GETTING_STARTED.md`.
+- Do **not** use qFlipper "Install from file" — it is not supported for this package.
+- The firmware update (Step 1) must be done before apps will work correctly.

