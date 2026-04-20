@@ -737,11 +737,12 @@ body {
   background: linear-gradient(90deg, rgba(255,0,110,0.03), rgba(0,255,204,0.03), rgba(124,58,237,0.03));
   border-top: 1px solid rgba(255,0,110,0.08);
   border-bottom: 1px solid rgba(0,255,204,0.08);
-  padding: 6px 0; overflow: hidden;
+  padding: 6px 0;
 }
 .ticker-track {
-  display: inline-block; white-space: nowrap;
-  animation: ticker-scroll 60s linear infinite;
+  display: block;
+  white-space: normal;
+  animation: none;
   font-family: 'Courier New', monospace;
   font-size: 0.6rem; letter-spacing: 1.5px;
   color: var(--cf-cyan); opacity: 0.45;

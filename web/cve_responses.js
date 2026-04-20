@@ -526,6 +526,26 @@ const CVE_RESPONSE_TOPICS = [
     details: 'Researchers and vendors follow CNA or MITRE guidelines to request CVE assignment.',
     example: 'A complete report includes proof of concept, impact description, and reproducible steps.',
     advice: 'Ensure your CVE report is clear, verifiable, and mapped to the correct vendor product.'
+  },
+  {
+    slug: 'zero-day',
+    title: 'Zero-Day Vulnerabilities',
+    keywords: ['zero day','zero-day','0 day','0-day','zero day vulnerability'],
+    simple: 'A zero-day is a vulnerability that is known to attackers before a fix is available.',
+    technical: 'Zero-day vulnerabilities are exploited before a patch is broadly released or systems are updated.',
+    details: 'They pose high risk because defenders often have no prior signature or configuration guidance when attacks begin.',
+    example: 'A zero-day in widely deployed networking software can be weaponized immediately after discovery.',
+    advice: 'Harden exposed services, apply vendor mitigations quickly, and monitor for suspicious activity while vendors prepare fixes.'
+  },
+  {
+    slug: 'ransomware',
+    title: 'Most Dangerous CVEs',
+    keywords: ['best cve','top cve','most dangerous cve','highest risk cve','worst cve'],
+    simple: 'The most dangerous CVEs are those that are remote, unauthenticated, and actively exploited.',
+    technical: 'Top risk CVEs combine high severity, public exploit code, and broad exposure across widely deployed systems.',
+    details: 'These CVEs require fast patching and review because they often lead to ransomware, data theft, or full network compromise.',
+    example: 'Critical remote code execution issues in internet-facing infrastructure are usually the highest priority.',
+    advice: 'Start with critical RCE, authentication bypass, and widely deployed vendor CVEs when prioritizing remediation.'
   }
 ];
 
@@ -633,6 +653,54 @@ function buildCveSummary(cve, level) {
   return `Expert summary: ${base} ${detail} ${scan} ${advice}`;
 }
 
+function getCuratedCveSet() {
+  if (typeof CURATED_DB !== 'undefined' && Array.isArray(CURATED_DB) && CURATED_DB.length) {
+    return CURATED_DB;
+  }
+  if (typeof CVE_DB !== 'undefined' && Array.isArray(CVE_DB)) {
+    return CVE_DB;
+  }
+  return [];
+}
+
+function getTopCves(limit = 5) {
+  const source = getCuratedCveSet();
+  const rank = { CRITICAL: 1, HIGH: 2, MEDIUM: 3, LOW: 4 };
+  return [...source]
+    .sort((a, b) => (rank[a.sev] - rank[b.sev]) || (b.year - a.year))
+    .slice(0, limit);
+}
+
+function getTopCveSummary(level) {
+  const top = getTopCves(5);
+  if (!top.length) {
+    return buildCveResponse(CVE_RESPONSE_TOPICS.find(t => t.slug === 'best-cve') || CVE_RESPONSE_TOPICS[0], level);
+  }
+  const lines = top.map((c, index) => `${index + 1}. ${c.id} — ${c.vendor} ${c.product} (${c.sev})`).join('\n');
+  return `${level.intro} Top risk CVEs are those that are remote, unauthenticated, and actively exploited. In this feed, the top candidates are:\n${lines}\nFocus on critical remote code execution and authentication bypass issues first.`;
+}
+
+function getRansomwareResponse(level) {
+  const subject = CVE_RESPONSE_TOPICS.find(t => t.slug === 'ransomware');
+  if (!subject) return buildCveResponse(CVE_RESPONSE_TOPICS[0], level);
+  return buildCveResponse(subject, level);
+}
+
+function getSpecializedResponse(query, level) {
+  const normalized = normalizeText(query);
+  if (/(best|top|most dangerous|highest risk|worst)/.test(normalized) && normalized.includes('cve')) {
+    return getTopCveSummary(level);
+  }
+  if (/ransomware/.test(normalized)) {
+    return getRansomwareResponse(level);
+  }
+  if (/zero day|zero-day|0-day|0 day/.test(normalized)) {
+    const subject = CVE_RESPONSE_TOPICS.find(t => t.slug === 'zero-day' || t.slug === 'what-is-cve');
+    return buildCveResponse(subject || CVE_RESPONSE_TOPICS[0], level);
+  }
+  return null;
+}
+
 function getCveResponseForQuery(query) {
   const cveId = extractCveId(query);
   const levelIndex = parseLevel(query);
@@ -643,6 +711,11 @@ function getCveResponseForQuery(query) {
     if (cve) {
       return buildCveSummary(cve, level);
     }
+  }
+
+  const special = getSpecializedResponse(query, level);
+  if (special) {
+    return special;
   }
 
   if (/patch|patch priority|priority|mitigation|fix|remediation/.test(query.toLowerCase())) {
