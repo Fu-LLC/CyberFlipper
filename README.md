@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>[ CYBERFLIPPER : PRODUCTION RELEASE v1.1.0 ]</strong><br>
+  <strong>[ CYBERFLIPPER: PRODUCTION RELEASE v1.1.0 ]</strong><br>
   <em>Maintained by Personfu @ <a href="https://fllc.net">fllc.net</a> </em><br>
   <strong>Official Discord: <a href="https://discord.gg/Cd9qyvht7X">discord.gg/Cd9qyvht7X</a></strong>
 </p>
@@ -219,8 +219,6 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 
 ---
 
-<<<<<<< HEAD
-=======
 ## ▓▒░ V. EDC ECOSYSTEM
 CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
 
@@ -238,7 +236,6 @@ The CyberFlipper dashboard now features a fully integrated, live-updating produc
 **Legal:**
 All product data is sourced from Lab401 and is for informational and convenience purposes only. See [Lab401 Terms](https://lab401.com/pages/terms-of-service) for details. No commercial relationship is implied.
 
->>>>>>> a086e6fca8b1d2cb1f38e1522b704a4f20f321e2
 ---
 
 ## ▓▒░ VII. BRANDING & ASSET PIPELINE
