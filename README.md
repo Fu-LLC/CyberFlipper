@@ -14,6 +14,7 @@
   <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/MCU-STM32WB55_DUAL_CORE-A020F0?style=for-the-badge" alt="MCU"></a>
   <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/TX_RX-CC1101_TRANSCEIVER-ff0000?style=for-the-badge" alt="CC1101"></a>
   <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/STATUS-OPERATIONAL-00FFFF?style=for-the-badge" alt="Status"></a>
+  <a href="https://github.com/Personfu/CyberFlipper" style="margin-left:8px;"><img src="https://img.shields.io/badge/REPO-Personfu%2FCyberFlipper-00FFFF?style=for-the-badge&logo=github" alt="Repo"></a>
 </p>
 
 ---

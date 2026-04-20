@@ -3,7 +3,7 @@ name: Build & Release CyberFlipper
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'   # e.g. v1.3.0
+      - 'v*.*.*'   # e.g. v1.3.0
   workflow_dispatch:
     inputs:
       version:
@@ -190,7 +190,10 @@ jobs:
           cp manifest.json manifest.txt update.fuf \
             "release_staging/CYBERFLIPPER-v${VER}/"
           zip -r "$FULL_ZIP" "release_staging/"
-          echo "FULL_ZIP=$FULL_ZIP" >> $GITHUB_ENV
+          echo "FULL_ZIP=$FULL_ZIP" >> $GITHUB_ENV      - name: Print generated release files
+        run: |
+          echo "Generated files:"
+          ls -lh "$TGZ_NAME" "$SD_ZIP" "$FULL_ZIP" manifest.json manifest.txt update.fuf
 
       # ------------------------------------------------------------------
       # Upload artifacts for the release job
@@ -225,6 +228,11 @@ jobs:
         with:
           name: cyberflipper-release-${{ env.VER }}
           path: dist/
+
+      - name: List downloaded artifacts
+        run: |
+          echo "Downloaded artifacts in dist/"
+          ls -lh dist || true
 
       - name: Generate release notes
         id: notes
