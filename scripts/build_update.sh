@@ -58,7 +58,7 @@ cp update.fuf firmware.dfu updater.bin radio.bin splash.bin resources.tar "$BUIL
 
 TGZ_NAME="CYBERFLIPPER-v${VERSION}.tgz"
 rm -f "$TGZ_NAME"
-tar -czvf "$TGZ_NAME" -C . "update/CYBERFLIPPER-v${VERSION}"
+tar -czvf "$TGZ_NAME" -C . --transform "s#^update/CYBERFLIPPER-v${VERSION}#update#" "update/CYBERFLIPPER-v${VERSION}"
 
 echo "[*] Created $TGZ_NAME"
 

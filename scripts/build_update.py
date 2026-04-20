@@ -86,7 +86,7 @@ def build_update_tgz(version: str) -> Path:
         tgz_name.unlink()
 
     with tarfile.open(tgz_name, "w:gz") as tar:
-        tar.add(build_dir, arcname=str(build_dir.relative_to(ROOT)))
+        tar.add(build_dir, arcname="update")
 
     return tgz_name
 
