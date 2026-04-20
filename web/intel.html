@@ -389,7 +389,7 @@
       localStorage.setItem('cf_api_key', k);
       document.getElementById('aiStatus').textContent = 'READY';
       document.getElementById('aiStatus').style.color = 'var(--cf-cyan)';
-      appendAIMessage('system', 'Optional Anthropic key saved. Optional Anthropic analysis is enabled; local CyberFlipper; local CyberFlipper intelligence remains active for fast results.');
+      appendAIMessage('system', 'Optional Anthropic key saved. Optional Anthropic analysis is enabled; local CyberFlipper intelligence remains active for fast results.');
     }
   }
 
@@ -617,12 +617,12 @@ Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONL
       throw new Error(`API ${resp.status}: ${resp.statusText} ${body}`);
     }
     const data = await resp.json();
-    return data.content?.[0]?.text || 'No response from Claude.';
+    return data.content?.[0]?.text || 'No response from the optional Claude API.';
   }
 
   function getLocalResponse(query) {
     if (!query || !query.trim()) {
-      return 'Ask me anything about CVEs. I have 1,000 educational, grade-level-aware responses available locally.';
+      return 'Ask me anything about CVEs. I have 1,400 educational, grade-level-aware responses available locally.';
     }
     return getCveResponseForQuery(query);
   }
@@ -711,7 +711,7 @@ Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONL
       }
       appendAIMessage('ai', response);
     } catch (err) {
-      appendAIMessage('ai', `ERROR: ${err.message}\n\nVerify your API key and try again.`);
+      appendAIMessage('ai', `ERROR: ${err.message}\n\nVerify your Anthropic Claude API key and try again.`);
     } finally {
       status.textContent = apiKey_status();
     }
