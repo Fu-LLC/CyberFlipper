@@ -72,6 +72,33 @@ def patch_update_fuf(version: str) -> None:
     path.write_text("\n".join(updated) + "\n", encoding="utf-8")
 
 
+# Directories packed into resources.tar (written to Flipper SD card)
+RESOURCES_DIRS = ["subghz", "apps", "dolphin", "u2f"]
+
+# File extensions that must NOT go on the Flipper (causes updater errors)
+RESOURCES_EXCLUDE_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
+
+
+def build_resources_tar() -> Path:
+    """Rebuild resources.tar from local directories, excluding non-Flipper files."""
+    out = ROOT / "resources.tar"
+    with tarfile.open(out, "w") as tar:
+        for d in RESOURCES_DIRS:
+            src = ROOT / d
+            if not src.exists():
+                continue
+            for item in sorted(src.rglob("*")):
+                if not item.is_file():
+                    continue
+                if item.suffix.lower() in RESOURCES_EXCLUDE_EXT:
+                    continue
+                if ".git" in item.parts:
+                    continue
+                arcname = item.relative_to(ROOT)
+                tar.add(item, arcname=str(arcname))
+    return out
+
+
 def build_update_tgz(version: str) -> Path:
     build_dir = ROOT / "update" / f"CYBERFLIPPER-v{version}"
     if build_dir.exists():
@@ -150,6 +177,7 @@ def main(argv: list[str]) -> int:
     validate_required_files()
     write_manifest_txt(version)
     patch_update_fuf(version)
+    build_resources_tar()
 
     tgz_path = build_update_tgz(version)
     sd_path = build_sd_zip(version)
