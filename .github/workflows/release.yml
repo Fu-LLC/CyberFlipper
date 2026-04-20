@@ -190,7 +190,8 @@ jobs:
           cp manifest.json manifest.txt update.fuf \
             "release_staging/CYBERFLIPPER-v${VER}/"
           zip -r "$FULL_ZIP" "release_staging/"
-          echo "FULL_ZIP=$FULL_ZIP" >> $GITHUB_ENV      - name: Print generated release files
+          echo "FULL_ZIP=$FULL_ZIP" >> $GITHUB_ENV
+      - name: Print generated release files
         run: |
           echo "Generated files:"
           ls -lh "$TGZ_NAME" "$SD_ZIP" "$FULL_ZIP" manifest.json manifest.txt update.fuf

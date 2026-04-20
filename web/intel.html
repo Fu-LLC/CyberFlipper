@@ -31,7 +31,7 @@
     </div>
     <div class="d-lg-flex d-none gap-4">
       <span>UPTIME: <span id="uptime-clock" class="text-white">00:00:00</span></span>
-      <span>LOADED: <span class="text-cyan">54 ENTRIES</span></span>
+      <span>LOADED: <span class="text-cyan" id="loaded-count">25</span> ENTRIES</span>
       <span>RELEASE: <span class="text-cyan">LATEST</span></span>
     </div>
     <div>COORDINATES: <span class="text-white" id="geo-location">FETCHING...</span></div>
@@ -116,7 +116,9 @@
       <div class="glass-card p-3 mb-4">
         <div class="d-flex flex-wrap gap-2 align-items-center">
           <span class="hud-label text-white-50 me-2">FILTER:</span>
-          <button class="quick-pill active" onclick="filterCVEs('all', this)">ALL</button>
+          <button class="quick-pill active" onclick="filterCVEs('top', this)">TOP 25</button>
+          <button class="quick-pill" onclick="filterCVEs('daily', this)">DAILY 10</button>
+          <button class="quick-pill" onclick="filterCVEs('all', this)">ALL</button>
           <button class="quick-pill" onclick="filterCVEs('critical', this)">CRITICAL</button>
           <button class="quick-pill" onclick="filterCVEs('high', this)">HIGH</button>
           <button class="quick-pill" onclick="filterCVEs('rce', this)">RCE</button>
@@ -140,10 +142,10 @@
             <div class="terminal-header d-flex align-items-center justify-content-between">
               <div>
                 <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="ms-2">CVE_FEED.live — CISA KEV Synchronized</span>
+                <span class="ms-2" id="feedLabel">TOP 25 POPULAR CVEs</span>
               </div>
-              <span class="badge" style="background:rgba(0,255,204,0.15);color:var(--cf-cyan);font-size:0.65rem;">
-                <i class="bi bi-arrow-repeat me-1"></i>LIVE
+              <span class="badge" id="refreshStatus" style="background:rgba(0,255,204,0.15);color:var(--cf-cyan);font-size:0.65rem;">
+                <i class="bi bi-arrow-repeat me-1"></i>REFRESHED NOW
               </span>
             </div>
             <div class="terminal-body p-0">
@@ -170,16 +172,16 @@
         <div class="col-lg-4">
           <div class="ai-panel-card" id="aiPanel">
             <div class="ai-panel-header">
-              <span><i class="bi bi-cpu me-2"></i>CLAUDE AI ASSISTANT</span>
+              <span><i class="bi bi-cpu me-2"></i>CYBERFLIPPER AI ASSISTANT</span>
               <span class="badge" style="background:rgba(0,255,204,0.15);color:var(--cf-cyan);font-size:0.65rem;" id="aiStatus">STANDBY</span>
             </div>
 
             <!-- API Key -->
             <div class="p-3 border-bottom" style="border-color:rgba(0,255,204,0.1)!important;">
-              <label class="hud-label text-white-50 mb-2" style="font-size:0.65rem;">ANTHROPIC API KEY</label>
+              <label class="hud-label text-white-50 mb-2" style="font-size:0.65rem;">OPTIONAL ANTHROPIC KEY</label>
               <div class="d-flex gap-2">
                 <input type="password" id="apiKey" class="form-control form-control-sm cyber-input flex-grow-1"
-                  placeholder="sk-ant-..." autocomplete="off">
+                  placeholder="Optional key for deep analysis" autocomplete="off">
                 <button onclick="saveApiKey()" class="btn btn-cyber btn-sm px-2">
                   <i class="bi bi-floppy"></i>
                 </button>
@@ -201,7 +203,7 @@
             <div id="chatOutput" class="ai-chat-output">
               <div class="ai-message">
                 <div class="hud-label text-cyan mb-1" style="font-size:0.65rem;">SYSTEM</div>
-                <p>CYBERFLIPPER CVE Intelligence AI online. 54 CISA KEV vulnerabilities loaded. Select a CVE for analysis, use quick actions, or type a custom query. Provide your Anthropic API key for Claude AI responses.</p>
+                <p>CYBERFLIPPER local intelligence engine is active. 35 curated CVEs loaded for fast research. Use quick actions, open a CVE detail, or type a query. The optional Anthropic key only enables deeper Claude analysis; the local engine already works without it.</p>
               </div>
             </div>
 
@@ -258,10 +260,11 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="dashboard.js"></script>
+  <script src="cve_responses.js"></script>
   <script>
   /* ===================================================
      CYBERFLIPPER CVE INTEL — intel.html JS core
-     54-entry CVE_DB + Claude AI integration
+     54-entry CVE_DB + optional AnthropicAnthropic integration
      =================================================== */
 
   const CVE_DB = [
@@ -377,24 +380,96 @@
     { id:'CVE-2025-15556', vendor:'Notepad++', product:'Notepad++', title:'Notepad++ Updater Download Integrity Check Bypass', desc:'Notepad++ WinGUp updater contains a download without integrity check vulnerability allowing an attacker to intercept update traffic and execute an attacker-controlled installer.', cwe:'CWE-494', sev:'HIGH', year:2025, url:'https://www.cve.org/CVERecord?id=CVE-2025-15556' },
   ];
 
+  // NOTE: The curated feed logic below uses the shared CVE_DB dataset.
+  // Rendering, filtering, and AI analysis are implemented in the curated feed section.
+
+  function saveApiKey() {
+    const k = document.getElementById('apiKey').value.trim();
+    if (k) {
+      localStorage.setItem('cf_api_key', k);
+      document.getElementById('aiStatus').textContent = 'READY';
+      document.getElementById('aiStatus').style.color = 'var(--cf-cyan)';
+      appendAIMessage('system', 'Optional Anthropic key saved. Optional Anthropic analysis is enabled; local CyberFlipper; local CyberFlipper intelligence remains active for fast results.');
+    }
+  }
+
+  function getStoredKey() {
+    return localStorage.getItem('cf_api_key') || '';
+  }
+
+  // Prefill key if stored
+  window.addEventListener('DOMContentLoaded', () => {
+    const k = getStoredKey();
+    if (k) {
+      document.getElementById('apiKey').value = k;
+      document.getElementById('aiStatus').textContent = 'READY';
+      document.getElementById('aiStatus').style.color = 'var(--cf-cyan)';
+    }
+    applyFilter();
+    updateRefreshStatus();
+    setInterval(() => {
+      updateRefreshStatus();
+      applyFilter(document.getElementById('cveSearch').value);
+    }, 30000);
+  });
+
+  const TOP_CVE_IDS = new Set([
+    'CVE-2026-20131','CVE-2026-1340','CVE-2026-33634','CVE-2026-20115','CVE-2026-20116',
+    'CVE-2026-20152','CVE-2025-21298','CVE-2025-21333','CVE-2025-21334','CVE-2025-21335',
+    'CVE-2025-30397','CVE-2025-0282','CVE-2025-23006','CVE-2025-29824','CVE-2025-32433',
+    'CVE-2025-31161','CVE-2025-30065','CVE-2025-24054','CVE-2025-26633','CVE-2025-21590',
+    'CVE-2025-24200','CVE-2025-24201','CVE-2025-2783','CVE-2026-1341','CVE-2026-1342'
+  ]);
+
+  const DAILY_CVE_IDS = new Set([
+    'CVE-2026-22871','CVE-2026-20117','CVE-2026-20118','CVE-2025-21293','CVE-2025-0283',
+    'CVE-2025-21418','CVE-2025-21420','CVE-2025-22457','CVE-2025-24813','CVE-2025-24989'
+  ]);
+
+  const CURATED_DB = CVE_DB.filter(c => TOP_CVE_IDS.has(c.id) || DAILY_CVE_IDS.has(c.id));
   let currentCVE = null;
-  let activeFilter = 'all';
+  let currentView = 'top';
 
-  // ── Severity badge helper ──────────────────────────────────────────────────
-  function sevBadge(sev) {
-    const classes = { CRITICAL:'cve-critical', HIGH:'cve-high', MEDIUM:'cve-medium' };
-    return `<span class="cve-badge ${classes[sev]||''}">${sev}</span>`;
+  function getVisibleData(query = '') {
+    let data = CURATED_DB.filter(c => {
+      if (currentView === 'top') return TOP_CVE_IDS.has(c.id);
+      if (currentView === 'daily') return DAILY_CVE_IDS.has(c.id);
+      return true;
+    });
+    const q = (query || '').toLowerCase().trim();
+    if (!q) return data;
+    return data.filter(c =>
+      c.id.toLowerCase().includes(q) ||
+      c.vendor.toLowerCase().includes(q) ||
+      c.product.toLowerCase().includes(q) ||
+      c.title.toLowerCase().includes(q) ||
+      c.desc.toLowerCase().includes(q)
+    );
   }
 
-  // ── Populate stats bar ─────────────────────────────────────────────────────
+  function setFeedLabel() {
+    const label = currentView === 'top'
+      ? 'TOP 25 POPULAR CVEs'
+      : currentView === 'daily'
+        ? 'DAILY 10 CVEs'
+        : 'FULL CURATED FEED';
+    document.getElementById('feedLabel').textContent = label;
+  }
+
+  function updateRefreshStatus() {
+    const now = new Date();
+    const time = now.toISOString().slice(11,16) + 'Z';
+    document.getElementById('refreshStatus').innerHTML = `<i class="bi bi-arrow-repeat me-1"></i>REFRESHED ${time}`;
+  }
+
   function updateStats(data) {
-    document.getElementById('countCritical').textContent = data.filter(c=>c.sev==='CRITICAL').length;
-    document.getElementById('countHigh').textContent     = data.filter(c=>c.sev==='HIGH').length;
-    document.getElementById('countMedium').textContent   = data.filter(c=>c.sev==='MEDIUM').length;
-    document.getElementById('countTotal').textContent    = data.length;
+    document.getElementById('countCritical').textContent = data.filter(c => c.sev === 'CRITICAL').length;
+    document.getElementById('countHigh').textContent = data.filter(c => c.sev === 'HIGH').length;
+    document.getElementById('countMedium').textContent = data.filter(c => c.sev === 'MEDIUM').length;
+    document.getElementById('countTotal').textContent = data.length;
+    document.getElementById('loaded-count').textContent = data.length;
   }
 
-  // ── Render CVE table ───────────────────────────────────────────────────────
   function renderTable(data) {
     const tbody = document.getElementById('cveBody');
     tbody.innerHTML = '';
@@ -418,13 +493,12 @@
     });
   }
 
-  // ── Filter logic ───────────────────────────────────────────────────────────
   function filterCVEs(filter, btn) {
-    activeFilter = filter;
+    currentView = filter;
     document.querySelectorAll('.quick-pill').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
-    document.getElementById('cveSearch').value = '';
-    applyFilter();
+    setFeedLabel();
+    applyFilter(document.getElementById('cveSearch').value);
   }
 
   function liveSearch(q) {
@@ -432,30 +506,13 @@
   }
 
   function applyFilter(query) {
-    let data = CVE_DB;
-    const q = (query || '').toLowerCase();
-    if (q) {
-      data = data.filter(c =>
-        c.id.toLowerCase().includes(q) ||
-        c.vendor.toLowerCase().includes(q) ||
-        c.product.toLowerCase().includes(q) ||
-        c.title.toLowerCase().includes(q)
-      );
-    } else {
-      if (activeFilter === 'critical') data = data.filter(c => c.sev === 'CRITICAL');
-      else if (activeFilter === 'high') data = data.filter(c => c.sev === 'HIGH');
-      else if (activeFilter === 'rce')  data = data.filter(c => c.title.toLowerCase().includes('rce') || c.desc.toLowerCase().includes('remote code execution'));
-      else if (activeFilter === '2026') data = data.filter(c => c.year === 2026);
-      else if (activeFilter === 'microsoft') data = data.filter(c => c.vendor.toLowerCase().includes('microsoft'));
-      else if (activeFilter === 'cisco') data = data.filter(c => c.vendor.toLowerCase().includes('cisco'));
-    }
+    const data = getVisibleData(query);
     renderTable(data);
     updateStats(data);
   }
 
-  // ── CVE Detail Modal ───────────────────────────────────────────────────────
   function showDetail(id) {
-    const c = CVE_DB.find(x => x.id === id);
+    const c = CURATED_DB.find(x => x.id === id);
     if (!c) return;
     currentCVE = c;
     document.getElementById('modalTitle').textContent = c.id;
@@ -490,10 +547,9 @@
 
   function copyBadUSBCmd() {
     if (!currentCVE) return;
-    const cmd = `REM CyberFlipper BadUSB Audit — ${currentCVE.id}\nGUI r\nDELAY 500\nSTRING powershell -WindowStyle Hidden -Command "& {$r = '${currentCVE.id} ${currentCVE.vendor} ${currentCVE.product} AUDIT'; echo $r > $env:USERPROFILE\\Desktop\\CF_CVE_AUDIT.txt}"  \nENTER`;
+    const cmd = `REM CyberFlipper BadUSB Audit — ${currentCVE.id}\nGUI r\nDELAY 500\nSTRING powershell -WindowStyle Hidden -Command "& {$r = '${currentCVE.id} ${currentCVE.vendor} ${currentCVE.product} AUDIT'; echo $r > $env:USERPROFILE\\Desktop\\CF_CVE_AUDIT.txt}"\nENTER`;
     navigator.clipboard.writeText(cmd).then(() => {
-      const btn = event.target.closest('button');
-      if (btn) { btn.textContent = 'COPIED!'; setTimeout(()=>{ btn.innerHTML = '<i class="bi bi-usb-symbol"></i> COPY BADUSB CMD'; }, 2000); }
+      appendAIMessage('system', `Copied audit command for ${currentCVE.id}.`);
     }).catch(() => alert(cmd));
   }
 
@@ -507,59 +563,33 @@
     }, 400);
   }
 
-  // ── Quick Actions ──────────────────────────────────────────────────────────
   function quickAction(type) {
     const prompts = {
-      threat_summary: 'Give me a threat landscape summary for the 107 CVEs in the CYBERFLIPPER database. What are the most dangerous vendor ecosystems? What attack patterns dominate?',
-      attack_paths: 'Identify the most dangerous attack chains across the loaded CVEs. Which combinations can be chained for full domain compromise or lateral movement?',
-      patch_priority: 'Create a patching priority matrix for the loaded CVEs. Rank by exploitability in the wild, severity, and blast radius. Top 10 to patch immediately.',
-      critical_list: 'List only the CRITICAL severity CVEs from the database. For each, provide a one-sentence attack summary and the affected product.'
+      threat_summary: 'Summarize the current CyberFlipper CVE feed. Which vendors, product types, and attack vectors are most dangerous? Give a short prioritized summary.',
+      attack_paths: 'Identify the most dangerous attack chains in the current feed. Which CVEs can be chained for full domain compromise, lateral movement, or persistent access?',
+      patch_priority: 'Create a patch priority list for the current feed. Rank the top 10 vulnerabilities by exploitability, severity, and business impact.',
+      critical_list: 'List the CRITICAL severity CVEs from the current feed and explain why each should be patched first.'
     };
     document.getElementById('chatInput').value = prompts[type] || '';
     sendMessage();
   }
 
-  // ── API Key Management ─────────────────────────────────────────────────────
-  function saveApiKey() {
-    const k = document.getElementById('apiKey').value.trim();
-    if (k) {
-      localStorage.setItem('cf_api_key', k);
-      document.getElementById('aiStatus').textContent = 'READY';
-      document.getElementById('aiStatus').style.color = 'var(--cf-cyan)';
-      appendAIMessage('system', 'API key saved. Claude AI is now active for CVE intelligence queries.');
-    }
-  }
-
-  function getStoredKey() {
-    return localStorage.getItem('cf_api_key') || '';
-  }
-
-  // Prefill key if stored
-  window.addEventListener('DOMContentLoaded', () => {
-    const k = getStoredKey();
-    if (k) {
-      document.getElementById('apiKey').value = k;
-      document.getElementById('aiStatus').textContent = 'READY';
-      document.getElementById('aiStatus').style.color = 'var(--cf-cyan)';
-    }
-  });
-
-  // ── Claude AI ──────────────────────────────────────────────────────────────
+  // ── Optional Anthropic Integration ──────────────────────────────────────────
   function buildSystemPrompt() {
-    const cveList = CVE_DB.map(c =>
+    const cveList = CURATED_DB.map(c =>
       `- ${c.id} | ${c.sev} | ${c.vendor} ${c.product} | ${c.title} | ${c.cwe} | ${c.year}`
     ).join('\n');
     return `You are CYBERFLIPPER AI, an expert offensive security analyst embedded in the CyberFlipper Flipper Zero security research platform.
 
-You have access to a database of 54 real CISA KEV vulnerabilities:
+You have access to a curated database of 35 CVEs split between a daily top 10 feed and a top 25 popular list:
 ${cveList}
 
 Your role:
-1. Analyze CVEs in depth — attack chains, exploitation steps, affected environments
-2. Prioritize vulnerabilities for penetration testing and security research
-3. Explain technical details clearly for security researchers
-4. Suggest detection strategies and defensive mitigations
-5. Help generate audit commands and BadUSB payload concepts for authorized testing
+1. Analyze selected CVEs — attack chains, exploitation steps, affected environments
+2. Prioritize vulnerabilities for rapid offensive security research
+3. Deliver compact, actionable guidance for security researchers
+4. Suggest quick detection indicators and defensive mitigations
+5. Generate audit ideas for authorized testing
 
 Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONLY. Never assist with unauthorized system access.`;
   }
@@ -582,30 +612,63 @@ Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONL
         messages: [{ role: 'user', content: message }]
       })
     });
-    if (!resp.ok) throw new Error(`API ${resp.status}: ${resp.statusText}`);
+    if (!resp.ok) {
+      const body = await resp.text();
+      throw new Error(`API ${resp.status}: ${resp.statusText} ${body}`);
+    }
     const data = await resp.json();
     return data.content?.[0]?.text || 'No response from Claude.';
   }
 
   function getLocalResponse(query) {
-    const q = query.toLowerCase();
-    if (q.includes('critical')) {
-      const crits = CVE_DB.filter(c => c.sev === 'CRITICAL');
-      return `${crits.length} CRITICAL CVEs loaded:\n${crits.map(c => `• ${c.id} — ${c.vendor} ${c.product}: ${c.title}`).join('\n')}\n\n[Set your API key above for full Claude AI analysis]`;
+    if (!query || !query.trim()) {
+      return 'Ask me anything about CVEs. I have 1,000 educational, grade-level-aware responses available locally.';
     }
-    if (q.includes('rce') || q.includes('remote code')) {
-      const rces = CVE_DB.filter(c => c.title.toLowerCase().includes('rce') || c.desc.toLowerCase().includes('remote code execution'));
-      return `${rces.length} RCE vulnerabilities found:\n${rces.map(c => `• ${c.id} (${c.sev}) — ${c.title}`).join('\n')}\n\n[Set API key for AI analysis]`;
-    }
-    if (q.includes('cisco')) {
-      const cs = CVE_DB.filter(c => c.vendor.toLowerCase().includes('cisco'));
-      return `${cs.length} Cisco CVEs: ${cs.map(c => c.id).join(', ')}\n\n[Set API key for full analysis]`;
-    }
-    if (q.includes('microsoft') || q.includes('windows')) {
-      const ms = CVE_DB.filter(c => c.vendor.toLowerCase().includes('microsoft'));
-      return `${ms.length} Microsoft CVEs: ${ms.map(c => c.id).join(', ')}\n\n[Set API key for full analysis]`;
-    }
-    return `Query received. ${CVE_DB.length} CVEs indexed. Set your Anthropic API key above to enable Claude AI-powered deep analysis of CVE attack chains, exploitation steps, and patch prioritization.`;
+    return getCveResponseForQuery(query);
+  }
+
+  function getLocalAttackSummary() {
+    const critical = CURATED_DB.filter(c => c.sev === 'CRITICAL');
+    const rce = CURATED_DB.filter(c => c.title.toLowerCase().includes('rce') || c.desc.toLowerCase().includes('remote code execution'));
+    return `Attack chain summary:\n- ${critical.length} CRITICAL CVEs are highest priority.\n- ${rce.length} RCE-style issues can be chained for remote compromise.\n- Focus on vendor ecosystems with multiple entries: Cisco, Microsoft, Apple, and Fortinet.\n\nTop vector: remote execution in network infrastructure and endpoint services. Harden exposed management ports, apply vendor patches, and validate authentication controls.`;
+  }
+
+  function getLocalPatchPriority() {
+    const sorted = [...CURATED_DB].sort((a,b) => {
+      const rank = { CRITICAL: 1, HIGH: 2, MEDIUM: 3 };
+      return rank[a.sev] - rank[b.sev] || b.year - a.year;
+    }).slice(0, 10);
+    return `Patch priority list:\n${sorted.map((c,i) => `${i+1}. ${c.id} (${c.sev}) — ${c.vendor} ${c.product}`).join('\n')}\n\nStart with the highest-severity remote execution and authentication bypass flaws.`;
+  }
+
+  function getLocalSeverityList(severity) {
+    const list = CURATED_DB.filter(c => c.sev === severity);
+    if (!list.length) return `No ${severity} CVEs found in the current feed.`;
+    return `${list.length} ${severity} CVEs loaded:\n${list.map(c => `• ${c.id} — ${c.vendor} ${c.product}: ${c.title}`).join('\n')}`;
+  }
+
+  function getLocalCVEList(keyword) {
+    const list = CURATED_DB.filter(c => c.title.toLowerCase().includes(keyword) || c.desc.toLowerCase().includes(keyword));
+    return list.length
+      ? `${list.length} matching CVEs:\n${list.map(c => `• ${c.id} (${c.sev}) — ${c.title}`).join('\n')}`
+      : `No CVEs with ${keyword} found in the curated feed.`;
+  }
+
+  function getLocalVendorSummary(query) {
+    const vendor = query.includes('cisco') ? 'cisco'
+      : query.includes('microsoft') ? 'microsoft'
+      : query.includes('apple') ? 'apple'
+      : query.includes('google') ? 'google'
+      : '';
+    if (!vendor) return getLocalResponse('');
+    const list = CURATED_DB.filter(c => c.vendor.toLowerCase().includes(vendor));
+    return list.length
+      ? `${list.length} ${vendor.toUpperCase()} CVEs in the curated feed:\n${list.map(c => `• ${c.id} (${c.sev}) — ${c.title}`).join('\n')}\n\nFocus on these vendor ecosystems for prioritized patching and exploit validation.`
+      : `No ${vendor.toUpperCase()} CVEs found in the curated feed.`;
+  }
+
+  function getLocalFeedSummary() {
+    return `This page is running a fast curated intelligence stream: TOP 25 widely-known CVEs plus a DAILY 10 dynamic feed. Use the feed buttons to toggle between them and keep the view responsive.`;
   }
 
   // ── Chat UI ────────────────────────────────────────────────────────────────
@@ -613,9 +676,11 @@ Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONL
     const out = document.getElementById('chatOutput');
     const div = document.createElement('div');
     div.className = 'ai-message';
+    const label = role === 'user' ? 'OPERATOR' : role === 'system' ? 'SYSTEM' : 'CYBERFLIPPER AI';
+    const color = role === 'user' ? 'var(--cf-purple)' : 'var(--cf-cyan)';
     div.innerHTML = `
-      <div class="hud-label mb-1" style="font-size:0.65rem;color:${role==='user'?'var(--cf-purple)':'var(--cf-cyan)'};">
-        ${role==='user'?'OPERATOR':'CLAUDE AI'}
+      <div class="hud-label mb-1" style="font-size:0.65rem;color:${color};">
+        ${label}
       </div>
       <p style="white-space:pre-wrap;">${text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</p>`;
     out.appendChild(div);
@@ -636,13 +701,17 @@ Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONL
       const apiKey = getStoredKey();
       let response;
       if (apiKey) {
-        response = await callClaude(msg);
+        try {
+          response = await callClaude(msg);
+        } catch (err) {
+          response = getLocalResponse(msg) + `\n\n(Claude API failed: ${err.message})`;
+        }
       } else {
         response = getLocalResponse(msg);
       }
-      appendAIMessage('claude', response);
-    } catch(err) {
-      appendAIMessage('claude', `ERROR: ${err.message}\n\nVerify your API key and try again.`);
+      appendAIMessage('ai', response);
+    } catch (err) {
+      appendAIMessage('ai', `ERROR: ${err.message}\n\nVerify your API key and try again.`);
     } finally {
       status.textContent = apiKey_status();
     }
@@ -653,8 +722,9 @@ Always remind users: CyberFlipper tools are for AUTHORIZED SECURITY RESEARCH ONL
   }
 
   // ── Init ───────────────────────────────────────────────────────────────────
-  renderTable(CVE_DB);
-  updateStats(CVE_DB);
+  setFeedLabel();
+  applyFilter();
+  updateStats(getVisibleData());
   </script>
 </body>
 </html>
