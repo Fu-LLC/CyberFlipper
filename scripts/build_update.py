@@ -25,7 +25,6 @@ FIRMWARE_FILES = [
     "splash.bin",
     "updater.bin",
     "update.fuf",
-    "resources.tar",
 ]
 
 SD_PATHS = [
