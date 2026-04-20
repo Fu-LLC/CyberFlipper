@@ -1,22 +1,27 @@
 # Getting Started with CyberFlipper
 
-Welcome to the CyberFlipper project! This guide will help you set up your Flipper Zero, deploy payloads, and use the web dashboard.
+Welcome to CyberFlipper — a custom Flipper Zero content pack. Installation is done entirely via the qFlipper SD card mount. No firmware flashing required.
 
-## 1. SD Card Preparation
-- Copy the contents of `SD_CARD_READY/` to your Flipper's SD card.
-- Ensure all payloads are in the correct folders (see `docs/SD_CARD_STRUCTURE.md`).
+## Requirements
+- Flipper Zero with an SD card inserted
+- [qFlipper](https://flipperzero.one/update) installed on your PC/Mac/Linux
 
-## 2. Firmware Update
-- Use the files in `firmware/` to update your Flipper Zero.
-- See `docs/FIRMWARE_UPDATE.md` for step-by-step instructions and release build details.
-- You can also download the `.tgz` release asset from the GitHub release page.
-- To build your own release package locally, use `bash scripts/build_update.sh`.
+## Installation (SD Card via qFlipper)
 
-## 3. Web Dashboard
-- Open `web/index.html` in your browser for the CyberFlipper dashboard.
+1. Download `CYBERFLIPPER-v1.2.1-SD_CARD.zip` from the [GitHub Releases](https://github.com/Fu-LLC/CyberFlipper/releases) page.
+2. Extract the zip — you will see folders: `badusb/`, `infrared/`, `nfc/`, `subghz/`, `lfrfid/`, `dolphin/`, `apps/`, `u2f/`.
+3. Open **qFlipper** and connect your Flipper Zero via USB.
+4. Click the **SD Card** tab in qFlipper.
+5. Drag and drop the extracted folders directly onto the SD card root in qFlipper.
+6. Safely eject and reboot your Flipper Zero.
 
-## 4. Customization
-- See `docs/BRANDING.md` for theming and branding your payloads and dashboard.
+All payloads, apps, and assets are now loaded.
 
-## 5. Support
-- Join our Discord or open an issue on GitHub for help.
+## Web Dashboard
+- Open `web/index.html` in your browser for the CyberFlipper intelligence dashboard.
+
+## Customization
+- See `docs/BRANDING.md` for theming and branding options.
+
+## Support
+- Open an issue on GitHub or visit [fllc.net](https://fllc.net)

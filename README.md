@@ -79,13 +79,51 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 
 ---
 
-## ▓▒░ IV. NATIVE SOFTWARE TOPOLOGY
-*   **PASSIVE_NODE Integrations:** Background mapping software (wardriver.c). Natively formats 802.11 / NMEA frames to .csv for direct database sync without external parsing.
-*   **Flipper Mobile App & qFlipper Protocol:** Payload bloat removed. Designed to flash natively over qFlipper or directly via SD card insertion avoiding SPI watchdog timeouts.
+## ▓▒░ IV. INSTALLATION — SD CARD VIA qFlipper
+
+> **The only supported install method is SD card content copy via the qFlipper SD Card tab. No firmware flashing is required or supported.**
+
+### CyberFlipper v1.2.1 — Release 2026-04-20
+
+**What's New**
+- Daily CVE BadUSB payloads (auto-generated from CISA KEV catalog)
+- Extra apps bundle updated
+- SD card only distribution — no OTA flash required
+
+**Included BadUSB CVE Payloads:** See [badusb/](badusb/) for the full CVE payload listing.
+
+> **LEGAL**: All payloads are for authorized security research in controlled environments only. See [LEGAL.md](docs/LEGAL.md).
+
+### Steps
+
+1. Download **`CYBERFLIPPER-v1.2.1-SD_CARD.zip`** from the [Releases page](https://github.com/Fu-LLC/CyberFlipper/releases).
+2. Extract the zip — you will see: `badusb/`, `infrared/`, `nfc/`, `subghz/`, `lfrfid/`, `dolphin/`, `apps/`, `u2f/`
+3. Open **qFlipper** → connect Flipper via USB → click the **SD Card** tab.
+4. Drag and drop the extracted folders onto the SD card root.
+5. Eject and reboot your Flipper Zero.
+
+### What's Included
+
+| Folder | Contents |
+| :--- | :--- |
+| `badusb/` | 88+ BadUSB payloads + daily CVE scripts (Windows/Linux/macOS) |
+| `infrared/` | IR universal remote databases |
+| `nfc/` | NFC dumps, Amiibo collection, hotel keys |
+| `subghz/` | Gate codes, vehicle signals, brute-force sets |
+| `lfrfid/` | EM4100, HID Prox, Indala RFID dumps |
+| `dolphin/` | Dolphin XP level data |
+| `apps/` | 35+ WiFi/RF, 14 Bluetooth, 9 SubGHz, Games, GPIO, NFC tools (.fap) |
+| `u2f/` | U2F key assets |
 
 ---
 
-## ▓▒░ V. HARDWARE TECHNICAL SPECIFICATIONS
+## ▓▒░ V. NATIVE SOFTWARE TOPOLOGY
+*   **PASSIVE_NODE Integrations:** Background mapping software (wardriver.c). Natively formats 802.11 / NMEA frames to .csv for direct database sync without external parsing.
+*   **qFlipper SD Card Protocol:** All content distributed as SD card data only. Copy via qFlipper SD Card tab — no firmware flash, no OTA update required.
+
+---
+
+## ▓▒░ VI. HARDWARE TECHNICAL SPECIFICATIONS
 
 > *Full specifications reference: [Official Flipper Zero Tech Specs](https://docs.flipper.net/zero/development/hardware/tech-specs) | [Hardware Schematics](https://docs.flipper.net/zero/development/hardware/schematic#)*
 
@@ -219,10 +257,10 @@ CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss
 
 ---
 
-## ▓▒░ V. EDC ECOSYSTEM
+## ▓▒░ VII. EDC ECOSYSTEM
 CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
 
-## ▓▒░ VI. LAB401 PRODUCT CATALOG INTEGRATION
+## ▓▒░ VIII. LAB401 PRODUCT CATALOG INTEGRATION
 
 ### 🛒 Live Lab401 Catalog
 The CyberFlipper dashboard now features a fully integrated, live-updating product catalog from [Lab401](https://lab401.com/collections/all-products). This catalog is available at [lab401.html](lab401.html) and is updated daily via GitHub Actions. All product data is stored in [assets/lab401_catalog.json](assets/lab401_catalog.json) and rendered dynamically for a seamless user experience.
@@ -238,7 +276,7 @@ All product data is sourced from Lab401 and is for informational and convenience
 
 ---
 
-## ▓▒░ VII. BRANDING & ASSET PIPELINE
+## ▓▒░ IX. BRANDING & ASSET PIPELINE
 ### 🎨 Custom Animation Standards
 CYBERFLIPPER uses the **F-SERIES** bitmap specification. To create custom animations for the intelligence deck:
 1. **Design:** Use Aseprite or Photoshop for 128x64 pixel art.
@@ -252,7 +290,7 @@ Join the **F-SERIES** core on Discord for development blueprints:
 ---
 <p align="center">&copy; 2026 FurulieLLC | Personfu | NEON_DUSK_PROTOCOL</p>
 
-## ▓▒░ VIII. APPENDIX: FLIPPER ANIMATION ARCHITECTURE
+## ▓▒░ X. APPENDIX: FLIPPER ANIMATION ARCHITECTURE
 *A technical guide for the CyberFlipper Neural Interface.*
 
 ### 🛠️ SOFTWARE TOPOLOGY
