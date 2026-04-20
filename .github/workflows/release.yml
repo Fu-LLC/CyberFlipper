@@ -1,0 +1,281 @@
+name: Build & Release CyberFlipper
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'   # e.g. v1.3.0
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g. 1.3.0)'
+        required: true
+        default: '1.3.0'
+      prerelease:
+        description: 'Mark as pre-release?'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+env:
+  # Derive version from tag (v1.3.0 → 1.3.0) or manual input
+  RELEASE_VERSION: ${{ github.event.inputs.version || '' }}
+
+jobs:
+  # -------------------------------------------------------------------------
+  # 1. Build the properly-structured Flipper update tgz
+  # -------------------------------------------------------------------------
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.ver }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Resolve version from tag or manual input
+      - name: Resolve version string
+        id: version
+        run: |
+          if [ -n "${{ env.RELEASE_VERSION }}" ]; then
+            VER="${{ env.RELEASE_VERSION }}"
+          else
+            VER="${GITHUB_REF_NAME#v}"   # strip leading 'v'
+          fi
+          echo "ver=$VER" >> $GITHUB_OUTPUT
+          echo "[*] Building version: $VER"
+
+      # ------------------------------------------------------------------
+      # Verify required firmware blobs are present
+      # ------------------------------------------------------------------
+      - name: Verify firmware assets
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          MISSING=0
+          for f in firmware.dfu updater.bin radio.bin splash.bin update.fuf resources.tar; do
+            if [ ! -f "$f" ]; then
+              echo "::error::Missing required firmware file: $f"
+              MISSING=$((MISSING+1))
+            else
+              echo "  [ok] $f ($(du -sh $f | cut -f1))"
+            fi
+          done
+          if [ "$MISSING" -gt 0 ]; then
+            echo "::error::$MISSING firmware file(s) missing. Cannot build release."
+            exit 1
+          fi
+
+      # ------------------------------------------------------------------
+      # Patch manifest files with new version string
+      # ------------------------------------------------------------------
+      - name: Patch manifest.txt
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          cat > manifest.txt <<EOF
+          Filetype: Flipper Update Manifest
+          Version: 1
+          Info: CYBERFLIPPER v${VER}
+          Target: 7
+          Loader: updater.bin
+          Firmware: firmware.dfu
+          Radio: radio.bin
+          Resources: resources.tar
+          Splashscreen: splash.bin
+          EOF
+          # Remove leading spaces introduced by heredoc indentation
+          sed -i 's/^[[:space:]]*//' manifest.txt
+          cat manifest.txt
+
+      - name: Patch update.fuf version line
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          # Replace the Info line in update.fuf only
+          sed -i "s/^Info:.*/Info: CYBERFLIPPER v${VER}/" update.fuf
+          grep "^Info:" update.fuf
+
+      - name: Patch manifest.json version
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          BUILD_DATE=$(date -u +%Y-%m-%dT%H:%M:%S)
+          python3 - <<'PYEOF'
+          import json, os
+          ver = os.environ["VER"]
+          bd  = os.environ["BUILD_DATE"]
+          with open("manifest.json") as f:
+              data = json.load(f)
+          data["version"]    = ver
+          data["build_date"] = bd
+          with open("manifest.json", "w") as f:
+              json.dump(data, f, indent=2)
+          print(f"[*] manifest.json version → {ver}")
+          PYEOF
+        env:
+          VER: ${{ steps.version.outputs.ver }}
+          BUILD_DATE: ${{ github.event.repository.updated_at }}
+
+      # ------------------------------------------------------------------
+      # Build the update tgz with the correct Flipper directory layout:
+      #
+      #   update/
+      #     CYBERFLIPPER-v<VER>/
+      #       update.fuf        ← Flipper reads this first
+      #       firmware.dfu
+      #       updater.bin
+      #       radio.bin
+      #       splash.bin
+      #       resources.tar
+      #
+      # The Flipper OTA updater unpacks the tgz to the SD card at
+      #   /ext/.update/CYBERFLIPPER-v<VER>/
+      # and then boots into updater.bin which reads update.fuf from
+      # the same directory. ALL paths in update.fuf MUST be basename
+      # only (no subdirectory prefixes).
+      # ------------------------------------------------------------------
+      - name: Assemble Flipper update directory
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          UPDATE_DIR="update/CYBERFLIPPER-v${VER}"
+          mkdir -p "$UPDATE_DIR"
+          cp update.fuf    "$UPDATE_DIR/update.fuf"
+          cp firmware.dfu  "$UPDATE_DIR/firmware.dfu"
+          cp updater.bin   "$UPDATE_DIR/updater.bin"
+          cp radio.bin     "$UPDATE_DIR/radio.bin"
+          cp splash.bin    "$UPDATE_DIR/splash.bin"
+          cp resources.tar "$UPDATE_DIR/resources.tar"
+          echo "[*] Update directory contents:"
+          ls -lh "$UPDATE_DIR"
+
+      - name: Build update tgz (CYBERFLIPPER-v<VER>.tgz)
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          TGZ_NAME="CYBERFLIPPER-v${VER}.tgz"
+          # Use --dereference to follow symlinks; --owner/group for clean archives
+          tar -czvf "$TGZ_NAME" \
+            --owner=0 --group=0 --numeric-owner \
+            -C . "update/CYBERFLIPPER-v${VER}"
+          echo "[*] Archive: $TGZ_NAME ($(du -sh $TGZ_NAME | cut -f1))"
+          echo "TGZ_NAME=$TGZ_NAME" >> $GITHUB_ENV
+
+          # Smoke-test: list contents and verify update.fuf is at the right path
+          echo "[*] Archive listing:"
+          tar -tzvf "$TGZ_NAME"
+          tar -tzvf "$TGZ_NAME" | grep -q "update.fuf" \
+            || { echo "::error::update.fuf missing from archive!"; exit 1; }
+
+      # ------------------------------------------------------------------
+      # Build the SD_CARD_READY zip (everything except firmware blobs)
+      # ------------------------------------------------------------------
+      - name: Build SD card zip
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          SD_ZIP="CYBERFLIPPER-v${VER}-SD_CARD.zip"
+          zip -r "$SD_ZIP" SD_CARD_READY/ badusb/ infrared/ nfc/ subghz/ \
+            lfrfid/ dolphin/ u2f/ apps/ \
+            -x "*.git*"
+          echo "[*] SD card zip: $SD_ZIP ($(du -sh $SD_ZIP | cut -f1))"
+          echo "SD_ZIP=$SD_ZIP" >> $GITHUB_ENV
+
+      # ------------------------------------------------------------------
+      # Build the full release zip (tgz + SD card content)
+      # ------------------------------------------------------------------
+      - name: Build full release zip
+        run: |
+          VER="${{ steps.version.outputs.ver }}"
+          FULL_ZIP="CYBERFLIPPER-v${VER}-FULL.zip"
+          mkdir -p "release_staging/CYBERFLIPPER-v${VER}"
+          cp "$TGZ_NAME"  "release_staging/CYBERFLIPPER-v${VER}/"
+          cp manifest.json manifest.txt update.fuf \
+            "release_staging/CYBERFLIPPER-v${VER}/"
+          zip -r "$FULL_ZIP" "release_staging/"
+          echo "FULL_ZIP=$FULL_ZIP" >> $GITHUB_ENV
+
+      # ------------------------------------------------------------------
+      # Upload artifacts for the release job
+      # ------------------------------------------------------------------
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyberflipper-release-${{ steps.version.outputs.ver }}
+          path: |
+            ${{ env.TGZ_NAME }}
+            ${{ env.SD_ZIP }}
+            ${{ env.FULL_ZIP }}
+            manifest.json
+            manifest.txt
+            update.fuf
+          retention-days: 7
+
+  # -------------------------------------------------------------------------
+  # 2. Create the GitHub Release
+  # -------------------------------------------------------------------------
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      VER: ${{ needs.build.outputs.version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: cyberflipper-release-${{ env.VER }}
+          path: dist/
+
+      - name: Generate release notes
+        id: notes
+        run: |
+          VER="$VER"
+          DATESTAMP=$(date -u +%Y-%m-%d)
+          cat > release_notes.md <<NOTES
+          ## CyberFlipper v${VER} — Release ${DATESTAMP}
+
+          ### What's New
+          - Daily CVE BadUSB payloads (auto-generated from CISA KEV catalog)
+          - Corrected Flipper OTA update packaging (`.tgz` directory structure fix)
+          - Updated extra apps bundle
+
+          ### Installation
+
+          #### Method 1 — OTA via qFlipper / Flipper Mobile App (Recommended)
+          1. Download \`CYBERFLIPPER-v${VER}.tgz\`
+          2. Open **qFlipper** → click **Install from file**
+          3. Select the downloaded \`.tgz\` and follow prompts
+
+          #### Method 2 — Manual SD Card
+          1. Download \`CYBERFLIPPER-v${VER}-SD_CARD.zip\`
+          2. Extract to the **root** of your Flipper SD card
+          3. Safely eject and insert into your Flipper Zero
+          4. On device: **Settings → System → Update** and point to the update folder
+
+          #### Method 3 — Full Package
+          Download \`CYBERFLIPPER-v${VER}-FULL.zip\` for both firmware + SD content.
+
+          ### Included BadUSB CVE Payloads
+          See [CVE_Index.md](badusb/CVE_Index.md) for the full daily CVE payload listing.
+
+          ---
+          > **LEGAL**: All payloads are for authorized security research in controlled environments only. See [LEGAL.md](docs/LEGAL.md).
+          NOTES
+          echo "notes_file=release_notes.md" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VER }}
+          name: "CyberFlipper v${{ env.VER }}"
+          body_path: release_notes.md
+          prerelease: ${{ github.event.inputs.prerelease == 'true' }}
+          files: |
+            dist/CYBERFLIPPER-v${{ env.VER }}.tgz
+            dist/CYBERFLIPPER-v${{ env.VER }}-SD_CARD.zip
+            dist/CYBERFLIPPER-v${{ env.VER }}-FULL.zip
+            dist/manifest.json
+            dist/manifest.txt
+            dist/update.fuf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

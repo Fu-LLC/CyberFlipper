@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DOWNLOAD — CYBERFLIPPER</title>
+  <title>DOWNLOAD — CYBERFLIPPER v1.3.0</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
     </div>
     <div class="d-lg-flex d-none gap-4">
       <span>UPTIME: <span id="uptime-clock" class="text-white">00:00:00</span></span>
-      <span>RELEASE: <span class="text-cyan">v1.2.0 STABLE</span></span>
+      <span>RELEASE: <span class="text-cyan" id="hud-version">v1.3.0</span></span>
     </div>
     <div>COORDINATES: <span class="text-white" id="geo-location">FETCHING...</span></div>
   </div>
@@ -46,7 +46,7 @@
         </div>
         <div class="col-md-6 text-md-end mt-3 mt-md-0">
           <a href="index.html" class="btn btn-outline-cyber me-2"><i class="bi bi-house"></i> HOME</a>
-          <a href="https://github.com/Personfu/CyberFlipper" class="btn btn-cyber" target="_blank" rel="noopener">
+          <a href="https://github.com/0dayCTF/Flipper" class="btn btn-cyber" target="_blank" rel="noopener">
             <i class="bi bi-github"></i> REPO
           </a>
         </div>
@@ -70,35 +70,125 @@
     </div>
   </nav>
 
+  <!-- Live Ticker -->
+  <div class="cyber-ticker">
+    <span class="ticker-track">
+      &#9889; CYBERFLIPPER v1.3.0 — NEON DUSK PROTOCOL &nbsp;|&nbsp; Daily CISA KEV CVE BadUSB Payloads — Auto-Generated &nbsp;|&nbsp;
+      Proper Flipper OTA .tgz Packaging — Fixed &nbsp;|&nbsp; 60+ FAP Extra Apps &nbsp;|&nbsp;
+      167 SubGHz Captures &nbsp;|&nbsp; 50+ NFC Profiles &nbsp;|&nbsp; Automated Daily Releases &nbsp;|&nbsp;
+    </span>
+  </div>
+
   <main class="py-5">
     <div class="container">
-
-      <!-- MAIN DOWNLOAD -->
       <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center">
-          <div class="hud-label text-cyan mb-2">▸ NEON DUSK PROTOCOL</div>
+        <div class="col-lg-10 text-center">
+          <div class="hud-label text-cyan mb-2">&#9654; NEON DUSK PROTOCOL</div>
           <h2 style="font-family:'Orbitron',monospace;font-size:2rem;color:#fff;">
-            CYBERFLIPPER <span class="text-cyan">v1.2.0</span>
+            CYBERFLIPPER <span class="text-cyan">DEPLOYMENT</span>
           </h2>
           <p class="mt-3" style="color:rgba(221,224,240,0.65);">
-            The latest stable release. Includes 54 CVE BadUSB payloads, NFC profiles, SubGHz captures, LFRFID cards, IR remotes, and the full web dashboard.
+            <strong>All direct downloads have been removed.</strong><br>
+            To build and flash CyberFlipper, clone the repository and follow the instructions below for a proper, verifiable build.
           </p>
         </div>
       </div>
 
-      <!-- DOWNLOAD CARD -->
       <div class="row justify-content-center mb-5">
-        <div class="col-lg-8">
-          <div class="glass-card p-5 text-center" style="border-color:rgba(0,255,204,0.3);">
-            <div class="stat-icon mb-3" style="font-size:3rem;"><i class="bi bi-download"></i></div>
-            <h3 style="font-family:'Orbitron',monospace;color:var(--cf-cyan);">CYBERFLIPPER-v1.2.0.tgz</h3>
-            <p class="text-white-50 mt-2 mb-4">Complete Flipper Zero SD card package + web dashboard + firmware</p>
-            <a href="https://github.com/Personfu/CyberFlipper/archive/refs/heads/main.zip"
-              class="btn btn-cyber btn-lg neon-pulse px-5 py-3" target="_blank" rel="noopener">
-              <i class="bi bi-download"></i> DOWNLOAD RELEASE v1.2.0
-            </a>
-            <div class="mt-4" style="color:var(--cf-muted);font-size:0.72rem;letter-spacing:1px;">
-              SHA256: NEON_DUSK_PROTOCOL_2026 — Flipper Zero Unleashed 0.79+ Compatible
+        <div class="col-lg-10">
+          <div class="glass-card p-5 text-center">
+            <h4 class="hud-label text-cyan mb-4">BUILD & INSTALL CYBERFLIPPER</h4>
+            <ol class="text-white-50 text-start" style="max-width:600px;margin:auto;">
+              <li><b>Clone the repository:</b><br>
+                <code>git clone https://github.com/0dayCTF/Flipper.git</code>
+              </li>
+              <li><b>Prepare the firmware files:</b><br>
+                Place your <code>firmware.dfu</code>, <code>updater.bin</code>, <code>radio.bin</code>, <code>splash.bin</code>, and <code>resources.tar</code> in the root directory.<br>
+                <span style="color:var(--cf-muted);font-size:0.8em;">(See <b>docs/FIRMWARE_UPDATE.md</b> for details.)</span>
+              </li>
+              <li><b>Build the update package:</b><br>
+                <code>bash scripts/build_update.sh</code> <span style="color:var(--cf-muted);font-size:0.8em;">(or use the provided GitHub Actions)</span>
+              </li>
+              <li><b>Flash to Flipper Zero:</b><br>
+                Use <b>qFlipper</b> or the <b>Flipper Mobile App</b> to install the generated <code>.tgz</code> or copy the <code>update/</code> folder to your SD card.<br>
+                <span style="color:var(--cf-muted);font-size:0.8em;">(See <b>docs/FIRMWARE_UPDATE.md</b> for full instructions.)</span>
+              </li>
+            </ol>
+            <div class="alert alert-warning mt-4" style="background:rgba(255,0,110,0.08);color:var(--cf-pink);border:1px solid var(--cf-pink);">
+              <b>Note:</b> All builds must be performed locally or via GitHub Actions for full integrity. <br>
+              <b>No prebuilt firmware is provided for security and compliance reasons.</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSTALLATION GUIDE -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+          <h4 class="hud-label text-cyan mb-4 text-center">INSTALLATION GUIDE</h4>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="glass-card p-4 text-center h-100">
+                <div class="stat-icon mb-2" style="font-size:2rem;color:var(--cf-cyan);"><i class="bi bi-1-circle"></i></div>
+                <h6 class="hud-label text-cyan">METHOD A: qFLIPPER OTA</h6>
+                <p class="text-white-50 small mt-2">
+                  Download the <strong>.tgz</strong> file. Open <strong>qFlipper</strong> on your PC.
+                  Click <strong>"Install from file"</strong> and select the .tgz.
+                  The Flipper reboots into update mode automatically.
+                </p>
+                <span class="cve-badge-low">RECOMMENDED</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="glass-card p-4 text-center h-100">
+                <div class="stat-icon mb-2" style="font-size:2rem;color:var(--cf-purple);"><i class="bi bi-2-circle"></i></div>
+                <h6 class="hud-label text-cyan">METHOD B: MOBILE APP</h6>
+                <p class="text-white-50 small mt-2">
+                  Download the <strong>.tgz</strong> to your phone.
+                  Open the <strong>Flipper Mobile App</strong> &rarr; <strong>Update Channel</strong> &rarr;
+                  <strong>"Install from file"</strong>. Select the .tgz and wait for OTA.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="glass-card p-4 text-center h-100">
+                <div class="stat-icon mb-2" style="font-size:2rem;color:var(--cf-pink);"><i class="bi bi-3-circle"></i></div>
+                <h6 class="hud-label text-cyan">METHOD C: MANUAL SD</h6>
+                <p class="text-white-50 small mt-2">
+                  Extract the .tgz. Copy the <code>update/</code> folder to your SD root.
+                  On Flipper: <strong>Settings &rarr; Storage &rarr; Run update</strong>.
+                  Then copy SD_CARD contents separately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TGZ STRUCTURE DIAGRAM -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="ms-2">CYBERFLIPPER_TGZ_STRUCTURE.txt</span>
+            </div>
+            <div class="terminal-body">
+<span style="color:var(--cf-cyan)"># Flipper OTA .tgz — Correct Directory Layout</span><br>
+<span style="color:var(--cf-cyan)"># The Flipper extracts this to /ext/.update/ on the SD card</span><br><br>
+<span style="color:#fff">CYBERFLIPPER-v1.3.0.tgz</span><br>
+<span style="color:var(--cf-muted)">&boxvr;&boxh;&boxh; update/</span><br>
+<span style="color:var(--cf-muted)">    &boxur;&boxh;&boxh; CYBERFLIPPER-v1.3.0/</span><br>
+<span style="color:#00ff88">        &boxvr;&boxh;&boxh; update.fuf</span>        <span style="color:var(--cf-muted)"># Flipper reads this FIRST (firmware upgrade config)</span><br>
+<span style="color:#00ff88">        &boxvr;&boxh;&boxh; updater.bin</span>       <span style="color:var(--cf-muted)"># Boot loader for the update process</span><br>
+<span style="color:#00ff88">        &boxvr;&boxh;&boxh; firmware.dfu</span>      <span style="color:var(--cf-muted)"># Main firmware image (STM32WB55)</span><br>
+<span style="color:#00ff88">        &boxvr;&boxh;&boxh; radio.bin</span>         <span style="color:var(--cf-muted)"># BLE/802.15.4 radio stack</span><br>
+<span style="color:#00ff88">        &boxvr;&boxh;&boxh; splash.bin</span>        <span style="color:var(--cf-muted)"># Boot splash screen</span><br>
+<span style="color:#00ff88">        &boxur;&boxh;&boxh; resources.tar</span>     <span style="color:var(--cf-muted)"># SD card resources (apps, assets, databases)</span><br><br>
+<span style="color:var(--cf-pink)">[!] CRITICAL: update.fuf must reference files by BASENAME only</span><br>
+<span style="color:var(--cf-pink)">[!] CRITICAL: Loader must be updater.bin (NOT firmware.dfu)</span><br>
+<span style="color:var(--cf-cyan)">[+] Target: 7 (STM32WB55RG)</span><br>
+<span style="color:var(--cf-cyan)">[+] Compatible: Flipper Zero Unleashed 0.79+</span>
             </div>
           </div>
         </div>
@@ -106,55 +196,60 @@
 
       <!-- RELEASE NOTES -->
       <div class="row justify-content-center mb-5">
-        <div class="col-lg-8">
+        <div class="col-lg-10">
           <div class="terminal-card">
-            <div class="terminal-header">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-              <span class="ms-2">RELEASE_NOTES_v1.2.0.txt</span>
+            <div class="terminal-header d-flex align-items-center justify-content-between">
+              <div>
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="ms-2">RELEASE_NOTES.txt</span>
+              </div>
+              <span class="badge" style="background:rgba(0,255,204,0.15);color:var(--cf-cyan);font-size:0.6rem;">LATEST</span>
             </div>
-            <div class="terminal-body">
-              <span style="color:var(--cf-cyan)">[CYBERFLIPPER v1.2.0 — NEON DUSK PROTOCOL]</span><br>
-              <span style="color:var(--cf-muted)">Released: April 2026</span><br><br>
-              <span style="color:#00ff88">[+]</span> 54 CISA KEV CVE BadUSB payloads (complete catalog)<br>
-              <span style="color:#00ff88">[+]</span> Claude AI CVE 0-Day Intel Feed — claude-sonnet-4-5<br>
-              <span style="color:#00ff88">[+]</span> Full Bootstrap 5 / Orbitron web dashboard<br>
-              <span style="color:#00ff88">[+]</span> 50+ NFC profiles (NTAG213/215/216, MIFARE Classic)<br>
-              <span style="color:#00ff88">[+]</span> 40+ SubGHz RAW captures (315/433/868/915 MHz)<br>
+            <div class="terminal-body" id="release-notes-body">
+              <span style="color:var(--cf-cyan)">[CYBERFLIPPER v1.3.0 — NEON DUSK PROTOCOL]</span><br>
+              <span style="color:var(--cf-muted)">Released: April 2026 | Maintained by Personfu @ fllc.net</span><br><br>
+              <span style="color:#00ff88">[+]</span> <strong>FIXED:</strong> OTA .tgz packaging — correct update/ directory structure<br>
+              <span style="color:#00ff88">[+]</span> <strong>FIXED:</strong> manifest.txt Loader now points to updater.bin (was firmware.dfu)<br>
+              <span style="color:#00ff88">[+]</span> <strong>FIXED:</strong> update.fuf Splashscreen entry added<br>
+              <span style="color:#00ff88">[+]</span> <strong>NEW:</strong> Daily automated CVE BadUSB payloads from CISA KEV catalog<br>
+              <span style="color:#00ff88">[+]</span> <strong>NEW:</strong> Auto-increment 0.0.1 daily releases via GitHub Actions<br>
+              <span style="color:#00ff88">[+]</span> <strong>NEW:</strong> Multi-OS payload generation (Windows/Linux/macOS/Network)<br>
+              <span style="color:#00ff88">[+]</span> <strong>NEW:</strong> Live CISA KEV feed on download page<br>
+              <span style="color:#00ff88">[+]</span> 60+ extra FAP apps (Bluetooth, GPIO, NFC, RFID, Sub-GHz, Tools)<br>
+              <span style="color:#00ff88">[+]</span> 167 SubGHz captures across all bands<br>
+              <span style="color:#00ff88">[+]</span> 50+ NFC profiles (NTAG, MIFARE, Amiibo)<br>
               <span style="color:#00ff88">[+]</span> 30+ Infrared remote profiles<br>
               <span style="color:#00ff88">[+]</span> LFRFID collection (EM4100, HID Prox, Indala)<br>
-              <span style="color:#00ff88">[+]</span> GitHub Pages deployment via Actions<br><br>
+              <span style="color:#00ff88">[+]</span> Full web dashboard with CVE Intel feed<br><br>
               <span style="color:var(--cf-pink)">[!]</span> FOR AUTHORIZED SECURITY RESEARCH ONLY<br>
-              <span style="color:var(--cf-muted)">[~]</span> Compatible: Flipper Zero Unleashed 0.79+
+              <span style="color:var(--cf-muted)">[~]</span> Compatible: Flipper Zero + Unleashed 0.79+<br>
+              <span style="color:var(--cf-muted)">[~]</span> Platform: STM32WB55RG Dual-Core MCU
             </div>
           </div>
         </div>
       </div>
 
-      <!-- INSTALLATION -->
+      <!-- LIVE CVE FEED -->
       <div class="row justify-content-center mb-5">
-        <div class="col-lg-8">
-          <h4 class="hud-label text-cyan mb-4">INSTALLATION GUIDE</h4>
-          <div class="row g-3">
-            <div class="col-md-4">
-              <div class="glass-card p-4 text-center h-100">
-                <div class="stat-icon mb-2"><i class="bi bi-1-circle"></i></div>
-                <h6 class="hud-label text-cyan">DOWNLOAD</h6>
-                <p class="text-white-50 small mt-2">Download the TGZ package and extract to a temporary folder on your PC.</p>
+        <div class="col-lg-10">
+          <h4 class="hud-label text-cyan mb-3 text-center">LATEST CVE BADUSB PAYLOADS</h4>
+          <p class="text-center text-white-50 small mb-4">
+            Auto-generated daily from <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+            target="_blank" rel="noopener" style="color:var(--cf-cyan);">CISA Known Exploited Vulnerabilities</a> catalog.
+          </p>
+          <div class="terminal-card">
+            <div class="terminal-header d-flex justify-content-between align-items-center">
+              <div>
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="ms-2">CVE_DAILY_FEED.live</span>
               </div>
+              <span class="badge" style="background:rgba(239,68,68,0.15);color:var(--cf-danger);font-size:0.6rem;">
+                <i class="bi bi-arrow-repeat me-1"></i>CISA KEV LIVE
+              </span>
             </div>
-            <div class="col-md-4">
-              <div class="glass-card p-4 text-center h-100">
-                <div class="stat-icon mb-2"><i class="bi bi-2-circle"></i></div>
-                <h6 class="hud-label text-cyan">SD CARD</h6>
-                <p class="text-white-50 small mt-2">Copy the contents of <code>SD_CARD_READY/</code> to your Flipper Zero SD card via qFlipper or direct mount.</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="glass-card p-4 text-center h-100">
-                <div class="stat-icon mb-2"><i class="bi bi-3-circle"></i></div>
-                <h6 class="hud-label text-cyan">FIRMWARE</h6>
-                <p class="text-white-50 small mt-2">Flash the included <code>firmware.dfu</code> via qFlipper. Requires Flipper Zero Unleashed 0.79+.</p>
-              </div>
+            <div class="terminal-body" id="cve-feed-body" style="max-height:300px;overflow-y:auto;">
+              <span style="color:var(--cf-cyan)">[*] Fetching CISA KEV catalog...</span><br>
+              <span class="typing-dots"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></span>
             </div>
           </div>
         </div>
@@ -162,18 +257,21 @@
 
       <!-- GITHUB LINKS -->
       <div class="row justify-content-center">
-        <div class="col-lg-8">
+        <div class="col-lg-10">
           <div class="glass-card p-4 text-center">
             <h4 class="hud-label text-cyan mb-4">ALTERNATIVE ACCESS</h4>
             <div class="d-flex gap-3 justify-content-center flex-wrap">
-              <a href="https://github.com/Personfu/CyberFlipper" class="btn btn-cyber" target="_blank" rel="noopener">
+              <a href="https://github.com/0dayCTF/Flipper" class="btn btn-cyber" target="_blank" rel="noopener">
                 <i class="bi bi-github"></i> GitHub Repository
               </a>
-              <a href="https://github.com/Personfu/CyberFlipper/releases" class="btn btn-outline-cyber" target="_blank" rel="noopener">
-                <i class="bi bi-tag"></i> Releases
+              <a href="https://github.com/0dayCTF/Flipper/releases" class="btn btn-outline-cyber" target="_blank" rel="noopener">
+                <i class="bi bi-tag"></i> All Releases
               </a>
-              <a href="https://github.com/Personfu/CyberFlipper/archive/refs/heads/main.zip" class="btn btn-outline-cyber" target="_blank" rel="noopener">
-                <i class="bi bi-file-zip"></i> ZIP Archive
+              <a href="https://github.com/0dayCTF/Flipper/archive/refs/heads/main.zip" class="btn btn-outline-cyber" target="_blank" rel="noopener">
+                <i class="bi bi-file-zip"></i> Source ZIP
+              </a>
+              <a href="https://discord.gg/Cd9qyvht7X" class="btn btn-outline-cyber" target="_blank" rel="noopener">
+                <i class="bi bi-discord"></i> Discord
               </a>
             </div>
           </div>
@@ -194,5 +292,56 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="dashboard.js"></script>
+  <script>
+  /* ── Fetch latest GitHub release + CISA KEV feed ── */
+  (async function() {
+    // 1. Fetch latest release from GitHub API
+    try {
+      const rel = await fetch('https://api.github.com/repos/0dayCTF/Flipper/releases/latest').then(function(r){return r.json();});
+      if (rel && rel.tag_name) {
+        var ver = rel.tag_name;
+        document.getElementById('release-version').textContent = ver;
+        document.getElementById('hud-version').textContent = ver;
+        var tgzAsset = (rel.assets||[]).find(function(a){return a.name.endsWith('.tgz');});
+        var sdAsset  = (rel.assets||[]).find(function(a){return a.name.indexOf('SD_CARD')!==-1;});
+        var fullAsset= (rel.assets||[]).find(function(a){return a.name.indexOf('FULL')!==-1;});
+        if (tgzAsset) {
+          document.getElementById('btn-download-tgz').href = tgzAsset.browser_download_url;
+          document.getElementById('btn-download-tgz').innerHTML = '<i class="bi bi-download"></i> DOWNLOAD ' + tgzAsset.name;
+          document.getElementById('tgz-size').textContent = (tgzAsset.size/1024/1024).toFixed(1)+' MB';
+        }
+        if (sdAsset) document.getElementById('btn-download-sd').href = sdAsset.browser_download_url;
+        if (fullAsset) document.getElementById('btn-download-full').href = fullAsset.browser_download_url;
+        document.getElementById('tgz-date').textContent = new Date(rel.published_at).toLocaleDateString('en-US',{month:'long',year:'numeric',day:'numeric'});
+      }
+    } catch(e) { console.warn('GitHub API unavailable, using static links'); }
+
+    // 2. Fetch latest CISA KEV vulnerabilities
+    try {
+      var kev = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json').then(function(r){return r.json();});
+      var vulns = (kev.vulnerabilities||[]).sort(function(a,b){return b.dateAdded.localeCompare(a.dateAdded);}).slice(0,10);
+      var feed = document.getElementById('cve-feed-body');
+      var html = '<span style="color:var(--cf-cyan)">[+] CISA KEV Catalog synchronized — ' + kev.vulnerabilities.length + ' total entries</span><br>';
+      html += '<span style="color:var(--cf-cyan)">[+] Showing 10 most recent additions:</span><br><br>';
+      vulns.forEach(function(v) {
+        var desc = v.shortDescription || '';
+        var sev = desc.toLowerCase().indexOf('remote code') !== -1 ? 'CRITICAL' : 'HIGH';
+        var sevColor = sev==='CRITICAL' ? 'var(--cf-danger)' : 'var(--cf-orange)';
+        html += '<span style="color:'+sevColor+'">['+sev+']</span> ';
+        html += '<span style="color:#fff">'+v.cveID+'</span> ';
+        html += '<span style="color:var(--cf-muted)">'+v.vendorProject+' — '+v.product+'</span><br>';
+        html += '<span style="color:var(--cf-muted);font-size:0.65rem;margin-left:2ch;">'+desc.substring(0,120)+'</span><br>';
+        html += '<span style="color:var(--cf-muted);font-size:0.6rem;margin-left:2ch;">Added: '+v.dateAdded+' | Action: '+(v.requiredAction||'').substring(0,60)+'</span><br><br>';
+      });
+      html += '<span style="color:var(--cf-cyan)">[+] BadUSB payloads auto-generated for each CVE (Windows/Linux/macOS)</span><br>';
+      html += '<span style="color:var(--cf-cyan)">[+] See badusb/CVE_Daily/ in the repository for all payloads</span>';
+      feed.innerHTML = html;
+    } catch(e) {
+      document.getElementById('cve-feed-body').innerHTML =
+        '<span style="color:var(--cf-warning)">[!] CISA KEV feed unavailable — using cached data</span><br>' +
+        '<span style="color:var(--cf-muted)">[~] BadUSB payloads are pre-generated in the release package</span>';
+    }
+  })();
+  </script>
 </body>
 </html>

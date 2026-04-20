@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadText = document.querySelector('.loading-text');
   if (loadText) {
     const lines = [
-      'CYBERFLIPPER v1.2.1 BOOT',
-      'Scanning SubGHz radios...',
-      'NFC stack ready',
-      'IR blaster calibrated',
-      'Dolphin mood: happy',
+      'CYBERFLIPPER v1.3.0 BOOT',
+      'Daily CVE feed: SYNCED',
+      'SubGHz radios: 167 captures',
+      'NFC stack: 50+ profiles',
+      'BadUSB: CISA KEV ACTIVE',
       'System online'
     ];
     let i = 0;
