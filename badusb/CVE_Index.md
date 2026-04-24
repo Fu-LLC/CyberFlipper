@@ -14,3 +14,4 @@
 | 2026-04-20 | CVE-2025-32975 | Quest | KACE Systems Management Appliance (SMA) | windows, linux | [WINDOWS](CVE_Daily/2026-04-20/CVE-2025-32975_WINDOWS.txt) [LINUX](CVE_Daily/2026-04-20/CVE-2025-32975_LINUX.txt) |
 | 2026-04-20 | CVE-2024-27199 | JetBrains | TeamCity | windows, linux | [WINDOWS](CVE_Daily/2026-04-20/CVE-2024-27199_WINDOWS.txt) [LINUX](CVE_Daily/2026-04-20/CVE-2024-27199_LINUX.txt) |
 | 2026-04-22 | CVE-2026-33825 | Microsoft | Defender | windows | [WINDOWS](CVE_Daily/2026-04-22/CVE-2026-33825_WINDOWS.txt) |
+| 2026-04-23 | CVE-2026-39987 | Marimo | Marimo | windows, linux | [WINDOWS](CVE_Daily/2026-04-23/CVE-2026-39987_WINDOWS.txt) [LINUX](CVE_Daily/2026-04-23/CVE-2026-39987_LINUX.txt) |
