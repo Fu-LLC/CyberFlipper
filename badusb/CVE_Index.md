@@ -21,3 +21,4 @@
 | 2026-04-24 | CVE-2024-57726 | SimpleHelp  | SimpleHelp | windows, linux | [WINDOWS](CVE_Daily/2026-04-24/CVE-2024-57726_WINDOWS.txt) [LINUX](CVE_Daily/2026-04-24/CVE-2024-57726_LINUX.txt) |
 | 2026-04-28 | CVE-2024-1708 | ConnectWise | ScreenConnect | windows, linux | [WINDOWS](CVE_Daily/2026-04-28/CVE-2024-1708_WINDOWS.txt) [LINUX](CVE_Daily/2026-04-28/CVE-2024-1708_LINUX.txt) |
 | 2026-04-28 | CVE-2026-32202 | Microsoft | Windows | windows | [WINDOWS](CVE_Daily/2026-04-28/CVE-2026-32202_WINDOWS.txt) |
+| 2026-04-30 | CVE-2026-41940 | WebPros | cPanel & WHM and WP2 (WordPress Squared) | windows | [WINDOWS](CVE_Daily/2026-04-30/CVE-2026-41940_WINDOWS.txt) |
