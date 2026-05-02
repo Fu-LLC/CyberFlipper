@@ -22,3 +22,4 @@
 | 2026-04-28 | CVE-2024-1708 | ConnectWise | ScreenConnect | windows, linux | [WINDOWS](CVE_Daily/2026-04-28/CVE-2024-1708_WINDOWS.txt) [LINUX](CVE_Daily/2026-04-28/CVE-2024-1708_LINUX.txt) |
 | 2026-04-28 | CVE-2026-32202 | Microsoft | Windows | windows | [WINDOWS](CVE_Daily/2026-04-28/CVE-2026-32202_WINDOWS.txt) |
 | 2026-04-30 | CVE-2026-41940 | WebPros | cPanel & WHM and WP2 (WordPress Squared) | windows | [WINDOWS](CVE_Daily/2026-04-30/CVE-2026-41940_WINDOWS.txt) |
+| 2026-05-01 | CVE-2026-31431 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-05-01/CVE-2026-31431_LINUX.txt) |
