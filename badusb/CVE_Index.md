@@ -25,3 +25,4 @@
 | 2026-05-01 | CVE-2026-31431 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-05-01/CVE-2026-31431_LINUX.txt) |
 | 2026-05-06 | CVE-2026-0300 | Palo Alto Networks | PAN-OS | network | [NETWORK](CVE_Daily/2026-05-06/CVE-2026-0300_NETWORK.txt) |
 | 2026-05-07 | CVE-2026-6973 | Ivanti | Endpoint Manager Mobile (EPMM) | windows, linux | [WINDOWS](CVE_Daily/2026-05-07/CVE-2026-6973_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-07/CVE-2026-6973_LINUX.txt) |
+| 2026-05-08 | CVE-2026-42208 | BerriAI | LiteLLM | windows, linux | [WINDOWS](CVE_Daily/2026-05-08/CVE-2026-42208_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-08/CVE-2026-42208_LINUX.txt) |
