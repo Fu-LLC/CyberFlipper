@@ -1,6 +1,6 @@
 Filetype: Flipper Update Manifest
 Version: 1
-Info: CYBERFLIPPER v1.1.10
+Info: CYBERFLIPPER v1.1.11
 Target: 7
 Loader: updater.bin
 Firmware: firmware.dfu
