@@ -28,3 +28,10 @@
 | 2026-05-08 | CVE-2026-42208 | BerriAI | LiteLLM | windows, linux | [WINDOWS](CVE_Daily/2026-05-08/CVE-2026-42208_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-08/CVE-2026-42208_LINUX.txt) |
 | 2026-05-14 | CVE-2026-20182 | Cisco | Catalyst SD-WAN | network | [NETWORK](CVE_Daily/2026-05-14/CVE-2026-20182_NETWORK.txt) |
 | 2026-05-15 | CVE-2026-42897 | Microsoft | Microsoft | windows | [WINDOWS](CVE_Daily/2026-05-15/CVE-2026-42897_WINDOWS.txt) |
+| 2026-05-20 | CVE-2008-4250 | Microsoft | Windows | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2008-4250_WINDOWS.txt) |
+| 2026-05-20 | CVE-2009-1537 | Microsoft | DirectX | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2009-1537_WINDOWS.txt) |
+| 2026-05-20 | CVE-2009-3459 | Adobe | Acrobat and Reader | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2009-3459_WINDOWS.txt) |
+| 2026-05-20 | CVE-2010-0249 | Microsoft | Internet Explorer | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2010-0249_WINDOWS.txt) |
+| 2026-05-20 | CVE-2010-0806 | Microsoft | Internet Explorer | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2010-0806_WINDOWS.txt) |
+| 2026-05-20 | CVE-2026-41091 | Microsoft | Defender | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2026-41091_WINDOWS.txt) |
+| 2026-05-20 | CVE-2026-45498 | Microsoft | Defender | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2026-45498_WINDOWS.txt) |
