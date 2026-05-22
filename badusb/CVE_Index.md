@@ -35,3 +35,5 @@
 | 2026-05-20 | CVE-2010-0806 | Microsoft | Internet Explorer | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2010-0806_WINDOWS.txt) |
 | 2026-05-20 | CVE-2026-41091 | Microsoft | Defender | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2026-41091_WINDOWS.txt) |
 | 2026-05-20 | CVE-2026-45498 | Microsoft | Defender | windows | [WINDOWS](CVE_Daily/2026-05-20/CVE-2026-45498_WINDOWS.txt) |
+| 2026-05-21 | CVE-2025-34291 | Langflow | Langflow | windows, linux | [WINDOWS](CVE_Daily/2026-05-21/CVE-2025-34291_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-21/CVE-2025-34291_LINUX.txt) |
+| 2026-05-21 | CVE-2026-34926 | Trend Micro | Apex One | windows, linux | [WINDOWS](CVE_Daily/2026-05-21/CVE-2026-34926_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-21/CVE-2026-34926_LINUX.txt) |
