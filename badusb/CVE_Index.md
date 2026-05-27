@@ -38,3 +38,4 @@
 | 2026-05-21 | CVE-2025-34291 | Langflow | Langflow | windows, linux | [WINDOWS](CVE_Daily/2026-05-21/CVE-2025-34291_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-21/CVE-2025-34291_LINUX.txt) |
 | 2026-05-21 | CVE-2026-34926 | Trend Micro | Apex One | windows, linux | [WINDOWS](CVE_Daily/2026-05-21/CVE-2026-34926_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-21/CVE-2026-34926_LINUX.txt) |
 | 2026-05-22 | CVE-2026-9082 | Drupal | Core | windows, linux | [WINDOWS](CVE_Daily/2026-05-22/CVE-2026-9082_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-22/CVE-2026-9082_LINUX.txt) |
+| 2026-05-26 | CVE-2026-48172 | LiteSpeed | cPanel Plugin | windows, linux | [WINDOWS](CVE_Daily/2026-05-26/CVE-2026-48172_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-26/CVE-2026-48172_LINUX.txt) |
