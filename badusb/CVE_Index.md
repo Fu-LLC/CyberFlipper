@@ -39,3 +39,6 @@
 | 2026-05-21 | CVE-2026-34926 | Trend Micro | Apex One | windows, linux | [WINDOWS](CVE_Daily/2026-05-21/CVE-2026-34926_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-21/CVE-2026-34926_LINUX.txt) |
 | 2026-05-22 | CVE-2026-9082 | Drupal | Core | windows, linux | [WINDOWS](CVE_Daily/2026-05-22/CVE-2026-9082_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-22/CVE-2026-9082_LINUX.txt) |
 | 2026-05-26 | CVE-2026-48172 | LiteSpeed | cPanel Plugin | windows, linux | [WINDOWS](CVE_Daily/2026-05-26/CVE-2026-48172_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-26/CVE-2026-48172_LINUX.txt) |
+| 2026-05-27 | CVE-2026-48027 | Nx | Nx Console | windows, linux | [WINDOWS](CVE_Daily/2026-05-27/CVE-2026-48027_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-27/CVE-2026-48027_LINUX.txt) |
+| 2026-05-27 | CVE-2026-45321 | TanStack | TanStack | windows, linux | [WINDOWS](CVE_Daily/2026-05-27/CVE-2026-45321_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-27/CVE-2026-45321_LINUX.txt) |
+| 2026-05-27 | CVE-2026-8398 | Daemon | Daemon Tools Lite | windows, linux | [WINDOWS](CVE_Daily/2026-05-27/CVE-2026-8398_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-27/CVE-2026-8398_LINUX.txt) |
