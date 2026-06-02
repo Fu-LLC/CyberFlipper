@@ -43,3 +43,4 @@
 | 2026-05-27 | CVE-2026-45321 | TanStack | TanStack | windows, linux | [WINDOWS](CVE_Daily/2026-05-27/CVE-2026-45321_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-27/CVE-2026-45321_LINUX.txt) |
 | 2026-05-27 | CVE-2026-8398 | Daemon | Daemon Tools Lite | windows, linux | [WINDOWS](CVE_Daily/2026-05-27/CVE-2026-8398_WINDOWS.txt) [LINUX](CVE_Daily/2026-05-27/CVE-2026-8398_LINUX.txt) |
 | 2026-05-29 | CVE-2026-0257 | Palo Alto Networks | PAN-OS | network | [NETWORK](CVE_Daily/2026-05-29/CVE-2026-0257_NETWORK.txt) |
+| 2026-06-01 | CVE-2024-21182 | Oracle | WebLogic Server | windows, linux | [WINDOWS](CVE_Daily/2026-06-01/CVE-2024-21182_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-01/CVE-2024-21182_LINUX.txt) |
