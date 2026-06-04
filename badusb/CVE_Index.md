@@ -46,3 +46,4 @@
 | 2026-06-01 | CVE-2024-21182 | Oracle | WebLogic Server | windows, linux | [WINDOWS](CVE_Daily/2026-06-01/CVE-2024-21182_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-01/CVE-2024-21182_LINUX.txt) |
 | 2026-06-02 | CVE-2022-0492 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-06-02/CVE-2022-0492_LINUX.txt) |
 | 2026-06-02 | CVE-2025-48595 | Android | Framework | windows, linux | [WINDOWS](CVE_Daily/2026-06-02/CVE-2025-48595_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-02/CVE-2025-48595_LINUX.txt) |
+| 2026-06-03 | CVE-2026-45247 | Mirasvit | Mirasvit Full Page Cache Warmer | windows, linux | [WINDOWS](CVE_Daily/2026-06-03/CVE-2026-45247_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-03/CVE-2026-45247_LINUX.txt) |
