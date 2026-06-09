@@ -48,3 +48,5 @@
 | 2026-06-02 | CVE-2025-48595 | Android | Framework | windows, linux | [WINDOWS](CVE_Daily/2026-06-02/CVE-2025-48595_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-02/CVE-2025-48595_LINUX.txt) |
 | 2026-06-03 | CVE-2026-45247 | Mirasvit | Mirasvit Full Page Cache Warmer | windows, linux | [WINDOWS](CVE_Daily/2026-06-03/CVE-2026-45247_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-03/CVE-2026-45247_LINUX.txt) |
 | 2026-06-05 | CVE-2026-28318 | SolarWinds | Serv-U | windows, linux | [WINDOWS](CVE_Daily/2026-06-05/CVE-2026-28318_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-05/CVE-2026-28318_LINUX.txt) |
+| 2026-06-08 | CVE-2026-42271 | BerriAI | LiteLLM | windows, linux | [WINDOWS](CVE_Daily/2026-06-08/CVE-2026-42271_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-08/CVE-2026-42271_LINUX.txt) |
+| 2026-06-08 | CVE-2026-50751 | Check Point | Security Gateway | windows, network | [WINDOWS](CVE_Daily/2026-06-08/CVE-2026-50751_WINDOWS.txt) [NETWORK](CVE_Daily/2026-06-08/CVE-2026-50751_NETWORK.txt) |
