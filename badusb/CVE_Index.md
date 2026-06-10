@@ -50,3 +50,6 @@
 | 2026-06-05 | CVE-2026-28318 | SolarWinds | Serv-U | windows, linux | [WINDOWS](CVE_Daily/2026-06-05/CVE-2026-28318_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-05/CVE-2026-28318_LINUX.txt) |
 | 2026-06-08 | CVE-2026-42271 | BerriAI | LiteLLM | windows, linux | [WINDOWS](CVE_Daily/2026-06-08/CVE-2026-42271_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-08/CVE-2026-42271_LINUX.txt) |
 | 2026-06-08 | CVE-2026-50751 | Check Point | Security Gateway | windows, network | [WINDOWS](CVE_Daily/2026-06-08/CVE-2026-50751_WINDOWS.txt) [NETWORK](CVE_Daily/2026-06-08/CVE-2026-50751_NETWORK.txt) |
+| 2026-06-09 | CVE-2026-11645 | Google | Chromium V8 | windows | [WINDOWS](CVE_Daily/2026-06-09/CVE-2026-11645_WINDOWS.txt) |
+| 2026-06-09 | CVE-2026-7473 | Arista | Extensible Operating System | network | [NETWORK](CVE_Daily/2026-06-09/CVE-2026-7473_NETWORK.txt) |
+| 2026-06-09 | CVE-2026-20245 | Cisco | Catalyst SD-WAN Manager | network | [NETWORK](CVE_Daily/2026-06-09/CVE-2026-20245_NETWORK.txt) |
