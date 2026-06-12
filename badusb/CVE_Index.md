@@ -53,3 +53,4 @@
 | 2026-06-09 | CVE-2026-11645 | Google | Chromium V8 | windows | [WINDOWS](CVE_Daily/2026-06-09/CVE-2026-11645_WINDOWS.txt) |
 | 2026-06-09 | CVE-2026-7473 | Arista | Extensible Operating System | network | [NETWORK](CVE_Daily/2026-06-09/CVE-2026-7473_NETWORK.txt) |
 | 2026-06-09 | CVE-2026-20245 | Cisco | Catalyst SD-WAN Manager | network | [NETWORK](CVE_Daily/2026-06-09/CVE-2026-20245_NETWORK.txt) |
+| 2026-06-11 | CVE-2026-10520 | Ivanti | Sentry | windows, linux | [WINDOWS](CVE_Daily/2026-06-11/CVE-2026-10520_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-11/CVE-2026-10520_LINUX.txt) |
