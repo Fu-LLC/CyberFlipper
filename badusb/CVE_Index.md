@@ -55,3 +55,5 @@
 | 2026-06-09 | CVE-2026-20245 | Cisco | Catalyst SD-WAN Manager | network | [NETWORK](CVE_Daily/2026-06-09/CVE-2026-20245_NETWORK.txt) |
 | 2026-06-11 | CVE-2026-10520 | Ivanti | Sentry | windows, linux | [WINDOWS](CVE_Daily/2026-06-11/CVE-2026-10520_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-11/CVE-2026-10520_LINUX.txt) |
 | 2026-06-12 | CVE-2026-35273 | Oracle |  PeopleSoft Enterprise PeopleTools | windows, linux | [WINDOWS](CVE_Daily/2026-06-12/CVE-2026-35273_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-12/CVE-2026-35273_LINUX.txt) |
+| 2026-06-15 | CVE-2026-54420 | LiteSpeed | cPanel Plugin | linux | [LINUX](CVE_Daily/2026-06-15/CVE-2026-54420_LINUX.txt) |
+| 2026-06-15 | CVE-2026-20262 | Cisco | Catalyst SD-WAN Manager | network | [NETWORK](CVE_Daily/2026-06-15/CVE-2026-20262_NETWORK.txt) |
