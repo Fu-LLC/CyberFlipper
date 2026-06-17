@@ -57,3 +57,4 @@
 | 2026-06-12 | CVE-2026-35273 | Oracle |  PeopleSoft Enterprise PeopleTools | windows, linux | [WINDOWS](CVE_Daily/2026-06-12/CVE-2026-35273_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-12/CVE-2026-35273_LINUX.txt) |
 | 2026-06-15 | CVE-2026-54420 | LiteSpeed | cPanel Plugin | linux | [LINUX](CVE_Daily/2026-06-15/CVE-2026-54420_LINUX.txt) |
 | 2026-06-15 | CVE-2026-20262 | Cisco | Catalyst SD-WAN Manager | network | [NETWORK](CVE_Daily/2026-06-15/CVE-2026-20262_NETWORK.txt) |
+| 2026-06-16 | CVE-2026-48907 | Widget Factory | Joomla Content Editor  | windows, linux | [WINDOWS](CVE_Daily/2026-06-16/CVE-2026-48907_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-16/CVE-2026-48907_LINUX.txt) |
