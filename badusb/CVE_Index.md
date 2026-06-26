@@ -63,3 +63,5 @@
 | 2026-06-23 | CVE-2026-34910 | Ubiquiti | UniFi OS | windows, linux | [WINDOWS](CVE_Daily/2026-06-23/CVE-2026-34910_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-23/CVE-2026-34910_LINUX.txt) |
 | 2026-06-23 | CVE-2026-34909 | Ubiquiti | UniFi OS | windows, linux | [WINDOWS](CVE_Daily/2026-06-23/CVE-2026-34909_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-23/CVE-2026-34909_LINUX.txt) |
 | 2026-06-23 | CVE-2026-34908 | Ubiquiti | UniFi OS | windows, linux | [WINDOWS](CVE_Daily/2026-06-23/CVE-2026-34908_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-23/CVE-2026-34908_LINUX.txt) |
+| 2026-06-25 | CVE-2026-12569 | PTC | Windchill and FlexPLM | windows, linux | [WINDOWS](CVE_Daily/2026-06-25/CVE-2026-12569_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-25/CVE-2026-12569_LINUX.txt) |
+| 2026-06-25 | CVE-2026-20230 | Cisco | Unified Communications Manager | network | [NETWORK](CVE_Daily/2026-06-25/CVE-2026-20230_NETWORK.txt) |
