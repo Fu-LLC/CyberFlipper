@@ -1,0 +1,28 @@
+REM CyberFlipper Level 006 - macOS Workstation Review
+REM Safe: visible local workstation review report only.
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING Terminal
+ENTER
+DELAY 1200
+STRING OUT="$HOME/Desktop/cyberflipper_l006_macos_workstation_review.txt"
+ENTER
+STRING echo "CYBERFLIPPER LEVEL 006 - MACOS WORKSTATION REVIEW" > "$OUT"
+ENTER
+STRING date >> "$OUT"
+ENTER
+STRING echo "== SYSTEM VERSION ==" >> "$OUT"
+ENTER
+STRING sw_vers >> "$OUT"
+ENTER
+STRING echo "== APPLICATION SAMPLE ==" >> "$OUT"
+ENTER
+STRING find /Applications -maxdepth 2 -name "*.app" | sed 's#/Applications/##' | sort | head -120 >> "$OUT"
+ENTER
+STRING echo "== FIREWALL STATE ==" >> "$OUT"
+ENTER
+STRING /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate >> "$OUT" 2>&1
+ENTER
+STRING open -a TextEdit "$OUT"
+ENTER
