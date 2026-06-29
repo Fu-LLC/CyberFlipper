@@ -1,0 +1,26 @@
+REM CyberFlipper Level 006 - Windows Desktop Stack Audit
+REM Safe: visible local software review report only.
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoProfile
+ENTER
+DELAY 1200
+STRING $r="$env:USERPROFILE\Desktop\cyberflipper_l006_desktop_stack_audit.txt"
+ENTER
+STRING "CYBERFLIPPER LEVEL 006 - WINDOWS DESKTOP STACK AUDIT" | Out-File $r
+ENTER
+STRING Get-Date | Out-File $r -Append
+ENTER
+STRING "== INSTALLED DESKTOP STACK ==" | Out-File $r -Append
+ENTER
+STRING $rx="Chrome|Edge|Firefox|Brave|Opera|Vivaldi|Office|Word|Excel|Power BI|Tableau|LibreOffice|Adobe|Acrobat|Photoshop|Illustrator|Premiere|Audition|OBS|Blender|VLC|Slack|Teams|Zoom|Discord|Thunderbird|Notion|Obsidian|OneNote|Dropbox|OneDrive|Google Drive|7-Zip|WinRAR|Malwarebytes|NordVPN|AnyConnect|Everything"
+ENTER
+STRING Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*,HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* -ErrorAction SilentlyContinue | Where-Object {$_.DisplayName -match $rx} | Select DisplayName,DisplayVersion,Publisher,InstallDate | Sort DisplayName | Format-Table -Auto | Out-File $r -Append
+ENTER
+STRING "== RUNNING USER-FACING CLIENTS ==" | Out-File $r -Append
+ENTER
+STRING Get-Process | Where-Object {$_.ProcessName -match "chrome|msedge|firefox|brave|opera|vivaldi|Teams|slack|Discord|Zoom|OUTLOOK|thunderbird|notion|obsidian|OneDrive|Dropbox|GoogleDrive|Acrobat|Photoshop|Illustrator|Premiere|OBS|vlc"} | Select ProcessName,Id -ErrorAction SilentlyContinue | Sort ProcessName | Format-Table -Auto | Out-File $r -Append
+ENTER
+STRING notepad $r
+ENTER
