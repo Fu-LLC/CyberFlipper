@@ -1,0 +1,24 @@
+REM CyberFlipper Level 006 - Windows Browser Review
+REM Safe: visible local browser presence and update-service report only.
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoProfile
+ENTER
+DELAY 1200
+STRING $r="$env:USERPROFILE\Desktop\cyberflipper_l006_browser_review.txt"
+ENTER
+STRING "CYBERFLIPPER LEVEL 006 - WINDOWS BROWSER REVIEW" | Out-File $r
+ENTER
+STRING Get-Date | Out-File $r -Append
+ENTER
+STRING "== BROWSER EXECUTABLES ==" | Out-File $r -Append
+ENTER
+STRING foreach($b in "chrome","msedge","firefox","brave","opera","vivaldi"){$c=Get-Command $b -ErrorAction SilentlyContinue; if($c){"FOUND $b $($c.Source)" | Out-File $r -Append}else{"MISSING $b" | Out-File $r -Append}}
+ENTER
+STRING "== UPDATE SERVICES ==" | Out-File $r -Append
+ENTER
+STRING Get-Service | Where-Object {$_.Name -match "edgeupdate|gupdate|Mozilla|Brave|Opera|Vivaldi"} | Select Name,Status,StartType | Sort Name | Format-Table -Auto | Out-File $r -Append
+ENTER
+STRING notepad $r
+ENTER
