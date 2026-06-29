@@ -1,324 +1,184 @@
-<p align="center">
-  <img src="CYBERFLIPPER_Logo.png" alt="CYBERFLIPPER F-SERIES" width="300">
-</p>
+# CyberFlipper
 
-<p align="center">
-  <strong>[ CYBERFLIPPER: PRODUCTION RELEASE v1.1.0 ]</strong><br>
-  <em>Maintained by Personfu @ <a href="https://fllc.net">fllc.net</a> </em><br>
-  <strong>Official Discord: <a href="https://discord.gg/Cd9qyvht7X">discord.gg/Cd9qyvht7X</a></strong>
-</p>
+Developer-focused Flipper Zero lab content for SD-card organization, BadUSB training, IR/NFC/RFID notes, GPIO practice, firmware review notes, hardware documentation, and defensive security education.
 
+CyberFlipper is maintained for practical builders: people who want clean file layouts, readable payloads, repeatable tests, and documentation that can survive public review.
 
-<p align="center">
-  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/ARCH-PCB_12.1.F7B9C6-000000?style=for-the-badge&logo=circuit-board" alt="PCB"></a>
-  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/MCU-STM32WB55_DUAL_CORE-A020F0?style=for-the-badge" alt="MCU"></a>
-  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/TX_RX-CC1101_TRANSCEIVER-ff0000?style=for-the-badge" alt="CC1101"></a>
-  <a href="https://docs.flipper.net/zero/development/hardware/schematic#"><img src="https://img.shields.io/badge/STATUS-OPERATIONAL-00FFFF?style=for-the-badge" alt="Status"></a>
-  <a href="https://github.com/Personfu/CyberFlipper" style="margin-left:8px;"><img src="https://img.shields.io/badge/REPO-Personfu%2FCyberFlipper-00FFFF?style=for-the-badge&logo=github" alt="Repo"></a>
-</p>
+## Repository Focus
 
----
+| Area | Purpose |
+|---|---|
+| `badusb/` | Flipper-readable `.txt` training scripts with visible local output. |
+| `badusb/CyberFlipper_Lab/` | Progressive Level 001-099 curriculum. |
+| `docs/daily/` | Daily research notes, source-watch summaries, and release notes. |
+| `docs/community/` | Feature matrices, attribution notes, validation checklists, and project positioning. |
+| `infrared/` | IR organization and remote-control learning material. |
+| `nfc/` | NFC notes for owned cards, lab tags, and test fixtures. |
+| `lfrfid/` | 125 kHz RFID notes for owned cards, lab tags, and test fixtures. |
+| `subghz/` | Region-aware Sub-GHz documentation and receive-only learning notes. |
+| `apps/` | App catalog notes, compatibility notes, and `.fap` organization references. |
+| `hardware/` | GPIO, soldering, sensors, badge/SAO planning, fixtures, and bench notes. |
+| `web/` | Public project pages, payload catalog views, and developer-facing documentation. |
 
-## ▓▒░ I. HARDWARE SCHEMATIC ARCHITECTURE
-**CYBERFLIPPER** operates natively on the official [MAIN_PCB_12.1.F7B9C6](CYBERFLIPPER_BUILD/CYBERFLIPPER/MAIN_PCB_12.1.F7B9C6_Assembly.pdf) framework. It exploits the dual-core **STM32WB55** microprocessor, pushing the limits of the embedded CC1101 transceiver and physical HID bus arrays to create an autonomous, pocket-operable signal intercept pipeline. 
+## BadUSB Training Standard
 
-*(For raw engineering blueprints, cross-reference the official [Flipper Development Hardware Schematic](https://docs.flipper.net/zero/development/hardware/schematic#)).*
+Every CyberFlipper BadUSB file should be:
 
-```mermaid
-graph TD
-    A[STM32WB55 Dual-Core MCU] -->|SPI| B(CC1101 Transceiver)
-    A -->|I2C| C(NFC / 13.56MHz Coil)
-    A -->|L-C Resonator| D(125kHz RFID Array)
-    A -->|Diode Array| E(Infrared Transmitter)
-    A -->|Pin 1-18| F(GPIO FPC Header)
-    A -->|1-Wire| G(iButton Reader)
-    A -->|Type-C PHY| H(BadUSB / U2F)
-    B -->|SMA Antenna| I[Sub-GHz Spectrum]
-    F -->|UART/SPI/I2C| J[External CyberDeck Arrays]
-```
+- Plain `.txt` compatible with Flipper Zero BadUSB / DuckyScript-style syntax.
+- Visible to the user while running.
+- Local-output only.
+- Named clearly by level and platform.
+- Written to create a `cyberflipper_` report file.
+- Documented in the level README.
+- Reviewed before merge when it launches PowerShell, Terminal, shell, reads logs, lists services, or inventories installed software.
 
----
+Preferred commands:
 
-## ▓▒░ II. PROTOCOL VECTORS & TELEMETRY MATRIX
-
-| Vector | Internal Silicon Driver | Attack / Capture Simulation Capabilities |
-| :--- | :--- | :--- |
-| **Sub-GHz** | CC1101 Transceiver | Operates <1GHz. Overrides ASK/OOK/GFSK/MSK. Captures/Synthesizes rolling codes (Keeloq, Somfy). Includes deep-passive listening nodes. |
-| **125 kHz RFID** | LF L-C Tuned Circuit | Emulates low-frequency proximity gates (HID Prox, EM4100, Indala). |
-| **NFC (13.56 MHz)** | ST25R3916 Controller | Parses MIFARE Classic/Ultralight, NTAG architectures, ISO-14443A/B, and FeliCa transit layers. |
-| **Infrared** | Vishay TSSP / Diodes | Harvests ambient carrier frequencies. Modded universal dictionaries control HVAC / AV topologies. |
-| **GPIO & Modules** | 3.3V FPC Header | Raw interface for UART (Pin 13/14), SPI (Pin 2/3/4/5), and I2C arrays to host external modules. |
-| **iButton** | 1-Wire Interface (Pin 17)| Physical emulation of Dallas Contact memory (DS1990A). Replicates magnetic constraint locks. |
-| **Bad USB** | Type-C USB PHY | Enumerates as standard Human Interface Device (HID). Executes Tier-8 hyper-speed .txt injection vectors (RubberDucky). |
-| **U2F** | STM32 Crypto Engine | Fully validated FIDO U2F hardware cryptography key for authenticating advanced reverse-shells. |
-| **Video Game Mod** | ESP32 / RP2040 | Video-out framework repurposed for advanced Wi-Fi penetration staging or secondary external display mapping. |
-
----
-
-## ▓▒░ III. EDC ECOSYSTEM & TITAN MODULARITY
-CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
-
-*   **Wireless Exploitation:**
-    *   📡 **[ESP32 Marauder (JustCallMeKoko)](https://github.com/justcallmekoko/ESP32Marauder):** Pinned over UART TX(13) / RX(14). Essential 802.11 deauth mapping, beacon spamming, and PMKID capture.
-    *   ⚡ **[Awake Dynamics ESP32-C5](https://awakedynamics.com/):** Next-generation 2.4/5GHz Wi-Fi overrides natively synthesized over the GPIO backbone.
-*   **Rogue Signal & IMSI Detection:**
-    *   🕵️‍♂️ **[Nyan Box](https://github.com/inAudible1/NyanBox):** Correlates Axon Camera network density to passively track law enforcement grids.
-    *   📱 **[Ray Hunter](https://rayhunter.net/):** Verizon hotspot mod specifically dedicated to Stingray (Cell-Site Simulator) detection and IMSI catcher awareness.
-*   **Captive Portals & Micro-Computing:**
-    *   😈 **[M5Stick S3](https://docs.m5stack.com/en/core/m5stickc_plus2):** Running the "Evil" educational project for rapid captive-portal phishing emulation.
-    *   🖥️ **[M5Stack Cardputer Advanced](https://shop.m5stack.com/products/m5stack-cardputer-esp32-s3-mini-keyboard-computer):** Running Porkchop firmware by Octo as a standalone serial analysis terminal.
-*   **Spectrum Analysis & VHF/UHF Comms:**
-    *   📻 **[HackRF Portapack H4](https://greatscottgadgets.com/hackrf/one/) & RTL-SDR:** Making the invisible world visible. When the Flipper's CC1101 bottlenecks, escalate to external 1MHz-6GHz SDR arrays via physical SPI bridging.
-    *   🎙️ **[Quansheng UV-K5](https://github.com/egzumer/uv-k5-firmware-custom):** A highly capable, hackable handheld radio. The Flipper's GPIO serves as a programmable PTT interface to transmit encrypted digital APRS payloads.
-*   **📡 [ProjectZero](https://github.com/C5Lab/projectZero) & OWASP Intelligence:** Integrated security logic and protocol manipulation derived from official Project Zero vulnerability mapping and the [OWASP CheatSheet Series](https://github.com/OWASP/CheatSheetSeries).
-*   **🦆 Hak5 Tactical Payloads:** Native translation of master payload repositories: [USB Rubber Ducky](https://github.com/hak5/usbrubberducky-payloads), [WiFi Pineapple](https://github.com/hak5/wifipineapplepager-payloads), [Bash Bunny](https://github.com/hak5/bashbunny-payloads), and [OMG Cable](https://github.com/hak5/omg-payloads).
-*   **🛠️ Cyber-Analytic Arrays:** Logic and conversion matrices sourced from [CyberChef (GCHQ)](https://github.com/gchq/CyberChef), [SecLists](https://github.com/Personfu/seclists), and [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking).
-*   **🌍 Signal ISR (Intelligence, Surveillance, Reconnaissance):** Direct integration of cellular tower and satellite tracking logic via [Tower-Hunter](https://github.com/Ringmast4r/Tower-Hunter) and [GNSS](https://github.com/Ringmast4r/GNSS) frameworks.
-
-> *We operate closely mapped alongside heavily customized smartphones and physical tools: **Nothing Phone 3** (Brute-force cloud processing), **Civivi Elementum Button Lock** (Physical override architecture), and the **Zebra F-701** (Tactical scribing).*
-
----
-
-## ▓▒░ IV. INSTALLATION — SD CARD VIA qFlipper
-
-> **The only supported install method is SD card content copy via the qFlipper SD Card tab. No firmware flashing is required or supported.**
-
-### CyberFlipper v1.2.1 — Release 2026-04-20
-
-**What's New**
-- Daily CVE BadUSB payloads (auto-generated from CISA KEV catalog)
-- Extra apps bundle updated
-- SD card only distribution — no OTA flash required
-
-**Included BadUSB CVE Payloads:** See [badusb/](badusb/) for the full CVE payload listing.
-
-> **LEGAL**: All payloads are for authorized security research in controlled environments only. See [LEGAL.md](docs/LEGAL.md).
-
-### Steps
-
-1. Download **`CYBERFLIPPER-v1.2.1-SD_CARD.zip`** from the [Releases page](https://github.com/Fu-LLC/CyberFlipper/releases).
-2. Extract the zip — you will see: `badusb/`, `infrared/`, `nfc/`, `subghz/`, `lfrfid/`, `dolphin/`, `apps/`, `u2f/`
-3. Open **qFlipper** → connect Flipper via USB → click the **SD Card** tab.
-4. Drag and drop the extracted folders onto the SD card root.
-5. Eject and reboot your Flipper Zero.
-
-### What's Included
-
-| Folder | Contents |
-| :--- | :--- |
-| `badusb/` | 88+ BadUSB payloads + daily CVE scripts (Windows/Linux/macOS) |
-| `infrared/` | IR universal remote databases |
-| `nfc/` | NFC dumps, Amiibo collection, hotel keys |
-| `subghz/` | Gate codes, vehicle signals, brute-force sets |
-| `lfrfid/` | EM4100, HID Prox, Indala RFID dumps |
-| `dolphin/` | Dolphin XP level data |
-| `apps/` | 35+ WiFi/RF, 14 Bluetooth, 9 SubGHz, Games, GPIO, NFC tools (.fap) |
-| `u2f/` | U2F key assets |
-
----
-
-## ▓▒░ V. NATIVE SOFTWARE TOPOLOGY
-*   **PASSIVE_NODE Integrations:** Background mapping software (wardriver.c). Natively formats 802.11 / NMEA frames to .csv for direct database sync without external parsing.
-*   **qFlipper SD Card Protocol:** All content distributed as SD card data only. Copy via qFlipper SD Card tab — no firmware flash, no OTA update required.
-
----
-
-## ▓▒░ VI. HARDWARE TECHNICAL SPECIFICATIONS
-
-> *Full specifications reference: [Official Flipper Zero Tech Specs](https://docs.flipper.net/zero/development/hardware/tech-specs) | [Hardware Schematics](https://docs.flipper.net/zero/development/hardware/schematic#)*
-
-### 📐 Body
-
-| Parameter | Value |
-| :--- | :--- |
-| **Materials** | PC, ABS, PMMA |
-| **Height** | 40.1 mm (1.58 inches) |
-| **Width** | 100.3 mm (3.95 inches) |
-| **Depth** | 25.6 mm (1.01 inches) |
-| **Weight** | 102 grams (3.6 ounces) |
-
-### 🖥️ Display
-
-| Parameter | Value |
-| :--- | :--- |
-| **Type** | Monochrome LCD |
-| **Resolution** | 128×64 pixels |
-| **Controller** | ST7567 |
-| **Interface** | SPI |
-| **Diagonal** | 1.4" |
-
-### ⚙️ Microcontroller Unit (MCU)
-
-| Parameter | Value |
-| :--- | :--- |
-| **Model** | STM32WB55RG |
-| **Application Processor** | ARM Cortex-M4 32-bit @ 64 MHz |
-| **Radio Processor** | ARM Cortex-M0+ 32-bit @ 32 MHz |
-| **Radio** | Bluetooth LE 5.4, 802.15.4, Proprietary |
-| **Flash** | 1024 KB (shared between application & radio) |
-| **SRAM** | 256 KB (shared between application & radio) |
-
-### 📡 Sub-1 GHz Module
-
-| Parameter | Value |
-| :--- | :--- |
-| **Transceiver** | CC1101 |
-| **TX Power** | -20 dBm max |
-| **Frequency Bands** | 315 MHz · 433 MHz · 868 MHz · 915 MHz (region-dependent) |
-
-### 📱 NFC (13.56 MHz)
-
-| Parameter | Value |
-| :--- | :--- |
-| **Transceiver** | ST25R3916 |
-| **Frequency** | 13.56 MHz |
-| **Protocols** | ISO-14443A/B, NFC Forum |
-| **Supported Cards** | MIFARE Classic®, Ultralight®, DESFire®, FeliCa™, HID iClass (Picopass) |
-
-### 🔑 RFID 125 kHz
-
-| Parameter | Value |
-| :--- | :--- |
-| **Frequency** | 125 KHz |
-| **Modulation** | AM, OOK |
-| **Coding** | ASK, PSK |
-| **Supported Cards** | EM4100, HID H10301, Indala 26, IoProx XSF, AWID, FDX-A, FDX-B, Pyramid, Viking, Jablotron, Paradox, PAC Stanley, Keri, Gallagher, Nexwatch, Electra, Securakey |
-
-### 🔌 GPIO
-
-| Parameter | Value |
-| :--- | :--- |
-| **I/O Pins** | 13 available on external 2.54mm connectors |
-| **Logic Level** | 3.3V CMOS |
-| **Input Tolerance** | 5V tolerant (See AN4899) |
-| **Max Current** | Up to 20 mA per digital pin |
-
-### 🔴 Infrared
-
-| Parameter | Value |
-| :--- | :--- |
-| **RX Wavelength** | 950 nm (±100 nm) |
-| **RX Carrier** | 38 KHz (±5%) |
-| **TX Wavelength** | 940 nm |
-| **TX Carrier** | 0–2 MHz |
-| **TX Power** | 300 mW |
-| **Protocols** | NEC, Kaseikyo, RCA, RC5, RC6, Samsung, SIRC |
-
-### 🗝️ iButton 1-Wire
-
-| Parameter | Value |
-| :--- | :--- |
-| **Protocols** | Dallas DS199x, DS1971, CYFRAL, Metakom, TM2004, RW1990 |
-
-### 🔋 Battery
-
-| Parameter | Value |
-| :--- | :--- |
-| **Type** | Lithium Polymer (LiPo) |
-| **Capacity** | 2100 mAh |
-| **Battery Life** | Up to 28 days |
-| **Operating Temp** | 0° to 40°C (32° to 104°F) |
-
-### 💾 MicroSD Card
-
-| Parameter | Value |
-| :--- | :--- |
-| **Max Capacity** | Up to 256 GB |
-| **Recommended** | 2–32 GB |
-| **Interface** | SPI |
-| **R/W Speed** | Up to 5 Mbps |
-
-### 🔗 USB
-
-| Parameter | Value |
-| :--- | :--- |
-| **Connector** | Type-C |
-| **Standard** | USB 2.0 |
-| **Data Speed** | 12 Mbps |
-| **Max Charge** | 1 A |
-
-### 📶 Bluetooth LE 5.4
-
-| Parameter | Value |
-| :--- | :--- |
-| **TX Power** | 4 dBm max |
-| **RX Sensitivity** | -96 dBm |
-| **Data Rate** | 2 Mbps |
-
-### 🔊 Buzzer & Vibration
-
-| Parameter | Value |
-| :--- | :--- |
-| **Buzzer Frequency** | 100–2500 Hz |
-| **Sound Output** | 87 dB |
-| **Buzzer Type** | Coin |
-| **Vibration Force** | 30 N |
-| **Vibration Speed** | 13500 rpm |
-
----
-
-## ▓▒░ VII. EDC ECOSYSTEM
-CYBERFLIPPER serves as the core bridging microcontroller representing the "Swiss Army Knife of cybersecurity tools" for an extensive Everyday Carry (EDC) loadout. We integrate directly with the greatest external penetration hardware on the market:
-
-## ▓▒░ VIII. LAB401 PRODUCT CATALOG INTEGRATION
-
-### 🛒 Live Lab401 Catalog
-The CyberFlipper dashboard now features a fully integrated, live-updating product catalog from [Lab401](https://lab401.com/collections/all-products). This catalog is available at [lab401.html](lab401.html) and is updated daily via GitHub Actions. All product data is stored in [assets/lab401_catalog.json](assets/lab401_catalog.json) and rendered dynamically for a seamless user experience.
-
-**Features:**
-- Live product data (title, price, image, description, direct buy link)
-- Fully themed UI, accessible from all navigation menus
-- Automated daily updates via GitHub Actions ([.github/workflows/update_lab401_catalog.yml](.github/workflows/update_lab401_catalog.yml))
-- Source code for catalog fetcher: [.github/scripts/fetch_lab401_catalog.py](.github/scripts/fetch_lab401_catalog.py)
-
-**Legal:**
-All product data is sourced from Lab401 and is for informational and convenience purposes only. See [Lab401 Terms](https://lab401.com/pages/terms-of-service) for details. No commercial relationship is implied.
-
----
-
-## ▓▒░ IX. BRANDING & ASSET PIPELINE
-### 🎨 Custom Animation Standards
-CYBERFLIPPER uses the **F-SERIES** bitmap specification. To create custom animations for the intelligence deck:
-1. **Design:** Use Aseprite or Photoshop for 128x64 pixel art.
-2. **Compile:** Convert PNG frames to `.bm` using `asset_packer.py`.
-3. **Register:** Add your animation to `/dolphin/manifest.txt` with a designated weight.
-
-### 🔗 Contributor Uplink
-Join the **F-SERIES** core on Discord for development blueprints:
-➡️ **[https://discord.gg/Cd9qyvht7X](https://discord.gg/Cd9qyvht7X)**
-
----
-<p align="center">&copy; 2026 FurulieLLC | Personfu | NEON_DUSK_PROTOCOL</p>
-
-## ▓▒░ X. APPENDIX: FLIPPER ANIMATION ARCHITECTURE
-*A technical guide for the CyberFlipper Neural Interface.*
-
-### 🛠️ SOFTWARE TOPOLOGY
-**Local Engineering:**
-1. **Aseprite** (Primary)
-2. **Adobe Photoshop** (High Fidelity)
-3. **GIMP / Microsoft Paint** (Legacy)
-
-**Web-Link Arrays:** EzGIF, Piskel, Lopaka, Photopea.
-
-### 📂 FILE STRUCTURE PROTOCOLS
-**CFW (Custom Firmware) Standard:**
 ```text
-Animation_Pack_Name/
-    ├── Anims/
-    │   ├── Animation_1/
-    │   │   ├── frame_0.bm
-    │   │   ├── frame_1.bm
-    │   │   └── meta.txt
-    │   └── manifest.txt
-    └── Icons/
-        └── Passport/
-            └── passport_128x64.bmx
+REM
+DELAY
+STRING
+ENTER
+GUI
+CTRL
+ALT
+SHIFT
+TAB
+ESC
 ```
 
-### ⚙️ COMPILATION VECTORS
-Use `compile_assets.py` or official FBT logs to debug:
-- `log debug`: The optimal verbosity for signal analysis.
-- `log trace`: High-intensity telemetry (overwhelming).
+Avoid fragile behavior: hidden windows, keyboard-layout-specific symbols where possible, hard-coded focus assumptions, silent execution, destructive commands, remote callbacks, credential stores, browser profile data, cookies, tokens, passwords, persistence, evasion, or privilege-abuse logic.
 
-*For errors regarding 'frames order', verify the passive/active frame counts in your meta.txt against the .bm library.*
+## Level Ladder
+
+| Level | Theme | Developer output |
+|---|---|---|
+| 001 | Host identity | Basic host and OS reports. |
+| 002 | Application inventory | Browser, office, PDF, and desktop tool reports. |
+| 003 | Event and app review | Local event summaries and installed app views. |
+| 004 | Business stack review | Productivity, design, backup, sync, and security tooling visibility. |
+| 005 | Communications workflow | Chat, meeting, project, and knowledge-base software reports. |
+| 006 | Community desktop review | Cross-platform desktop review suite. |
+| 020 | IR and detection engineering | Triage reports, event counts, patch posture, backup posture, report manifests. |
+| 030 | Benign validation | Detection-rule worksheets and tabletop emulation notes. |
+| 040 | Firmware and app review | Firmware/API changes, app catalog notes, compatibility tables. |
+| 060 | Evidence discipline | Hash manifests, metadata discipline, chain-of-custody notes. |
+| 080 | Sandboxed research | Local-only lab harnesses and mitigation-first analysis templates. |
+| 099 | Capstone | Full authorized lab workflow with docs, scripts, detection notes, and review checklist. |
+
+## Current Community Pack
+
+Level 006 and Level 020 are the active developer baselines.
+
+Recommended files to review first:
+
+```text
+badusb/CyberFlipper_Lab/level_006/README.md
+badusb/CyberFlipper_Lab/level_006/cf_l006_windows_desktop_stack_audit.txt
+badusb/CyberFlipper_Lab/level_006/cf_l006_windows_browser_review.txt
+badusb/CyberFlipper_Lab/level_006/cf_l006_linux_desktop_stack_audit.txt
+badusb/CyberFlipper_Lab/level_006/cf_l006_macos_workstation_review.txt
+badusb/CyberFlipper_Lab/level_020/README.md
+docs/community/CYBERFLIPPER_COMMUNITY_FEATURE_MATRIX.md
+docs/community/CYBERFLIPPER_SOURCE_ATTRIBUTION_2026-06-29.md
+```
+
+## SD Card Layout
+
+CyberFlipper is distributed as SD-card content. No firmware flash is required for the training files.
+
+Expected root layout:
+
+```text
+badusb/
+infrared/
+nfc/
+lfrfid/
+subghz/
+apps/
+dolphin/
+u2f/
+docs/
+hardware/
+web/
+```
+
+Install flow:
+
+1. Copy the needed folders to the Flipper Zero SD card.
+2. Keep level folders intact.
+3. Run BadUSB files from the Flipper interface.
+4. Confirm the host output file appears visibly.
+5. Record firmware version, host OS, keyboard layout, and test result.
+
+## Source Watch
+
+CyberFlipper tracks ideas from the Flipper Zero ecosystem and converts them into safe documentation, lab validation, detection engineering, and defensive training.
+
+Watched repositories and topics:
+
+| Source | What to extract |
+|---|---|
+| `flipperdevices/flipperzero-firmware` | Official firmware behavior, APIs, hardware notes, compatibility changes. |
+| `flipperdevices/flipper-application-catalog` | App metadata, app packaging patterns, catalog changes. |
+| `DarkFlippers/unleashed-firmware` | Community firmware changes, app compatibility, feature deltas. |
+| `Flipper-XFW/Xtreme-Firmware` | Community UX patterns, firmware feature organization, compatibility notes. |
+| `RogueMaster/flipperzero-firmware-wPlugins` | Plugin ecosystem tracking and app compatibility notes. |
+| `UberGuidoZ/Flipper` | Community file organization, payload structure, examples, and SD-card layout ideas. |
+| `UberGuidoZ/Flipper-IRDB` | IR database organization and attribution patterns. |
+| `Lucaslhm/Flipper-IRDB` | IR collection structure and remote taxonomy. |
+| `RocketGod-git/ProtoPirate` | Project presentation, feature matrices, protocol documentation style. |
+| `SkeletonMan03/FZEasyMarauderFlash` | Flashing workflow documentation and setup UX ideas. |
+| `kbembedded/Flipper-Zero-Game-Boy-Pokemon-Trading` | GPIO timing, retro hardware documentation, test fixtures. |
+| `DarkFlippers/Multi_Fuzzer` | Reader testing safety notes and lab-only validation patterns. |
+| `DarkFlippers/qFlipper` | Desktop update workflow and device-management notes. |
+
+Risky topics such as jamming, Wi-Fi attack tooling, fuzzing, cracking, and offensive firmware are only used for safety notes, defensive detection ideas, lawful lab disclaimers, and mitigation-first documentation.
+
+## Developer Validation Checklist
+
+Before opening or merging a PR:
+
+```text
+[ ] File names are clear and platform-specific.
+[ ] BadUSB files are plain text.
+[ ] Commands stay visible.
+[ ] Output file uses cyberflipper_ prefix.
+[ ] No credential, token, cookie, browser-profile, password-manager, VPN-secret, or message-content collection.
+[ ] No persistence, stealth, evasion, destructive behavior, or privilege-abuse chain.
+[ ] No RF transmission abuse, jamming, Wi-Fi cracking, or captive credential capture.
+[ ] Level README exists.
+[ ] Daily/source notes exist when the update came from ecosystem research.
+[ ] Human review is requested for shell-launching or host-inventory scripts.
+```
+
+## Contribution Format
+
+Use this structure for new levels:
+
+```text
+badusb/CyberFlipper_Lab/level_0XX/
+  README.md
+  cf_l0XX_windows_<topic>.txt
+  cf_l0XX_linux_<topic>.txt
+  cf_l0XX_macos_<topic>.txt
+
+docs/daily/YYYY-MM-DD-cyberflipper-level-0XX.md
+```
+
+README sections per level:
+
+```text
+Purpose
+Files
+Expected output
+Defensive value
+Detection notes
+Review requirements
+```
+
+## Project Boundary
+
+CyberFlipper is for owned hardware, classroom labs, CTF ranges, client-approved scopes, defensive education, and public-safe developer documentation.
+
+Do not use this repository for unauthorized access, credential capture, stealth, persistence, evasion, reverse shells, destructive actions, exploitation against third-party systems, RF abuse, or network abuse.
