@@ -1,0 +1,50 @@
+REM CyberFlipper Level 030 - Windows Patch SLA Worksheet
+REM Safe behavior: visible local report only. No remote collection.
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoProfile
+ENTER
+DELAY 1200
+STRING $r="$env:USERPROFILE\Desktop\cyberflipper_l030_windows_patch_sla_worksheet.txt"
+ENTER
+STRING "CYBERFLIPPER LEVEL 030 - WINDOWS PATCH SLA WORKSHEET" | Out-File $r
+ENTER
+STRING Get-Date | Out-File $r -Append
+ENTER
+STRING "== HOST CONTEXT ==" | Out-File $r -Append
+ENTER
+STRING whoami | Out-File $r -Append; hostname | Out-File $r -Append
+ENTER
+STRING Get-CimInstance Win32_OperatingSystem | Select Caption,Version,BuildNumber,LastBootUpTime | Format-List | Out-File $r -Append
+ENTER
+STRING "== RECENT HOTFIXES ==" | Out-File $r -Append
+ENTER
+STRING Get-HotFix | Sort InstalledOn -Descending | Select -First 20 HotFixID,Description,InstalledOn | Format-Table -Auto | Out-File $r -Append
+ENTER
+STRING "== DEFENDER SUMMARY ==" | Out-File $r -Append
+ENTER
+STRING Get-MpComputerStatus | Select AMServiceEnabled,AntivirusEnabled,RealTimeProtectionEnabled,BehaviorMonitorEnabled,NISEnabled,AntispywareSignatureLastUpdated | Format-List | Out-File $r -Append
+ENTER
+STRING "== FIREWALL SUMMARY ==" | Out-File $r -Append
+ENTER
+STRING Get-NetFirewallProfile | Select Name,Enabled,DefaultInboundAction,DefaultOutboundAction | Format-Table -Auto | Out-File $r -Append
+ENTER
+STRING "== PATCH SLA WORKSHEET ==" | Out-File $r -Append
+ENTER
+STRING "Publicly exposed asset: yes/no/unknown" | Out-File $r -Append
+ENTER
+STRING "Known exploited vulnerability involved: yes/no/unknown" | Out-File $r -Append
+ENTER
+STRING "Exploit automation risk: low/medium/high/unknown" | Out-File $r -Append
+ENTER
+STRING "Access impact if exploited: low/medium/high/unknown" | Out-File $r -Append
+ENTER
+STRING "Target remediation window: 3 days / 14 days / 60 days / manual exception" | Out-File $r -Append
+ENTER
+STRING "Owner: " | Out-File $r -Append
+ENTER
+STRING "Evidence link or ticket: " | Out-File $r -Append
+ENTER
+STRING notepad $r
+ENTER
