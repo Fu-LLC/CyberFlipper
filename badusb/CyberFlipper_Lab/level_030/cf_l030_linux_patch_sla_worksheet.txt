@@ -1,0 +1,43 @@
+REM CyberFlipper Level 030 - Linux Patch SLA Worksheet
+REM Safe behavior: visible local report only. No remote collection.
+DELAY 1000
+CTRL ALT t
+DELAY 1000
+STRING OUT="$HOME/cyberflipper_l030_linux_patch_sla_worksheet.txt"
+ENTER
+STRING echo "CYBERFLIPPER LEVEL 030 - LINUX PATCH SLA WORKSHEET" > "$OUT"
+ENTER
+STRING date >> "$OUT"
+ENTER
+STRING echo "== HOST CONTEXT ==" >> "$OUT"; whoami >> "$OUT"; hostname >> "$OUT"; uname -a >> "$OUT"
+ENTER
+STRING echo "== PACKAGE MANAGER SNAPSHOT ==" >> "$OUT"
+ENTER
+STRING command -v apt >/dev/null && apt list --upgradable 2>/dev/null | head -80 >> "$OUT"
+ENTER
+STRING command -v dnf >/dev/null && dnf check-update 2>/dev/null | head -80 >> "$OUT"
+ENTER
+STRING command -v pacman >/dev/null && pacman -Qu 2>/dev/null | head -80 >> "$OUT"
+ENTER
+STRING echo "== LISTENING SOCKETS ==" >> "$OUT"; ss -tuln 2>/dev/null | head -80 >> "$OUT"
+ENTER
+STRING echo "== RUNNING SERVICE SAMPLE ==" >> "$OUT"; systemctl --type=service --state=running --no-pager 2>/dev/null | head -80 >> "$OUT"
+ENTER
+STRING echo "== PATCH SLA WORKSHEET ==" >> "$OUT"
+ENTER
+STRING echo "Publicly exposed asset: yes/no/unknown" >> "$OUT"
+ENTER
+STRING echo "Known exploited vulnerability involved: yes/no/unknown" >> "$OUT"
+ENTER
+STRING echo "Exploit automation risk: low/medium/high/unknown" >> "$OUT"
+ENTER
+STRING echo "Access impact if exploited: low/medium/high/unknown" >> "$OUT"
+ENTER
+STRING echo "Target remediation window: 3 days / 14 days / 60 days / manual exception" >> "$OUT"
+ENTER
+STRING echo "Owner: " >> "$OUT"
+ENTER
+STRING echo "Evidence link or ticket: " >> "$OUT"
+ENTER
+STRING xdg-open "$OUT"
+ENTER
