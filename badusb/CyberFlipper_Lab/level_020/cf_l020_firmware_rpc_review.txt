@@ -1,0 +1,50 @@
+REM CyberFlipper Level 020 - Firmware RPC Review Worksheet
+REM Safe behavior: opens Notepad and types a firmware review worksheet.
+DELAY 1000
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 1000
+STRING CYBERFLIPPER LEVEL 020 - FIRMWARE RPC REVIEW WORKSHEET
+ENTER
+STRING Report file suggestion: cyberflipper_l020_firmware_rpc_review.txt
+ENTER
+STRING 
+ENTER
+STRING REVIEW THEME
+ENTER
+STRING Recent Flipper ecosystem work shows increased use of companion, network, GPS, and app-catalog workflows.
+ENTER
+STRING CyberFlipper treats this as a reason to improve permission review, privacy notes, and audit discipline.
+ENTER
+STRING 
+ENTER
+STRING REVIEW QUESTIONS
+ENTER
+STRING - Does the feature request location, network, USB, Bluetooth, NFC, RFID, IR, GPIO, or storage access?
+ENTER
+STRING - Is user consent explicit and visible?
+ENTER
+STRING - Is the data retained locally or transmitted elsewhere?
+ENTER
+STRING - Are unsafe radio, Wi-Fi, jammer, cracking, or fuzzing behaviors excluded from the public pack?
+ENTER
+STRING - Is licensing and attribution preserved?
+ENTER
+STRING - Does the README explain lawful authorized use only?
+ENTER
+STRING 
+ENTER
+STRING SAFE CYBERFLIPPER ACTIONS
+ENTER
+STRING - Add privacy review notes.
+ENTER
+STRING - Add validation checklists.
+ENTER
+STRING - Add detection guidance.
+ENTER
+STRING - Add lab-only disclaimers.
+ENTER
+STRING - Keep shell-launching payloads in draft PRs until reviewed.
+ENTER

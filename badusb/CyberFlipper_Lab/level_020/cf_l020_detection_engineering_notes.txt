@@ -1,0 +1,60 @@
+REM CyberFlipper Level 020 - Detection Engineering Notes
+REM Safe behavior: opens Notepad and types local detection guidance.
+DELAY 1000
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 1000
+STRING CYBERFLIPPER LEVEL 020 - DETECTION ENGINEERING NOTES
+ENTER
+STRING Report file suggestion: cyberflipper_l020_detection_engineering_notes.txt
+ENTER
+STRING 
+ENTER
+STRING DETECTION OBJECTIVE
+ENTER
+STRING Validate whether defenders can identify authorized HID-based training activity without relying on stealth assumptions.
+ENTER
+STRING 
+ENTER
+STRING WATCH FOR
+ENTER
+STRING - New USB keyboard or composite HID device.
+ENTER
+STRING - Notepad or terminal opened shortly after USB insertion.
+ENTER
+STRING - Rapid keystroke timing inconsistent with normal typing.
+ENTER
+STRING - New visible files or notes using cyberflipper_l020 naming.
+ENTER
+STRING - Repeated tabletop or checklist text across multiple hosts.
+ENTER
+STRING 
+ENTER
+STRING TRIAGE QUESTIONS
+ENTER
+STRING - Was the test approved?
+ENTER
+STRING - Who owns the asset?
+ENTER
+STRING - Was sensitive data touched?
+ENTER
+STRING - Was anything changed?
+ENTER
+STRING - Was any network connection made?
+ENTER
+STRING - What evidence should be retained?
+ENTER
+STRING 
+ENTER
+STRING MITIGATION IDEAS
+ENTER
+STRING - Use device-control policy for unapproved HID devices.
+ENTER
+STRING - Require written authorization for HID exercises.
+ENTER
+STRING - Log test windows and expected filenames before exercises.
+ENTER
+STRING - Train staff to report unexpected typed activity immediately.
+ENTER

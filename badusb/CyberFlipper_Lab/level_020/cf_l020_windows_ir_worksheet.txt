@@ -1,0 +1,62 @@
+REM CyberFlipper Level 020 - Windows IR Worksheet
+REM Safe behavior: opens Notepad and types a visible defensive triage worksheet.
+DELAY 1000
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 1000
+STRING CYBERFLIPPER LEVEL 020 - WINDOWS INCIDENT RESPONSE WORKSHEET
+ENTER
+STRING Report file suggestion: cyberflipper_l020_windows_ir_worksheet.txt
+ENTER
+STRING Purpose: authorized local defensive training only.
+ENTER
+STRING 
+ENTER
+STRING 1. HOST CONTEXT
+ENTER
+STRING - Asset owner:
+ENTER
+STRING - Device name:
+ENTER
+STRING - Operating system:
+ENTER
+STRING - Current user:
+ENTER
+STRING - Approved test window:
+ENTER
+STRING 
+ENTER
+STRING 2. INITIAL OBSERVATIONS
+ENTER
+STRING - Unexpected USB HID activity observed?
+ENTER
+STRING - New shell window observed?
+ENTER
+STRING - New cyberflipper_l020 report file observed?
+ENTER
+STRING - User reported symptoms:
+ENTER
+STRING 
+ENTER
+STRING 3. DEFENSIVE CHECKS
+ENTER
+STRING - Confirm endpoint protection status.
+ENTER
+STRING - Confirm firewall profile status.
+ENTER
+STRING - Review recent security events through approved tools.
+ENTER
+STRING - Review recent software updates.
+ENTER
+STRING - Confirm backup health and last successful restore test.
+ENTER
+STRING 
+ENTER
+STRING 4. SAFETY BOUNDARY
+ENTER
+STRING This worksheet does not collect credentials, tokens, cookies, browser stores, private files, or third-party data.
+ENTER
+STRING It does not install software, change settings, transmit data, exploit systems, or create persistence.
+ENTER
