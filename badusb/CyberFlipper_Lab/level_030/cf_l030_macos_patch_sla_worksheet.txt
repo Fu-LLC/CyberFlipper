@@ -1,0 +1,40 @@
+REM CyberFlipper Level 030 - macOS Patch SLA Worksheet
+REM Safe behavior: visible local report only. No remote collection.
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING Terminal
+ENTER
+DELAY 1200
+STRING OUT="$HOME/Desktop/cyberflipper_l030_macos_patch_sla_worksheet.txt"
+ENTER
+STRING echo "CYBERFLIPPER LEVEL 030 - MACOS PATCH SLA WORKSHEET" > "$OUT"
+ENTER
+STRING date >> "$OUT"
+ENTER
+STRING echo "== HOST CONTEXT ==" >> "$OUT"; whoami >> "$OUT"; hostname >> "$OUT"; sw_vers >> "$OUT"
+ENTER
+STRING echo "== UPDATE STATUS PROMPT ==" >> "$OUT"; softwareupdate -l 2>&1 | head -80 >> "$OUT"
+ENTER
+STRING echo "== FIREWALL STATE ==" >> "$OUT"; /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate >> "$OUT" 2>&1
+ENTER
+STRING echo "== LISTENING TCP SAMPLE ==" >> "$OUT"; lsof -nP -iTCP -sTCP:LISTEN 2>/dev/null | head -80 >> "$OUT"
+ENTER
+STRING echo "== PATCH SLA WORKSHEET ==" >> "$OUT"
+ENTER
+STRING echo "Publicly exposed asset: yes/no/unknown" >> "$OUT"
+ENTER
+STRING echo "Known exploited vulnerability involved: yes/no/unknown" >> "$OUT"
+ENTER
+STRING echo "Exploit automation risk: low/medium/high/unknown" >> "$OUT"
+ENTER
+STRING echo "Access impact if exploited: low/medium/high/unknown" >> "$OUT"
+ENTER
+STRING echo "Target remediation window: 3 days / 14 days / 60 days / manual exception" >> "$OUT"
+ENTER
+STRING echo "Owner: " >> "$OUT"
+ENTER
+STRING echo "Evidence link or ticket: " >> "$OUT"
+ENTER
+STRING open -a TextEdit "$OUT"
+ENTER
