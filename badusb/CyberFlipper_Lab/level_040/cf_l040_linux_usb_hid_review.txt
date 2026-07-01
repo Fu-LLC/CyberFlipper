@@ -1,0 +1,41 @@
+REM CyberFlipper Level 040 - Linux USB/HID Review Worksheet
+REM Safe: visible local worksheet only. No secret collection, no remote calls, no policy changes.
+DELAY 1000
+CTRL ALT t
+DELAY 1000
+STRING OUT="$HOME/cyberflipper_l040_linux_usb_hid_review.txt"
+ENTER
+STRING echo "CYBERFLIPPER LEVEL 040 - LINUX USB/HID REVIEW WORKSHEET" > "$OUT"
+ENTER
+STRING date >> "$OUT"
+ENTER
+STRING echo "== HOST CONTEXT ==" >> "$OUT"
+ENTER
+STRING whoami >> "$OUT"; hostname >> "$OUT"; uname -a >> "$OUT"
+ENTER
+STRING echo "== REVIEW PROMPTS ==" >> "$OUT"
+ENTER
+STRING echo "1. Record Flipper firmware version and qFlipper version manually." >> "$OUT"
+ENTER
+STRING echo "2. Record keyboard layout used for this BadUSB test." >> "$OUT"
+ENTER
+STRING echo "3. Review local USB/HID device-control policy with the system owner." >> "$OUT"
+ENTER
+STRING echo "4. Review whether endpoint telemetry captures new HID keyboard events." >> "$OUT"
+ENTER
+STRING echo "5. Review whether terminal launch and report creation are logged." >> "$OUT"
+ENTER
+STRING echo "6. Confirm no secrets, browser data, tokens, credentials, or message content were collected." >> "$OUT"
+ENTER
+STRING echo "7. Confirm no persistence, privilege escalation, RF action, Wi-Fi attack, or policy modification occurred." >> "$OUT"
+ENTER
+STRING echo "== APPROVAL ==" >> "$OUT"
+ENTER
+STRING echo "Approved scope owner:" >> "$OUT"
+ENTER
+STRING echo "Approved test window:" >> "$OUT"
+ENTER
+STRING echo "Observed detection events:" >> "$OUT"
+ENTER
+STRING xdg-open "$OUT"
+ENTER
