@@ -1,0 +1,40 @@
+REM CyberFlipper Level 040 - Windows HID Policy Review
+REM Safe: visible local USB/HID and device-control posture worksheet.
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoProfile
+ENTER
+DELAY 1200
+STRING $r="$env:USERPROFILE\Desktop\cyberflipper_l040_windows_hid_policy_review.txt"
+ENTER
+STRING "CYBERFLIPPER LEVEL 040 - WINDOWS HID POLICY REVIEW" | Out-File $r
+ENTER
+STRING Get-Date | Out-File $r -Append
+ENTER
+STRING "== HOST CONTEXT ==" | Out-File $r -Append
+ENTER
+STRING whoami | Out-File $r -Append; hostname | Out-File $r -Append
+ENTER
+STRING Get-CimInstance Win32_OperatingSystem | Select Caption,Version,BuildNumber,LastBootUpTime | Format-List | Out-File $r -Append
+ENTER
+STRING "== USB AND HID DEVICES VISIBLE TO WINDOWS ==" | Out-File $r -Append
+ENTER
+STRING Get-PnpDevice -PresentOnly | Where-Object {$_.Class -match "USB|HID|Keyboard|Mouse"} | Select Class,FriendlyName,Status,InstanceId | Format-Table -Auto | Out-File $r -Append
+ENTER
+STRING "== DEVICE INSTALL RESTRICTION POLICY LOCATIONS ==" | Out-File $r -Append
+ENTER
+STRING "Review GPO/MDM: Device Installation Restrictions" | Out-File $r -Append
+ENTER
+STRING "Review endpoint removable storage and device-control policy if deployed." | Out-File $r -Append
+ENTER
+STRING "== REVIEW NOTES ==" | Out-File $r -Append
+ENTER
+STRING "1. Confirm written authorization and test window." | Out-File $r -Append
+ENTER
+STRING "2. Confirm endpoint logs show HID arrival and shell launch." | Out-File $r -Append
+ENTER
+STRING "3. Confirm no hidden execution, persistence, or credential access occurred." | Out-File $r -Append
+ENTER
+STRING notepad $r
+ENTER
