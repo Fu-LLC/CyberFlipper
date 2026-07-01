@@ -1,0 +1,25 @@
+REM CyberFlipper Level 006 - Linux Desktop Stack Audit
+REM Safe: visible local desktop and service report only.
+DELAY 1000
+CTRL ALT t
+DELAY 1000
+STRING OUT="$HOME/cyberflipper_l006_linux_desktop_stack_audit.txt"
+ENTER
+STRING echo "CYBERFLIPPER LEVEL 006 - LINUX DESKTOP STACK AUDIT" > "$OUT"
+ENTER
+STRING date >> "$OUT"
+ENTER
+STRING echo "== DESKTOP TOOLS ==" >> "$OUT"
+ENTER
+STRING for app in google-chrome microsoft-edge firefox brave-browser opera vivaldi libreoffice gimp inkscape vlc obs blender thunderbird discord slack zoom filezilla 7z code; do if command -v "$app" >/dev/null 2>&1; then echo "$app FOUND $(command -v "$app")" >> "$OUT"; else echo "$app MISSING" >> "$OUT"; fi; done
+ENTER
+STRING echo "== NETWORK INTERFACES ==" >> "$OUT"
+ENTER
+STRING ip -brief addr >> "$OUT"
+ENTER
+STRING echo "== LISTENING SOCKETS ==" >> "$OUT"
+ENTER
+STRING ss -tuln >> "$OUT"
+ENTER
+STRING xdg-open "$OUT"
+ENTER
