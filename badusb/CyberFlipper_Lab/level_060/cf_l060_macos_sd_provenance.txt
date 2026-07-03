@@ -1,0 +1,38 @@
+REM CyberFlipper Level 060 - macOS SD Provenance Worksheet
+REM Safe: visible local report for an authorized CyberFlipper SD-card lab folder only.
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING Terminal
+ENTER
+DELAY 1200
+STRING OUT="$HOME/Desktop/cyberflipper_l060_macos_sd_provenance.txt"
+ENTER
+STRING TARGET="$HOME/Desktop/CyberFlipper_SD_CARD"
+ENTER
+STRING echo "CYBERFLIPPER LEVEL 060 - MACOS SD PROVENANCE WORKSHEET" > "$OUT"
+ENTER
+STRING date >> "$OUT"
+ENTER
+STRING echo "== AUTHORIZED LAB SCOPE ==" >> "$OUT"
+ENTER
+STRING echo "Use this only for a CyberFlipper SD-card folder that you own or administer." >> "$OUT"
+ENTER
+STRING echo "== TARGET FOLDER ==" >> "$OUT"
+ENTER
+STRING echo "$TARGET" >> "$OUT"
+ENTER
+STRING echo "== OPERATOR ACTION ==" >> "$OUT"
+ENTER
+STRING echo "Place a copy of the SD-card lab folder at Desktop/CyberFlipper_SD_CARD before running this worksheet." >> "$OUT"
+ENTER
+STRING echo "== TOP LEVEL REVIEW ==" >> "$OUT"
+ENTER
+STRING if [ -d "$TARGET" ]; then ls -la "$TARGET" >> "$OUT"; else echo "Target folder not found." >> "$OUT"; fi
+ENTER
+STRING echo "== REVIEW NOTES ==" >> "$OUT"
+ENTER
+STRING echo "Record source URL, license, folder purpose, release approval, and reviewer initials for each imported asset." >> "$OUT"
+ENTER
+STRING open -a TextEdit "$OUT"
+ENTER
