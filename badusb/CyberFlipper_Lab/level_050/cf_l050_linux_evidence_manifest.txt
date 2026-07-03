@@ -1,0 +1,57 @@
+REM CyberFlipper Level 050 - Linux Evidence Worksheet
+REM Safe: opens a terminal editor flow and creates a visible lab handoff template.
+DELAY 1000
+CTRL ALT t
+DELAY 1000
+STRING cat > "$HOME/cyberflipper_l050_linux_evidence_worksheet.txt" <<'EOF'
+ENTER
+STRING CYBERFLIPPER LEVEL 050 - LINUX EVIDENCE WORKSHEET
+ENTER
+STRING Date:
+ENTER
+STRING Operator:
+ENTER
+STRING Reviewer:
+ENTER
+STRING Scope:
+ENTER
+STRING Flipper firmware version:
+ENTER
+STRING SD-card source:
+ENTER
+STRING Keyboard layout:
+ENTER
+STRING Host OS:
+ENTER
+STRING Lab files reviewed:
+ENTER
+STRING - cyberflipper_
+ENTER
+STRING Hashes recorded manually:
+ENTER
+STRING - SHA256:
+ENTER
+STRING Defensive value:
+ENTER
+STRING - Evidence provenance
+ENTER
+STRING - SD-card content review
+ENTER
+STRING - Repeatable lab handoff
+ENTER
+STRING Handoff checklist:
+ENTER
+STRING [ ] Authorization and scope confirmed
+ENTER
+STRING [ ] No private content collected
+ENTER
+STRING [ ] Only intended cyberflipper_ reports attached
+ENTER
+STRING [ ] Findings reviewed before publication
+ENTER
+STRING [ ] Human approval recorded before merge or release
+ENTER
+STRING EOF
+ENTER
+STRING xdg-open "$HOME/cyberflipper_l050_linux_evidence_worksheet.txt" 2>/dev/null || cat "$HOME/cyberflipper_l050_linux_evidence_worksheet.txt"
+ENTER
