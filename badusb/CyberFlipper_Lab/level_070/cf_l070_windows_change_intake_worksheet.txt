@@ -1,0 +1,54 @@
+REM CyberFlipper Level 070 - Windows Change Intake Worksheet
+REM Safe: creates a visible local worksheet for firmware/app/source review.
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoProfile
+ENTER
+DELAY 1200
+STRING $r="$env:USERPROFILE\Desktop\cyberflipper_l070_windows_change_intake.txt"
+ENTER
+STRING "CYBERFLIPPER LEVEL 070 - WINDOWS CHANGE INTAKE WORKSHEET" | Out-File $r
+ENTER
+STRING Get-Date | Out-File $r -Append
+ENTER
+STRING "" | Out-File $r -Append
+ENTER
+STRING "== SOURCE UNDER REVIEW ==" | Out-File $r -Append
+ENTER
+STRING "Repository/advisory/source:" | Out-File $r -Append
+ENTER
+STRING "Version/tag/commit/date:" | Out-File $r -Append
+ENTER
+STRING "License/attribution notes:" | Out-File $r -Append
+ENTER
+STRING "" | Out-File $r -Append
+ENTER
+STRING "== RISK DOMAIN ==" | Out-File $r -Append
+ENTER
+STRING "Check all that apply: Firmware | App catalog | BadUSB | IR | NFC | LFRFID | Sub-GHz | GPIO | Wi-Fi | BLE | Fuzzer | Jammer | Other" | Out-File $r -Append
+ENTER
+STRING "Risk summary:" | Out-File $r -Append
+ENTER
+STRING "" | Out-File $r -Append
+ENTER
+STRING "== SAFE CONVERSION TARGET ==" | Out-File $r -Append
+ENTER
+STRING "Allowed outputs: docs, matrix, checklist, worksheet, visible local report, detection note, mitigation note, tabletop note" | Out-File $r -Append
+ENTER
+STRING "Blocked outputs: credentials, tokens, cookies, stealth, persistence, exploitation, RF abuse, Wi-Fi cracking, captive credential capture" | Out-File $r -Append
+ENTER
+STRING "" | Out-File $r -Append
+ENTER
+STRING "== REVIEW DECISION ==" | Out-File $r -Append
+ENTER
+STRING "Proceed as documentation only:" | Out-File $r -Append
+ENTER
+STRING "Needs lab-only review:" | Out-File $r -Append
+ENTER
+STRING "Needs human approval before merge:" | Out-File $r -Append
+ENTER
+STRING "Rejected reason:" | Out-File $r -Append
+ENTER
+STRING notepad $r
+ENTER

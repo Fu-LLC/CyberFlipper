@@ -1,0 +1,51 @@
+REM CyberFlipper Level 070 - Linux Change Intake Worksheet
+REM Safe: creates a visible local worksheet for firmware/app/source review.
+DELAY 1000
+CTRL ALT t
+DELAY 1000
+STRING OUT="$HOME/cyberflipper_l070_linux_change_intake.txt"
+ENTER
+STRING echo "CYBERFLIPPER LEVEL 070 - LINUX CHANGE INTAKE WORKSHEET" > "$OUT"
+ENTER
+STRING date >> "$OUT"
+ENTER
+STRING echo "" >> "$OUT"
+ENTER
+STRING echo "== SOURCE UNDER REVIEW ==" >> "$OUT"
+ENTER
+STRING echo "Repository/advisory/source:" >> "$OUT"
+ENTER
+STRING echo "Version/tag/commit/date:" >> "$OUT"
+ENTER
+STRING echo "License/attribution notes:" >> "$OUT"
+ENTER
+STRING echo "" >> "$OUT"
+ENTER
+STRING echo "== RISK DOMAIN ==" >> "$OUT"
+ENTER
+STRING echo "Check all that apply: Firmware | App catalog | BadUSB | IR | NFC | LFRFID | Sub-GHz | GPIO | Wi-Fi | BLE | Fuzzer | Jammer | Other" >> "$OUT"
+ENTER
+STRING echo "Risk summary:" >> "$OUT"
+ENTER
+STRING echo "" >> "$OUT"
+ENTER
+STRING echo "== SAFE CONVERSION TARGET ==" >> "$OUT"
+ENTER
+STRING echo "Allowed outputs: docs, matrix, checklist, worksheet, visible local report, detection note, mitigation note, tabletop note" >> "$OUT"
+ENTER
+STRING echo "Blocked outputs: credentials, tokens, cookies, stealth, persistence, exploitation, RF abuse, Wi-Fi cracking, captive credential capture" >> "$OUT"
+ENTER
+STRING echo "" >> "$OUT"
+ENTER
+STRING echo "== REVIEW DECISION ==" >> "$OUT"
+ENTER
+STRING echo "Proceed as documentation only:" >> "$OUT"
+ENTER
+STRING echo "Needs lab-only review:" >> "$OUT"
+ENTER
+STRING echo "Needs human approval before merge:" >> "$OUT"
+ENTER
+STRING echo "Rejected reason:" >> "$OUT"
+ENTER
+STRING xdg-open "$OUT"
+ENTER
