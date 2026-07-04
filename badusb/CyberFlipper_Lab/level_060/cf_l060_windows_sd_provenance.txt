@@ -1,0 +1,40 @@
+REM CyberFlipper Level 060 - Windows SD Provenance and SBOM-Lite
+REM Safe: visible local report for an authorized CyberFlipper SD-card lab folder only.
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoProfile
+ENTER
+DELAY 1200
+STRING $out="$env:USERPROFILE\Desktop\cyberflipper_l060_windows_sd_provenance.txt"
+ENTER
+STRING $candidates=@("$env:USERPROFILE\Desktop\CyberFlipper_SD_CARD","$env:USERPROFILE\Downloads\CyberFlipper_SD_CARD","E:\","F:\")
+ENTER
+STRING $target=$candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+ENTER
+STRING "CYBERFLIPPER LEVEL 060 - WINDOWS SD PROVENANCE AND SBOM-LITE" | Out-File $out
+ENTER
+STRING Get-Date | Out-File $out -Append
+ENTER
+STRING "== AUTHORIZED LAB SCOPE ==" | Out-File $out -Append
+ENTER
+STRING "This report is for a CyberFlipper SD-card folder or removable lab media only." | Out-File $out -Append
+ENTER
+STRING "== TARGET ==" | Out-File $out -Append
+ENTER
+STRING if($target){$target | Out-File $out -Append}else{"No default lab folder found. Create Desktop\CyberFlipper_SD_CARD or connect lab SD media." | Out-File $out -Append}
+ENTER
+STRING if($target){"== TOP LEVEL FOLDERS ==" | Out-File $out -Append; Get-ChildItem $target -Directory -ErrorAction SilentlyContinue | Select Name,LastWriteTime | Format-Table -Auto | Out-File $out -Append}
+ENTER
+STRING if($target){"== FILE TYPE COUNTS ==" | Out-File $out -Append; Get-ChildItem $target -Recurse -File -ErrorAction SilentlyContinue | Group-Object Extension | Sort Count -Descending | Select Count,Name | Format-Table -Auto | Out-File $out -Append}
+ENTER
+STRING if($target){"== SAMPLE FILE MANIFEST FIRST 200 FILES ==" | Out-File $out -Append; Get-ChildItem $target -Recurse -File -ErrorAction SilentlyContinue | Select -First 200 FullName,Length,LastWriteTime | Format-Table -Auto | Out-File $out -Append}
+ENTER
+STRING if($target){"== SHA256 FIRST 100 FILES ==" | Out-File $out -Append; Get-ChildItem $target -Recurse -File -ErrorAction SilentlyContinue | Select -First 100 | Get-FileHash -Algorithm SHA256 | Format-Table -Auto | Out-File $out -Append}
+ENTER
+STRING "== REVIEW NOTES ==" | Out-File $out -Append
+ENTER
+STRING "Check attribution, license notes, folder purpose, source URL, and public-release approval before publishing." | Out-File $out -Append
+ENTER
+STRING notepad $out
+ENTER
