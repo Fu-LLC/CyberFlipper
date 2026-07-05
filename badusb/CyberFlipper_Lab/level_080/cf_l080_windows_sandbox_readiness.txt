@@ -1,0 +1,10 @@
+REM CyberFlipper Level 080 - Windows Sandbox Readiness
+REM Visible local defensive worksheet only. No stealth. No credential collection. No remote connection.
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoProfile
+ENTER
+DELAY 1000
+STRING $d=Join-Path $env:USERPROFILE 'Desktop\cyberflipper_level080'; New-Item -ItemType Directory -Force -Path $d | Out-Null; $r=Join-Path $d 'cyberflipper_l080_windows_sandbox_readiness.txt'; 'CyberFlipper Level 080 - Windows Sandbox Readiness' | Set-Content $r; 'Date: '+(Get-Date -Format s) | Add-Content $r; 'Host: '+$env:COMPUTERNAME | Add-Content $r; 'Purpose: visible local defensive sandbox worksheet' | Add-Content $r; 'No credentials, tokens, cookies, browser data, persistence, stealth, exploitation, or remote callbacks are collected.' | Add-Content $r; '--- OS ---' | Add-Content $r; Get-ComputerInfo -Property OsName,OsVersion,OsBuildNumber | Out-String | Add-Content $r; '--- Reviewer checklist ---' | Add-Content $r; 'Sandbox or VM ready: [ ]' | Add-Content $r; 'Snapshot or rollback point ready: [ ]' | Add-Content $r; 'Test account only: [ ]' | Add-Content $r; 'Network isolation considered: [ ]' | Add-Content $r; 'Firmware/app/source URL recorded: [ ]' | Add-Content $r; 'Expected output documented: [ ]' | Add-Content $r; 'Stop conditions documented: [ ]' | Add-Content $r; notepad $r
+ENTER
