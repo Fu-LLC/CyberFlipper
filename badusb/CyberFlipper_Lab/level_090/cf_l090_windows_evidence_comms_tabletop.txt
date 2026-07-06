@@ -1,0 +1,50 @@
+REM CyberFlipper Level 090 Windows worksheet
+REM Authorized education only. Visible typing into Notepad.
+DELAY 1000
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 1000
+STRING CyberFlipper Level 090 Windows Evidence Communications Worksheet
+ENTER
+STRING Save as cyberflipper_l090_windows_evidence_comms.txt
+ENTER
+ENTER
+STRING Operator:
+ENTER
+STRING Lab or classroom:
+ENTER
+STRING Date:
+ENTER
+STRING Host:
+ENTER
+STRING Operating system:
+ENTER
+STRING Keyboard layout:
+ENTER
+STRING Flipper firmware:
+ENTER
+STRING CyberFlipper source:
+ENTER
+STRING Authorization statement:
+ENTER
+STRING Test scope:
+ENTER
+STRING Files reviewed:
+ENTER
+STRING Expected result:
+ENTER
+STRING Actual result:
+ENTER
+STRING Artifacts created:
+ENTER
+STRING Follow-up owner:
+ENTER
+STRING Release decision:
+ENTER
+STRING Reviewer signoff:
+ENTER
+ENTER
+STRING Summary: This visible worksheet documents an approved local CyberFlipper lab review. It is for scope, provenance, communication, and release review notes only.
+ENTER
