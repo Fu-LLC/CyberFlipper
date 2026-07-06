@@ -1,0 +1,49 @@
+REM CyberFlipper Level 090 Linux worksheet
+REM Authorized education only. Visible terminal note.
+DELAY 1000
+CTRL ALT t
+DELAY 1200
+STRING cat > ~/cyberflipper_l090_linux_evidence_comms.txt <<'CYBERFLIPPER_L090'
+ENTER
+STRING CyberFlipper Level 090 Linux Evidence Communications Worksheet
+ENTER
+STRING Operator:
+ENTER
+STRING Lab or classroom:
+ENTER
+STRING Date:
+ENTER
+STRING Host:
+ENTER
+STRING Operating system:
+ENTER
+STRING Keyboard layout:
+ENTER
+STRING Flipper firmware:
+ENTER
+STRING CyberFlipper source:
+ENTER
+STRING Authorization statement:
+ENTER
+STRING Test scope:
+ENTER
+STRING Files reviewed:
+ENTER
+STRING Expected result:
+ENTER
+STRING Actual result:
+ENTER
+STRING Artifacts created:
+ENTER
+STRING Follow-up owner:
+ENTER
+STRING Release decision:
+ENTER
+STRING Reviewer signoff:
+ENTER
+STRING Summary: This visible worksheet documents an approved local CyberFlipper lab review. It is for scope, provenance, communication, and release review notes only.
+ENTER
+STRING CYBERFLIPPER_L090
+ENTER
+STRING cat ~/cyberflipper_l090_linux_evidence_comms.txt
+ENTER
