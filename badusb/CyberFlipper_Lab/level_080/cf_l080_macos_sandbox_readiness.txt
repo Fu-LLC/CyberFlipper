@@ -1,0 +1,10 @@
+REM CyberFlipper Level 080 - macOS Sandbox Readiness
+REM Visible local defensive worksheet only. No stealth. No credential collection. No remote connection.
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING Terminal
+ENTER
+DELAY 1000
+STRING mkdir -p "$HOME/Desktop/cyberflipper_level080"; r="$HOME/Desktop/cyberflipper_level080/cyberflipper_l080_macos_sandbox_readiness.txt"; { echo "CyberFlipper Level 080 - macOS Sandbox Readiness"; date -Is; echo "Host: $(hostname)"; echo "Purpose: visible local defensive sandbox worksheet"; echo "No credentials, tokens, cookies, browser data, persistence, stealth, exploitation, or remote callbacks are collected."; echo "--- OS ---"; sw_vers; uname -a; echo "--- Reviewer checklist ---"; echo "Sandbox or VM ready: [ ]"; echo "Snapshot or rollback point ready: [ ]"; echo "Test account only: [ ]"; echo "Network isolation considered: [ ]"; echo "Firmware/app/source URL recorded: [ ]"; echo "Expected output documented: [ ]"; echo "Stop conditions documented: [ ]"; } > "$r"; open -e "$r"
+ENTER
