@@ -67,3 +67,7 @@
 | 2026-06-25 | CVE-2026-20230 | Cisco | Unified Communications Manager | network | [NETWORK](CVE_Daily/2026-06-25/CVE-2026-20230_NETWORK.txt) |
 | 2026-06-29 | CVE-2026-48558 | SimpleHelp  | SimpleHelp | windows, linux | [WINDOWS](CVE_Daily/2026-06-29/CVE-2026-48558_WINDOWS.txt) [LINUX](CVE_Daily/2026-06-29/CVE-2026-48558_LINUX.txt) |
 | 2026-07-01 | CVE-2026-45659 | Microsoft | SharePoint Server | windows | [WINDOWS](CVE_Daily/2026-07-01/CVE-2026-45659_WINDOWS.txt) |
+| 2026-07-07 | CVE-2026-48908 | JoomShaper | SP Page Builder | windows, linux | [WINDOWS](CVE_Daily/2026-07-07/CVE-2026-48908_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-07/CVE-2026-48908_LINUX.txt) |
+| 2026-07-07 | CVE-2026-55255 | Langflow | Langflow | windows, linux | [WINDOWS](CVE_Daily/2026-07-07/CVE-2026-55255_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-07/CVE-2026-55255_LINUX.txt) |
+| 2026-07-07 | CVE-2026-56290 | Joomlack | Page Builder | windows, linux | [WINDOWS](CVE_Daily/2026-07-07/CVE-2026-56290_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-07/CVE-2026-56290_LINUX.txt) |
+| 2026-07-07 | CVE-2026-48282 | Adobe | ColdFusion | windows, linux | [WINDOWS](CVE_Daily/2026-07-07/CVE-2026-48282_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-07/CVE-2026-48282_LINUX.txt) |
