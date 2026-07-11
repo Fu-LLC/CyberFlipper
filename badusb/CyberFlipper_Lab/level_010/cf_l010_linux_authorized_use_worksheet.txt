@@ -1,0 +1,68 @@
+REM CyberFlipper Level 010 - Linux authorized-use worksheet
+REM Visible local output only. No credential, token, cookie, browser, RF, Wi-Fi, exploit, persistence, stealth, or destructive behavior.
+DELAY 1000
+CTRL ALT t
+DELAY 1200
+STRING cat > "$HOME/Desktop/cyberflipper_l010_linux_authorized_use_worksheet.txt" <<'CYBERFLIPPER'
+ENTER
+STRING CyberFlipper Level 010 - Authorized-Use Kickoff
+ENTER
+STRING Output file: cyberflipper_l010_linux_authorized_use_worksheet.txt
+ENTER
+STRING Date: 2026-07-08
+ENTER
+ENTER
+STRING Operator name:
+ENTER
+STRING Organization / class / lab:
+ENTER
+STRING Approver or written authorization reference:
+ENTER
+STRING Host or device in scope:
+ENTER
+STRING Flipper Zero firmware version:
+ENTER
+STRING SD-card pack or repository branch:
+ENTER
+STRING Public source or community idea reviewed:
+ENTER
+ENTER
+STRING Authorized activities:
+ENTER
+STRING [ ] Local visible worksheet generation
+ENTER
+STRING [ ] Owned host inventory or policy review
+ENTER
+STRING [ ] Owned SD-card provenance review
+ENTER
+STRING [ ] Owned NFC/RFID/IR/RF test fixture documentation
+ENTER
+STRING [ ] Defensive detection, mitigation, or tabletop notes
+ENTER
+ENTER
+STRING Explicitly out of scope:
+ENTER
+STRING [ ] Credential, token, cookie, browser-profile, password-manager, or private-secret collection
+ENTER
+STRING [ ] Persistence, stealth, evasion, destructive commands, or privilege-abuse chains
+ENTER
+STRING [ ] RF jamming, unauthorized transmission, Wi-Fi cracking, or captive credential capture
+ENTER
+STRING [ ] Testing against systems, cards, devices, RF environments, or networks not owned or administered
+ENTER
+ENTER
+STRING Safety result:
+ENTER
+STRING [ ] Approved for lab-only review
+ENTER
+STRING [ ] Needs human review before running any higher-level CyberFlipper pack
+ENTER
+STRING [ ] Blocked until scope is clarified
+ENTER
+ENTER
+STRING Notes:
+ENTER
+STRING CYBERFLIPPER
+ENTER
+STRING xdg-open "$HOME/Desktop/cyberflipper_l010_linux_authorized_use_worksheet.txt"
+ENTER
