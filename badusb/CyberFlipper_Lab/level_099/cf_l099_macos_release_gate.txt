@@ -1,0 +1,106 @@
+REM CyberFlipper Level 099 macOS release gate worksheet
+REM Authorized lab use only. Visible local output only.
+DELAY 1000
+GUI SPACE
+DELAY 800
+STRING Terminal
+ENTER
+DELAY 1200
+STRING cat > ~/Desktop/cyberflipper_l099_macos_release_gate.txt <<'EOF'
+ENTER
+STRING CyberFlipper Level 099 macOS Release Gate
+ENTER
+STRING 
+ENTER
+STRING Run date:
+ENTER
+STRING Operator:
+ENTER
+STRING Organization / class / lab:
+ENTER
+STRING Host name:
+ENTER
+STRING macOS version:
+ENTER
+STRING Flipper firmware version:
+ENTER
+STRING CyberFlipper branch or release:
+ENTER
+STRING 
+ENTER
+STRING AUTHORIZATION
+ENTER
+STRING - System is owned, administered, or covered by written permission:
+ENTER
+STRING - Lab scope:
+ENTER
+STRING - Out-of-scope systems:
+ENTER
+STRING - Reviewer:
+ENTER
+STRING 
+ENTER
+STRING PROVENANCE
+ENTER
+STRING - SD-card source:
+ENTER
+STRING - Files changed:
+ENTER
+STRING - Upstream sources reviewed:
+ENTER
+STRING - License / attribution notes:
+ENTER
+STRING 
+ENTER
+STRING SAFETY REVIEW
+ENTER
+STRING [ ] Visible commands only
+ENTER
+STRING [ ] Local worksheet output only
+ENTER
+STRING [ ] No sensitive data collection
+ENTER
+STRING [ ] No persistence or stealth
+ENTER
+STRING [ ] No destructive commands
+ENTER
+STRING [ ] No RF or network misuse
+ENTER
+STRING [ ] Risky-source ideas converted to defensive notes only
+ENTER
+STRING 
+ENTER
+STRING DEFENSIVE VALUE
+ENTER
+STRING - Inventory value:
+ENTER
+STRING - Detection value:
+ENTER
+STRING - Mitigation value:
+ENTER
+STRING - Training value:
+ENTER
+STRING 
+ENTER
+STRING EVIDENCE AND RELEASE
+ENTER
+STRING - Evidence artifacts produced:
+ENTER
+STRING - Hash / version notes:
+ENTER
+STRING - Known limitations:
+ENTER
+STRING - Release decision: publish / internal only / blocked
+ENTER
+STRING - Human reviewer signoff:
+ENTER
+STRING 
+ENTER
+STRING Notes:
+ENTER
+STRING EOF
+ENTER
+STRING echo CyberFlipper Level 099 worksheet created: ~/Desktop/cyberflipper_l099_macos_release_gate.txt
+ENTER
+STRING open -a TextEdit ~/Desktop/cyberflipper_l099_macos_release_gate.txt
+ENTER

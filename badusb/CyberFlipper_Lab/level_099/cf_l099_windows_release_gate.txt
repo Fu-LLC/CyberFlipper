@@ -1,0 +1,53 @@
+REM CyberFlipper Level 099 Windows release gate worksheet
+REM Authorized lab use only. Visible local output only.
+DELAY 1000
+GUI r
+DELAY 800
+STRING powershell -NoExit -Command "$p=Join-Path ([Environment]::GetFolderPath('Desktop')) 'cyberflipper_l099_windows_release_gate.txt'; @'
+CyberFlipper Level 099 Windows Release Gate
+
+Run date:
+Operator:
+Organization / class / lab:
+Host name:
+Windows version:
+Flipper firmware version:
+CyberFlipper branch or release:
+
+AUTHORIZATION
+- System is owned, administered, or covered by written permission:
+- Lab scope:
+- Out-of-scope systems:
+- Reviewer:
+
+PROVENANCE
+- SD-card source:
+- Files changed:
+- Upstream sources reviewed:
+- License / attribution notes:
+
+SAFETY REVIEW
+[ ] Visible commands only
+[ ] Local worksheet output only
+[ ] No sensitive data collection
+[ ] No persistence or stealth
+[ ] No destructive commands
+[ ] No RF or network misuse
+[ ] Risky-source ideas converted to defensive notes only
+
+DEFENSIVE VALUE
+- Inventory value:
+- Detection value:
+- Mitigation value:
+- Training value:
+
+EVIDENCE AND RELEASE
+- Evidence artifacts produced:
+- Hash / version notes:
+- Known limitations:
+- Release decision: publish / internal only / blocked
+- Human reviewer signoff:
+
+Notes:
+'@ | Set-Content -Path $p -Encoding UTF8; notepad $p; Write-Host 'CyberFlipper Level 099 worksheet created:' $p"
+ENTER
