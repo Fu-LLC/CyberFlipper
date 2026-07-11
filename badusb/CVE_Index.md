@@ -71,3 +71,5 @@
 | 2026-07-07 | CVE-2026-55255 | Langflow | Langflow | windows, linux | [WINDOWS](CVE_Daily/2026-07-07/CVE-2026-55255_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-07/CVE-2026-55255_LINUX.txt) |
 | 2026-07-07 | CVE-2026-56290 | Joomlack | Page Builder | windows, linux | [WINDOWS](CVE_Daily/2026-07-07/CVE-2026-56290_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-07/CVE-2026-56290_LINUX.txt) |
 | 2026-07-07 | CVE-2026-48282 | Adobe | ColdFusion | windows, linux | [WINDOWS](CVE_Daily/2026-07-07/CVE-2026-48282_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-07/CVE-2026-48282_LINUX.txt) |
+| 2026-07-10 | CVE-2026-56291 | Balbooa | Forms | windows, linux | [WINDOWS](CVE_Daily/2026-07-10/CVE-2026-56291_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-10/CVE-2026-56291_LINUX.txt) |
+| 2026-07-10 | CVE-2026-48939 | iCagenda | iCagenda | windows, linux | [WINDOWS](CVE_Daily/2026-07-10/CVE-2026-48939_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-10/CVE-2026-48939_LINUX.txt) |
