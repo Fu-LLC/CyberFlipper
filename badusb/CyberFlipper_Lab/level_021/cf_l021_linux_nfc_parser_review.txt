@@ -1,0 +1,7 @@
+REM CyberFlipper Level 021 - Visible Linux NFC Parser Review Worksheet
+REM Authorized defensive lab use only. Creates a local static worksheet and opens it visibly.
+DELAY 1200
+CTRL ALT t
+DELAY 1000
+STRING printf 'CYBERFLIPPER LEVEL 021 - NFC PARSER BOUNDARY REVIEW\nAuthorized operator:\nWritten scope reference:\nTest date and window:\nFlipper firmware version:\nExact firmware commit:\nApplication or plugin source:\nApplication API version:\nLicense and attribution checked: YES / NO\nKnown-good rollback image verified: YES / NO\nSD-card backup verified: YES / NO\nOwned lab tag and reader identifiers:\nExpected invalid-input rejection behavior:\nActual observed behavior:\nLogs and screenshots location:\nReviewer and disposition:\nNo malformed frames, emulation, transmission, fuzzing, or exploit reproduction performed.\n' > "$HOME/cyberflipper_l021_nfc_parser_review.txt" && xdg-open "$HOME/cyberflipper_l021_nfc_parser_review.txt"
+ENTER
