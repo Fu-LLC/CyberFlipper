@@ -1,0 +1,48 @@
+REM CyberFlipper Level 021 - Visible Windows NFC Parser Review Worksheet
+REM Authorized defensive lab use only. No host inventory or sensitive-data collection.
+DELAY 1200
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 1200
+STRING CYBERFLIPPER LEVEL 021 - NFC PARSER BOUNDARY REVIEW
+ENTER
+STRING Authorized operator:
+ENTER
+STRING Written scope reference:
+ENTER
+STRING Test date and window:
+ENTER
+STRING Flipper firmware version:
+ENTER
+STRING Exact firmware commit:
+ENTER
+STRING Application or plugin source:
+ENTER
+STRING Application API version:
+ENTER
+STRING License and attribution checked: YES / NO
+ENTER
+STRING Known-good rollback image verified: YES / NO
+ENTER
+STRING SD-card backup verified: YES / NO
+ENTER
+STRING Owned lab tag and reader identifiers:
+ENTER
+STRING Expected invalid-input rejection behavior:
+ENTER
+STRING Actual observed behavior:
+ENTER
+STRING Logs and screenshots location:
+ENTER
+STRING Reviewer and disposition:
+ENTER
+STRING No malformed frames, emulation, transmission, fuzzing, or exploit reproduction performed.
+ENTER
+CTRL SHIFT s
+DELAY 1000
+STRING %USERPROFILE%\Desktop\cyberflipper_l021_nfc_parser_review.txt
+ENTER
+DELAY 1200
+ENTER
