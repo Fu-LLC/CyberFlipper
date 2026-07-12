@@ -1,0 +1,42 @@
+REM CyberFlipper Level 022 - Windows Application Provenance Review
+REM Visible local worksheet only. Human review required.
+DELAY 1000
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 1000
+STRING CYBERFLIPPER LEVEL 022 - APPLICATION PROVENANCE REVIEW
+ENTER
+STRING Date:
+ENTER
+STRING Reviewer:
+ENTER
+STRING Application name and version:
+ENTER
+STRING Source repository:
+ENTER
+STRING Exact commit:
+ENTER
+STRING License:
+ENTER
+STRING Firmware and API version:
+ENTER
+STRING Interfaces requested - USB Storage GPIO IR NFC RFID SubGHz BLE Network:
+ENTER
+STRING Expected files and settings:
+ENTER
+STRING Backup verified:
+ENTER
+STRING Rollback version and procedure:
+ENTER
+STRING Lawful-use boundary:
+ENTER
+STRING Validation evidence:
+ENTER
+STRING Decision - approve revise reject:
+ENTER
+CTRL SHIFT s
+DELAY 800
+STRING cyberflipper_l022_app_provenance_review.txt
+ENTER
