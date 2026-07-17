@@ -1,0 +1,68 @@
+REM CyberFlipper Level 023 - macOS Memory Pressure and Recovery Review
+REM Visible local worksheet only. Opens TextEdit; no Terminal, elevation, collection, or network activity.
+DELAY 1500
+GUI SPACE
+DELAY 700
+STRING TextEdit
+DELAY 700
+ENTER
+DELAY 1400
+GUI n
+DELAY 600
+STRING CYBERFLIPPER LEVEL 023 - MEMORY PRESSURE AND RECOVERY REVIEW
+ENTER
+STRING Date:
+ENTER
+STRING Reviewer:
+ENTER
+STRING Written authorization reference:
+ENTER
+STRING Asset owner:
+ENTER
+STRING Flipper firmware and version:
+ENTER
+STRING Firmware source commit:
+ENTER
+STRING Application and version:
+ENTER
+STRING Application source commit and license:
+ENTER
+STRING Test data source - synthetic, owned, receive-only, or pre-recorded:
+ENTER
+STRING Maximum input file size:
+ENTER
+STRING Maximum record or frame count:
+ENTER
+STRING Maximum repeat count:
+ENTER
+STRING Maximum session duration:
+ENTER
+STRING Free storage and SD-card health checked:
+ENTER
+STRING Expected fail-closed behavior:
+ENTER
+STRING Observed hang, reboot, heat, or unexpected storage growth:
+ENTER
+STRING Normal exit result:
+ENTER
+STRING Restart result:
+ENTER
+STRING Backup and rollback result:
+ENTER
+STRING Unexpected files created:
+ENTER
+STRING Sensitive or third-party data collected: NO
+ENTER
+STRING Remote data transfer: NO
+ENTER
+STRING Radio transmission performed: NO
+ENTER
+STRING Final approval decision:
+ENTER
+GUI SHIFT s
+DELAY 1000
+GUI a
+STRING cyberflipper_l023_memory_recovery_review.txt
+ENTER
+DELAY 1000
+ENTER
