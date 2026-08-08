@@ -74,3 +74,4 @@
 | 2026-07-10 | CVE-2026-56291 | Balbooa | Forms | windows, linux | [WINDOWS](CVE_Daily/2026-07-10/CVE-2026-56291_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-10/CVE-2026-56291_LINUX.txt) |
 | 2026-07-10 | CVE-2026-48939 | iCagenda | iCagenda | windows, linux | [WINDOWS](CVE_Daily/2026-07-10/CVE-2026-48939_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-10/CVE-2026-48939_LINUX.txt) |
 | 2026-07-13 | CVE-2008-4128 | Cisco | IOS | network | [NETWORK](CVE_Daily/2026-07-13/CVE-2008-4128_NETWORK.txt) |
+| 2026-08-07 | CVE-2026-8037 | Progress | LoadMaster | windows, linux | [WINDOWS](CVE_Daily/2026-08-07/CVE-2026-8037_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-07/CVE-2026-8037_LINUX.txt) |
