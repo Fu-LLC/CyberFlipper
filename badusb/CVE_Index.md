@@ -75,3 +75,6 @@
 | 2026-07-10 | CVE-2026-48939 | iCagenda | iCagenda | windows, linux | [WINDOWS](CVE_Daily/2026-07-10/CVE-2026-48939_WINDOWS.txt) [LINUX](CVE_Daily/2026-07-10/CVE-2026-48939_LINUX.txt) |
 | 2026-07-13 | CVE-2008-4128 | Cisco | IOS | network | [NETWORK](CVE_Daily/2026-07-13/CVE-2008-4128_NETWORK.txt) |
 | 2026-08-07 | CVE-2026-8037 | Progress | LoadMaster | windows, linux | [WINDOWS](CVE_Daily/2026-08-07/CVE-2026-8037_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-07/CVE-2026-8037_LINUX.txt) |
+| 2026-08-11 | CVE-2026-20349 | Cisco | Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)  | network | [NETWORK](CVE_Daily/2026-08-11/CVE-2026-20349_NETWORK.txt) |
+| 2026-08-11 | CVE-2026-68820 | Microsoft | Windows Ancillary Function Driver for WinSock  | windows | [WINDOWS](CVE_Daily/2026-08-11/CVE-2026-68820_WINDOWS.txt) |
+| 2026-08-11 | CVE-2026-72898 | Metabase | Metabase | windows, linux | [WINDOWS](CVE_Daily/2026-08-11/CVE-2026-72898_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-11/CVE-2026-72898_LINUX.txt) |
