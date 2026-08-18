@@ -78,3 +78,4 @@
 | 2026-08-11 | CVE-2026-20349 | Cisco | Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)  | network | [NETWORK](CVE_Daily/2026-08-11/CVE-2026-20349_NETWORK.txt) |
 | 2026-08-11 | CVE-2026-68820 | Microsoft | Windows Ancillary Function Driver for WinSock  | windows | [WINDOWS](CVE_Daily/2026-08-11/CVE-2026-68820_WINDOWS.txt) |
 | 2026-08-11 | CVE-2026-72898 | Metabase | Metabase | windows, linux | [WINDOWS](CVE_Daily/2026-08-11/CVE-2026-72898_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-11/CVE-2026-72898_LINUX.txt) |
+| 2026-08-17 | CVE-2025-62593 | Ray-Project | Ray | macos | [MACOS](CVE_Daily/2026-08-17/CVE-2025-62593_MACOS.txt) |
