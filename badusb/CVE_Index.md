@@ -83,3 +83,4 @@
 | 2026-08-18 | CVE-2026-59310 | Broadcom | VMware vCenter | network | [NETWORK](CVE_Daily/2026-08-18/CVE-2026-59310_NETWORK.txt) |
 | 2026-08-18 | CVE-2026-55040 | Microsoft | SharePoint | windows | [WINDOWS](CVE_Daily/2026-08-18/CVE-2026-55040_WINDOWS.txt) |
 | 2026-08-18 | CVE-2026-65400 | Apple | macOS | macos | [MACOS](CVE_Daily/2026-08-18/CVE-2026-65400_MACOS.txt) |
+| 2026-08-19 | CVE-2026-64849 | MLflow | MLflow | windows, linux | [WINDOWS](CVE_Daily/2026-08-19/CVE-2026-64849_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-19/CVE-2026-64849_LINUX.txt) |
