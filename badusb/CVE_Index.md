@@ -86,3 +86,4 @@
 | 2026-08-19 | CVE-2026-64849 | MLflow | MLflow | windows, linux | [WINDOWS](CVE_Daily/2026-08-19/CVE-2026-64849_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-19/CVE-2026-64849_LINUX.txt) |
 | 2026-08-20 | CVE-2026-72530 | TrueConf | Server | windows, linux | [WINDOWS](CVE_Daily/2026-08-20/CVE-2026-72530_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-20/CVE-2026-72530_LINUX.txt) |
 | 2026-08-20 | CVE-2026-72529 | TrueConf | Server | windows, linux | [WINDOWS](CVE_Daily/2026-08-20/CVE-2026-72529_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-20/CVE-2026-72529_LINUX.txt) |
+| 2026-08-21 | CVE-2026-73570 | Synacor | Zimbra Collaboration Suite (ZCS) | windows, linux | [WINDOWS](CVE_Daily/2026-08-21/CVE-2026-73570_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-21/CVE-2026-73570_LINUX.txt) |
