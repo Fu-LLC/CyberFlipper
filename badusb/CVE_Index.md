@@ -89,3 +89,6 @@
 | 2026-08-21 | CVE-2026-73570 | Synacor | Zimbra Collaboration Suite (ZCS) | windows, linux | [WINDOWS](CVE_Daily/2026-08-21/CVE-2026-73570_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-21/CVE-2026-73570_LINUX.txt) |
 | 2026-08-24 | CVE-2026-21962 | Oracle | HTTP Server and Oracle Weblogic Server Proxy Plug-in | windows, linux | [WINDOWS](CVE_Daily/2026-08-24/CVE-2026-21962_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-24/CVE-2026-21962_LINUX.txt) |
 | 2026-08-25 | CVE-2026-60004 | Gitea | Gitea | windows, linux | [WINDOWS](CVE_Daily/2026-08-25/CVE-2026-60004_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-25/CVE-2026-60004_LINUX.txt) |
+| 2026-08-27 | CVE-2023-49105 | ownCloud | ownCloud | windows, linux | [WINDOWS](CVE_Daily/2026-08-27/CVE-2023-49105_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-27/CVE-2023-49105_LINUX.txt) |
+| 2026-08-27 | CVE-2026-53362 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-08-27/CVE-2026-53362_LINUX.txt) |
+| 2026-08-27 | CVE-2026-66384 | JFrog | Artifactory | windows, linux | [WINDOWS](CVE_Daily/2026-08-27/CVE-2026-66384_WINDOWS.txt) [LINUX](CVE_Daily/2026-08-27/CVE-2026-66384_LINUX.txt) |
