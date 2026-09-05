@@ -101,3 +101,4 @@
 | 2026-09-02 | CVE-2026-9586 | Sangoma | Switchvox | network | [NETWORK](CVE_Daily/2026-09-02/CVE-2026-9586_NETWORK.txt) |
 | 2026-09-02 | CVE-2026-83548 | SonicWall | SMA1000 Appliances | network | [NETWORK](CVE_Daily/2026-09-02/CVE-2026-83548_NETWORK.txt) |
 | 2026-09-02 | CVE-2026-83549 | SonicWall | SMA1000 Appliances | network | [NETWORK](CVE_Daily/2026-09-02/CVE-2026-83549_NETWORK.txt) |
+| 2026-09-04 | CVE-2026-85046 | Google | Chromium V8 | windows | [WINDOWS](CVE_Daily/2026-09-04/CVE-2026-85046_WINDOWS.txt) |
