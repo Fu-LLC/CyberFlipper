@@ -106,3 +106,7 @@
 | 2026-09-08 | CVE-2026-81963 | Microsoft | Windows | windows | [WINDOWS](CVE_Daily/2026-09-08/CVE-2026-81963_WINDOWS.txt) |
 | 2026-09-08 | CVE-2026-86218 | N-able | N-central | windows, linux | [WINDOWS](CVE_Daily/2026-09-08/CVE-2026-86218_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-08/CVE-2026-86218_LINUX.txt) |
 | 2026-09-08 | CVE-2026-85880 | Microsoft | Windows | windows | [WINDOWS](CVE_Daily/2026-09-08/CVE-2026-85880_WINDOWS.txt) |
+| 2026-09-09 | CVE-2026-19490 | Citrix | NetScaler | windows, network | [WINDOWS](CVE_Daily/2026-09-09/CVE-2026-19490_WINDOWS.txt) [NETWORK](CVE_Daily/2026-09-09/CVE-2026-19490_NETWORK.txt) |
+| 2026-09-09 | CVE-2025-25249 | Fortinet | Multiple Products | network | [NETWORK](CVE_Daily/2026-09-09/CVE-2025-25249_NETWORK.txt) |
+| 2026-09-09 | CVE-2026-87491 | Google | Chromium V8 | windows | [WINDOWS](CVE_Daily/2026-09-09/CVE-2026-87491_WINDOWS.txt) |
+| 2026-09-09 | CVE-2026-20079 | Cisco | Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management | network | [NETWORK](CVE_Daily/2026-09-09/CVE-2026-20079_NETWORK.txt) |
