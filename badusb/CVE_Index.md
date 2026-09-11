@@ -110,3 +110,5 @@
 | 2026-09-09 | CVE-2025-25249 | Fortinet | Multiple Products | network | [NETWORK](CVE_Daily/2026-09-09/CVE-2025-25249_NETWORK.txt) |
 | 2026-09-09 | CVE-2026-87491 | Google | Chromium V8 | windows | [WINDOWS](CVE_Daily/2026-09-09/CVE-2026-87491_WINDOWS.txt) |
 | 2026-09-09 | CVE-2026-20079 | Cisco | Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management | network | [NETWORK](CVE_Daily/2026-09-09/CVE-2026-20079_NETWORK.txt) |
+| 2026-09-10 | CVE-2026-86060 | MikroTik | RouterOS | network | [NETWORK](CVE_Daily/2026-09-10/CVE-2026-86060_NETWORK.txt) |
+| 2026-09-10 | CVE-2026-67277 | MikroTik | RouterOS | linux, network | [LINUX](CVE_Daily/2026-09-10/CVE-2026-67277_LINUX.txt) [NETWORK](CVE_Daily/2026-09-10/CVE-2026-67277_NETWORK.txt) |
