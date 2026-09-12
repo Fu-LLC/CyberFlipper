@@ -112,3 +112,7 @@
 | 2026-09-09 | CVE-2026-20079 | Cisco | Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management | network | [NETWORK](CVE_Daily/2026-09-09/CVE-2026-20079_NETWORK.txt) |
 | 2026-09-10 | CVE-2026-86060 | MikroTik | RouterOS | network | [NETWORK](CVE_Daily/2026-09-10/CVE-2026-86060_NETWORK.txt) |
 | 2026-09-10 | CVE-2026-67277 | MikroTik | RouterOS | linux, network | [LINUX](CVE_Daily/2026-09-10/CVE-2026-67277_LINUX.txt) [NETWORK](CVE_Daily/2026-09-10/CVE-2026-67277_NETWORK.txt) |
+| 2026-09-11 | CVE-2026-84869 | ConnectWise | ScreenConnect | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-84869_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-84869_LINUX.txt) |
+| 2026-09-11 | CVE-2026-42016 | JFrog | Artifactory | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-42016_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-42016_LINUX.txt) |
+| 2026-09-11 | CVE-2026-42018 | JFrog | Artifactory | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-42018_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-42018_LINUX.txt) |
+| 2026-09-11 | CVE-2026-85706 | GitLab | Community Edition and Enterprise Edition | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-85706_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-85706_LINUX.txt) |
