@@ -116,3 +116,4 @@
 | 2026-09-11 | CVE-2026-42016 | JFrog | Artifactory | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-42016_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-42016_LINUX.txt) |
 | 2026-09-11 | CVE-2026-42018 | JFrog | Artifactory | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-42018_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-42018_LINUX.txt) |
 | 2026-09-11 | CVE-2026-85706 | GitLab | Community Edition and Enterprise Edition | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-85706_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-85706_LINUX.txt) |
+| 2026-09-14 | CVE-2026-76461 | Cisco | Secure Email Gateway | network | [NETWORK](CVE_Daily/2026-09-14/CVE-2026-76461_NETWORK.txt) |
