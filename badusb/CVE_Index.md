@@ -117,3 +117,6 @@
 | 2026-09-11 | CVE-2026-42018 | JFrog | Artifactory | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-42018_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-42018_LINUX.txt) |
 | 2026-09-11 | CVE-2026-85706 | GitLab | Community Edition and Enterprise Edition | windows, linux | [WINDOWS](CVE_Daily/2026-09-11/CVE-2026-85706_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-11/CVE-2026-85706_LINUX.txt) |
 | 2026-09-14 | CVE-2026-76461 | Cisco | Secure Email Gateway | network | [NETWORK](CVE_Daily/2026-09-14/CVE-2026-76461_NETWORK.txt) |
+| 2026-09-16 | CVE-2026-58704 | Google | Pixel | windows, linux | [WINDOWS](CVE_Daily/2026-09-16/CVE-2026-58704_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-16/CVE-2026-58704_LINUX.txt) |
+| 2026-09-16 | CVE-2026-76460 | Cisco | Identity Services Engine | network | [NETWORK](CVE_Daily/2026-09-16/CVE-2026-76460_NETWORK.txt) |
+| 2026-09-16 | CVE-2026-87886 | Acronis | Backup | windows, linux | [WINDOWS](CVE_Daily/2026-09-16/CVE-2026-87886_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-16/CVE-2026-87886_LINUX.txt) |
