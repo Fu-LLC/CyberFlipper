@@ -120,3 +120,6 @@
 | 2026-09-16 | CVE-2026-58704 | Google | Pixel | windows, linux | [WINDOWS](CVE_Daily/2026-09-16/CVE-2026-58704_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-16/CVE-2026-58704_LINUX.txt) |
 | 2026-09-16 | CVE-2026-76460 | Cisco | Identity Services Engine | network | [NETWORK](CVE_Daily/2026-09-16/CVE-2026-76460_NETWORK.txt) |
 | 2026-09-16 | CVE-2026-87886 | Acronis | Backup | windows, linux | [WINDOWS](CVE_Daily/2026-09-16/CVE-2026-87886_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-16/CVE-2026-87886_LINUX.txt) |
+| 2026-09-18 | CVE-2025-39964 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2025-39964_LINUX.txt) |
+| 2026-09-18 | CVE-2026-53266 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2026-53266_LINUX.txt) |
+| 2026-09-18 | CVE-2025-39682 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2025-39682_LINUX.txt) |
