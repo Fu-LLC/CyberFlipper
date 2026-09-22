@@ -123,3 +123,4 @@
 | 2026-09-18 | CVE-2025-39964 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2025-39964_LINUX.txt) |
 | 2026-09-18 | CVE-2026-53266 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2026-53266_LINUX.txt) |
 | 2026-09-18 | CVE-2025-39682 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2025-39682_LINUX.txt) |
+| 2026-09-21 | CVE-2026-7273 | Zyxel | GS1900 Series Switches | network | [NETWORK](CVE_Daily/2026-09-21/CVE-2026-7273_NETWORK.txt) |
