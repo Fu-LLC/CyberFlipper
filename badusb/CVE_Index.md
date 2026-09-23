@@ -124,3 +124,7 @@
 | 2026-09-18 | CVE-2026-53266 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2026-53266_LINUX.txt) |
 | 2026-09-18 | CVE-2025-39682 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-09-18/CVE-2025-39682_LINUX.txt) |
 | 2026-09-21 | CVE-2026-7273 | Zyxel | GS1900 Series Switches | network | [NETWORK](CVE_Daily/2026-09-21/CVE-2026-7273_NETWORK.txt) |
+| 2026-09-22 | CVE-2026-93952 | Arista | VeloCloud Orchestrator | windows, linux | [WINDOWS](CVE_Daily/2026-09-22/CVE-2026-93952_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-22/CVE-2026-93952_LINUX.txt) |
+| 2026-09-22 | CVE-2026-94127 | F5 | BIG-IP APM | network | [NETWORK](CVE_Daily/2026-09-22/CVE-2026-94127_NETWORK.txt) |
+| 2026-09-22 | CVE-2026-93616 | Check Point | Multiple Products | windows, linux | [WINDOWS](CVE_Daily/2026-09-22/CVE-2026-93616_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-22/CVE-2026-93616_LINUX.txt) |
+| 2026-09-22 | CVE-2026-85102 | Check Point | Multiple Products | network | [NETWORK](CVE_Daily/2026-09-22/CVE-2026-85102_NETWORK.txt) |
