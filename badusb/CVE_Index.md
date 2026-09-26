@@ -130,3 +130,6 @@
 | 2026-09-22 | CVE-2026-85102 | Check Point | Multiple Products | network | [NETWORK](CVE_Daily/2026-09-22/CVE-2026-85102_NETWORK.txt) |
 | 2026-09-24 | CVE-2026-5430 | WSO2 | Multiple Products | windows, linux | [WINDOWS](CVE_Daily/2026-09-24/CVE-2026-5430_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-24/CVE-2026-5430_LINUX.txt) |
 | 2026-09-24 | CVE-2026-71362 | Adobe | Commerce and Magento  | windows, linux | [WINDOWS](CVE_Daily/2026-09-24/CVE-2026-71362_WINDOWS.txt) [LINUX](CVE_Daily/2026-09-24/CVE-2026-71362_LINUX.txt) |
+| 2026-09-25 | CVE-2026-67279 | MikroTik | RouterOS | network | [NETWORK](CVE_Daily/2026-09-25/CVE-2026-67279_NETWORK.txt) |
+| 2026-09-25 | CVE-2026-65660 | Microsoft | SharePoint | windows | [WINDOWS](CVE_Daily/2026-09-25/CVE-2026-65660_WINDOWS.txt) |
+| 2026-09-25 | CVE-2026-87902 | WordPress | Core | windows | [WINDOWS](CVE_Daily/2026-09-25/CVE-2026-87902_WINDOWS.txt) |
