@@ -133,3 +133,5 @@
 | 2026-09-25 | CVE-2026-67279 | MikroTik | RouterOS | network | [NETWORK](CVE_Daily/2026-09-25/CVE-2026-67279_NETWORK.txt) |
 | 2026-09-25 | CVE-2026-65660 | Microsoft | SharePoint | windows | [WINDOWS](CVE_Daily/2026-09-25/CVE-2026-65660_WINDOWS.txt) |
 | 2026-09-25 | CVE-2026-87902 | WordPress | Core | windows | [WINDOWS](CVE_Daily/2026-09-25/CVE-2026-87902_WINDOWS.txt) |
+| 2026-09-27 | CVE-2026-88772 | Citrix | NetScaler | network | [NETWORK](CVE_Daily/2026-09-27/CVE-2026-88772_NETWORK.txt) |
+| 2026-09-27 | CVE-2026-88771 | Citrix | NetScaler | network | [NETWORK](CVE_Daily/2026-09-27/CVE-2026-88771_NETWORK.txt) |
