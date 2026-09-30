@@ -135,3 +135,4 @@
 | 2026-09-25 | CVE-2026-87902 | WordPress | Core | windows | [WINDOWS](CVE_Daily/2026-09-25/CVE-2026-87902_WINDOWS.txt) |
 | 2026-09-27 | CVE-2026-88772 | Citrix | NetScaler | network | [NETWORK](CVE_Daily/2026-09-27/CVE-2026-88772_NETWORK.txt) |
 | 2026-09-27 | CVE-2026-88771 | Citrix | NetScaler | network | [NETWORK](CVE_Daily/2026-09-27/CVE-2026-88771_NETWORK.txt) |
+| 2026-09-29 | CVE-2026-86950 | Apple | Multiple Products | macos | [MACOS](CVE_Daily/2026-09-29/CVE-2026-86950_MACOS.txt) |
