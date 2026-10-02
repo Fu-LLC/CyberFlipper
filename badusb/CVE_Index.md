@@ -137,3 +137,4 @@
 | 2026-09-27 | CVE-2026-88771 | Citrix | NetScaler | network | [NETWORK](CVE_Daily/2026-09-27/CVE-2026-88771_NETWORK.txt) |
 | 2026-09-29 | CVE-2026-86950 | Apple | Multiple Products | macos | [MACOS](CVE_Daily/2026-09-29/CVE-2026-86950_MACOS.txt) |
 | 2026-09-30 | CVE-2026-76504 | Cisco | Catalyst SD-WAN Manager | network | [NETWORK](CVE_Daily/2026-09-30/CVE-2026-76504_NETWORK.txt) |
+| 2026-10-01 | CVE-2026-104286 | Fortinet | FortiMail | network | [NETWORK](CVE_Daily/2026-10-01/CVE-2026-104286_NETWORK.txt) |
