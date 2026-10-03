@@ -138,3 +138,5 @@
 | 2026-09-29 | CVE-2026-86950 | Apple | Multiple Products | macos | [MACOS](CVE_Daily/2026-09-29/CVE-2026-86950_MACOS.txt) |
 | 2026-09-30 | CVE-2026-76504 | Cisco | Catalyst SD-WAN Manager | network | [NETWORK](CVE_Daily/2026-09-30/CVE-2026-76504_NETWORK.txt) |
 | 2026-10-01 | CVE-2026-104286 | Fortinet | FortiMail | network | [NETWORK](CVE_Daily/2026-10-01/CVE-2026-104286_NETWORK.txt) |
+| 2026-10-02 | CVE-2026-102490 | Zammad GmbH | Zammad | windows, linux | [WINDOWS](CVE_Daily/2026-10-02/CVE-2026-102490_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-02/CVE-2026-102490_LINUX.txt) |
+| 2026-10-02 | CVE-2026-102489 | Zammad GmbH | Zammad | windows, linux | [WINDOWS](CVE_Daily/2026-10-02/CVE-2026-102489_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-02/CVE-2026-102489_LINUX.txt) |
