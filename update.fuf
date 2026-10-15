@@ -1,6 +1,6 @@
 Filetype: Flipper firmware upgrade configuration
 Version: 2
-Info: CYBERFLIPPER v1.1.68
+Info: CYBERFLIPPER v1.1.69
 Target: 7
 Loader: updater.bin
 # little-endian hex!
