@@ -152,3 +152,4 @@
 | 2026-10-14 | CVE-2026-76519 | Cisco | Secure Email Gateway | network | [NETWORK](CVE_Daily/2026-10-14/CVE-2026-76519_NETWORK.txt) |
 | 2026-10-14 | CVE-2026-105133 | Ahsay | AhsayCBS | windows, linux | [WINDOWS](CVE_Daily/2026-10-14/CVE-2026-105133_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-14/CVE-2026-105133_LINUX.txt) |
 | 2026-10-14 | CVE-2026-0322 | Palo Alto Networks | PAN-OS | network | [NETWORK](CVE_Daily/2026-10-14/CVE-2026-0322_NETWORK.txt) |
+| 2026-10-15 | CVE-2026-21589 | Atlassian | Multiple Products | windows, linux | [WINDOWS](CVE_Daily/2026-10-15/CVE-2026-21589_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-15/CVE-2026-21589_LINUX.txt) |
