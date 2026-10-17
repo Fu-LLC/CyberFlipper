@@ -153,3 +153,5 @@
 | 2026-10-14 | CVE-2026-105133 | Ahsay | AhsayCBS | windows, linux | [WINDOWS](CVE_Daily/2026-10-14/CVE-2026-105133_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-14/CVE-2026-105133_LINUX.txt) |
 | 2026-10-14 | CVE-2026-0322 | Palo Alto Networks | PAN-OS | network | [NETWORK](CVE_Daily/2026-10-14/CVE-2026-0322_NETWORK.txt) |
 | 2026-10-15 | CVE-2026-21589 | Atlassian | Multiple Products | windows, linux | [WINDOWS](CVE_Daily/2026-10-15/CVE-2026-21589_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-15/CVE-2026-21589_LINUX.txt) |
+| 2026-10-16 | CVE-2026-102764 | BeyondTrust | Remote Support | windows, linux | [WINDOWS](CVE_Daily/2026-10-16/CVE-2026-102764_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-16/CVE-2026-102764_LINUX.txt) |
+| 2026-10-16 | CVE-2025-61624 | Fortinet | Multiple Products | network | [NETWORK](CVE_Daily/2026-10-16/CVE-2025-61624_NETWORK.txt) |
