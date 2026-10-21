@@ -155,3 +155,9 @@
 | 2026-10-15 | CVE-2026-21589 | Atlassian | Multiple Products | windows, linux | [WINDOWS](CVE_Daily/2026-10-15/CVE-2026-21589_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-15/CVE-2026-21589_LINUX.txt) |
 | 2026-10-16 | CVE-2026-102764 | BeyondTrust | Remote Support | windows, linux | [WINDOWS](CVE_Daily/2026-10-16/CVE-2026-102764_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-16/CVE-2026-102764_LINUX.txt) |
 | 2026-10-16 | CVE-2025-61624 | Fortinet | Multiple Products | network | [NETWORK](CVE_Daily/2026-10-16/CVE-2025-61624_NETWORK.txt) |
+| 2026-10-20 | CVE-2026-106931 | EG Secure Solutions | SiteGuard Server Edition | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-106931_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-106931_LINUX.txt) |
+| 2026-10-20 | CVE-2026-96656 | Plex | Media Server | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-96656_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-96656_LINUX.txt) |
+| 2026-10-20 | CVE-2026-96655 | Plex | Media Server | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-96655_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-96655_LINUX.txt) |
+| 2026-10-20 | CVE-2026-96654 | Plex | Media Server | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-96654_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-96654_LINUX.txt) |
+| 2026-10-20 | CVE-2026-96652 | Plex | Media Server | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-96652_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-96652_LINUX.txt) |
+| 2026-10-20 | CVE-2026-110936 | Siemens | Software Center | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-110936_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-110936_LINUX.txt) |
