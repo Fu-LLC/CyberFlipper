@@ -161,3 +161,5 @@
 | 2026-10-20 | CVE-2026-96654 | Plex | Media Server | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-96654_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-96654_LINUX.txt) |
 | 2026-10-20 | CVE-2026-96652 | Plex | Media Server | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-96652_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-96652_LINUX.txt) |
 | 2026-10-20 | CVE-2026-110936 | Siemens | Software Center | windows, linux | [WINDOWS](CVE_Daily/2026-10-20/CVE-2026-110936_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-20/CVE-2026-110936_LINUX.txt) |
+| 2026-10-23 | CVE-2026-114625 | Arista | VeloCloud Orchestrator | windows, linux | [WINDOWS](CVE_Daily/2026-10-23/CVE-2026-114625_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-23/CVE-2026-114625_LINUX.txt) |
+| 2026-10-23 | CVE-2026-110447 | Collabora | Collabora Online – Built-in CODE Server | windows, linux | [WINDOWS](CVE_Daily/2026-10-23/CVE-2026-110447_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-23/CVE-2026-110447_LINUX.txt) |
