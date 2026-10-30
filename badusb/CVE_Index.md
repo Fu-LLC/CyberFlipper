@@ -169,3 +169,5 @@
 | 2026-10-27 | CVE-2026-111497 | Google | Brotli | windows, linux | [WINDOWS](CVE_Daily/2026-10-27/CVE-2026-111497_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-27/CVE-2026-111497_LINUX.txt) |
 | 2026-10-28 | CVE-2026-41709 | Broadcom | VMware ESX | network | [NETWORK](CVE_Daily/2026-10-28/CVE-2026-41709_NETWORK.txt) |
 | 2026-10-28 | CVE-2026-46300 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-10-28/CVE-2026-46300_LINUX.txt) |
+| 2026-10-29 | CVE-2026-97229 | GitLab | Community Edition and Enterprise Edition | windows, linux | [WINDOWS](CVE_Daily/2026-10-29/CVE-2026-97229_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-29/CVE-2026-97229_LINUX.txt) |
+| 2026-10-29 | CVE-2026-76418 | Cisco | Secure Firewall ASA Software and Cisco Secure FTD Software | network | [NETWORK](CVE_Daily/2026-10-29/CVE-2026-76418_NETWORK.txt) |
