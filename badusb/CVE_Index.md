@@ -171,3 +171,5 @@
 | 2026-10-28 | CVE-2026-46300 | Linux | Kernel | linux | [LINUX](CVE_Daily/2026-10-28/CVE-2026-46300_LINUX.txt) |
 | 2026-10-29 | CVE-2026-97229 | GitLab | Community Edition and Enterprise Edition | windows, linux | [WINDOWS](CVE_Daily/2026-10-29/CVE-2026-97229_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-29/CVE-2026-97229_LINUX.txt) |
 | 2026-10-29 | CVE-2026-76418 | Cisco | Secure Firewall ASA Software and Cisco Secure FTD Software | network | [NETWORK](CVE_Daily/2026-10-29/CVE-2026-76418_NETWORK.txt) |
+| 2026-10-30 | CVE-2026-118527 | Ivanti | Connect Secure | windows, linux | [WINDOWS](CVE_Daily/2026-10-30/CVE-2026-118527_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-30/CVE-2026-118527_LINUX.txt) |
+| 2026-10-30 | CVE-2026-111357 | Ivanti | Connect Secure | windows, linux | [WINDOWS](CVE_Daily/2026-10-30/CVE-2026-111357_WINDOWS.txt) [LINUX](CVE_Daily/2026-10-30/CVE-2026-111357_LINUX.txt) |
