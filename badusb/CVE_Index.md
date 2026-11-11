@@ -180,3 +180,9 @@
 | 2026-11-09 | CVE-2026-123158 | OpenBSD | OpenSSH | linux | [LINUX](CVE_Daily/2026-11-09/CVE-2026-123158_LINUX.txt) |
 | 2026-11-09 | CVE-2026-116779 | SignalWire | FreeSwitch | network | [NETWORK](CVE_Daily/2026-11-09/CVE-2026-116779_NETWORK.txt) |
 | 2026-11-09 | CVE-2026-123218 | IBM | Aspera Faspex | windows, linux | [WINDOWS](CVE_Daily/2026-11-09/CVE-2026-123218_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-09/CVE-2026-123218_LINUX.txt) |
+| 2026-11-10 | CVE-2026-124194 | Microsoft | Office | windows | [WINDOWS](CVE_Daily/2026-11-10/CVE-2026-124194_WINDOWS.txt) |
+| 2026-11-10 | CVE-2026-111793 | Openwave Messaging Limited | Webtop Media Transcoder | windows, linux | [WINDOWS](CVE_Daily/2026-11-10/CVE-2026-111793_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-10/CVE-2026-111793_LINUX.txt) |
+| 2026-11-10 | CVE-2026-20320 | Cisco | BroadWorks | network | [NETWORK](CVE_Daily/2026-11-10/CVE-2026-20320_NETWORK.txt) |
+| 2026-11-10 | CVE-2026-111560 | Barracuda Networks | Multiple Products | network | [NETWORK](CVE_Daily/2026-11-10/CVE-2026-111560_NETWORK.txt) |
+| 2026-11-10 | CVE-2026-116606 | Barracuda Networks | Barracuda Email Security Gateway (ESG) | windows, linux | [WINDOWS](CVE_Daily/2026-11-10/CVE-2026-116606_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-10/CVE-2026-116606_LINUX.txt) |
+| 2026-11-10 | CVE-2026-125350 | Google | Chromium | windows | [WINDOWS](CVE_Daily/2026-11-10/CVE-2026-125350_WINDOWS.txt) |
