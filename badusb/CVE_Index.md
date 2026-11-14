@@ -186,3 +186,5 @@
 | 2026-11-10 | CVE-2026-111560 | Barracuda Networks | Multiple Products | network | [NETWORK](CVE_Daily/2026-11-10/CVE-2026-111560_NETWORK.txt) |
 | 2026-11-10 | CVE-2026-116606 | Barracuda Networks | Barracuda Email Security Gateway (ESG) | windows, linux | [WINDOWS](CVE_Daily/2026-11-10/CVE-2026-116606_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-10/CVE-2026-116606_LINUX.txt) |
 | 2026-11-10 | CVE-2026-125350 | Google | Chromium | windows | [WINDOWS](CVE_Daily/2026-11-10/CVE-2026-125350_WINDOWS.txt) |
+| 2026-11-13 | CVE-2026-114713 | UnrealIRCd | UnrealIRCd | windows, linux | [WINDOWS](CVE_Daily/2026-11-13/CVE-2026-114713_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-13/CVE-2026-114713_LINUX.txt) |
+| 2026-11-13 | CVE-2026-123039 | Check Point | Multiple Products | network | [NETWORK](CVE_Daily/2026-11-13/CVE-2026-123039_NETWORK.txt) |
