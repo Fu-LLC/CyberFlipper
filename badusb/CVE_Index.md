@@ -189,3 +189,7 @@
 | 2026-11-13 | CVE-2026-114713 | UnrealIRCd | UnrealIRCd | windows, linux | [WINDOWS](CVE_Daily/2026-11-13/CVE-2026-114713_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-13/CVE-2026-114713_LINUX.txt) |
 | 2026-11-13 | CVE-2026-123039 | Check Point | Multiple Products | network | [NETWORK](CVE_Daily/2026-11-13/CVE-2026-123039_NETWORK.txt) |
 | 2026-11-17 | CVE-2026-115731 | Perforce | Puppet Enterprise | windows, linux | [WINDOWS](CVE_Daily/2026-11-17/CVE-2026-115731_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-17/CVE-2026-115731_LINUX.txt) |
+| 2026-11-18 | CVE-2024-10441 | Synology | DiskStation Manager (DSM) | network | [NETWORK](CVE_Daily/2026-11-18/CVE-2024-10441_NETWORK.txt) |
+| 2026-11-18 | CVE-2026-40217 | BerriAI | LiteLLM | windows, linux | [WINDOWS](CVE_Daily/2026-11-18/CVE-2026-40217_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-18/CVE-2026-40217_LINUX.txt) |
+| 2026-11-18 | CVE-2026-90817 | Vanderbilt University | Research Electronic Data Capture (REDCap) | windows | [WINDOWS](CVE_Daily/2026-11-18/CVE-2026-90817_WINDOWS.txt) |
+| 2026-11-18 | CVE-2026-90436 | Apache | Axis | linux | [LINUX](CVE_Daily/2026-11-18/CVE-2026-90436_LINUX.txt) |
