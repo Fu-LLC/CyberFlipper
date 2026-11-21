@@ -193,3 +193,7 @@
 | 2026-11-18 | CVE-2026-40217 | BerriAI | LiteLLM | windows, linux | [WINDOWS](CVE_Daily/2026-11-18/CVE-2026-40217_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-18/CVE-2026-40217_LINUX.txt) |
 | 2026-11-18 | CVE-2026-90817 | Vanderbilt University | Research Electronic Data Capture (REDCap) | windows | [WINDOWS](CVE_Daily/2026-11-18/CVE-2026-90817_WINDOWS.txt) |
 | 2026-11-18 | CVE-2026-90436 | Apache | Axis | linux | [LINUX](CVE_Daily/2026-11-18/CVE-2026-90436_LINUX.txt) |
+| 2026-11-20 | CVE-2026-129448 | Apache | Roller | linux | [LINUX](CVE_Daily/2026-11-20/CVE-2026-129448_LINUX.txt) |
+| 2026-11-20 | CVE-2026-123890 | Broadcom | VMware vCenter | network | [NETWORK](CVE_Daily/2026-11-20/CVE-2026-123890_NETWORK.txt) |
+| 2026-11-20 | CVE-2025-42884 | SAP | NetWeaver | windows, linux | [WINDOWS](CVE_Daily/2026-11-20/CVE-2025-42884_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-20/CVE-2025-42884_LINUX.txt) |
+| 2026-11-20 | CVE-2026-76466 | Cisco | Expressway Series | network | [NETWORK](CVE_Daily/2026-11-20/CVE-2026-76466_NETWORK.txt) |
