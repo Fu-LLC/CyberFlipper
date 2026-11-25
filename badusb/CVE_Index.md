@@ -199,3 +199,4 @@
 | 2026-11-20 | CVE-2026-76466 | Cisco | Expressway Series | network | [NETWORK](CVE_Daily/2026-11-20/CVE-2026-76466_NETWORK.txt) |
 | 2026-11-23 | CVE-2026-133968 | Project MONAI | MONAI Label | windows, linux | [WINDOWS](CVE_Daily/2026-11-23/CVE-2026-133968_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-23/CVE-2026-133968_LINUX.txt) |
 | 2026-11-23 | CVE-2026-134624 | N-able | MailAssure | windows, linux | [WINDOWS](CVE_Daily/2026-11-23/CVE-2026-134624_WINDOWS.txt) [LINUX](CVE_Daily/2026-11-23/CVE-2026-134624_LINUX.txt) |
+| 2026-11-25 | CVE-2026-103406 | Hewlett Packard Enterprise (HPE) | Juniper Session Smart Conductor and Session Smart Router | network | [NETWORK](CVE_Daily/2026-11-25/CVE-2026-103406_NETWORK.txt) |
